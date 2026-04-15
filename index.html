@@ -29,12 +29,12 @@
     }
 
     .topbar-inner {
-        max-width: 1700px;
+        max-width: 1900px;
         margin: 0 auto;
         display: flex;
         align-items: center;
-        gap: 14px;
-        padding: 8px 16px;
+        gap: 22px;
+        padding: 10px 20px;
     }
 
     .site-logo-link {
@@ -44,7 +44,7 @@
     }
 
     .site-logo {
-        height: 78px;
+        height: 100px;
         width: auto;
         display: block;
         background: transparent !important;
@@ -59,7 +59,8 @@
         list-style: none;
         display: flex;
         align-items: center;
-        gap: 0;
+        justify-content: space-between;
+        gap: 6px;
         flex: 1;
         min-width: 0;
     }
@@ -72,8 +73,8 @@
     .menu > li > a {
         display: block;
         color: #fff;
-        padding: 18px 12px;
-        font-size: 13px;
+        padding: 18px 14px;
+        font-size: 14px;
         white-space: nowrap;
         transition: 0.3s;
         letter-spacing: 0.2px;
@@ -88,7 +89,7 @@
         position: absolute;
         top: 100%;
         left: 0;
-        min-width: 250px;
+        min-width: 260px;
         background: #fff;
         border: 1px solid #ddd;
         box-shadow: 0 6px 16px rgba(0,0,0,0.15);
@@ -119,7 +120,7 @@
     }
 
     .president-photo {
-        height: 78px;
+        height: 90px;
         width: auto;
         display: block;
         border-radius: 6px;
@@ -128,32 +129,32 @@
 
     .hero {
         background:
-            linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-            url('MALATYA BANNER.png') center center / cover no-repeat;
+            linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.38)),
+            url('MALATYA BANNER(1).png') center center / cover no-repeat;
         color: #fff;
         text-align: center;
-        padding: 110px 20px 120px;
+        padding: 120px 20px 130px;
     }
 
     .hero h1 {
-        font-size: 54px;
-        margin-bottom: 16px;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+        font-size: 58px;
+        margin-bottom: 18px;
+        text-shadow: 0 3px 12px rgba(0,0,0,0.35);
     }
 
     .hero p {
-        font-size: 24px;
+        font-size: 26px;
         margin-bottom: 12px;
         text-shadow: 0 2px 8px rgba(0,0,0,0.30);
     }
 
     .container {
-        max-width: 1600px;
+        max-width: 1700px;
         margin: 20px auto;
         display: grid;
-        grid-template-columns: 270px 1fr 270px;
+        grid-template-columns: 280px 1fr 280px;
         gap: 20px;
-        padding: 0 16px 40px;
+        padding: 0 18px 40px;
     }
 
     .box {
@@ -164,7 +165,7 @@
     .box-title {
         background: #333;
         color: #fff;
-        padding: 15px 16px;
+        padding: 16px 18px;
         font-size: 18px;
         font-weight: bold;
     }
@@ -184,13 +185,13 @@
     .content {
         background: #fff;
         border: 1px solid #ddd;
-        padding: 28px;
+        padding: 30px;
     }
 
     .content h2 {
-        font-size: 38px;
+        font-size: 40px;
         color: #8b0000;
-        margin-bottom: 18px;
+        margin-bottom: 20px;
     }
 
     .content p {
@@ -261,28 +262,29 @@
         z-index: 1000;
     }
 
-    @media (max-width: 1450px) {
-        .menu > li > a {
-            padding: 16px 9px;
-            font-size: 12px;
-        }
-
+    @media (max-width: 1650px) {
         .site-logo {
-            height: 72px;
+            height: 90px;
         }
 
         .president-photo {
-            height: 72px;
+            height: 82px;
+        }
+
+        .menu > li > a {
+            padding: 16px 10px;
+            font-size: 13px;
         }
     }
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1350px) {
         .topbar-inner {
             flex-wrap: wrap;
         }
 
         .menu {
             flex-wrap: wrap;
+            justify-content: flex-start;
         }
 
         .president-link {
@@ -294,11 +296,11 @@
         }
 
         .hero h1 {
-            font-size: 36px;
+            font-size: 40px;
         }
 
         .hero p {
-            font-size: 18px;
+            font-size: 20px;
         }
     }
 </style>
