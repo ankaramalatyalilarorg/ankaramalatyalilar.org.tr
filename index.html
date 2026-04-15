@@ -1,508 +1,631 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ankara Malatyalılar Derneği</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankara Malatyalılar Derneği</title>
 
-<style>
-    :root {
-        --header-height: 140px;
-        --dark: #2f2f2f;
-        --red: #8b0000;
-        --light: #f2f2f2;
-        --white: #ffffff;
-        --border: #dddddd;
-    }
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        font-family: Arial, sans-serif;
-        background: var(--light);
-        color: #222;
-    }
-
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .topbar {
-        background: var(--dark);
-        border-bottom: 4px solid var(--red);
-    }
-
-    .topbar-inner {
-        max-width: 1900px;
-        margin: 0 auto;
-        min-height: var(--header-height);
-        display: flex;
-        align-items: center;
-        gap: 22px;
-        padding: 10px 20px;
-    }
-
-    .site-logo-link,
-    .president-link {
-        display: flex;
-        align-items: center;
-        flex-shrink: 0;
-    }
-
-    .site-logo {
-        height: calc(var(--header-height) - 24px);
-        width: auto;
-        display: block;
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-        border-radius: 0 !important;
-        padding: 0 !important;
-        margin: 0;
-        object-fit: contain;
-    }
-
-    .president-photo {
-        height: calc(var(--header-height) - 24px);
-        width: auto;
-        display: block;
-        border-radius: 8px;
-        object-fit: cover;
-    }
-
-    .menu {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 8px;
-        flex: 1;
-        min-width: 0;
-    }
-
-    .menu > li {
-        position: relative;
-        flex-shrink: 0;
-    }
-
-    .menu > li > a {
-        display: block;
-        color: #fff;
-        padding: 18px 14px;
-        font-size: 14px;
-        white-space: nowrap;
-        transition: background 0.3s ease;
-        letter-spacing: 0.2px;
-    }
-
-    .menu > li > a:hover {
-        background: var(--red);
-    }
-
-    .dropdown {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        min-width: 260px;
-        background: #fff;
-        border: 1px solid #ddd;
-        box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-        z-index: 1000;
-    }
-
-    .dropdown a {
-        display: block;
-        padding: 12px 15px;
-        border-bottom: 1px solid #eee;
-        color: #222;
-        font-size: 15px;
-    }
-
-    .dropdown a:hover {
-        background: #f7f7f7;
-        color: var(--red);
-    }
-
-    .menu li:hover .dropdown {
-        display: block;
-    }
-
-    .hero {
-        background:
-            linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.38)),
-            url('MALATYA BANNER(1).png') center center / cover no-repeat;
-        color: #fff;
-        text-align: center;
-        padding: 120px 20px 130px;
-    }
-
-    .hero h1 {
-        font-size: 58px;
-        margin-bottom: 18px;
-        text-shadow: 0 3px 12px rgba(0,0,0,0.35);
-    }
-
-    .hero p {
-        font-size: 26px;
-        margin-bottom: 12px;
-        text-shadow: 0 2px 8px rgba(0,0,0,0.30);
-    }
-
-    .container {
-        max-width: 1700px;
-        margin: 20px auto;
-        display: grid;
-        grid-template-columns: 280px 1fr 280px;
-        gap: 20px;
-        padding: 0 18px 40px;
-    }
-
-    .box {
-        background: var(--white);
-        border: 1px solid var(--border);
-    }
-
-    .box-title {
-        background: #333;
-        color: #fff;
-        padding: 16px 18px;
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    .sidebar-links a {
-        display: block;
-        padding: 14px 16px;
-        border-bottom: 1px solid #eee;
-        font-size: 16px;
-    }
-
-    .sidebar-links a:hover {
-        background: #fafafa;
-        color: var(--red);
-    }
-
-    .content {
-        background: var(--white);
-        border: 1px solid var(--border);
-        padding: 30px;
-    }
-
-    .content h2 {
-        font-size: 40px;
-        color: var(--red);
-        margin-bottom: 20px;
-    }
-
-    .content p {
-        line-height: 1.8;
-        margin-bottom: 14px;
-        font-size: 18px;
-    }
-
-    .info-card {
-        margin-top: 28px;
-        background: #fafafa;
-        border: 1px solid #e5e5e5;
-        padding: 22px;
-        border-radius: 6px;
-    }
-
-    .info-card p {
-        margin-bottom: 14px;
-        font-size: 17px;
-    }
-
-    .phone-link {
-        color: #0056b3;
-        font-weight: bold;
-    }
-
-    .map-link {
-        color: var(--red);
-        font-weight: bold;
-    }
-
-    .whatsapp-btn {
-        display: inline-block;
-        margin-top: 10px;
-        background: #25D366;
-        color: white;
-        padding: 12px 18px;
-        border-radius: 6px;
-        font-weight: bold;
-    }
-
-    .whatsapp-btn:hover {
-        opacity: 0.92;
-    }
-
-    .bottom-banner {
-        max-width: 1700px;
-        margin: 0 auto 30px;
-        padding: 0 18px;
-    }
-
-    .bottom-banner img {
-        width: 100%;
-        display: block;
-        border-radius: 8px;
-    }
-
-    .footer {
-        background: var(--dark);
-        color: #fff;
-        text-align: center;
-        padding: 22px 15px;
-        font-size: 15px;
-    }
-
-    .floating-wa {
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-        background: #25D366;
-        color: white;
-        width: 58px;
-        height: 58px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        font-size: 28px;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-        z-index: 1000;
-    }
-
-    @media (max-width: 1700px) {
-        .menu > li > a {
-            padding: 16px 10px;
-            font-size: 13px;
-        }
-    }
-
-    @media (max-width: 1450px) {
+    <style>
         :root {
-            --header-height: 120px;
+            --ana-koyu: #2f2f2f;
+            --ana-kirmizi: #8b0000;
+            --zemin: #f3f3f3;
+            --beyaz: #ffffff;
+            --yazi: #222222;
+            --kenar: #dddddd;
+            --golge: 0 8px 24px rgba(0, 0, 0, 0.10);
+            --yuvarlak: 10px;
+            --ust-alan-yukseklik: 170px;
+            --logo-yukseklik: 138px;
+            --kapsayici-genislik: 1700px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--zemin);
+            color: var(--yazi);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .ust-alan {
+            background: var(--ana-koyu);
+            border-bottom: 4px solid var(--ana-kirmizi);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .ust-alan-ic {
+            max-width: var(--kapsayici-genislik);
+            margin: 0 auto;
+            min-height: var(--ust-alan-yukseklik);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 14px 22px;
+        }
+
+        .logo-bolum,
+        .baskan-bolum {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .site-logo,
+        .baskan-fotograf {
+            height: var(--logo-yukseklik);
+            width: auto;
+            object-fit: contain;
+        }
+
+        .baskan-fotograf {
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .menu-alani {
+            flex: 1 1 auto;
+            min-width: 0;
         }
 
         .menu {
-            gap: 4px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .menu > li {
+            position: relative;
         }
 
         .menu > li > a {
-            padding: 14px 8px;
-            font-size: 12px;
+            display: block;
+            color: #ffffff;
+            padding: 16px 12px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            border-radius: 6px;
+            transition: 0.25s ease;
+            white-space: nowrap;
         }
 
-        .hero h1 {
-            font-size: 44px;
+        .menu > li > a:hover {
+            background: var(--ana-kirmizi);
         }
 
-        .hero p {
-            font-size: 20px;
-        }
-    }
-
-    @media (max-width: 1250px) {
-        .topbar-inner {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .menu {
-            flex-wrap: wrap;
-            justify-content: center;
+        .acilir-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 260px;
+            background: var(--beyaz);
+            border: 1px solid #e6e6e6;
+            border-radius: 8px;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.16);
+            overflow: hidden;
+            z-index: 999;
         }
 
-        .container {
-            grid-template-columns: 1fr;
+        .acilir-menu a {
+            display: block;
+            padding: 13px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 15px;
+            color: #222;
+            transition: 0.2s ease;
         }
 
-        .hero {
-            padding: 90px 15px 95px;
+        .acilir-menu a:last-child {
+            border-bottom: none;
         }
 
-        .hero h1 {
-            font-size: 34px;
+        .acilir-menu a:hover {
+            background: #fafafa;
+            color: var(--ana-kirmizi);
         }
 
-        .hero p {
+        .menu li:hover .acilir-menu {
+            display: block;
+        }
+
+        .kahraman {
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)),
+                url('MALATYA BANNER(1).png') center center / cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 120px 20px 130px;
+        }
+
+        .kahraman h1 {
+            font-size: 56px;
+            margin-bottom: 18px;
+            text-shadow: 0 3px 12px rgba(0,0,0,0.35);
+        }
+
+        .kahraman p {
+            font-size: 24px;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.30);
+        }
+
+        .ana-icerik {
+            max-width: var(--kapsayici-genislik);
+            margin: 24px auto;
+            padding: 0 18px 40px;
+            display: grid;
+            grid-template-columns: 280px 1fr 280px;
+            gap: 20px;
+        }
+
+        .kutu,
+        .icerik-alani {
+            background: var(--beyaz);
+            border: 1px solid var(--kenar);
+            border-radius: var(--yuvarlak);
+            box-shadow: var(--golge);
+        }
+
+        .kutu-baslik {
+            background: #333333;
+            color: #ffffff;
+            padding: 16px 18px;
             font-size: 18px;
+            font-weight: 700;
+            border-radius: var(--yuvarlak) var(--yuvarlak) 0 0;
         }
-    }
-</style>
+
+        .yan-baglanti a {
+            display: block;
+            padding: 14px 16px;
+            border-bottom: 1px solid #efefef;
+            font-size: 16px;
+            transition: 0.2s ease;
+        }
+
+        .yan-baglanti a:last-child {
+            border-bottom: none;
+        }
+
+        .yan-baglanti a:hover {
+            background: #fafafa;
+            color: var(--ana-kirmizi);
+        }
+
+        .icerik-alani {
+            padding: 34px;
+        }
+
+        .icerik-alani h2 {
+            font-size: 42px;
+            color: var(--ana-kirmizi);
+            margin-bottom: 20px;
+        }
+
+        .icerik-alani p {
+            font-size: 18px;
+            line-height: 1.85;
+            margin-bottom: 16px;
+        }
+
+        .bilgi-karti {
+            margin-top: 30px;
+            background: #fafafa;
+            border: 1px solid #e8e8e8;
+            border-radius: 10px;
+            padding: 24px;
+        }
+
+        .bilgi-karti p {
+            margin-bottom: 14px;
+            font-size: 17px;
+        }
+
+        .telefon-baglanti {
+            color: #0056b3;
+            font-weight: 700;
+        }
+
+        .harita-baglanti {
+            color: var(--ana-kirmizi);
+            font-weight: 700;
+        }
+
+        .eposta-baglanti {
+            color: #0056b3;
+            font-weight: 700;
+        }
+
+        .butonlar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        .buton {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: 0.2s ease;
+        }
+
+        .buton:hover {
+            transform: translateY(-1px);
+            opacity: 0.96;
+        }
+
+        .buton-whatsapp {
+            background: #25D366;
+            color: #ffffff;
+        }
+
+        .buton-eposta {
+            background: var(--ana-kirmizi);
+            color: #ffffff;
+        }
+
+        .alt-afis {
+            max-width: var(--kapsayici-genislik);
+            margin: 0 auto 30px;
+            padding: 0 18px;
+        }
+
+        .alt-afis img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--golge);
+        }
+
+        .alt-bilgi {
+            background: var(--ana-koyu);
+            color: #ffffff;
+            text-align: center;
+            padding: 24px 15px;
+            font-size: 15px;
+        }
+
+        .sabit-whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.24);
+            z-index: 999;
+        }
+
+        .sabit-whatsapp:hover {
+            transform: scale(1.04);
+        }
+
+        @media (max-width: 1600px) {
+            :root {
+                --ust-alan-yukseklik: 155px;
+                --logo-yukseklik: 125px;
+            }
+
+            .menu > li > a {
+                font-size: 13px;
+                padding: 15px 10px;
+            }
+
+            .kahraman h1 {
+                font-size: 48px;
+            }
+
+            .kahraman p {
+                font-size: 21px;
+            }
+        }
+
+        @media (max-width: 1350px) {
+            :root {
+                --ust-alan-yukseklik: 145px;
+                --logo-yukseklik: 112px;
+            }
+
+            .ust-alan-ic {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .menu {
+                justify-content: center;
+            }
+
+            .ana-icerik {
+                grid-template-columns: 1fr;
+            }
+
+            .kahraman {
+                padding: 95px 18px 105px;
+            }
+
+            .kahraman h1 {
+                font-size: 38px;
+            }
+
+            .kahraman p {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --ust-alan-yukseklik: auto;
+                --logo-yukseklik: 88px;
+            }
+
+            .ust-alan-ic {
+                padding: 14px 14px 18px;
+            }
+
+            .menu {
+                gap: 4px;
+            }
+
+            .menu > li > a {
+                font-size: 12px;
+                padding: 10px 8px;
+            }
+
+            .acilir-menu {
+                min-width: 220px;
+            }
+
+            .kahraman {
+                padding: 80px 15px 85px;
+            }
+
+            .kahraman h1 {
+                font-size: 30px;
+            }
+
+            .kahraman p {
+                font-size: 16px;
+            }
+
+            .icerik-alani {
+                padding: 22px;
+            }
+
+            .icerik-alani h2 {
+                font-size: 32px;
+            }
+
+            .icerik-alani p,
+            .bilgi-karti p {
+                font-size: 16px;
+            }
+
+            .sabit-whatsapp {
+                width: 54px;
+                height: 54px;
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<nav class="topbar">
-    <div class="topbar-inner">
-        <a href="#" class="site-logo-link">
-            <img src="DERNEK SON ORİJİNAL YUVARLAK LOGO.png" alt="Logo" class="site-logo">
-        </a>
+    <nav class="ust-alan">
+        <div class="ust-alan-ic">
 
-        <ul class="menu">
-            <li><a href="#">ANASAYFA</a></li>
+            <a href="#" class="logo-bolum" aria-label="Anasayfa">
+                <img src="DERNEK SON ORİJİNAL YUVARLAK LOGO.png" alt="Ankara Malatyalılar Derneği Logosu" class="site-logo">
+            </a>
 
-            <li>
-                <a href="#">DERNEĞİMİZ HAKKINDA +</a>
-                <div class="dropdown">
-                    <a href="#">Derneğimiz Hakkında</a>
-                    <a href="#">Tüzüğümüz</a>
-                    <a href="#">Yönetim Kurulu</a>
-                    <a href="#">Denetim Kurulu</a>
-                    <a href="#">Kurucularımız</a>
+            <div class="menu-alani">
+                <ul class="menu">
+                    <li><a href="#">ANASAYFA</a></li>
+
+                    <li>
+                        <a href="#">DERNEĞİMİZ HAKKINDA +</a>
+                        <div class="acilir-menu">
+                            <a href="#">Derneğimiz Hakkında</a>
+                            <a href="#">Tüzüğümüz</a>
+                            <a href="#">Yönetim Kurulu</a>
+                            <a href="#">Denetim Kurulu</a>
+                            <a href="#">Kurucularımız</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#">MALATYAMIZ +</a>
+                        <div class="acilir-menu">
+                            <a href="#">Malatyamız Hakkında</a>
+                            <a href="#">Gelenek ve Görenek</a>
+                            <a href="#">Fotoğraf Galerisi</a>
+                            <a href="#">Videolar</a>
+                            <a href="#">Malatya'dan Haberler</a>
+                            <a href="#">Siteye Fotoğraf / Video Ekle</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#">ANKARA İLÇE DERNEKLERİ +</a>
+                        <div class="acilir-menu">
+                            <a href="#">Battalgazi Derneği</a>
+                            <a href="#">Yeşilyurt Derneği</a>
+                            <a href="#">Akçadağ Derneği</a>
+                            <a href="#">Darende Derneği</a>
+                            <a href="#">Doğanşehir Derneği</a>
+                            <a href="#">Hekimhan Derneği</a>
+                            <a href="#">Kuluncak Derneği</a>
+                            <a href="#">Pütürge Derneği</a>
+                            <a href="#">Yazıhan Derneği</a>
+                            <a href="#">Arapgir Derneği</a>
+                            <a href="#">Arguvan Derneği</a>
+                            <a href="#">Kale Derneği</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#">GALERİ +</a>
+                        <div class="acilir-menu">
+                            <a href="#">Fotoğraf Galerisi</a>
+                            <a href="#">Video Galerisi</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#">İLETİŞİM +</a>
+                        <div class="acilir-menu">
+                            <a href="#">İletişim Bilgileri</a>
+                            <a href="#">Bize Ulaşın</a>
+                        </div>
+                    </li>
+
+                    <li><a href="#">❤ BAĞIŞ YAP</a></li>
+                    <li><a href="#">💳 AİDAT ÖDE</a></li>
+                </ul>
+            </div>
+
+            <a href="#" class="baskan-bolum" aria-label="Başkan">
+                <img src="1.png" alt="Dernek Başkanı" class="baskan-fotograf">
+            </a>
+
+        </div>
+    </nav>
+
+    <section class="kahraman">
+        <h1>Ankara Malatyalılar Derneği</h1>
+        <p>Birlik, dayanışma ve kültürel bağlarımızı güçlendirmek için buradayız.</p>
+        <p>Daha kapsamlı ve güçlü içeriklerimizle çok yakında yayındayız.</p>
+    </section>
+
+    <div class="ana-icerik">
+        <aside class="kutu">
+            <div class="kutu-baslik">Derneğimiz Hakkında</div>
+            <div class="yan-baglanti">
+                <a href="#">Derneğimiz Hakkında</a>
+                <a href="#">Tüzüğümüz</a>
+                <a href="#">Yönetim Kurulu</a>
+                <a href="#">Denetim Kurulu</a>
+                <a href="#">Kurucularımız</a>
+                <a href="#">Üyelik İşlemleri</a>
+                <a href="#">Aidat Bilgileri</a>
+                <a href="#">Banka Bilgilerimiz</a>
+                <a href="#">Etkinliklerimiz</a>
+            </div>
+        </aside>
+
+        <main class="icerik-alani">
+            <h2>Hoş Geldiniz</h2>
+
+            <p>
+                Ankara Malatyalılar Derneği olarak; hemşehrilik bağlarımızı güçlendirmek, kültürel değerlerimizi yaşatmak,
+                dayanışma anlayışımızı büyütmek ve Malatya’mızın köklü birikimini Ankara’da en güçlü şekilde temsil etmek amacıyla faaliyet göstermekteyiz.
+            </p>
+
+            <p>
+                Derneğimiz; sosyal, kültürel ve toplumsal çalışmalarıyla üyelerimizi bir araya getirmeyi, yardımlaşma ruhunu canlı tutmayı,
+                birlik bilincini güçlendirmeyi ve gelecek nesillere sağlam bir dayanışma mirası bırakmayı hedeflemektedir.
+            </p>
+
+            <p>
+                İnternet sitemiz her geçen gün daha kapsamlı hale getirilmektedir. Bu süreçte bizimle aşağıdaki iletişim bilgilerimiz üzerinden doğrudan bağlantı kurabilirsiniz.
+            </p>
+
+            <div class="bilgi-karti">
+                <p><strong>📍 Şehir:</strong> Ankara</p>
+
+                <p>
+                    <strong>📍 Adres:</strong>
+                    <a
+                        class="harita-baglanti"
+                        href="https://www.google.com/maps?q=Mebusevleri+Mahallesi+Turgut+Reis+Caddesi+No:7+Kat:1+Daire+No:+9+06570+Çankaya+Ankara"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Mebusevleri Mahallesi Turgut Reis Caddesi No:7 Kat:1 Daire No:9 06570 Çankaya / Ankara
+                    </a>
+                </p>
+
+                <p>
+                    <strong>📞 Telefon:</strong>
+                    <a class="telefon-baglanti" href="tel:+905369887544">0536 988 75 44</a>
+                </p>
+
+                <p>
+                    <strong>📧 E-posta:</strong>
+                    <a class="eposta-baglanti" href="mailto:info@ankaramalatyalilar.org.tr">info@ankaramalatyalilar.org.tr</a>
+                </p>
+
+                <div class="butonlar">
+                    <a class="buton buton-whatsapp" href="https://wa.me/905369887544" target="_blank" rel="noopener noreferrer">
+                        💬 WhatsApp ile Ulaşın
+                    </a>
+
+                    <a class="buton buton-eposta" href="mailto:info@ankaramalatyalilar.org.tr">
+                        ✉ E-posta Gönderin
+                    </a>
                 </div>
-            </li>
+            </div>
+        </main>
 
-            <li>
-                <a href="#">MALATYAMIZ +</a>
-                <div class="dropdown">
-                    <a href="#">Malatyamız Hakkında</a>
-                    <a href="#">Gelenek Görenek</a>
-                    <a href="#">Fotoğraf Galerisi</a>
-                    <a href="#">Videolar</a>
-                    <a href="#">Malatya'dan Haberler</a>
-                    <a href="#">Siteye Fotoğraf / Video Ekle</a>
-                </div>
-            </li>
-
-            <li>
-                <a href="#">ANKARA İLÇE DERNEKLERİ +</a>
-                <div class="dropdown">
-                    <a href="#">Battalgazi Derneği</a>
-                    <a href="#">Yeşilyurt Derneği</a>
-                    <a href="#">Akçadağ Derneği</a>
-                    <a href="#">Darende Derneği</a>
-                    <a href="#">Doğanşehir Derneği</a>
-                    <a href="#">Hekimhan Derneği</a>
-                    <a href="#">Kuluncak Derneği</a>
-                    <a href="#">Pütürge Derneği</a>
-                    <a href="#">Yazıhan Derneği</a>
-                    <a href="#">Arapgir Derneği</a>
-                    <a href="#">Arguvan Derneği</a>
-                    <a href="#">Kale Derneği</a>
-                </div>
-            </li>
-
-            <li>
-                <a href="#">GALERİ +</a>
-                <div class="dropdown">
-                    <a href="#">Fotoğraf Galerisi</a>
-                    <a href="#">Video Galerisi</a>
-                </div>
-            </li>
-
-            <li>
-                <a href="#">İLETİŞİM +</a>
-                <div class="dropdown">
-                    <a href="#">İletişim Bilgileri</a>
-                    <a href="#">Bize Ulaşın</a>
-                </div>
-            </li>
-
-            <li><a href="#">❤ BAĞIŞ YAP</a></li>
-            <li><a href="#">💳 AİDAT ÖDE</a></li>
-        </ul>
-
-        <a href="#" class="president-link">
-            <img src="1.png" alt="Başkan" class="president-photo">
-        </a>
+        <aside class="kutu">
+            <div class="kutu-baslik">Malatyamız</div>
+            <div class="yan-baglanti">
+                <a href="#">Malatyamız Hakkında</a>
+                <a href="#">Gelenek ve Görenek</a>
+                <a href="#">Fotoğraf Galerisi</a>
+                <a href="#">Videolar</a>
+                <a href="#">Malatya'dan Haberler</a>
+                <a href="#">Siteye Fotoğraf / Video Ekle</a>
+            </div>
+        </aside>
     </div>
-</nav>
 
-<section class="hero">
-    <h1>Ankara Malatyalılar Derneği</h1>
-    <p>Birlik, dayanışma ve kültürel bağlarımızı güçlendirmek için buradayız.</p>
-    <p>Çok yakında daha kapsamlı sitemiz yayında olacaktır.</p>
-</section>
+    <section class="alt-afis">
+        <img src="MALATYA BANNER(2).png" alt="Malatya Tanıtım Görseli">
+    </section>
 
-<div class="container">
-    <aside class="box">
-        <div class="box-title">Derneğimiz Hakkında</div>
-        <div class="sidebar-links">
-            <a href="#">Derneğimiz Hakkında</a>
-            <a href="#">Tüzüğümüz</a>
-            <a href="#">Yönetim Kurulu</a>
-            <a href="#">Denetim Kurulu</a>
-            <a href="#">Kurucularımız</a>
-            <a href="#">Üyelik İşlemleri</a>
-            <a href="#">Aidat Bilgileri</a>
-            <a href="#">Banka Bilgilerimiz</a>
-            <a href="#">Etkinliklerimiz</a>
-        </div>
-    </aside>
+    <footer class="alt-bilgi">
+        © 2026 Ankara Malatyalılar Derneği - Tüm hakları saklıdır.
+    </footer>
 
-    <main class="content">
-        <h2>Hoş Geldiniz</h2>
-
-        <p>
-            Ankara Malatyalılar Derneği olarak; hemşehrilik bağlarını güçlendirmek, kültürel değerlerimizi yaşatmak,
-            dayanışmayı artırmak ve Malatya’mızın zengin birikimini Ankara’da en güzel şekilde temsil etmek amacıyla faaliyet göstermekteyiz.
-        </p>
-
-        <p>
-            Derneğimiz; sosyal, kültürel ve toplumsal çalışmalarıyla üyelerimizi bir araya getirmeyi,
-            yardımlaşma ruhunu canlı tutmayı ve gelecek nesillere güçlü bir birlik mirası bırakmayı hedeflemektedir.
-        </p>
-
-        <p>
-            Sitemizin yeni ve gelişmiş sürümü çok yakında yayında olacaktır. Bu süreçte aşağıdaki iletişim bilgilerimizden bize ulaşabilirsiniz.
-        </p>
-
-        <div class="info-card">
-            <p><strong>📍 Şehir:</strong> Ankara</p>
-
-            <p>
-                <strong>📍 Adres:</strong>
-                <a class="map-link" href="https://www.google.com/maps?q=Mebusevleri+Mahallesi+Turgut+Reis+Caddesi+No:7+Kat:1+Daire+No:+9+06570+Çankaya+Ankara" target="_blank">
-                    Mebusevleri Mahallesi Turgut Reis Caddesi No:7 Kat:1 Daire No: 9 06570 Çankaya Ankara
-                </a>
-            </p>
-
-            <p>
-                <strong>📞 Telefon:</strong>
-                <a class="phone-link" href="tel:+905369887544">0536 988 75 44</a>
-            </p>
-
-            <p>
-                <a class="whatsapp-btn" href="https://wa.me/905369887544" target="_blank">
-                    💬 WhatsApp ile Ulaşın
-                </a>
-            </p>
-
-            <p><strong>📧 E-posta:</strong> info@ankaramalatyalilar.org.tr</p>
-        </div>
-    </main>
-
-    <aside class="box">
-        <div class="box-title">Malatyamız</div>
-        <div class="sidebar-links">
-            <a href="#">Malatyamız Hakkında</a>
-            <a href="#">Gelenek Görenek</a>
-            <a href="#">Fotoğraf Galerisi</a>
-            <a href="#">Videolar</a>
-            <a href="#">Malatya'dan Haberler</a>
-            <a href="#">Siteye Fotoğraf / Video Ekle</a>
-        </div>
-    </aside>
-</div>
-
-<section class="bottom-banner">
-    <img src="MALATYA BANNER(2).png" alt="Malatya Banner">
-</section>
-
-<footer class="footer">
-    © 2026 Ankara Malatyalılar Derneği - Tüm hakları saklıdır.
-</footer>
-
-<a class="floating-wa" href="https://wa.me/905369887544" target="_blank">💬</a>
+    <a class="sabit-whatsapp" href="https://wa.me/905369887544" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile iletişime geç">
+        💬
+    </a>
 
 </body>
 </html>
