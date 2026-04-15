@@ -6,6 +6,15 @@
 <title>Ankara Malatyalılar Derneği</title>
 
 <style>
+    :root {
+        --header-height: 140px;
+        --dark: #2f2f2f;
+        --red: #8b0000;
+        --light: #f2f2f2;
+        --white: #ffffff;
+        --border: #dddddd;
+    }
+
     * {
         box-sizing: border-box;
         margin: 0;
@@ -14,7 +23,7 @@
 
     body {
         font-family: Arial, sans-serif;
-        background: #f2f2f2;
+        background: var(--light);
         color: #222;
     }
 
@@ -24,27 +33,29 @@
     }
 
     .topbar {
-        background: #2f2f2f;
-        border-bottom: 4px solid #8b0000;
+        background: var(--dark);
+        border-bottom: 4px solid var(--red);
     }
 
     .topbar-inner {
         max-width: 1900px;
         margin: 0 auto;
+        min-height: var(--header-height);
         display: flex;
         align-items: center;
         gap: 22px;
         padding: 10px 20px;
     }
 
-    .site-logo-link {
+    .site-logo-link,
+    .president-link {
         display: flex;
         align-items: center;
         flex-shrink: 0;
     }
 
     .site-logo {
-        height: 300px;
+        height: calc(var(--header-height) - 24px);
         width: auto;
         display: block;
         background: transparent !important;
@@ -53,6 +64,15 @@
         border-radius: 0 !important;
         padding: 0 !important;
         margin: 0;
+        object-fit: contain;
+    }
+
+    .president-photo {
+        height: calc(var(--header-height) - 24px);
+        width: auto;
+        display: block;
+        border-radius: 8px;
+        object-fit: cover;
     }
 
     .menu {
@@ -60,7 +80,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 6px;
+        gap: 8px;
         flex: 1;
         min-width: 0;
     }
@@ -76,12 +96,12 @@
         padding: 18px 14px;
         font-size: 14px;
         white-space: nowrap;
-        transition: 0.3s;
+        transition: background 0.3s ease;
         letter-spacing: 0.2px;
     }
 
     .menu > li > a:hover {
-        background: #8b0000;
+        background: var(--red);
     }
 
     .dropdown {
@@ -106,25 +126,11 @@
 
     .dropdown a:hover {
         background: #f7f7f7;
-        color: #8b0000;
+        color: var(--red);
     }
 
     .menu li:hover .dropdown {
         display: block;
-    }
-
-    .president-link {
-        display: flex;
-        align-items: center;
-        flex-shrink: 0;
-    }
-
-    .president-photo {
-        height: 450px;
-        width: auto;
-        display: block;
-        border-radius: 6px;
-        object-fit: cover;
     }
 
     .hero {
@@ -158,8 +164,8 @@
     }
 
     .box {
-        background: #fff;
-        border: 1px solid #ddd;
+        background: var(--white);
+        border: 1px solid var(--border);
     }
 
     .box-title {
@@ -179,18 +185,18 @@
 
     .sidebar-links a:hover {
         background: #fafafa;
-        color: #8b0000;
+        color: var(--red);
     }
 
     .content {
-        background: #fff;
-        border: 1px solid #ddd;
+        background: var(--white);
+        border: 1px solid var(--border);
         padding: 30px;
     }
 
     .content h2 {
         font-size: 40px;
-        color: #8b0000;
+        color: var(--red);
         margin-bottom: 20px;
     }
 
@@ -219,7 +225,7 @@
     }
 
     .map-link {
-        color: #8b0000;
+        color: var(--red);
         font-weight: bold;
     }
 
@@ -237,8 +243,20 @@
         opacity: 0.92;
     }
 
+    .bottom-banner {
+        max-width: 1700px;
+        margin: 0 auto 30px;
+        padding: 0 18px;
+    }
+
+    .bottom-banner img {
+        width: 100%;
+        display: block;
+        border-radius: 8px;
+    }
+
     .footer {
-        background: #2f2f2f;
+        background: var(--dark);
         color: #fff;
         text-align: center;
         padding: 22px 15px;
@@ -262,45 +280,61 @@
         z-index: 1000;
     }
 
-    @media (max-width: 1650px) {
-        .site-logo {
-            height: 90px;
-        }
-
-        .president-photo {
-            height: 82px;
-        }
-
+    @media (max-width: 1700px) {
         .menu > li > a {
             padding: 16px 10px;
             font-size: 13px;
         }
     }
 
-    @media (max-width: 1350px) {
+    @media (max-width: 1450px) {
+        :root {
+            --header-height: 120px;
+        }
+
+        .menu {
+            gap: 4px;
+        }
+
+        .menu > li > a {
+            padding: 14px 8px;
+            font-size: 12px;
+        }
+
+        .hero h1 {
+            font-size: 44px;
+        }
+
+        .hero p {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 1250px) {
         .topbar-inner {
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .menu {
             flex-wrap: wrap;
-            justify-content: flex-start;
-        }
-
-        .president-link {
-            display: none;
+            justify-content: center;
         }
 
         .container {
             grid-template-columns: 1fr;
         }
 
+        .hero {
+            padding: 90px 15px 95px;
+        }
+
         .hero h1 {
-            font-size: 40px;
+            font-size: 34px;
         }
 
         .hero p {
-            font-size: 20px;
+            font-size: 18px;
         }
     }
 </style>
@@ -460,13 +494,15 @@
     </aside>
 </div>
 
+<section class="bottom-banner">
+    <img src="MALATYA BANNER(2).png" alt="Malatya Banner">
+</section>
+
 <footer class="footer">
     © 2026 Ankara Malatyalılar Derneği - Tüm hakları saklıdır.
 </footer>
 
 <a class="floating-wa" href="https://wa.me/905369887544" target="_blank">💬</a>
-<section style="max-width: 1700px; margin: 30px auto;">
-    <img src="MALATYA BANNER(2).png" style="width:100%; border-radius:8px;">
-</section>
+
 </body>
 </html>
