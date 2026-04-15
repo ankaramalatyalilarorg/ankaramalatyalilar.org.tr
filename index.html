@@ -7,17 +7,18 @@
 
     <style>
         :root {
-            --ana-renk-koyu: #262626;
-            --ana-renk-bordo: #7b0f1a;
-            --ana-renk-kirmizi: #a40012;
-            --zemin-rengi: #f3f3f3;
+            --ana-koyu: #1f1f1f;
+            --ana-koyu-2: #2b2b2b;
+            --ana-kirmizi: #b30017;
+            --ana-bordo: #7d0f1d;
+            --zemin: #f3f3f3;
             --beyaz: #ffffff;
-            --yazi-rengi: #1f1f1f;
+            --yazi: #202020;
             --kenarlik: #dddddd;
-            --golge: 0 10px 30px rgba(0, 0, 0, 0.10);
+            --golge: 0 10px 28px rgba(0, 0, 0, 0.10);
             --buyuk-golge: 0 16px 40px rgba(0, 0, 0, 0.18);
-            --kapsayici-genislik: 1700px;
-            --yuvarlaklik: 12px;
+            --yuvarlak: 12px;
+            --kapsayici: 1700px;
         }
 
         * {
@@ -32,8 +33,8 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: var(--zemin-rengi);
-            color: var(--yazi-rengi);
+            background: var(--zemin);
+            color: var(--yazi);
         }
 
         a {
@@ -46,17 +47,17 @@
             max-width: 100%;
         }
 
-        .ust-alan {
-            background: linear-gradient(90deg, #1f1f1f 0%, #2a2a2a 50%, #1f1f1f 100%);
-            border-bottom: 4px solid var(--ana-renk-kirmizi);
+        .ust-menu {
+            background: linear-gradient(90deg, var(--ana-koyu) 0%, var(--ana-koyu-2) 50%, var(--ana-koyu) 100%);
+            border-bottom: 4px solid var(--ana-kirmizi);
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 14px rgba(0,0,0,0.14);
         }
 
-        .ust-alan-ic {
-            max-width: var(--kapsayici-genislik);
+        .ust-menu-ic {
+            max-width: var(--kapsayici);
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -67,7 +68,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            min-height: 94px;
+            min-height: 96px;
             flex-wrap: wrap;
         }
 
@@ -89,7 +90,6 @@
 
         .menu > li > a:hover {
             background: rgba(255,255,255,0.08);
-            color: #ffffff;
         }
 
         .acilir-menu {
@@ -121,7 +121,7 @@
 
         .acilir-menu a:hover {
             background: #fafafa;
-            color: var(--ana-renk-bordo);
+            color: var(--ana-bordo);
         }
 
         .menu li:hover .acilir-menu {
@@ -132,85 +132,49 @@
             position: relative;
             min-height: 760px;
             background:
-                linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.22)),
-                url('malatya-banner-yeni.png') center center / cover no-repeat;
+                linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12)),
+                url('banner.png') center center / cover no-repeat;
             overflow: hidden;
             display: flex;
             align-items: center;
         }
 
-        .banner-katman {
+        .banner-ic {
             width: 100%;
-            max-width: var(--kapsayici-genislik);
+            max-width: var(--kapsayici);
             margin: 0 auto;
-            padding: 50px 30px 70px;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .banner-yazi {
-            color: #ffffff;
-            max-width: 760px;
-            text-shadow: 0 4px 18px rgba(0,0,0,0.45);
-        }
-
-        .banner-yazi .ust-baslik {
-            display: inline-block;
-            margin-bottom: 18px;
-            padding: 10px 18px;
-            border-radius: 999px;
-            background: rgba(123, 15, 26, 0.88);
-            font-size: 15px;
-            font-weight: 700;
-            letter-spacing: 0.4px;
-        }
-
-        .banner-yazi h1 {
-            font-size: 66px;
-            line-height: 1.08;
-            margin-bottom: 18px;
-            font-weight: 800;
-        }
-
-        .banner-yazi p {
-            font-size: 26px;
-            line-height: 1.55;
-            margin-bottom: 14px;
-        }
-
-        .banner-yazi .ince-yazi {
-            font-size: 20px;
-            opacity: 0.96;
-        }
-
-        .banner-baskan {
+            padding: 40px 28px 55px;
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
         }
 
-        .baskan-karti {
-            width: min(100%, 560px);
-            background: rgba(255,255,255,0.10);
-            border: 1px solid rgba(255,255,255,0.20);
-            backdrop-filter: blur(6px);
-            border-radius: 24px;
-            padding: 18px;
-            box-shadow: var(--buyuk-golge);
+        .baskan-alani {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
         }
 
-        .baskan-karti img {
+        .baskan-gorsel {
+            width: min(100%, 440px);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: var(--buyuk-golge);
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.24);
+            backdrop-filter: blur(4px);
+        }
+
+        .baskan-gorsel img {
             width: 100%;
             height: auto;
-            border-radius: 18px;
+            display: block;
             object-fit: cover;
-            background: #ffffff;
         }
 
         .ana-icerik {
-            max-width: var(--kapsayici-genislik);
+            max-width: var(--kapsayici);
             margin: 24px auto;
             padding: 0 18px 40px;
             display: grid;
@@ -222,7 +186,7 @@
         .icerik {
             background: var(--beyaz);
             border: 1px solid var(--kenarlik);
-            border-radius: var(--yuvarlaklik);
+            border-radius: var(--yuvarlak);
             box-shadow: var(--golge);
         }
 
@@ -232,7 +196,7 @@
             padding: 16px 18px;
             font-size: 18px;
             font-weight: 700;
-            border-radius: var(--yuvarlaklik) var(--yuvarlaklik) 0 0;
+            border-radius: var(--yuvarlak) var(--yuvarlak) 0 0;
         }
 
         .yan-baglanti a {
@@ -249,7 +213,7 @@
 
         .yan-baglanti a:hover {
             background: #fafafa;
-            color: var(--ana-renk-bordo);
+            color: var(--ana-bordo);
         }
 
         .icerik {
@@ -258,7 +222,7 @@
 
         .icerik h2 {
             font-size: 42px;
-            color: var(--ana-renk-bordo);
+            color: var(--ana-bordo);
             margin-bottom: 20px;
         }
 
@@ -287,7 +251,7 @@
         }
 
         .harita-baglanti {
-            color: var(--ana-renk-bordo);
+            color: var(--ana-bordo);
             font-weight: 700;
         }
 
@@ -324,12 +288,12 @@
         }
 
         .buton-eposta {
-            background: var(--ana-renk-bordo);
+            background: var(--ana-bordo);
             color: #ffffff;
         }
 
         .alt-afis {
-            max-width: var(--kapsayici-genislik);
+            max-width: var(--kapsayici);
             margin: 0 auto 30px;
             padding: 0 18px;
         }
@@ -371,46 +335,30 @@
 
         @media (max-width: 1500px) {
             .banner-alani {
-                min-height: 680px;
+                min-height: 660px;
             }
 
-            .banner-yazi h1 {
-                font-size: 54px;
-            }
-
-            .banner-yazi p {
-                font-size: 22px;
-            }
-
-            .banner-yazi .ince-yazi {
-                font-size: 18px;
+            .baskan-gorsel {
+                width: min(100%, 390px);
             }
         }
 
         @media (max-width: 1280px) {
-            .menu {
+            .banner-alani {
+                min-height: 620px;
+            }
+
+            .banner-ic {
+                justify-content: center;
+                padding: 28px 18px 36px;
+            }
+
+            .baskan-alani {
                 justify-content: center;
             }
 
-            .banner-katman {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .banner-yazi {
-                margin: 0 auto;
-            }
-
-            .banner-yazi h1 {
-                font-size: 46px;
-            }
-
-            .banner-yazi p {
-                font-size: 20px;
-            }
-
-            .banner-alani {
-                min-height: 820px;
+            .baskan-gorsel {
+                width: min(100%, 360px);
             }
 
             .ana-icerik {
@@ -419,7 +367,7 @@
         }
 
         @media (max-width: 768px) {
-            .ust-alan-ic {
+            .ust-menu-ic {
                 padding: 0 12px;
             }
 
@@ -438,33 +386,16 @@
             }
 
             .banner-alani {
-                min-height: 720px;
+                min-height: 460px;
+                background-position: center;
             }
 
-            .banner-katman {
-                padding: 34px 16px 46px;
+            .banner-ic {
+                padding: 20px 14px 24px;
             }
 
-            .banner-yazi .ust-baslik {
-                font-size: 13px;
-                padding: 8px 14px;
-            }
-
-            .banner-yazi h1 {
-                font-size: 34px;
-            }
-
-            .banner-yazi p,
-            .banner-yazi .ince-yazi {
-                font-size: 16px;
-            }
-
-            .baskan-karti {
-                padding: 12px;
-                border-radius: 18px;
-            }
-
-            .baskan-karti img {
+            .baskan-gorsel {
+                width: min(100%, 250px);
                 border-radius: 14px;
             }
 
@@ -491,8 +422,8 @@
 </head>
 <body>
 
-    <nav class="ust-alan">
-        <div class="ust-alan-ic">
+    <nav class="ust-menu">
+        <div class="ust-menu-ic">
             <ul class="menu">
                 <li><a href="#">ANASAYFA</a></li>
 
@@ -512,7 +443,6 @@
                     <div class="acilir-menu">
                         <a href="#">Malatyamız Hakkında</a>
                         <a href="#">Gelenek ve Görenek</a>
-                        <a href="#">Fotoğraf Galerisi</a>
                         <a href="#">Videolar</a>
                         <a href="#">Malatya'dan Haberler</a>
                         <a href="#">Siteye Fotoğraf / Video Ekle</a>
@@ -538,14 +468,6 @@
                 </li>
 
                 <li>
-                    <a href="#">GALERİ +</a>
-                    <div class="acilir-menu">
-                        <a href="#">Fotoğraf Galerisi</a>
-                        <a href="#">Video Galerisi</a>
-                    </div>
-                </li>
-
-                <li>
                     <a href="#">İLETİŞİM +</a>
                     <div class="acilir-menu">
                         <a href="#">İletişim Bilgileri</a>
@@ -560,17 +482,10 @@
     </nav>
 
     <section class="banner-alani">
-        <div class="banner-katman">
-            <div class="banner-yazi">
-                <span class="ust-baslik">ANKARA MALATYALILAR DERNEĞİ</span>
-                <h1>Birlik, Dayanışma ve Hemşehrilik Ruhunu Güçlendiriyoruz</h1>
-                <p>Malatya’nın köklü kültürünü Ankara’da yaşatmak, hemşehrilerimiz arasında güçlü bağlar kurmak ve ortak değerlerimizi geleceğe taşımak için çalışıyoruz.</p>
-                <p class="ince-yazi">Kurumsal yapımız, sosyal faaliyetlerimiz ve toplumsal dayanışma anlayışımızla daha güçlü bir birlik için buradayız.</p>
-            </div>
-
-            <div class="banner-baskan">
-                <div class="baskan-karti">
-                    <img src="yusuf-gul-baskan.png" alt="Yusuf Gül - Başkan">
+        <div class="banner-ic">
+            <div class="baskan-alani">
+                <div class="baskan-gorsel">
+                    <img src="baskan.png" alt="Yusuf Gül - Başkan">
                 </div>
             </div>
         </div>
@@ -614,12 +529,7 @@
 
                 <p>
                     <strong>📍 Adres:</strong>
-                    <a
-                        class="harita-baglanti"
-                        href="https://www.google.com/maps?q=Mebusevleri+Mahallesi+Turgut+Reis+Caddesi+No:7+Kat:1+Daire+No:+9+06570+Çankaya+Ankara"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+                    <a class="harita-baglanti" href="https://www.google.com/maps?q=Mebusevleri+Mahallesi+Turgut+Reis+Caddesi+No:7+Kat:1+Daire+No:+9+06570+Çankaya+Ankara" target="_blank" rel="noopener noreferrer">
                         Mebusevleri Mahallesi Turgut Reis Caddesi No:7 Kat:1 Daire No:9 06570 Çankaya / Ankara
                     </a>
                 </p>
@@ -651,7 +561,6 @@
             <div class="yan-baglanti">
                 <a href="#">Malatyamız Hakkında</a>
                 <a href="#">Gelenek ve Görenek</a>
-                <a href="#">Fotoğraf Galerisi</a>
                 <a href="#">Videolar</a>
                 <a href="#">Malatya'dan Haberler</a>
                 <a href="#">Siteye Fotoğraf / Video Ekle</a>
@@ -660,7 +569,7 @@
     </div>
 
     <section class="alt-afis">
-        <img src="malatya-banner-yeni.png" alt="Ankara Malatyalılar Derneği Banner">
+        <img src="banner.png" alt="Ankara Malatyalılar Derneği Banner">
     </section>
 
     <footer class="alt-bilgi">
