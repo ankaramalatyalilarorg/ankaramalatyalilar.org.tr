@@ -7,10 +7,10 @@
 
     <style>
         :root {
-            --ana-koyu: #1f1f1f;
-            --ana-koyu-2: #2b2b2b;
-            --ana-kirmizi: #b30017;
-            --ana-bordo: #7d0f1d;
+            --koyu: #1f1f1f;
+            --koyu-2: #2b2b2b;
+            --kirmizi: #b30017;
+            --bordo: #7d0f1d;
             --zemin: #f3f3f3;
             --beyaz: #ffffff;
             --yazi: #202020;
@@ -18,17 +18,13 @@
             --golge: 0 10px 28px rgba(0, 0, 0, 0.10);
             --buyuk-golge: 0 16px 40px rgba(0, 0, 0, 0.18);
             --yuvarlak: 12px;
-            --kapsayici: 1700px;
+            --genislik: 1700px;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
@@ -43,13 +39,13 @@
         }
 
         img {
-            display: block;
             max-width: 100%;
+            display: block;
         }
 
         .ust-menu {
-            background: linear-gradient(90deg, var(--ana-koyu) 0%, var(--ana-koyu-2) 50%, var(--ana-koyu) 100%);
-            border-bottom: 4px solid var(--ana-kirmizi);
+            background: linear-gradient(90deg, var(--koyu) 0%, var(--koyu-2) 50%, var(--koyu) 100%);
+            border-bottom: 4px solid var(--kirmizi);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -57,7 +53,7 @@
         }
 
         .ust-menu-ic {
-            max-width: var(--kapsayici);
+            max-width: var(--genislik);
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -82,7 +78,6 @@
             padding: 16px 14px;
             font-size: 15px;
             font-weight: 700;
-            letter-spacing: 0.2px;
             border-radius: 8px;
             transition: 0.25s ease;
             white-space: nowrap;
@@ -121,7 +116,7 @@
 
         .acilir-menu a:hover {
             background: #fafafa;
-            color: var(--ana-bordo);
+            color: var(--bordo);
         }
 
         .menu li:hover .acilir-menu {
@@ -129,52 +124,39 @@
         }
 
         .banner-alani {
-            position: relative;
-            min-height: 760px;
-            background:
-                linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12)),
-                url('banner.png') center center / cover no-repeat;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-        }
-
-        .banner-ic {
-            width: 100%;
-            max-width: var(--kapsayici);
+            max-width: var(--genislik);
             margin: 0 auto;
-            padding: 40px 28px 55px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        .baskan-alani {
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        .baskan-gorsel {
-            width: min(100%, 440px);
-            border-radius: 18px;
+            position: relative;
             overflow: hidden;
-            box-shadow: var(--buyuk-golge);
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.24);
-            backdrop-filter: blur(4px);
+            background: #d9d9d9;
         }
 
-        .baskan-gorsel img {
+        .banner-resmi {
             width: 100%;
             height: auto;
             display: block;
-            object-fit: cover;
+        }
+
+        .baskan-kapsayici {
+            position: absolute;
+            right: 2.5%;
+            bottom: 4%;
+            width: 21%;
+            min-width: 180px;
+            max-width: 380px;
+        }
+
+        .baskan-resmi {
+            width: 100%;
+            height: auto;
+            border-radius: 18px;
+            box-shadow: var(--buyuk-golge);
+            border: 2px solid rgba(255,255,255,0.65);
+            background: #ffffff;
         }
 
         .ana-icerik {
-            max-width: var(--kapsayici);
+            max-width: var(--genislik);
             margin: 24px auto;
             padding: 0 18px 40px;
             display: grid;
@@ -213,7 +195,7 @@
 
         .yan-baglanti a:hover {
             background: #fafafa;
-            color: var(--ana-bordo);
+            color: var(--bordo);
         }
 
         .icerik {
@@ -222,7 +204,7 @@
 
         .icerik h2 {
             font-size: 42px;
-            color: var(--ana-bordo);
+            color: var(--bordo);
             margin-bottom: 20px;
         }
 
@@ -245,17 +227,17 @@
             font-size: 17px;
         }
 
-        .telefon-baglanti {
+        .telefon {
             color: #0056b3;
             font-weight: 700;
         }
 
-        .harita-baglanti {
-            color: var(--ana-bordo);
+        .harita {
+            color: var(--bordo);
             font-weight: 700;
         }
 
-        .eposta-baglanti {
+        .eposta {
             color: #0056b3;
             font-weight: 700;
         }
@@ -288,20 +270,8 @@
         }
 
         .buton-eposta {
-            background: var(--ana-bordo);
+            background: var(--bordo);
             color: #ffffff;
-        }
-
-        .alt-afis {
-            max-width: var(--kapsayici);
-            margin: 0 auto 30px;
-            padding: 0 18px;
-        }
-
-        .alt-afis img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: var(--golge);
         }
 
         .alt-bilgi {
@@ -329,40 +299,14 @@
             z-index: 999;
         }
 
-        .sabit-whatsapp:hover {
-            transform: scale(1.04);
-        }
-
-        @media (max-width: 1500px) {
-            .banner-alani {
-                min-height: 660px;
-            }
-
-            .baskan-gorsel {
-                width: min(100%, 390px);
-            }
-        }
-
         @media (max-width: 1280px) {
-            .banner-alani {
-                min-height: 620px;
-            }
-
-            .banner-ic {
-                justify-content: center;
-                padding: 28px 18px 36px;
-            }
-
-            .baskan-alani {
-                justify-content: center;
-            }
-
-            .baskan-gorsel {
-                width: min(100%, 360px);
-            }
-
             .ana-icerik {
                 grid-template-columns: 1fr;
+            }
+
+            .baskan-kapsayici {
+                width: 24%;
+                min-width: 160px;
             }
         }
 
@@ -385,18 +329,15 @@
                 min-width: 220px;
             }
 
-            .banner-alani {
-                min-height: 460px;
-                background-position: center;
+            .baskan-kapsayici {
+                width: 28%;
+                min-width: 110px;
+                right: 2%;
+                bottom: 3%;
             }
 
-            .banner-ic {
-                padding: 20px 14px 24px;
-            }
-
-            .baskan-gorsel {
-                width: min(100%, 250px);
-                border-radius: 14px;
+            .baskan-resmi {
+                border-radius: 10px;
             }
 
             .icerik {
@@ -482,12 +423,10 @@
     </nav>
 
     <section class="banner-alani">
-        <div class="banner-ic">
-            <div class="baskan-alani">
-                <div class="baskan-gorsel">
-                    <img src="baskan.png" alt="Yusuf Gül - Başkan">
-                </div>
-            </div>
+        <img src="banner.png" alt="Ankara Malatyalılar Derneği Banner" class="banner-resmi">
+
+        <div class="baskan-kapsayici">
+            <img src="baskan.png" alt="Yusuf Gül - Başkan" class="baskan-resmi">
         </div>
     </section>
 
@@ -529,19 +468,19 @@
 
                 <p>
                     <strong>📍 Adres:</strong>
-                    <a class="harita-baglanti" href="https://www.google.com/maps?q=Mebusevleri+Mahallesi+Turgut+Reis+Caddesi+No:7+Kat:1+Daire+No:+9+06570+Çankaya+Ankara" target="_blank" rel="noopener noreferrer">
+                    <a class="harita" href="https://www.google.com/maps?q=Mebusevleri+Mahallesi+Turgut+Reis+Caddesi+No:7+Kat:1+Daire+No:+9+06570+Çankaya+Ankara" target="_blank" rel="noopener noreferrer">
                         Mebusevleri Mahallesi Turgut Reis Caddesi No:7 Kat:1 Daire No:9 06570 Çankaya / Ankara
                     </a>
                 </p>
 
                 <p>
                     <strong>📞 Telefon:</strong>
-                    <a class="telefon-baglanti" href="tel:+905369887544">0536 988 75 44</a>
+                    <a class="telefon" href="tel:+905369887544">0536 988 75 44</a>
                 </p>
 
                 <p>
                     <strong>📧 E-posta:</strong>
-                    <a class="eposta-baglanti" href="mailto:info@ankaramalatyalilar.org.tr">info@ankaramalatyalilar.org.tr</a>
+                    <a class="eposta" href="mailto:info@ankaramalatyalilar.org.tr">info@ankaramalatyalilar.org.tr</a>
                 </p>
 
                 <div class="butonlar">
@@ -567,10 +506,6 @@
             </div>
         </aside>
     </div>
-
-    <section class="alt-afis">
-        <img src="banner.png" alt="Ankara Malatyalılar Derneği Banner">
-    </section>
 
     <footer class="alt-bilgi">
         © 2026 Ankara Malatyalılar Derneği - Tüm hakları saklıdır.
