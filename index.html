@@ -1,114 +1,89 @@
-export default function AnkaraMalatyalilarBanner() {
-  return (
-    <section className="w-full bg-white">
-      <div className="mx-auto w-full max-w-[1920px] px-3 md:px-4 lg:px-6 py-3">
-        <div className="relative h-[260px] sm:h-[320px] md:h-[380px] lg:h-[430px] xl:h-[480px] overflow-hidden rounded-[28px] border-[6px] border-red-700 shadow-2xl">
-          {/* Ana arka plan: eski bannerden alınan Beydağları + kayısı bahçesi görüntüsü */}
-          <img
-            src="/banner.png"
-            alt="Ankara Malatyalılar Derneği banner arka planı"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ankara Malatyalılar Derneği Banner</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-          {/* Hafif koyuluk ve renk dengesi */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/75 via-white/20 to-black/10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-white/10" />
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #1f2937;
+    }
 
-          {/* Üst ve alt kırmızı çizgiler */}
-          <div className="absolute inset-x-0 top-0 h-[8px] bg-red-700" />
-          <div className="absolute inset-x-0 bottom-0 h-[8px] bg-red-700" />
+    .wrapper {
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
 
-          {/* Sol tarafta logo */}
-          <div className="absolute left-3 top-1/2 z-20 -translate-y-1/2 sm:left-5 md:left-7 lg:left-8">
-            <div className="rounded-full bg-white/80 p-1 shadow-2xl backdrop-blur-[1px]">
-              <img
-                src="/logo.png"
-                alt="Ankara Malatyalılar Derneği Logosu"
-                className="h-[90px] w-[90px] sm:h-[120px] sm:w-[120px] md:h-[155px] md:w-[155px] lg:h-[200px] lg:w-[200px] xl:h-[240px] xl:w-[240px] object-contain"
-              />
-            </div>
-          </div>
+    .banner {
+      width: 100%;
+      overflow: hidden;
+      border-bottom: 1px solid #e5e7eb;
+    }
 
-          {/* Atatürk ve bayrak - sağ üst, arka planda yumuşak görünüm */}
-          <div className="absolute right-0 top-0 z-10 h-[46%] w-[42%] overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-l from-red-700/25 via-red-600/10 to-transparent" />
-            <div className="absolute inset-0 flex items-start justify-end">
-              <div className="relative h-full w-full">
-                <div className="absolute right-0 top-0 h-full w-full bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.45),transparent_45%)]" />
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg"
-                  alt="Türk Bayrağı"
-                  className="absolute right-0 top-0 h-full w-[72%] object-cover opacity-65"
-                />
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Mustafa_Kemal_Atat%C3%BCrk_imza.jpg"
-                  alt="Atatürk siluet görseli"
-                  className="absolute right-[16%] top-[10%] h-[72%] object-contain opacity-20 mix-blend-multiply"
-                />
-              </div>
-            </div>
-          </div>
+    .banner img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
 
-          {/* Orta ön tarafta kayısı çuvalı */}
-          <div className="absolute bottom-2 left-1/2 z-30 -translate-x-1/2 sm:bottom-3 md:bottom-4 lg:bottom-5">
-            <img
-              src="/kayısı.png"
-              alt="Kayısı ve kuru kayısı çuvalı"
-              className="h-[78px] sm:h-[110px] md:h-[145px] lg:h-[185px] xl:h-[215px] w-auto object-contain drop-shadow-[0_10px_18px_rgba(0,0,0,0.4)]"
-            />
-          </div>
+    .menu {
+      width: 100%;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      padding: 18px 20px;
+      border-bottom: 1px solid #e5e7eb;
+      flex-wrap: wrap;
+    }
 
-          {/* Sağ tarafta heykel */}
-          <div className="absolute bottom-0 right-2 z-20 sm:right-4 md:right-5 lg:right-8">
-            <img
-              src="/heykel.png"
-              alt="Malatya heykeli"
-              className="h-[120px] sm:h-[150px] md:h-[200px] lg:h-[255px] xl:h-[300px] w-auto object-contain drop-shadow-[0_12px_20px_rgba(0,0,0,0.35)]"
-            />
-          </div>
+    .menu a {
+      text-decoration: none;
+      color: #111827;
+      font-size: 18px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
 
-          {/* Başlık alanı - menüsüz, sadece dernek kimliği */}
-          <div className="absolute left-[110px] right-[100px] top-1/2 z-20 -translate-y-1/2 sm:left-[145px] md:left-[190px] lg:left-[255px] xl:left-[300px]">
-            <div className="max-w-[760px] rounded-2xl bg-white/22 px-3 py-2 backdrop-blur-[2px] sm:px-4 md:px-5 lg:px-6 lg:py-4">
-              <div className="flex items-center gap-2 md:gap-3">
-                <div className="h-10 w-[3px] bg-red-700 md:h-14" />
-                <div>
-                  <h1 className="text-[18px] font-black uppercase tracking-[0.04em] text-black sm:text-[24px] md:text-[34px] lg:text-[48px] xl:text-[58px] leading-none">
-                    Ankara
-                  </h1>
-                  <h2 className="mt-1 text-[12px] font-extrabold uppercase tracking-[0.02em] text-black/90 sm:text-[16px] md:text-[24px] lg:text-[34px] xl:text-[42px] leading-tight">
-                    Malatyalılar Derneği
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
+    .menu a:hover {
+      color: #b91c1c;
+    }
 
-          {/* Sol alttan sağ alta doğru görsel denge için yumuşak ışık */}
-          <div className="absolute bottom-0 left-0 h-[40%] w-[55%] bg-gradient-to-tr from-[#f4c96d]/20 via-transparent to-transparent" />
-        </div>
-      </div>
-    </section>
-  );
-}
+    @media (max-width: 768px) {
+      .menu {
+        gap: 20px;
+        padding: 14px 12px;
+      }
 
-/*
-             banner.png   (eski banner arka plan)
-logo.png
-kayisi.png   (çuvallı olan)
-heykel.png 
-KULLANIM NOTU
+      .menu a {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="banner">
+      <img src="banneryeni.png" alt="Ankara Malatyalılar Derneği Banner" />
+    </div>
 
-1) Aşağıdaki dosyaları projenizin public klasörüne koyun:
-   /public/banner.png   -> eski banner görseli (arka plan için)
-   /public/logo.png     -> dernek logosu
-   /public/kayısı.png   -> çuvallı kayısı görseli
-   /public/heykel.png   -> Malatya heykeli görseli
-
-2) Eğer GitHub'da dosya adlarınız farklıysa sadece src yollarını değiştirin.
-
-3) Atatürk ve Türk Bayrağı için şu an uzaktan görsel çağrılıyor.
-   İsterseniz bunları da yerel dosya yapıp şu şekilde değiştirebilirsiniz:
-   /public/ataturk.png
-   /public/bayrak.png
-*/
+    <nav class="menu">
+      <a href="#">Ana Sayfa</a>
+      <a href="#">Faaliyetlerimiz</a>
+      <a href="#">Projeler</a>
+      <a href="#">İletişim</a>
+    </nav>
+  </div>
+</body>
+</html>
