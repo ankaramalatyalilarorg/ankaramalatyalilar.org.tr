@@ -1,1 +1,323 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ankara Malatyalılar Derneği</title>
+  <meta
+    name="description"
+    content="Ankara Malatyalılar Derneği resmi web sitesi. Derneğimiz, faaliyetlerimiz, projeler ve iletişim bilgileri."
+  />
+  <style>
+    :root {
+      --navy: #0d2b52;
+      --white: #ffffff;
+      --apricot: #f4a300;
+      --text: #1f2937;
+      --bg: #f5f7fb;
+      --shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      --radius: 18px;
+      --max-width: 1280px;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Montserrat, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      padding: 16px 0 0;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-banner {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      background: #dbe4f0;
+    }
+
+    .main-nav {
+      background: var(--navy);
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(18px, 4vw, 56px);
+      margin: 0;
+      padding: 16px 20px;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      color: var(--apricot);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .main-nav a.active {
+      color: var(--apricot);
+      font-weight: 700;
+    }
+
+    .content {
+      padding: 36px 0 56px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 320px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .panel h1,
+    .panel h2 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      color: var(--navy);
+    }
+
+    .panel p {
+      line-height: 1.7;
+      margin: 0 0 14px;
+    }
+
+    .profile-card {
+      text-align: center;
+    }
+
+    .profile-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 4px solid #eef3f8;
+      margin-bottom: 18px;
+      background: #eef3f8;
+    }
+
+    .profile-card h2 {
+      margin-bottom: 10px;
+    }
+
+    .muted {
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .quick-link {
+      background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+      border: 1px solid #e5ebf3;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(13, 43, 82, 0.06);
+    }
+
+    .quick-link h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 18px;
+    }
+
+    .quick-link p {
+      margin: 0;
+      color: #4b5563;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .site-footer {
+      padding: 24px 0 36px;
+      color: #6b7280;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .intro-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-links {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 20px, var(--max-width));
+      }
+
+      .main-nav ul {
+        gap: 14px 20px;
+        padding: 14px 16px;
+      }
+
+      .main-nav a {
+        font-size: 15px;
+      }
+
+      .panel {
+        padding: 22px;
+      }
+
+      .quick-links {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="hero-card">
+        <img
+          src="dernekbanner.png"
+          alt="Ankara Malatyalılar Derneği banner görseli"
+          class="hero-banner"
+        />
+
+        <nav class="main-nav" aria-label="Ana menü">
+          <ul>
+            <li><a href="index.html" class="active">Ana Sayfa</a></li>
+            <li><a href="#dernegimiz">Derneğimiz</a></li>
+            <li><a href="#faaliyetlerimiz">Faaliyetlerimiz</a></li>
+            <li><a href="#projeler">Projeler</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="container">
+      <section class="intro-grid">
+        <article class="panel" id="dernegimiz">
+          <h1>Ankara Malatyalılar Derneği</h1>
+          <p>
+            Ankara’da yaşayan Malatyalılar arasında dayanışmayı güçlendirmek,
+            kültürel bağları korumak ve ortak değerleri yaşatmak amacıyla faaliyet gösteren
+            bir sivil toplum kuruluşudur.
+          </p>
+          <p>
+            Derneğimiz; hemşehrilik bilincini canlı tutan, sosyal yardımlaşmayı destekleyen,
+            kültürel mirası gelecek nesillere taşıyan ve toplumsal birlikteliği güçlendiren
+            çalışmalarıyla hizmet vermektedir.
+          </p>
+          <p class="muted">
+            Buradaki metinler örnek amaçlıdır; istersen bunları derneğin gerçek metinleriyle
+            birlikte düzenleyebiliriz.
+          </p>
+        </article>
+
+        <aside class="panel profile-card">
+          <img
+            src="profil.png"
+            alt="Dernek profil görseli"
+            class="profile-image"
+          />
+          <h2>Kurumsal Profil</h2>
+          <p class="muted">
+            Yönetim kurulu başkanı, dernek binası, kurumsal logo ya da öne çıkarmak istediğiniz
+            görsel burada kullanılabilir.
+          </p>
+        </aside>
+      </section>
+
+      <section class="quick-links">
+        <article class="quick-link" id="faaliyetlerimiz">
+          <h3>Faaliyetlerimiz</h3>
+          <p>
+            Kültürel buluşmalar, hemşehri toplantıları, sosyal yardımlaşma çalışmaları ve özel gün programları.
+          </p>
+        </article>
+
+        <article class="quick-link" id="projeler">
+          <h3>Projeler</h3>
+          <p>
+            Eğitim, gençlik, kültür, sosyal dayanışma ve yerel değerlerin tanıtımına yönelik projeler.
+          </p>
+        </article>
+
+        <article class="quick-link" id="iletisim">
+          <h3>İletişim</h3>
+          <p>
+            Adres, telefon, e-posta ve sosyal medya bağlantıları bu alana eklenebilir.
+          </p>
+        </article>
+
+        <article class="quick-link">
+          <h3>Duyurular</h3>
+          <p>
+            Genel kurul çağrıları, etkinlik haberleri ve güncel bilgilendirmeler için ayrılmış alan.
+          </p>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © 2026 Ankara Malatyalılar Derneği. Tüm hakları saklıdır.
+    </div>
+  </footer>
+</body>
+</html>
