@@ -1,89 +1,132 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ankara Malatyalılar Derneği Banner</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<title>Ankara Malatyalılar Derneği</title>
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #1f2937;
-    }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
-    .wrapper {
-      width: 100%;
-      max-width: 1600px;
-      margin: 0 auto;
-    }
+.banner {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
 
-    .banner {
-      width: 100%;
-      overflow: hidden;
-      border-bottom: 1px solid #e5e7eb;
-    }
+/* Arka plan */
+.banner-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-    .banner img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
+/* Logo (SOL) */
+.logo {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px;
+}
 
-    .menu {
-      width: 100%;
-      background: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 48px;
-      padding: 18px 20px;
-      border-bottom: 1px solid #e5e7eb;
-      flex-wrap: wrap;
-    }
+/* Yazı (ORTA) */
+.title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 34px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
 
-    .menu a {
-      text-decoration: none;
-      color: #111827;
-      font-size: 18px;
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
+/* Atatürk + Bayrak (SAĞ ÜST - YUMUŞAK) */
+.ataturk {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    opacity: 0.45;
+    mask-image: linear-gradient(to left, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
+}
 
-    .menu a:hover {
-      color: #b91c1c;
-    }
+/* Kayısı (SAĞ ALT) */
+.kayisi {
+    position: absolute;
+    right: 120px;
+    bottom: 10px;
+    width: 180px;
+}
 
-    @media (max-width: 768px) {
-      .menu {
-        gap: 20px;
-        padding: 14px 12px;
-      }
+/* Heykel (SAĞ ALT) */
+.heykel {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    width: 140px;
+}
 
-      .menu a {
-        font-size: 16px;
-      }
-    }
-  </style>
+/* Menü */
+.menu {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px 0;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+</style>
 </head>
+
 <body>
-  <div class="wrapper">
-    <div class="banner">
-      <img src="banneryeni.png" alt="Ankara Malatyalılar Derneği Banner" />
+
+<div class="banner">
+
+    <!-- ARKA PLAN -->
+    <img src="arkaplandaglarbahce(3).png" class="banner-bg">
+
+    <!-- ATATÜRK -->
+    <img src="ataturkbayrak.png" class="ataturk">
+
+    <!-- LOGO -->
+    <img src="logo.png(4).png" class="logo">
+
+    <!-- YAZI -->
+    <div class="title">
+        ANKARA MALATYALILAR DERNEĞİ
     </div>
 
-    <nav class="menu">
-      <a href="#">Ana Sayfa</a>
-      <a href="#">Faaliyetlerimiz</a>
-      <a href="#">Projeler</a>
-      <a href="#">İletişim</a>
-    </nav>
-  </div>
+    <!-- KAYISI -->
+    <img src="kayısı.png(3).png" class="kayisi">
+
+    <!-- HEYKEL -->
+    <img src="heykel.png(5).png" class="heykel">
+
+    <!-- MENU -->
+    <div class="menu">
+        <a href="#">Ana Sayfa</a>
+        <a href="#">Faaliyetlerimiz</a>
+        <a href="#">Projeler</a>
+        <a href="#">İletişim</a>
+    </div>
+
+</div>
+
 </body>
 </html>
