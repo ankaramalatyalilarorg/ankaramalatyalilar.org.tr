@@ -1,13 +1,652 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Ankara Malatyalılar Derneği</title>
+  <style>
+    :root{
+      --primary:#7a0019;
+      --secondary:#a61b3f;
+      --accent:#f8f1f3;
+      --text:#222;
+      --muted:#666;
+      --white:#fff;
+      --border:#e6d9de;
+      --soft:#faf7f8;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:#fafafa;
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+      height:auto;
+    }
+
+    .container{
+      width:min(1200px, 92%);
+      margin:0 auto;
+    }
+
+    header{
+      background:#fff;
+      box-shadow:0 2px 10px rgba(0,0,0,.06);
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .header-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:14px 0;
+    }
+
+    .logo-area{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo-area img{
+      width:58px;
+      height:58px;
+      object-fit:contain;
+      border-radius:8px;
+    }
+
+    .logo-text{
+      font-weight:700;
+      color:var(--primary);
+      font-size:18px;
+      line-height:1.2;
+    }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    nav ul li a{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:600;
+      color:#333;
+      transition:.25s ease;
+    }
+
+    nav ul li a:hover{
+      background:var(--accent);
+      color:var(--primary);
+    }
+
+    nav ul li a.active{
+      background:var(--primary);
+      color:#fff;
+    }
+
+    .hero{
+      background:linear-gradient(135deg, var(--primary), var(--secondary));
+      color:#fff;
+      padding:60px 0;
+    }
+
+    .hero h1{
+      font-size:40px;
+      margin-bottom:16px;
+      line-height:1.15;
+    }
+
+    .hero p{
+      max-width:880px;
+      font-size:18px;
+      opacity:.96;
+    }
+
+    .section{
+      padding:46px 0;
+    }
+
+    .intro-box{
+      background:#fff;
+      border:1px solid var(--border);
+      border-left:6px solid var(--primary);
+      border-radius:16px;
+      padding:24px;
+      box-shadow:0 8px 24px rgba(0,0,0,.04);
+    }
+
+    .intro-box h2{
+      color:var(--primary);
+      font-size:30px;
+      margin-bottom:14px;
+    }
+
+    .intro-box p{
+      margin-bottom:12px;
+    }
+
+    .intro-box p:last-child{
+      margin-bottom:0;
+    }
+
+    .quick-links{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-top:24px;
+    }
+
+    .quick-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px;
+      box-shadow:0 8px 20px rgba(0,0,0,.04);
+    }
+
+    .quick-card h3{
+      color:var(--primary);
+      font-size:18px;
+      margin-bottom:8px;
+    }
+
+    .section-title{
+      font-size:30px;
+      color:var(--primary);
+      margin-bottom:18px;
+    }
+
+    .featured{
+      display:grid;
+      grid-template-columns:1.3fr .7fr;
+      gap:20px;
+      margin-bottom:28px;
+    }
+
+    .featured-main{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,.05);
+    }
+
+    .featured-image{
+      background:linear-gradient(135deg, #8b1d38, #c03a61);
+      color:#fff;
+      min-height:220px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      text-align:center;
+      font-size:28px;
+      font-weight:700;
+    }
+
+    .featured-content{
+      padding:24px;
+    }
+
+    .tag{
+      display:inline-block;
+      background:var(--accent);
+      color:var(--primary);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+
+    .featured-content h3{
+      font-size:28px;
+      color:var(--primary);
+      margin-bottom:10px;
+      line-height:1.25;
+    }
+
+    .featured-content p{
+      color:#444;
+      margin-bottom:14px;
+    }
+
+    .meta{
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:14px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:var(--primary);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:700;
+      transition:.25s ease;
+    }
+
+    .btn:hover{
+      background:var(--secondary);
+    }
+
+    .featured-side{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .mini-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 8px 20px rgba(0,0,0,.04);
+    }
+
+    .mini-card h4{
+      color:var(--primary);
+      font-size:18px;
+      margin-bottom:8px;
+      line-height:1.35;
+    }
+
+    .mini-card p{
+      color:#555;
+      font-size:15px;
+    }
+
+    .blog-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+    }
+
+    .blog-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 8px 20px rgba(0,0,0,.04);
+      transition:.25s ease;
+    }
+
+    .blog-card:hover{
+      transform:translateY(-4px);
+    }
+
+    .blog-thumb{
+      min-height:150px;
+      background:linear-gradient(135deg, #f0d9e0, #f8eef1);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--primary);
+      font-size:20px;
+      font-weight:700;
+      text-align:center;
+      padding:20px;
+    }
+
+    .blog-body{
+      padding:18px;
+    }
+
+    .blog-body h3{
+      color:var(--primary);
+      font-size:20px;
+      margin-bottom:10px;
+      line-height:1.35;
+    }
+
+    .blog-body p{
+      color:#555;
+      margin-bottom:14px;
+      font-size:15px;
+    }
+
+    .announcement-box{
+      background:var(--soft);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:24px;
+    }
+
+    .announcement-list{
+      display:grid;
+      gap:14px;
+      margin-top:16px;
+    }
+
+    .announcement-item{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:16px 18px;
+    }
+
+    .announcement-item h4{
+      color:var(--primary);
+      margin-bottom:6px;
+      font-size:18px;
+    }
+
+    .announcement-item p{
+      color:#555;
+      font-size:15px;
+    }
+
+    .cta{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:30px;
+      text-align:center;
+      box-shadow:0 8px 24px rgba(0,0,0,.04);
+    }
+
+    .cta h3{
+      color:var(--primary);
+      font-size:28px;
+      margin-bottom:10px;
+    }
+
+    .cta p{
+      color:var(--muted);
+      max-width:850px;
+      margin:0 auto 18px;
+    }
+
+    footer{
+      background:#f4f4f4;
+      color:#555;
+      padding:28px 0 40px;
+      margin-top:12px;
+      font-size:14px;
+    }
+
+    @media (max-width: 960px){
+      .header-inner{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .featured{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:32px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .intro-box h2,
+      .section-title,
+      .cta h3{
+        font-size:24px;
+      }
+
+      .featured-content h3{
+        font-size:24px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<h1>Blog Sayfası Hazır</h1>
+  <header>
+    <div class="container header-inner">
+      <div class="logo-area">
+        <img src="derbas.png" alt="Ankara Malatyalılar Derneği Logo">
+        <div class="logo-text">Ankara Malatyalılar Derneği</div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="#">Derneğimiz</a></li>
+          <li><a href="#">Faaliyetlerimiz</a></li>
+          <li><a href="proje.html">Projeler</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Blog & Haberler</h1>
+      <p>
+        Ankara Malatyalılar Derneği’nin faaliyetleri, kültürel etkinlikleri, toplumsal dayanışma çalışmaları,
+        proje duyuruları, gençlik fırsatları ve Malatya’ya dair değerli içerikler bu sayfada sizlerle buluşuyor.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="intro-box">
+        <h2>Günceli takip edin, dayanışmayı büyütün</h2>
+        <p>
+          Bu bölüm; derneğimizin duyurularını, etkinlik haberlerini, kültürel paylaşımlarını,
+          proje fırsatlarını ve toplum yararına gelişmeleri tek bir noktada toplamak amacıyla hazırlanmıştır.
+        </p>
+        <p>
+          Burada yer alacak yazılar sayesinde hem hemşehrilerimiz hem de ziyaretçilerimiz derneğimizin
+          çalışmalarını daha yakından takip edebilecek, aynı zamanda faydalı içeriklere daha kolay ulaşabilecektir.
+        </p>
+      </div>
+
+      <div class="quick-links">
+        <div class="quick-card">
+          <h3>Dernek Haberleri</h3>
+          <p>Faaliyetler, ziyaretler, toplantılar ve özel duyurular burada yer alabilir.</p>
+        </div>
+        <div class="quick-card">
+          <h3>Kültür Yazıları</h3>
+          <p>Malatya’nın kültürü, mutfağı, gelenekleri ve değerleri hakkında içerikler paylaşılabilir.</p>
+        </div>
+        <div class="quick-card">
+          <h3>Gençlik ve Eğitim</h3>
+          <p>Gençlere, öğrencilere ve ailelere yönelik faydalı bilgilendirme yazıları yayımlanabilir.</p>
+        </div>
+        <div class="quick-card">
+          <h3>Hibe ve Fırsatlar</h3>
+          <p>Yeni proje çağrıları, destek programları ve sosyal fayda odaklı fırsatlar öne çıkarılabilir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <h2 class="section-title">Öne Çıkan Yazı</h2>
+
+      <div class="featured">
+        <div class="featured-main">
+          <div class="featured-image">
+            Ankara Malatyalılar Derneği’nde Yeni Dönem
+          </div>
+          <div class="featured-content">
+            <span class="tag">Öne Çıkan Haber</span>
+            <h3>Birlik, dayanışma ve kültürel bağlarımızı daha da güçlendirecek yeni çalışmalar başlıyor</h3>
+            <div class="meta">Yayın Tarihi: 2026 • Kategori: Dernek Haberleri</div>
+            <p>
+              Derneğimiz; hemşehrilerimiz arasındaki bağı kuvvetlendirmek, kültürel değerlerimizi yaşatmak
+              ve genç kuşaklara daha güçlü bir aidiyet hissi kazandırmak amacıyla yeni dönemde çeşitli
+              sosyal, kültürel ve proje temelli faaliyetler planlamaktadır.
+            </p>
+            <p>
+              Bu alanda ilerleyen günlerde etkinlik takvimleri, özel duyurular, proje çağrıları ve
+              toplumsal fayda sağlayacak çalışmalara ilişkin yeni içerikler paylaşılacaktır.
+            </p>
+            <a href="#" class="btn">Devamını Oku</a>
+          </div>
+        </div>
+
+        <div class="featured-side">
+          <div class="mini-card">
+            <span class="tag">Duyuru</span>
+            <h4>Yaklaşan etkinlikler ve kültürel buluşmalar bu alanda paylaşılabilir</h4>
+            <p>Toplantı, yemek, tanıtım günü, hemşehri buluşması ve özel programlar için ideal alan.</p>
+          </div>
+
+          <div class="mini-card">
+            <span class="tag">Gençlik</span>
+            <h4>Gençlere yönelik proje, eğitim ve gönüllülük fırsatları düzenli yayımlanabilir</h4>
+            <p>Blog bölümü aynı zamanda gençlerin ilgisini çekecek güncel içerikler için güçlü bir merkez olur.</p>
+          </div>
+
+          <div class="mini-card">
+            <span class="tag">Kültür</span>
+            <h4>Malatya’nın tarihini, kültürünü ve zengin mutfağını anlatan yazılar eklenebilir</h4>
+            <p>Bu bölüm sitenin hem değerini hem de Google görünürlüğünü artırır.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <h2 class="section-title">Son Yazılar</h2>
+
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-thumb">Dernek Faaliyetleri</div>
+          <div class="blog-body">
+            <span class="tag">Faaliyet</span>
+            <h3>Derneğimizin sosyal ve kültürel çalışmaları daha görünür hale geliyor</h3>
+            <p>Faaliyet raporları, ziyaretler, programlar ve topluluk çalışmaları burada paylaşılabilir.</p>
+            <a href="#" class="btn">Yazıyı Aç</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-thumb">Malatya Kültürü</div>
+          <div class="blog-body">
+            <span class="tag">Kültür</span>
+            <h3>Malatya’nın köklü değerlerini yeni nesillere aktarmak neden önemli?</h3>
+            <p>Kültür, aidiyet ve hemşehrilik bağını güçlendiren yazılar bu alanda yer alabilir.</p>
+            <a href="#" class="btn">Yazıyı Aç</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-thumb">Gençlik Fırsatları</div>
+          <div class="blog-body">
+            <span class="tag">Gençlik</span>
+            <h3>Gençler için gönüllülük, eğitim ve proje fırsatları neden takip edilmeli?</h3>
+            <p>Gençlerin gelişimine katkı sağlayan fırsatlar bu sayfada düzenli duyurulabilir.</p>
+            <a href="#" class="btn">Yazıyı Aç</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-thumb">Toplumsal Dayanışma</div>
+          <div class="blog-body">
+            <span class="tag">Toplum</span>
+            <h3>Dayanışma kültürü güçlü toplumların en büyük zenginliğidir</h3>
+            <p>İhtiyaç sahiplerine destek, yardımlaşma ve sosyal sorumluluk içerikleri burada yer alabilir.</p>
+            <a href="#" class="btn">Yazıyı Aç</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-thumb">Eğitim & Öğrenciler</div>
+          <div class="blog-body">
+            <span class="tag">Eğitim</span>
+            <h3>Öğrenciler için bilgilendirici içerikler ve yol gösterici yazılar eklenebilir</h3>
+            <p>Burs, eğitim fırsatları, kariyer tavsiyeleri ve öğrenci odaklı yazılar için uygun alan.</p>
+            <a href="#" class="btn">Yazıyı Aç</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-thumb">Projeler & Hibeler</div>
+          <div class="blog-body">
+            <span class="tag">Proje</span>
+            <h3>Yeni hibe fırsatları, proje çağrıları ve başvuru rehberleri bu alanda öne çıkarılabilir</h3>
+            <p>Projeler sayfasını destekleyen, açıklayıcı ve yönlendirici blog içerikleri burada yayınlanabilir.</p>
+            <a href="#" class="btn">Yazıyı Aç</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="announcement-box">
+        <h2 class="section-title" style="margin-bottom:0;">Duyuru Alanı</h2>
+        <div class="announcement-list">
+          <div class="announcement-item">
+            <h4>Yeni etkinlik tarihleri ve özel program duyuruları burada yayınlanabilir</h4>
+            <p>Bu alanı kısa, dikkat çekici ve güncel duyurular için kullanabilirsiniz.</p>
+          </div>
+
+          <div class="announcement-item">
+            <h4>Başvuru çağrıları, burs haberleri veya önemli gelişmeler öne çıkarılabilir</h4>
+            <p>İnsanların hızlıca görmesini istediğiniz bilgi başlıkları için çok uygun bir bölümdür.</p>
+          </div>
+
+          <div class="announcement-item">
+            <h4>Dernekten haberler, ziyaretler ve özel gün kutlamaları burada paylaşılabilir</h4>
+            <p>Bu yapı siteyi daha canlı, güncel ve kurumsal gösterir.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta">
+        <h3>Blog bölümünü birlikte güçlü bir içerik merkezine dönüştürelim</h3>
+        <p>
+          İsterseniz bu sayfayı bir sonraki aşamada gerçek blog düzenine çevirip; her yazıya ayrı bağlantı,
+          görsel alanı, tarih, kategori ve “devamını oku” sayfası da ekleyebiliriz.
+        </p>
+        <a href="iletisim.html" class="btn">İletişime Geç</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <strong>Ankara Malatyalılar Derneği</strong><br>
+      Blog sayfasında yer alan içerikler; dernek faaliyetleri, kültürel paylaşımlar, bilgilendirme yazıları
+      ve toplumsal fayda odaklı duyurular için hazırlanmıştır.
+    </div>
+  </footer>
 
 </body>
 </html>
