@@ -1,1 +1,431 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proje Duyuruları | Ankara Malatyalılar Derneği</title>
+  <style>
+    :root{
+      --primary:#7a0019;
+      --secondary:#a61b3f;
+      --accent:#f7f1f3;
+      --text:#222;
+      --muted:#666;
+      --white:#fff;
+      --border:#e6d9de;
+      --success:#eaf7ed;
+      --warning:#fff6e6;
+      --info:#eef5ff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:#fafafa;
+      line-height:1.6;
+    }
+    .container{
+      width:min(1200px, 92%);
+      margin:0 auto;
+    }
+    .hero{
+      background:linear-gradient(135deg, var(--primary), var(--secondary));
+      color:#fff;
+      padding:56px 0;
+    }
+    .hero h1{
+      margin:0 0 16px;
+      font-size:38px;
+      line-height:1.15;
+    }
+    .hero p{
+      margin:0;
+      max-width:900px;
+      font-size:18px;
+      opacity:.96;
+    }
+    .section{
+      padding:42px 0;
+    }
+    .section h2{
+      font-size:30px;
+      margin:0 0 16px;
+      color:var(--primary);
+    }
+    .lead-box{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-left:6px solid var(--primary);
+      border-radius:14px;
+      padding:24px;
+      box-shadow:0 8px 24px rgba(0,0,0,.04);
+    }
+    .lead-box p{
+      margin:0 0 14px;
+    }
+    .lead-box p:last-child{
+      margin-bottom:0;
+    }
+    .highlight{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-top:22px;
+    }
+    .card{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px;
+      box-shadow:0 8px 20px rgba(0,0,0,.04);
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size:18px;
+      color:var(--primary);
+    }
+    .notice{
+      margin-top:18px;
+      padding:16px 18px;
+      border-radius:12px;
+      background:var(--warning);
+      border:1px solid #f1d48a;
+      font-weight:600;
+    }
+    .table-wrap{
+      overflow:auto;
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:16px;
+      box-shadow:0 8px 24px rgba(0,0,0,.04);
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:1100px;
+    }
+    th, td{
+      padding:14px 12px;
+      border-bottom:1px solid #eee;
+      text-align:left;
+      vertical-align:top;
+      font-size:15px;
+    }
+    th{
+      background:#f8eef1;
+      color:var(--primary);
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:.3px;
+    }
+    tr:hover td{
+      background:#fcfbfc;
+    }
+    .badge{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+    .badge-open{ background:var(--success); color:#116633; }
+    .badge-soon{ background:var(--info); color:#114b9b; }
+    .badge-follow{ background:#f1f1f1; color:#444; }
+    a.btn{
+      display:inline-block;
+      text-decoration:none;
+      background:var(--primary);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:700;
+      transition:.2s ease;
+    }
+    a.btn:hover{
+      background:var(--secondary);
+    }
+    .cta{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:26px;
+      text-align:center;
+      box-shadow:0 8px 24px rgba(0,0,0,.04);
+    }
+    .cta h3{
+      margin:0 0 10px;
+      font-size:28px;
+      color:var(--primary);
+    }
+    .cta p{
+      max-width:850px;
+      margin:0 auto 18px;
+      color:var(--muted);
+    }
+    footer{
+      background:#f4f4f4;
+      color:#555;
+      padding:24px 0 40px;
+      font-size:14px;
+    }
+    .small{
+      color:var(--muted);
+      font-size:14px;
+    }
+    @media (max-width:768px){
+      .hero h1{font-size:30px}
+      .hero p{font-size:16px}
+      .section h2{font-size:24px}
+    }
+  </style>
+</head>
+<body>
 
+  <!-- MENÜDE "Projeler" LINKI BU SAYFAYA YÖNLENDİRİLMELİDİR -->
+  <!-- Örnek: <li><a href="projeler.html">Projeler</a></li> -->
+
+  <section class="hero">
+    <div class="container">
+      <h1>PROJE DUYURULARI</h1>
+      <p>
+        Ankara Malatyalılar Derneği olarak; gençler, kadınlar, öğrenciler, girişimciler,
+        çiftçiler, üreticiler, sivil toplum kuruluşları ve toplum yararına proje üretmek isteyen
+        tüm kişi ve kurumlar için Türkiye ve Avrupa kaynaklı güncel hibe, destek ve proje fırsatlarını
+        sizlerle buluşturuyoruz.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="lead-box">
+        <h2>Geleceğe Açılan Kapılar Burada</h2>
+        <p>
+          Bazen bir fikir, doğru destekle büyük bir değişime dönüşür. Bir genç için eğitim kapısı,
+          bir kadın için girişim fırsatı, bir üretici için yeni yatırım, bir dernek için sosyal etki,
+          bir mahalle için umut olabilir.
+        </p>
+        <p>
+          Bu sayfada; <strong>başvuruya açık</strong>, <strong>sürekli yürüyen</strong> veya
+          <strong>takvimi yayımlanmış</strong> proje ve hibe fırsatlarını sade, anlaşılır ve herkesin
+          yararlanabileceği bir dille paylaşıyoruz.
+        </p>
+        <p>
+          <strong>Amacımız yalnızca duyuru yapmak değil;</strong> insanımıza yol göstermek, fırsatları görünür
+          kılmak ve “Ben de başvurabilir miyim?” diyen herkese cesaret vermektir.
+        </p>
+      </div>
+
+      <div class="highlight">
+        <div class="card">
+          <h3>Gençler İçin</h3>
+          <p>Dayanışma projeleri, gençlik katılımı, gençlik değişimleri, gönüllülük ve uluslararası proje fırsatları.</p>
+        </div>
+        <div class="card">
+          <h3>Girişimciler İçin</h3>
+          <p>KOSGEB destekleri, işletme geliştirme başlıkları, iş kurma ve büyütme odaklı çağrılar.</p>
+        </div>
+        <div class="card">
+          <h3>Çiftçiler ve Kırsal Alan İçin</h3>
+          <p>TKDK / IPARD başlıkları, kırsal kalkınma, işleme-pazarlama ve üretim yatırımları.</p>
+        </div>
+        <div class="card">
+          <h3>STK ve Toplum İçin</h3>
+          <p>Toplumsal dayanışma, katılım, gönüllülük, eğitim, kapsayıcılık ve yerel etki üreten projeler.</p>
+        </div>
+      </div>
+
+      <div class="notice">
+        Not: Başvuru takvimleri ve şartlar zaman içinde güncellenebilir. Bu nedenle her ilan için
+        “Detay / Başvuru” bağlantısından resmî başvuru sayfası ayrıca kontrol edilmelidir.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <h2>Güncel Hibe ve Destek İlanları</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Durum</th>
+              <th>Hibe / Destek Konusu</th>
+              <th>Kimler Başvurabilir?</th>
+              <th>Başvuru Kurumu</th>
+              <th>Çağrı / Başvuru Tarih Aralığı</th>
+              <th>Destek Tutarı / Bütçe</th>
+              <th>Kısa Açıklama</th>
+              <th>Detay / Başvuru</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><span class="badge badge-open">Açık / Yaklaşan Tur</span></td>
+              <td><strong>ESC Dayanışma Projeleri</strong></td>
+              <td>18-30 yaş arası gençler, en az 5 kişilik grup; gençler adına çalışan kuruluşlar</td>
+              <td>Türkiye Ulusal Ajansı / Avrupa Dayanışma Programı</td>
+              <td>2026 ikinci dönem son başvuru: <strong>1 Ekim 2026</strong></td>
+              <td><strong>630 Avro / ay</strong> proje yönetim bütçesi + koçluk + kapsayıcılık / istisnai giderler</td>
+              <td>Mahalle, okul, çevre, dayanışma, sosyal sorumluluk, gençlik, kapsayıcılık ve yerel toplumsal fayda odaklı projeler için uygundur.</td>
+              <td><a class="btn" href="https://www.ua.gov.tr/programlar/firsatlar/esc-30-dayanisma-ulusal/" target="_blank" rel="noopener">Detay / Başvuru</a></td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td><span class="badge badge-soon">Yaklaşan Başvuru</span></td>
+              <td><strong>Erasmus+ Gençlik Katılımı (KA154-YOU)</strong></td>
+              <td>STK’lar, gençlik kuruluşları, kamu kurumları, gençlerle çalışan yapılar</td>
+              <td>Türkiye Ulusal Ajansı / Erasmus+</td>
+              <td>2026 ikinci dönem son başvuru: <strong>1 Ekim 2026</strong></td>
+              <td>Proje içeriğine göre</td>
+              <td>Gençlerin karar alma süreçlerine katılımı, demokrasi, aktif vatandaşlık, yerel gençlik toplantıları ve katılımcı süreçler için uygundur.</td>
+              <td><a class="btn" href="https://www.ua.gov.tr/programlar/firsatlar/ka154-genclik-katilimi/" target="_blank" rel="noopener">Detay / Başvuru</a></td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td><span class="badge badge-soon">Yaklaşan Başvuru</span></td>
+              <td><strong>Erasmus+ Gençlik Değişimleri (KA152-YOU)</strong></td>
+              <td>Gençlik kuruluşları, gençlik grupları, STK’lar</td>
+              <td>Türkiye Ulusal Ajansı / Erasmus+</td>
+              <td>2026 ikinci dönem son başvuru: <strong>1 Ekim 2026</strong></td>
+              <td>Proje içeriğine göre</td>
+              <td>Farklı ülkelerden gençlerin bir araya geldiği eğitim, kültür, sosyal içerme, çevre ve dayanışma temalı değişim projeleri için uygundur.</td>
+              <td><a class="btn" href="https://www.ua.gov.tr/programlar/firsatlar/ka152-you/" target="_blank" rel="noopener">Detay / Başvuru</a></td>
+            </tr>
+
+            <tr>
+              <td>4</td>
+              <td><span class="badge badge-open">Sürekli Başvuru</span></td>
+              <td><strong>KOSGEB Girişimci Destek Programı</strong></td>
+              <td>Yeni iş kuracak veya işini büyütmek isteyen girişimciler; özellikle genç, kadın, engelli, gazi ve şehit yakını girişimciler</td>
+              <td>KOSGEB</td>
+              <td><strong>Sürekli / dönemsel sistem üzerinden</strong></td>
+              <td><strong>1.500.000 TL</strong> iş geliştirme desteği + uygun gruplara <strong>150.000 TL</strong> ilave; ayrıca 1.000.000 TL faiz/kâr payı desteği üst limiti</td>
+              <td>İş kurma, personel, makine-teçhizat, yazılım, danışmanlık ve gelişim giderleri için önemli bir destek başlığıdır.</td>
+              <td><a class="btn" href="https://www.kosgeb.gov.tr/site/tr/genel/destekdetay/1231/girisimci-destek-programi" target="_blank" rel="noopener">Detay / Başvuru</a></td>
+            </tr>
+
+            <tr>
+              <td>5</td>
+              <td><span class="badge badge-open">Sürekli Başvuru</span></td>
+              <td><strong>KOSGEB İşletme Geliştirme Destek Programı</strong></td>
+              <td>Faaliyette olan işletmeler / KOBİ’ler</td>
+              <td>KOSGEB</td>
+              <td><strong>Sürekli / ilgili destek başlığına göre</strong></td>
+              <td>Örnek üst limitler: Yurt içi fuar <strong>100.000 TL</strong>, belgelendirme <strong>300.000 TL</strong>, test-analiz <strong>300.000 TL</strong>, nitelikli eleman <strong>150.000 TL</strong></td>
+              <td>İşletmelerin fuar, belgelendirme, test, tasarım, dijital dönüşüm ve danışmanlık gibi gelişim giderlerini destekler.</td>
+              <td><a class="btn" href="https://www.kosgeb.gov.tr/site/tr/genel/destekdetay/6798/isletme-gelistirme-destek-programi" target="_blank" rel="noopener">Detay / Başvuru</a></td>
+            </tr>
+
+            <tr>
+              <td>6</td>
+              <td><span class="badge badge-soon">Takvimi Yayımlandı</span></td>
+              <td><strong>TKDK / IPARD III – M7 Çiftlik Faaliyetlerinin Çeşitlendirilmesi ve İş Geliştirme</strong></td>
+              <td>Çiftçiler, kırsal girişimciler, kırsalda yatırım yapmak isteyen gerçek/tüzel kişiler</td>
+              <td>TKDK</td>
+              <td>İlan: <strong>Nisan 2026</strong> / Başvuru dönemi: <strong>Nisan–Mayıs 2026</strong></td>
+              <td><strong>25.000.000 Avro</strong> çağrı bütçesi</td>
+              <td>Kırsalda yeni gelir alanları oluşturmak, üretimi çeşitlendirmek ve küçük ölçekli iş geliştirme yatırımları yapmak isteyenler için uygundur.</td>
+              <td><a class="btn" href="https://www.tkdk.gov.tr/Duyuru/ipard-iii-programi-2026-yili-cagri-takvimi-yayimlandi-13041" target="_blank" rel="noopener">Detay / Başvuru</a></td>
+            </tr>
+
+            <tr>
+              <td>7</td>
+              <td><span class="badge badge-soon">Takvimi Yayımlandı</span></td>
+              <td><strong>TKDK / IPARD III – M3 Tarım ve Balıkçılık Ürünlerinin İşlenmesi ve Pazarlanması</strong></td>
+              <td>Gıda işleme, tarımsal ürün işleme, paketleme ve pazarlama yatırımı yapacak gerçek/tüzel kişiler</td>
+              <td>TKDK</td>
+              <td>İlan: <strong>Mayıs 2026</strong> / Başvuru dönemi: <strong>Haziran–Temmuz 2026</strong></td>
+              <td><strong>30.000.000 Avro</strong> çağrı bütçesi</td>
+              <td>İşleme tesisi, paketleme, soğuk zincir, katma değerli tarımsal üretim ve pazarlama altyapısı için uygundur.</td>
+              <td><a class="btn" href="https://www.tkdk.gov.tr/Duyuru/ipard-iii-programi-2026-yili-cagri-takvimi-yayimlandi-13041" target="_blank" rel="noopener">Detay / Başvuru</a></td>
+            </tr>
+
+            <tr>
+              <td>8</td>
+              <td><span class="badge badge-soon">Takvimi Yayımlandı</span></td>
+              <td><strong>TKDK / IPARD III – M1 Tarımsal İşletmelerin Fiziki Varlıklarına Yönelik Yatırımlar</strong></td>
+              <td>Tarımsal üreticiler, yatırımcılar, işletmesini büyütmek isteyen üreticiler</td>
+              <td>TKDK</td>
+              <td>İlan: <strong>Haziran 2026</strong> / Başvuru dönemi: <strong>Temmuz–Ağustos 2026</strong></td>
+              <td><strong>30.000.000 Avro</strong> çağrı bütçesi</td>
+              <td>Modernizasyon, ekipman, kapasite geliştirme ve fiziki yatırım gerektiren tarımsal işletme projeleri için uygundur.</td>
+              <td><a class="btn" href="https://www.tkdk.gov.tr/Duyuru/ipard-iii-programi-2026-yili-cagri-takvimi-yayimlandi-13041" target="_blank" rel="noopener">Detay / Başvuru</a></td>
+            </tr>
+
+            <tr>
+              <td>9</td>
+              <td><span class="badge badge-soon">Takvimi Yayımlandı</span></td>
+              <td><strong>TKDK / IPARD III – M6 Kırsal Alanda Kamu Altyapı Yatırımları</strong></td>
+              <td>Kamu kurumları ve ilgili uygun yararlanıcı yapılar</td>
+              <td>TKDK</td>
+              <td>İlan: <strong>Temmuz 2026</strong> / Başvuru dönemi: <strong>Ağustos–Kasım 2026</strong></td>
+              <td><strong>156.000.000 Avro</strong> çağrı bütçesi</td>
+              <td>Kırsal yaşam kalitesini artıran altyapı yatırımları için uygundur; nihai ilan yayımlandığında özel koşullar ayrıca kontrol edilmelidir.</td>
+              <td><a class="btn" href="https://www.tkdk.gov.tr/Duyuru/ipard-iii-programi-2026-yili-cagri-takvimi-yayimlandi-13041" target="_blank" rel="noopener">Detay / Başvuru</a></td>
+            </tr>
+
+            <tr>
+              <td>10</td>
+              <td><span class="badge badge-follow">Takip Edilecek Program</span></td>
+              <td><strong>Erasmus+ Küçük Ölçekli Ortaklıklar (KA210)</strong></td>
+              <td>STK’lar, okullar, yetişkin eğitimi kurumları, gençlik kuruluşları, spor kuruluşları</td>
+              <td>Erasmus+ / Ulusal Ajans</td>
+              <td>2026 ana son başvuru: <strong>5 Mart 2026</strong> (birçok alan için ikinci dönem yoktur)</td>
+              <td><strong>30.000 Avro</strong> veya <strong>60.000 Avro</strong> toplu hibe</td>
+              <td>Küçük ama etkili uluslararası ortaklıklar kurmak isteyen dernekler ve yeni başlayan kurumlar için çok değerli bir programdır.</td>
+              <td><a class="btn" href="https://erasmus-plus.ec.europa.eu/programme-guide/part-b/key-action-2/small-scale-partnerships" target="_blank" rel="noopener">Detay / Başvuru</a></td>
+            </tr>
+
+            <tr>
+              <td>11</td>
+              <td><span class="badge badge-open">Açık</span></td>
+              <td><strong>AB İç Güvenlik Fonu – Şiddet İçeren Aşırılık ve Radikalleşmeyle Mücadele Çağrısı</strong></td>
+              <td>Sivil toplum kuruluşları ve ilgili proje ortaklıkları</td>
+              <td>European Commission / Internal Security Fund</td>
+              <td>Açılış: <strong>26 Şubat 2026</strong> / Son başvuru: <strong>27 Mayıs 2026</strong></td>
+              <td><strong>5.000.000 Avro</strong> toplam çağrı bütçesi</td>
+              <td>Özellikle gençlerin ve kırılgan grupların çevrimiçi radikalleşmeye karşı dayanıklılığı, toplumsal uyum, yerel önleme ve gençlik güçlendirme odaklı projeler için uygundur.</td>
+              <td><a class="btn" href="https://home-affairs.ec.europa.eu/news/call-proposals-prevent-and-counter-violent-extremism-and-radicalisation-2026-02-26_en" target="_blank" rel="noopener">Detay / Başvuru</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="small" style="margin-top:14px;">
+        * Liste, herkesin kolay anlayabilmesi için sadeleştirilmiştir. Kesin uygunluk şartları, destek oranları ve başvuru evrakları ilgili resmî ilan sayfasında yer almaktadır.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta">
+        <h3>Bir fikriniz varsa, birlikte projeye dönüştürelim</h3>
+        <p>
+          Ankara Malatyalılar Derneği olarak; gençlere, kadınlara, öğrencilere, üreticilere,
+          girişimcilere ve toplum yararına çalışan tüm kesimlere fayda sağlayacak projeleri önemsiyoruz.
+          Uygun bir çağrı bulduysanız ve proje hazırlamak istiyorsanız bizimle iletişime geçebilirsiniz.
+        </p>
+        <a class="btn" href="iletisim.html">İletişime Geç</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <strong>Ankara Malatyalılar Derneği</strong><br>
+      Projeler sayfası üzerinden yayımlanan bu bilgiler, kamu yararı amacıyla derlenmiştir.
+      Güncel başvuru şartları için ilgili resmî kurum duyuruları esas alınmalıdır.
+    </div>
+  </footer>
+
+</body>
+</html>
