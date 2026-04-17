@@ -8,14 +8,15 @@
     :root{
       --primary:#7a0019;
       --secondary:#a61b3f;
-      --accent:#f8f1f3;
-      --soft:#fcf8f9;
+      --gold:#c9a646;
+      --gold-dark:#a88422;
+      --gold-soft:#f7f1df;
+      --soft:#fcfaf5;
       --text:#222;
       --muted:#666;
       --white:#fff;
-      --border:#e7d9de;
-      --gold:#c9a646;
-      --shadow:0 10px 30px rgba(0,0,0,.06);
+      --border:#e7ddd0;
+      --shadow:0 10px 28px rgba(0,0,0,.06);
     }
 
     *{
@@ -100,7 +101,7 @@
     }
 
     nav ul li a:hover{
-      background:var(--accent);
+      background:#f7f0f2;
       color:var(--primary);
     }
 
@@ -110,21 +111,12 @@
     }
 
     .hero{
-      position:relative;
-     background:
-linear-gradient(135deg, #ffffff, #f8f4ea),
-radial-gradient(circle at top right, rgba(201,166,70,.25), transparent 35%);
-      color:#fff;
-      padding:72px 0 64px;
-      overflow:hidden;
-    }
-
-    .hero:before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to right, transparent, rgba(255,255,255,.03));
-      pointer-events:none;
+      background:
+        radial-gradient(circle at top right, rgba(201,166,70,.22), transparent 30%),
+        linear-gradient(135deg, #ffffff, #f8f4ea);
+      color:var(--text);
+      padding:70px 0 60px;
+      border-bottom:1px solid #efe7d8;
     }
 
     .hero-grid{
@@ -135,16 +127,18 @@ radial-gradient(circle at top right, rgba(201,166,70,.25), transparent 35%);
     }
 
     .hero h1{
-      font-size:44px;
-      line-height:1.12;
+      font-size:46px;
+      line-height:1.1;
       margin-bottom:16px;
+      color:var(--primary);
+      font-weight:800;
     }
 
     .hero p{
-      font-size:18px;
+      font-size:19px;
       max-width:760px;
-      opacity:.97;
       margin-bottom:18px;
+      color:#333;
     }
 
     .hero-badges{
@@ -158,52 +152,48 @@ radial-gradient(circle at top right, rgba(201,166,70,.25), transparent 35%);
       display:inline-block;
       padding:10px 14px;
       border:1px solid #d9c48a;
-background:#fff8e8;
-color:#7.hero-card li{
-  padding:10px 12px;
-  border-radius:12px;
-  background:#f8f4ea;
-  font-size:14px;
-  font-weight:600;
-  color:#7a0019;
-}a0019;
+      background:#fff8e8;
       border-radius:999px;
       font-size:14px;
       font-weight:700;
-      backdrop-filter:blur(4px);
+      color:var(--primary);
     }
 
     .hero-card{
-     background:rgba(255,255,255,.88);
-border:1px solid #e7d9de;
+      background:rgba(255,255,255,.9);
+      border:1px solid #eadfcd;
       border-radius:22px;
       padding:24px;
-      box-shadow:0 15px 40px rgba(0,0,0,.18);
-      backdrop-filter:blur(10px);
+      box-shadow:0 16px 38px rgba(0,0,0,.08);
     }
 
     .hero-card h3{
-      font-size:24px;
+      font-size:30px;
       margin-bottom:12px;
+      color:var(--primary);
+      line-height:1.2;
     }
 
     .hero-card p{
       font-size:15px;
       margin:0 0 14px;
+      color:#444;
     }
 
     .hero-card ul{
       list-style:none;
       display:grid;
-      gap:10px;
+      gap:12px;
     }
 
     .hero-card li{
-      padding:10px 12px;
-      border-radius:12px;
+      padding:12px 14px;
+      border-radius:14px;
       background:#f8f4ea;
+      border:1px solid #eee1c2;
       font-size:14px;
       font-weight:600;
+      color:var(--primary);
     }
 
     .section{
@@ -227,11 +217,7 @@ border:1px solid #e7d9de;
 
     .intro-box p{
       margin-bottom:12px;
-      .hero-card p{
-  font-size:15px;
-  margin:0 0 14px;
-  color:#444;
-}
+      color:#444;
     }
 
     .intro-box p:last-child{
@@ -272,7 +258,7 @@ border:1px solid #e7d9de;
     }
 
     .side-panel{
-      background:linear-gradient(180deg, #fff, #fbf6f7);
+      background:linear-gradient(180deg, #fff, #fbf8f1);
       border:1px solid var(--border);
       border-radius:22px;
       padding:24px;
@@ -312,7 +298,7 @@ border:1px solid #e7d9de;
     .quote-box{
       margin-top:18px;
       padding:18px;
-      background:linear-gradient(135deg, #fff8e6, #fff);
+      background:linear-gradient(135deg, #fff8e6, #fffdf7);
       border:1px solid #ecdca7;
       border-radius:16px;
       color:#5d4b15;
@@ -381,8 +367,8 @@ border:1px solid #e7d9de;
     input:focus,
     select:focus,
     textarea:focus{
-      border-color:var(--secondary);
-      box-shadow:0 0 0 4px rgba(166,27,63,.08);
+      border-color:var(--gold);
+      box-shadow:0 0 0 4px rgba(201,166,70,.13);
     }
 
     textarea{
@@ -410,14 +396,14 @@ border:1px solid #e7d9de;
       width:100%;
       border:none;
       cursor:pointer;
-      background:linear-gradient(135deg, var(--primary), var(--secondary));
+      background:linear-gradient(135deg, var(--gold), var(--gold-dark));
       color:#fff;
       padding:16px 18px;
       border-radius:16px;
       font-size:16px;
       font-weight:700;
       transition:.25s ease;
-      box-shadow:0 12px 26px rgba(122,0,25,.18);
+      box-shadow:0 12px 26px rgba(169,132,34,.22);
     }
 
     .submit-btn:hover{
@@ -487,7 +473,8 @@ border:1px solid #e7d9de;
       .intro-box h2,
       .side-panel h2,
       .form-title h2,
-      .cta h3{
+      .cta h3,
+      .hero-card h3{
         font-size:24px;
       }
     }
@@ -522,7 +509,8 @@ border:1px solid #e7d9de;
         <h1>Üyelik Başvurusu</h1>
         <p>
           Ankara Malatyalılar Derneği ailesine katılarak hemşehrilik bağlarını güçlendiren,
-          dayanışmayı büyüten ve kültürel değerlerimizi geleceğe taşıyan güçlü bir topluluğun parçası olabilirsiniz.
+          dayanışmayı büyüten ve kültürel değerlerimizi geleceğe taşıyan güçlü bir topluluğun
+          parçası olabilirsiniz.
         </p>
         <p>
           Birlikte daha güçlü, daha görünür ve daha etkili bir sosyal dayanışma ağı kurmak için
@@ -555,12 +543,13 @@ border:1px solid #e7d9de;
       <div class="intro-box">
         <h2>Birlikte daha güçlü bir topluluk</h2>
         <p>
-          Derneğimiz; Malatyalı hemşehrilerimizin bir araya gelmesini, kültürel değerlerimizin yaşatılmasını,
-          yardımlaşma ve dayanışma ruhunun güçlenmesini hedeflemektedir.
+          Derneğimiz; Malatyalı hemşehrilerimizin bir araya gelmesini, kültürel değerlerimizin
+          yaşatılmasını, yardımlaşma ve dayanışma ruhunun güçlenmesini hedeflemektedir.
         </p>
         <p>
-          Üyelik başvurusu yapan her kıymetli hemşehrimiz, bu ortak gönül yolculuğunun önemli bir parçasıdır.
-          Siz de bu yapının içinde yer alarak sosyal, kültürel ve toplumsal çalışmalara katkı sunabilirsiniz.
+          Üyelik başvurusu yapan her kıymetli hemşehrimiz, bu ortak gönül yolculuğunun önemli bir
+          parçasıdır. Siz de bu yapının içinde yer alarak sosyal, kültürel ve toplumsal çalışmalara
+          katkı sunabilirsiniz.
         </p>
       </div>
 
