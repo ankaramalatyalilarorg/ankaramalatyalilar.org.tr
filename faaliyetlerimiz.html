@@ -1,1 +1,326 @@
-<li><a href="faaliyetlerimiz.html">Faaliyetlerimiz</a></li>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faaliyetlerimiz | Ankara Malatyalılar Derneği</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f8f9fa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #8b0000, #b22222);
+      color: white;
+      padding: 20px 0 0 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 15px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-area img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      background: white;
+      border-radius: 50%;
+      padding: 5px;
+    }
+
+    .logo-area h1 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .logo-area p {
+      font-size: 14px;
+      opacity: 0.95;
+    }
+
+    nav {
+      background: white;
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 15px 20px;
+      text-decoration: none;
+      color: #222;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background: #8b0000;
+      color: white;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #198754, #157347);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 50px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h3 {
+      font-size: 30px;
+      color: #8b0000;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h4 {
+      color: #8b0000;
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: #444;
+      font-size: 15px;
+    }
+
+    .highlight {
+      background: white;
+      border-left: 5px solid #198754;
+      border-radius: 10px;
+      padding: 25px;
+      margin-top: 35px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    .highlight h4 {
+      color: #198754;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .logo-area h1 {
+        font-size: 20px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav ul li a {
+        border-bottom: 1px solid #eee;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="top-bar">
+        <div class="logo-area">
+          <img src="logo.png" alt="Ankara Malatyalılar Derneği Logo">
+          <div>
+            <h1>Ankara Malatyalılar Derneği</h1>
+            <p>Birlik, Dayanışma ve Kültürel Miras</p>
+          </div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="kurumsal.html">Kurumsal</a></li>
+          <li><a href="faaliyetlerimiz.html" class="active">Faaliyetlerimiz</a></li>
+          <li><a href="proje.html">Projeler</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="uyelik.html">Üyelik</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Faaliyetlerimiz</h2>
+      <p>
+        Ankara Malatyalılar Derneği olarak hemşehrilerimiz arasında dayanışmayı güçlendiren,
+        kültürel değerlerimizi yaşatan, gençleri destekleyen ve toplumsal fayda üreten çalışmalar yürütüyoruz.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h3>Başlıca Faaliyet Alanlarımız</h3>
+        <p>
+          Derneğimiz, sosyal bağları kuvvetlendiren ve ortak kültürel hafızayı canlı tutan çok yönlü çalışmalar gerçekleştirmektedir.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h4>Kültürel Etkinlikler</h4>
+          <p>Malatya kültürünü tanıtan geceler, anma programları, yöresel buluşmalar ve kültürel paylaşımlar düzenlenir.</p>
+        </div>
+
+        <div class="card">
+          <h4>Hemşehri Buluşmaları</h4>
+          <p>Ankara’da yaşayan Malatyalı hemşehrilerimizin bir araya gelmesini sağlayan tanışma, kaynaşma ve dayanışma toplantıları yapılır.</p>
+        </div>
+
+        <div class="card">
+          <h4>Gençlik Çalışmaları</h4>
+          <p>Gençlerin sosyal, kültürel ve akademik gelişimlerini destekleyen organizasyonlar, buluşmalar ve rehberlik faaliyetleri yürütülür.</p>
+        </div>
+
+        <div class="card">
+          <h4>Eğitim &amp; Seminerler</h4>
+          <p>Kişisel gelişim, mesleki yönelim, toplumsal bilinç ve kültürel miras alanlarında eğitim ve seminer programları düzenlenir.</p>
+        </div>
+
+        <div class="card">
+          <h4>Sosyal Yardımlaşma</h4>
+          <p>İhtiyaç sahiplerine yönelik destek çalışmaları, dayanışma organizasyonları ve toplumsal yardımlaşma faaliyetleri gerçekleştirilir.</p>
+        </div>
+
+        <div class="card">
+          <h4>Projeler &amp; Hibeler</h4>
+          <p>Ulusal ve uluslararası proje çağrıları takip edilerek gençlik, eğitim, kültür ve sosyal gelişim alanlarında projeler hazırlanır.</p>
+        </div>
+
+        <div class="card">
+          <h4>Kadın Kolları</h4>
+          <p>Kadınların sosyal hayata katılımını ve üretkenliğini destekleyen etkinlikler, buluşmalar ve dayanışma faaliyetleri yürütülür.</p>
+        </div>
+
+        <div class="card">
+          <h4>Gezi &amp; Organizasyonlar</h4>
+          <p>Kültürel geziler, özel gün programları ve üyeler arasındaki bağı güçlendiren sosyal organizasyonlar planlanır.</p>
+        </div>
+
+        <div class="card">
+          <h4>İş Dünyası Platformu</h4>
+          <p>İş insanları, girişimciler ve profesyoneller arasında iletişimi artıracak buluşmalar ve iş ağı geliştirme çalışmaları yapılır.</p>
+        </div>
+
+        <div class="card">
+          <h4>Haberler &amp; Duyurular</h4>
+          <p>Derneğimizin faaliyetlerine ilişkin gelişmeler, etkinlik duyuruları ve kamuoyunu bilgilendiren paylaşımlar yayınlanır.</p>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <h4>Birlikte Daha Güçlüyüz</h4>
+        <p>
+          Derneğimiz; kültürel mirası koruyan, hemşehri bağlarını güçlendiren ve gelecek nesillere sağlam bir toplumsal dayanışma zemini bırakan çalışmalar yapmayı amaçlamaktadır.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Ankara Malatyalılar Derneği - Tüm Hakları Saklıdır.</p>
+  </footer>
+
+</body>
+</html>
