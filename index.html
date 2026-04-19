@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ankara Malatyalılar Derneği | Resmi Web Sitesi</title>
-    <meta name="description" content="Ankara Malatyalılar Derneği resmi web sitesi. Faaliyetler, projeler, üyelik ve iletişim bilgileri.">
+<meta name="description" content="Ankara Malatyalılar Derneği resmi web sitesi. Faaliyetler, projeler, üyelik ve iletişim bilgileri.">
+
 <style>
 *{
     margin:0;
@@ -94,9 +95,17 @@ main{
 }
 
 .card h1{
-    font-size:46px;
-    margin-bottom:25px;
+    font-size:42px;
+    line-height:1.25;
+    margin-bottom:12px;
     color:#0d2b52;
+}
+
+.card h3{
+    font-size:22px;
+    font-weight:600;
+    color:#f4a300;
+    margin-bottom:24px;
 }
 
 .card p{
@@ -133,6 +142,35 @@ main{
 .profile p{
     font-size:18px;
     line-height:1.7;
+    margin-bottom:16px;
+}
+
+/* ALT BÖLÜMLER */
+.bottom-sections{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.info-box{
+    background:#ffffff;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 8px 22px rgba(0,0,0,0.08);
+    min-height:220px;
+}
+
+.info-box h2{
+    color:#0d2b52;
+    font-size:32px;
+    margin-bottom:18px;
+}
+
+.info-box p{
+    font-size:20px;
+    line-height:1.7;
+    color:#44556b;
 }
 
 /* FOOTER */
@@ -151,16 +189,26 @@ footer{
         grid-template-columns:1fr;
     }
 
+    .bottom-sections{
+        grid-template-columns:1fr;
+    }
+
     .card h1{
-        font-size:34px;
+        font-size:30px;
+    }
+
+    .card h3{
+        font-size:20px;
     }
 
     .card p,
-    .profile p{
+    .profile p,
+    .info-box p{
         font-size:18px;
     }
 
-    .profile h2{
+    .profile h2,
+    .info-box h2{
         font-size:28px;
     }
 
@@ -188,8 +236,8 @@ footer{
     <!-- MENÜ -->
     <nav>
         <ul>
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="#">Derneğimiz</a></li>
+            <li><a href="index.html" class="active">Ana Sayfa</a></li>
+            <li><a href="#">Kurumsal</a></li>
             <li><a href="#">Faaliyetlerimiz</a></li>
             <li><a href="proje.html">Projeler</a></li>
             <li><a href="blog.html">Blog</a></li>
@@ -206,58 +254,79 @@ footer{
 
         <!-- SOL ALAN -->
         <section class="card">
-            <h1>Ankara Malatyalılar Derneği</h1>
+            <h1>1997’den Bugüne Ankara’daki<br>Malatyalıların Ortak Buluşma Noktası</h1>
+            <h3>Ankara Malatyalılar Derneği</h3>
 
             <p>
-            Ankara’da yaşayan Malatyalılar arasında dayanışmayı güçlendirmek,
-            kültürel bağları korumak ve ortak değerleri yaşatmak amacıyla
-            faaliyet gösteren bir sivil toplum kuruluşudur.
+                Ankara Malatyalılar Derneği, 1997 yılından bu yana Ankara’da yaşayan
+                Malatyalı hemşehrilerimizi aynı çatı altında buluşturan köklü bir sivil
+                toplum kuruluşudur. Birlik, beraberlik, dayanışma ve hemşehrilik ruhunu
+                yaşatmayı amaçlayan derneğimiz; kültürel değerlerimizi koruyan, sosyal
+                yardımlaşmayı güçlendiren ve ortak aidiyet bilincini geleceğe taşıyan
+                çalışmalarıyla faaliyetlerini sürdürmektedir.
             </p>
 
             <p>
-            Derneğimiz; hemşehrilik bilincini canlı tutan, sosyal yardımlaşmayı
-            destekleyen, kültürel mirası gelecek nesillere taşıyan ve toplumsal
-            birlikteliği güçlendiren çalışmalarıyla hizmet vermektedir.
+                Kurulduğu günden bugüne halk oyunları kursları, bağlama eğitimleri,
+                halk müziği korosu çalışmaları, kültürel buluşmalar, yardım faaliyetleri
+                ve Malatya’mızın tanıtımına katkı sunan televizyon ve radyo programlarıyla
+                hemşehrilerimiz arasında güçlü bir gönül bağı oluşturmuştur.
             </p>
 
             <p>
-            Birlik, beraberlik ve hemşehri ruhuyla geleceğe güçlü adımlar atıyoruz.
+                Geçmişinden aldığı güç ve tecrübeyle bugün de Ankara’daki Malatyalılar
+                için güven veren bir buluşma noktası olmayı sürdüren derneğimiz,
+                geleceğe dönük vizyonuyla gençlerimize, kadınlarımıza ve tüm
+                hemşehrilerimize daha güçlü sosyal, kültürel ve eğitim odaklı
+                imkânlar sunmak için çalışmalarına kararlılıkla devam etmektedir.
             </p>
         </section>
 
         <!-- SAĞ PROFİL -->
-        <!-- BAŞKANIN MESAJI -->
-<aside class="profile">
-    <img src="derbas.png" alt="Başkan Yusuf Gül">
+        <aside class="profile">
+            <img src="derbas.png" alt="Başkan Yusuf Gül">
 
-    <h2>Başkanın Mesajı</h2>
+            <h2>Başkanın Mesajı</h2>
 
-    <p>
-        1997 yılından bu yana Ankara’da Malatyalı hemşehrilerimizin birlik,
-        beraberlik ve dayanışma çatısı olan derneğimizin bugünlere gelmesinde
-        emeği bulunan geçmiş dönem başkanlarımıza ve yönetimlerimize teşekkür ediyorum.
-    </p>
+            <p>
+                1997 yılından bu yana Ankara’da Malatyalı hemşehrilerimizin birlik,
+                beraberlik ve dayanışma çatısı olan derneğimizin bugünlere gelmesinde
+                emeği bulunan geçmiş dönem başkanlarımıza ve yönetimlerimize teşekkür ediyorum.
+            </p>
 
-    <p>
-        Yeni dönemde; gençlerimizin, kadınlarımızın ve dezavantajlı kesimlerin
-        Avrupa Birliği projeleri ile eğitim ve gelişim fırsatlarından daha fazla
-        yararlanmasını öncelikli hedeflerimiz arasında görüyoruz.
-    </p>
+            <p>
+                Yeni dönemde; gençlerimizin, kadınlarımızın ve dezavantajlı kesimlerin
+                eğitim, gelişim ve sosyal fayda sağlayan çalışmalardan daha fazla
+                yararlanmasını öncelikli hedeflerimiz arasında görüyoruz.
+            </p>
 
-    <p>
-        Kültürümüzü yaşatmak, hemşehrilik bağlarımızı güçlendirmek ve geleceğe
-        güçlü adımlarla yürümek için çalışmalarımıza kararlılıkla devam edeceğiz.
-    </p>
+            <p>
+                Kültürümüzü yaşatmak, hemşehrilik bağlarımızı güçlendirmek ve geleceğe
+                güçlü adımlarla yürümek için çalışmalarımıza kararlılıkla devam edeceğiz.
+            </p>
 
-    <p><strong>Yusuf Gül</strong><br>Başkan</p>
-</aside>
+            <p><strong>Yusuf Gül</strong><br>Başkan</p>
+        </aside>
 
     </div>
+
+    <!-- ALT BÖLÜMLER -->
+    <section class="bottom-sections">
+        <div class="info-box">
+            <h2>Güncel Haberler</h2>
+            <p>Yakında yeni haberler ve duyurular burada paylaşılacaktır.</p>
+        </div>
+
+        <div class="info-box">
+            <h2>Etkinlikler</h2>
+            <p>Yaklaşan etkinlikler ve programlarımız burada yayınlanacaktır.</p>
+        </div>
+    </section>
 
 </main>
 
 <footer>
-© 2026 Ankara Malatyalılar Derneği - Tüm Hakları Saklıdır.
+    © 2026 Ankara Malatyalılar Derneği - Tüm Hakları Saklıdır.
 </footer>
 
 </body>
