@@ -4,17 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kurumsal | Ankara Malatyalılar Derneği</title>
-<meta name="description" content="Ankara Malatyalılar Derneği kurumsal sayfası. Hakkımızda, tarihçemiz, vizyonumuz, misyonumuz, başkanın mesajı, yönetim kurulu ve denetim kurulu bilgileri.">
+<meta name="description" content="Ankara Malatyalılar Derneği kurumsal sayfası.">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
 }
 
 body{
@@ -78,27 +74,27 @@ main{
 
 .section-card{
     background:#ffffff;
-    border-radius:18px;
-    padding:22px 24px;
-    margin-bottom:18px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.07);
+    border-radius:16px;
+    padding:18px 20px;
+    margin-bottom:14px;
+    box-shadow:0 6px 16px rgba(0,0,0,0.06);
 }
 
 .section-card h1{
-    font-size:29px;
-    color:#0d2b52;
-    margin-bottom:12px;
-}
-
-.section-card h2{
-    font-size:23px;
+    font-size:28px;
     color:#0d2b52;
     margin-bottom:10px;
 }
 
+.section-card h2{
+    font-size:20px;
+    color:#0d2b52;
+    margin-bottom:8px;
+}
+
 .section-card p{
     font-size:15px;
-    line-height:1.7;
+    line-height:1.65;
     margin-bottom:10px;
     color:#27415f;
 }
@@ -116,26 +112,18 @@ main{
     margin-bottom:8px;
 }
 
+.board-grid-members{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:8px;
+    margin-top:6px;
+}
+
 .board-grid-audit{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
     gap:8px;
     margin-top:6px;
-}
-
-.board-grid-last{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:10px;
-    max-width:620px;
-    margin-top:10px;
-}
-
-.board-grid-audit{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:10px;
-    margin-top:8px;
 }
 
 .board-item{
@@ -178,11 +166,6 @@ footer{
 
 @media(max-width:1100px){
     .board-grid-members{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:8px;
-    margin-top:6px;
-}
         grid-template-columns:repeat(3, 1fr);
     }
 }
@@ -194,15 +177,15 @@ footer{
     }
 
     .section-card{
-        padding:20px 18px;
+        padding:16px 16px;
     }
 
     .section-card h1{
-        font-size:25px;
+        font-size:24px;
     }
 
     .section-card h2{
-        font-size:20px;
+        font-size:18px;
     }
 
     .section-card p{
@@ -211,15 +194,8 @@ footer{
 
     .board-grid-top,
     .board-grid-members,
-    .board-grid-last,
     .board-grid-audit{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:8px;
-    margin-top:6px;
-}
         grid-template-columns:1fr;
-        max-width:none;
     }
 }
 </style>
@@ -228,7 +204,6 @@ footer{
 <body>
 
 <header class="container">
-
     <div class="banner-box">
         <img src="bas.png" alt="Ankara Malatyalılar Derneği Banner">
     </div>
@@ -244,134 +219,80 @@ footer{
             <li><a href="iletisim.html">İletişim</a></li>
         </ul>
     </nav>
-
 </header>
 
 <main class="container">
 
     <section class="section-card">
         <h1>Kurumsal</h1>
-        <p>
-            <span class="highlight">Ankara Malatyalılar Derneği</span>, 1997 yılından bu yana Ankara’da yaşayan Malatyalı hemşehrilerimizi aynı çatı altında buluşturan köklü bir sivil toplum kuruluşudur.
-        </p>
-        <p>
-            Derneğimiz; birlik, beraberlik, dayanışma ve hemşehrilik ruhunu güçlendirmeyi, Malatya’nın kültürel değerlerini yaşatmayı ve gelecek nesillere aktarmayı temel amaç edinmiştir.
-        </p>
+        <p><span class="highlight">Ankara Malatyalılar Derneği</span>, 1997 yılından bu yana Ankara’da yaşayan Malatyalı hemşehrilerimizi aynı çatı altında buluşturan köklü bir sivil toplum kuruluşudur.</p>
+        <p>Derneğimiz; birlik, beraberlik, dayanışma ve hemşehrilik ruhunu güçlendirmeyi, Malatya’nın kültürel değerlerini yaşatmayı ve gelecek nesillere aktarmayı temel amaç edinmiştir.</p>
     </section>
 
     <section class="section-card">
         <h2>Hakkımızda</h2>
-        <p>
-            Ankara Malatyalılar Derneği, hemşehrilerimiz arasındaki dayanışmayı güçlendirmek, ortak kültürel hafızayı canlı tutmak ve toplumsal birlikteliği geliştirmek amacıyla faaliyet göstermektedir. Ankara’da yaşayan Malatyalılar için güven veren bir buluşma noktası olan derneğimiz, kültürel ve sosyal çalışmalarıyla kurumsal yapısını her geçen gün daha da güçlendirmektedir.
-        </p>
+        <p>Ankara Malatyalılar Derneği, hemşehrilerimiz arasındaki dayanışmayı güçlendirmek, ortak kültürel hafızayı canlı tutmak ve toplumsal birlikteliği geliştirmek amacıyla faaliyet göstermektedir. Ankara’da yaşayan Malatyalılar için güven veren bir buluşma noktası olan derneğimiz, kültürel ve sosyal çalışmalarıyla kurumsal yapısını her geçen gün daha da güçlendirmektedir.</p>
     </section>
 
     <section class="section-card">
         <h2>Tarihçemiz</h2>
-        <p>
-            Derneğimiz 1997 yılında, Ankara’da yaşayan Malatyalıların ortak sesi olmak ve hemşehri dayanışmasını kurumsal bir yapı altında sürdürmek amacıyla kurulmuştur. Kuruluşundan bugüne kadar geçen süreçte kültürel etkinlikler, sosyal dayanışma faaliyetleri, kurslar, buluşmalar ve tanıtım çalışmalarıyla köklü bir hemşehri kuruluşu haline gelmiştir.
-        </p>
+        <p>Derneğimiz 1997 yılında, Ankara’da yaşayan Malatyalıların ortak sesi olmak ve hemşehri dayanışmasını kurumsal bir yapı altında sürdürmek amacıyla kurulmuştur. Kuruluşundan bugüne kadar geçen süreçte kültürel etkinlikler, sosyal dayanışma faaliyetleri, kurslar, buluşmalar ve tanıtım çalışmalarıyla köklü bir hemşehri kuruluşu haline gelmiştir.</p>
     </section>
 
     <section class="section-card">
         <h2>Vizyonumuz</h2>
-        <p>
-            Ankara’da yaşayan Malatyalı hemşehrilerimizin en güçlü dayanışma çatısı olmak; kültürel değerlerine sahip çıkan, güven veren, saygın ve örnek bir sivil toplum kuruluşu olarak yoluna devam etmektir.
-        </p>
+        <p>Ankara’da yaşayan Malatyalı hemşehrilerimizin en güçlü dayanışma çatısı olmak; kültürel değerlerine sahip çıkan, güven veren, saygın ve örnek bir sivil toplum kuruluşu olarak yoluna devam etmektir.</p>
     </section>
 
     <section class="section-card">
         <h2>Misyonumuz</h2>
-        <p>
-            Hemşehrilerimiz arasında birlik ve beraberliği güçlendirmek, sosyal yardımlaşmayı artırmak, kültürel değerlerimizi yaşatmak, gençlerimize ve ailelerimize katkı sunmak ve toplumsal fayda sağlayacak çalışmalar gerçekleştirmektir.
-        </p>
+        <p>Hemşehrilerimiz arasında birlik ve beraberliği güçlendirmek, sosyal yardımlaşmayı artırmak, kültürel değerlerimizi yaşatmak, gençlerimize ve ailelerimize katkı sunmak ve toplumsal fayda sağlayacak çalışmalar gerçekleştirmektir.</p>
     </section>
 
     <section class="section-card">
         <h2>Başkanın Mesajı</h2>
-        <p>
-            1997 yılından bu yana Ankara’da Malatyalı hemşehrilerimizin birlik, beraberlik ve dayanışma çatısı olan derneğimizin bugünlere gelmesinde emeği bulunan herkese teşekkür ediyorum.
-        </p>
-        <p>
-            Geçmişimizden aldığımız güçle kültürümüzü yaşatmak, hemşehrilik bağlarımızı daha da güçlendirmek ve derneğimizi geleceğe daha sağlam adımlarla taşımak için çalışmalarımıza kararlılıkla devam ediyoruz.
-        </p>
-        <p>
-            <strong>Yusuf Gül</strong><br>
-            Dernek Başkanı
-        </p>
+        <p>1997 yılından bu yana Ankara’da Malatyalı hemşehrilerimizin birlik, beraberlik ve dayanışma çatısı olan derneğimizin bugünlere gelmesinde emeği bulunan herkese teşekkür ediyorum.</p>
+        <p>Geçmişimizden aldığımız güçle kültürümüzü yaşatmak, hemşehrilik bağlarımızı daha da güçlendirmek ve derneğimizi geleceğe daha sağlam adımlarla taşımak için çalışmalarımıza kararlılıkla devam ediyoruz.</p>
+        <p><strong>Yusuf Gül</strong><br>Dernek Başkanı</p>
     </section>
 
     <section class="section-card">
-     <section class="section-card">
-    <h2>Yönetim Kurulu</h2>
+        <h2>Yönetim Kurulu</h2>
 
-    <div class="board-grid-top">
-        <div class="board-item top">
-            <span class="name">Yusuf Gül</span>
-            <span class="role">Dernek Başkanı</span>
-        </div>
-        <div class="board-item top">
-            <span class="name">Ramazan Bilgiç</span>
-            <span class="role">Başkan Yardımcısı ve Genel Sekreter</span>
-        </div>
-        <div class="board-item top">
-            <span class="name">Gül Şahin</span>
-            <span class="role">Sayman</span>
-        </div>
-    </div>
-
-    <div class="board-grid-members">
-        <div class="board-item">
-            <span class="name">Fatma Köse</span>
-            <span class="role">Yönetim Kurulu Üyesi</span>
-        </div>
-        <div class="board-item">
-            <span class="name">Seydihan Çamur</span>
-            <span class="role">Yönetim Kurulu Üyesi</span>
-        </div>
-        <div class="board-item">
-            <span class="name">Mahmut Cücemen</span>
-            <span class="role">Yönetim Kurulu Üyesi</span>
-        </div>
-        <div class="board-item">
-            <span class="name">Songül Başıbüyük</span>
-            <span class="role">Yönetim Kurulu Üyesi</span>
+        <div class="board-grid-top">
+            <div class="board-item top">
+                <span class="name">Yusuf Gül</span>
+                <span class="role">Dernek Başkanı</span>
+            </div>
+            <div class="board-item top">
+                <span class="name">Ramazan Bilgiç</span>
+                <span class="role">Başkan Yardımcısı ve Genel Sekreter</span>
+            </div>
+            <div class="board-item top">
+                <span class="name">Gül Şahin</span>
+                <span class="role">Sayman</span>
+            </div>
         </div>
 
-        <div class="board-item">
-            <span class="name">Derviş Kihtir</span>
-            <span class="role">Yönetim Kurulu Üyesi</span>
+        <div class="board-grid-members">
+            <div class="board-item"><span class="name">Fatma Köse</span><span class="role">Yönetim Kurulu Üyesi</span></div>
+            <div class="board-item"><span class="name">Seydihan Çamur</span><span class="role">Yönetim Kurulu Üyesi</span></div>
+            <div class="board-item"><span class="name">Mahmut Cücemen</span><span class="role">Yönetim Kurulu Üyesi</span></div>
+            <div class="board-item"><span class="name">Songül Başıbüyük</span><span class="role">Yönetim Kurulu Üyesi</span></div>
+
+            <div class="board-item"><span class="name">Derviş Kihtir</span><span class="role">Yönetim Kurulu Üyesi</span></div>
+            <div class="board-item"><span class="name">Aydan Yılmaz</span><span class="role">Yönetim Kurulu Üyesi</span></div>
+            <div class="board-item"><span class="name">Pınar Kayakökü</span><span class="role">Yönetim Kurulu Üyesi</span></div>
+            <div class="board-item"><span class="name">Ali Yenitur</span><span class="role">Yönetim Kurulu Üyesi</span></div>
         </div>
-        <div class="board-item">
-            <span class="name">Aydan Yılmaz</span>
-            <span class="role">Yönetim Kurulu Üyesi</span>
-        </div>
-        <div class="board-item">
-            <span class="name">Pınar Kayakökü</span>
-            <span class="role">Yönetim Kurulu Üyesi</span>
-        </div>
-        <div class="board-item">
-            <span class="name">Ali Yenitur</span>
-            <span class="role">Yönetim Kurulu Üyesi</span>
-        </div>
-    </div>
-</section>
+    </section>
 
     <section class="section-card">
         <h2>Denetim Kurulu</h2>
         <div class="board-grid-audit">
-            <div class="board-item">
-                <span class="name">Mustafa Yurttaş</span>
-                <span class="role">Denetim Kurulu Başkanı</span>
-            </div>
-            <div class="board-item">
-                <span class="name">Mehmet Gültekin</span>
-                <span class="role">Üye</span>
-            </div>
-            <div class="board-item">
-                <span class="name">Abidin Taşçı</span>
-                <span class="role">Üye</span>
-            </div>
+            <div class="board-item"><span class="name">Mustafa Yurttaş</span><span class="role">Denetim Kurulu Başkanı</span></div>
+            <div class="board-item"><span class="name">Mehmet Gültekin</span><span class="role">Üye</span></div>
+            <div class="board-item"><span class="name">Abidin Taşçı</span><span class="role">Üye</span></div>
         </div>
     </section>
 
