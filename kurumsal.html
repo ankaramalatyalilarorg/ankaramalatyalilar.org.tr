@@ -73,33 +73,33 @@ nav ul li a.active{
 }
 
 main{
-    margin-top:28px;
+    margin-top:24px;
 }
 
 .section-card{
     background:#ffffff;
     border-radius:18px;
-    padding:26px 28px;
-    margin-bottom:22px;
+    padding:22px 24px;
+    margin-bottom:18px;
     box-shadow:0 8px 20px rgba(0,0,0,0.07);
 }
 
 .section-card h1{
-    font-size:30px;
+    font-size:29px;
     color:#0d2b52;
-    margin-bottom:14px;
+    margin-bottom:12px;
 }
 
 .section-card h2{
-    font-size:24px;
+    font-size:23px;
     color:#0d2b52;
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .section-card p{
-    font-size:16px;
+    font-size:15px;
     line-height:1.7;
-    margin-bottom:12px;
+    margin-bottom:10px;
     color:#27415f;
 }
 
@@ -108,10 +108,33 @@ main{
     font-weight:700;
 }
 
-.board-grid{
+.board-grid-top{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
-    gap:12px;
+    gap:10px;
+    margin-top:8px;
+    margin-bottom:10px;
+}
+
+.board-grid-members{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:10px;
+    margin-top:8px;
+}
+
+.board-grid-last{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:10px;
+    max-width:620px;
+    margin-top:10px;
+}
+
+.board-grid-audit{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:10px;
     margin-top:8px;
 }
 
@@ -119,49 +142,54 @@ main{
     background:#f7f9fc;
     border:1px solid #dbe4ef;
     border-radius:12px;
-    padding:14px 16px;
-    min-height:78px;
+    padding:11px 13px;
+    min-height:62px;
+}
+
+.board-item.top{
+    background:#f3f7fc;
+    border:1px solid #cfdced;
 }
 
 .board-item .name{
     display:block;
-    font-size:15px;
+    font-size:14px;
     font-weight:700;
     color:#12345a;
-    margin-bottom:5px;
-    line-height:1.35;
+    margin-bottom:3px;
+    line-height:1.3;
 }
 
 .board-item .role{
     display:block;
-    font-size:14px;
+    font-size:12.8px;
     color:#4b627d;
-    line-height:1.4;
+    line-height:1.35;
 }
 
 footer{
-    margin-top:35px;
-    padding:22px;
+    margin-top:30px;
+    padding:20px;
     text-align:center;
     color:#ffffff;
     font-size:14px;
     background:#0d2b52;
 }
 
-@media(max-width:1000px){
-    .board-grid{
-        grid-template-columns:repeat(2, 1fr);
+@media(max-width:1100px){
+    .board-grid-members{
+        grid-template-columns:repeat(3, 1fr);
     }
 }
 
-@media(max-width:700px){
+@media(max-width:850px){
     nav ul{
         gap:22px;
         padding:14px 18px;
     }
 
     .section-card{
-        padding:22px 20px;
+        padding:20px 18px;
     }
 
     .section-card h1{
@@ -169,23 +197,19 @@ footer{
     }
 
     .section-card h2{
-        font-size:21px;
+        font-size:20px;
     }
 
     .section-card p{
-        font-size:15px;
+        font-size:14px;
     }
 
-    .board-grid{
+    .board-grid-top,
+    .board-grid-members,
+    .board-grid-last,
+    .board-grid-audit{
         grid-template-columns:1fr;
-    }
-
-    .board-item .name{
-        font-size:15px;
-    }
-
-    .board-item .role{
-        font-size:13px;
+        max-width:none;
     }
 }
 </style>
@@ -269,19 +293,23 @@ footer{
 
     <section class="section-card">
         <h2>Yönetim Kurulu</h2>
-        <div class="board-grid">
-            <div class="board-item">
+
+        <div class="board-grid-top">
+            <div class="board-item top">
                 <span class="name">Yusuf Gül</span>
                 <span class="role">Dernek Başkanı</span>
             </div>
-            <div class="board-item">
+            <div class="board-item top">
                 <span class="name">Ramazan Bilgiç</span>
                 <span class="role">Başkan Yardımcısı ve Genel Sekreter</span>
             </div>
-            <div class="board-item">
+            <div class="board-item top">
                 <span class="name">Gül Şahin</span>
                 <span class="role">Sayman</span>
             </div>
+        </div>
+
+        <div class="board-grid-members">
             <div class="board-item">
                 <span class="name">Fatma Köse</span>
                 <span class="role">Yönetim Kurulu Üyesi</span>
@@ -298,6 +326,7 @@ footer{
                 <span class="name">Songül Başıbüyük</span>
                 <span class="role">Yönetim Kurulu Üyesi</span>
             </div>
+
             <div class="board-item">
                 <span class="name">Derviş Kihtir</span>
                 <span class="role">Yönetim Kurulu Üyesi</span>
@@ -319,7 +348,7 @@ footer{
 
     <section class="section-card">
         <h2>Denetim Kurulu</h2>
-        <div class="board-grid">
+        <div class="board-grid-audit">
             <div class="board-item">
                 <span class="name">Mustafa Yurttaş</span>
                 <span class="role">Denetim Kurulu Başkanı</span>
