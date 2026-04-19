@@ -178,6 +178,11 @@ footer{
 
 @media(max-width:1100px){
     .board-grid-members{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:8px;
+    margin-top:6px;
+}
         grid-template-columns:repeat(3, 1fr);
     }
 }
@@ -208,6 +213,11 @@ footer{
     .board-grid-members,
     .board-grid-last,
     .board-grid-audit{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:8px;
+    margin-top:6px;
+}
         grid-template-columns:1fr;
         max-width:none;
     }
