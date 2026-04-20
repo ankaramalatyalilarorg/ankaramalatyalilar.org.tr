@@ -3,200 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kurumsal | Ankara Malatyalılar Derneği</title>
-<meta name="description" content="Ankara Malatyalılar Derneği kurumsal sayfası.">
+<title>Faaliyetlerimiz | Ankara Malatyalılar Derneği</title>
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#eef2f7;
-    color:#163257;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f4f4;
+color:#1b1b1b;
+line-height:1.6;
 }
 
 .container{
-    width:95%;
-    max-width:1280px;
-    margin:auto;
+width:95%;
+max-width:1280px;
+margin:auto;
 }
 
 header{
-    margin-top:15px;
-}
-
-.banner-box{
-    overflow:hidden;
-    border-radius:18px 18px 0 0;
+padding-top:18px;
 }
 
 .banner-box img{
-    width:100%;
-    display:block;
+width:100%;
+display:block;
+border-radius:18px 18px 0 0;
 }
 
 nav{
-    background:#0d2b52;
-    border-radius:0 0 18px 18px;
+background:#0d2d5e;
+border-radius:0 0 18px 18px;
+overflow:hidden;
 }
 
 nav ul{
-    list-style:none;
-    display:flex;
-    justify-content:flex-start;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:55px;
-    padding:15px 28px;
+list-style:none;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
 }
 
-nav ul li a{
-    color:#ffffff;
-    text-decoration:none;
-    font-size:15px;
-    font-weight:500;
-    transition:0.3s;
+nav li{
+margin:0;
 }
 
-nav ul li a:hover,
-nav ul li a.active{
-    color:#f4a300;
-    font-weight:700;
+nav a{
+display:block;
+padding:18px 24px;
+color:#ffffff;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
 }
 
-main{
-    margin-top:24px;
+nav a:hover,
+nav a.active{
+background:#f0a500;
+color:#0d2d5e;
+font-weight:bold;
 }
 
-.section-card{
-    background:#ffffff;
-    border-radius:16px;
-    padding:18px 20px;
-    margin-bottom:14px;
-    box-shadow:0 6px 16px rgba(0,0,0,0.06);
+.hero{
+margin-top:18px;
+background:linear-gradient(135deg,#0f7b45,#28a36a);
+color:#ffffff;
+padding:55px 20px;
+border-radius:18px;
+text-align:center;
 }
 
-.section-card h1{
-    font-size:28px;
-    color:#0d2b52;
-    margin-bottom:10px;
+.hero h1{
+font-size:46px;
+margin-bottom:12px;
 }
 
-.section-card h2{
-    font-size:20px;
-    color:#0d2b52;
-    margin-bottom:8px;
+.hero p{
+font-size:20px;
+max-width:850px;
+margin:auto;
 }
 
-.section-card p{
-    font-size:15px;
-    line-height:1.65;
-    margin-bottom:10px;
-    color:#27415f;
+.section{
+margin-top:24px;
+background:#ffffff;
+padding:34px;
+border-radius:18px;
+box-shadow:0 8px 24px rgba(0,0,0,0.08);
 }
 
-.highlight{
-    color:#f4a300;
-    font-weight:700;
+.section h2{
+font-size:34px;
+color:#0d2d5e;
+margin-bottom:18px;
+text-align:center;
 }
 
-.board-grid-top{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:8px;
-    margin-top:6px;
-    margin-bottom:8px;
+.section p{
+font-size:18px;
+margin-bottom:14px;
+text-align:center;
 }
 
-.board-grid-members{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:8px;
-    margin-top:6px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:22px;
+margin-top:25px;
 }
 
-.board-grid-audit{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:8px;
-    margin-top:6px;
+.card{
+background:#f9fbff;
+border-left:6px solid #0f7b45;
+padding:24px;
+border-radius:14px;
 }
 
-.board-item{
-    background:#f7f9fc;
-    border:1px solid #dbe4ef;
-    border-radius:10px;
-    padding:9px 11px;
-    min-height:54px;
+.card h3{
+font-size:24px;
+color:#8b0000;
+margin-bottom:12px;
 }
 
-.board-item.top{
-    background:#eef4fb;
-    border:1px solid #bfcfe3;
-}
-
-.board-item .name{
-    display:block;
-    font-size:13px;
-    font-weight:700;
-    color:#12345a;
-    margin-bottom:2px;
-    line-height:1.25;
-}
-
-.board-item .role{
-    display:block;
-    font-size:12px;
-    color:#4b627d;
-    line-height:1.25;
+.card p{
+font-size:17px;
+margin:0;
+text-align:left;
 }
 
 footer{
-    margin-top:30px;
-    padding:20px;
-    text-align:center;
-    color:#ffffff;
-    font-size:14px;
-    background:#0d2b52;
+margin-top:28px;
+background:#0d2d5e;
+color:#fff;
+text-align:center;
+padding:22px;
+font-size:16px;
 }
 
-@media(max-width:1100px){
-    .board-grid-members{
-        grid-template-columns:repeat(3, 1fr);
-    }
+@media(max-width:768px){
+
+nav ul{
+flex-direction:column;
 }
 
-@media(max-width:850px){
-    nav ul{
-        gap:22px;
-        padding:14px 18px;
-    }
+nav a{
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,0.15);
+}
 
-    .section-card{
-        padding:16px 16px;
-    }
+.hero h1{
+font-size:34px;
+}
 
-    .section-card h1{
-        font-size:24px;
-    }
+.hero p{
+font-size:17px;
+}
 
-    .section-card h2{
-        font-size:18px;
-    }
+.section h2{
+font-size:28px;
+}
 
-    .section-card p{
-        font-size:14px;
-    }
-
-    .board-grid-top,
-    .board-grid-members,
-    .board-grid-audit{
-        grid-template-columns:1fr;
-    }
 }
 </style>
 </head>
@@ -204,102 +174,102 @@ footer{
 <body>
 
 <header class="container">
-    <div class="banner-box">
-        <img src="bas.png" alt="Ankara Malatyalılar Derneği Banner">
-    </div>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="kurumsal.html" class="active">Kurumsal</a></li>
-           <li><a href="faaliyet.html">Faaliyetlerimiz</a></li>
-            <li><a href="proje.html">Projeler</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="uyelik.html">Üyelik</a></li>
-            <li><a href="iletisim.html">İletişim</a></li>
-        </ul>
-    </nav>
+<div class="banner-box">
+<img src="bas.png" alt="Ankara Malatyalılar Derneği Banner">
+</div>
+
+<nav>
+<ul>
+<li><a href="index.html">Ana Sayfa</a></li>
+<li><a href="kurumsal.html">Kurumsal</a></li>
+<li><a href="faaliyet.html" class="active">Faaliyetlerimiz</a></li>
+<li><a href="proje.html">Projeler</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="uyelik.html">Üyelik</a></li>
+<li><a href="iletisim.html">İletişim</a></li>
+</ul>
+</nav>
+
 </header>
 
 <main class="container">
 
-    <section class="section-card">
-        <h1>Kurumsal</h1>
-        <p><span class="highlight">Ankara Malatyalılar Derneği</span>, 1997 yılından bu yana Ankara’da yaşayan Malatyalı hemşehrilerimizi aynı çatı altında buluşturan köklü bir sivil toplum kuruluşudur.</p>
-        <p>Derneğimiz; birlik, beraberlik, dayanışma ve hemşehrilik ruhunu güçlendirmeyi, Malatya’nın kültürel değerlerini yaşatmayı ve gelecek nesillere aktarmayı temel amaç edinmiştir.</p>
-    </section>
+<section class="hero">
+<h1>Faaliyetlerimiz</h1>
+<p>
+Birlik, dayanışma ve kültürel mirasımızı yaşatan güçlü çalışmalar yürütüyoruz.
+</p>
+</section>
 
-    <section class="section-card">
-        <h2>Hakkımızda</h2>
-        <p>Ankara Malatyalılar Derneği, hemşehrilerimiz arasındaki dayanışmayı güçlendirmek, ortak kültürel hafızayı canlı tutmak ve toplumsal birlikteliği geliştirmek amacıyla faaliyet göstermektedir. Ankara’da yaşayan Malatyalılar için güven veren bir buluşma noktası olan derneğimiz, kültürel ve sosyal çalışmalarıyla kurumsal yapısını her geçen gün daha da güçlendirmektedir.</p>
-    </section>
+<section class="section">
 
-    <section class="section-card">
-        <h2>Tarihçemiz</h2>
-        <p>Derneğimiz 1997 yılında, Ankara’da yaşayan Malatyalıların ortak sesi olmak ve hemşehri dayanışmasını kurumsal bir yapı altında sürdürmek amacıyla kurulmuştur. Kuruluşundan bugüne kadar geçen süreçte kültürel etkinlikler, sosyal dayanışma faaliyetleri, kurslar, buluşmalar ve tanıtım çalışmalarıyla köklü bir hemşehri kuruluşu haline gelmiştir.</p>
-    </section>
+<h2>Başlıca Faaliyet Alanlarımız</h2>
 
-    <section class="section-card">
-        <h2>Vizyonumuz</h2>
-        <p>Ankara’da yaşayan Malatyalı hemşehrilerimizin en güçlü dayanışma çatısı olmak; kültürel değerlerine sahip çıkan, güven veren, saygın ve örnek bir sivil toplum kuruluşu olarak yoluna devam etmektir.</p>
-    </section>
+<p>
+Ankara Malatyalılar Derneği olarak hemşehrilerimizi bir araya getiren, sosyal bağları güçlendiren ve toplumsal fayda üreten faaliyetler gerçekleştiriyoruz.
+</p>
 
-    <section class="section-card">
-        <h2>Misyonumuz</h2>
-        <p>Hemşehrilerimiz arasında birlik ve beraberliği güçlendirmek, sosyal yardımlaşmayı artırmak, kültürel değerlerimizi yaşatmak, gençlerimize ve ailelerimize katkı sunmak ve toplumsal fayda sağlayacak çalışmalar gerçekleştirmektir.</p>
-    </section>
+<div class="grid">
 
-    <section class="section-card">
-        <h2>Başkanın Mesajı</h2>
-        <p>1997 yılından bu yana Ankara’da Malatyalı hemşehrilerimizin birlik, beraberlik ve dayanışma çatısı olan derneğimizin bugünlere gelmesinde emeği bulunan herkese teşekkür ediyorum.</p>
-        <p>Geçmişimizden aldığımız güçle kültürümüzü yaşatmak, hemşehrilik bağlarımızı daha da güçlendirmek ve derneğimizi geleceğe daha sağlam adımlarla taşımak için çalışmalarımıza kararlılıkla devam ediyoruz.</p>
-        <p><strong>Yusuf Gül</strong><br>Dernek Başkanı</p>
-    </section>
+<div class="card">
+<h3>Kültürel Etkinlikler</h3>
+<p>Malatya kültür geceleri, özel programlar, anma günleri ve yöresel buluşmalar düzenlenir.</p>
+</div>
 
-    <section class="section-card">
-        <h2>Yönetim Kurulu</h2>
+<div class="card">
+<h3>Hemşehri Buluşmaları</h3>
+<p>Ankara’da yaşayan hemşehrilerimizi kaynaştıran kahvaltı, toplantı ve dayanışma organizasyonları yapılır.</p>
+</div>
 
-        <div class="board-grid-top">
-            <div class="board-item top">
-                <span class="name">Yusuf Gül</span>
-                <span class="role">Dernek Başkanı</span>
-            </div>
-            <div class="board-item top">
-                <span class="name">Ramazan Bilgiç</span>
-                <span class="role">Başkan Yardımcısı ve Genel Sekreter</span>
-            </div>
-            <div class="board-item top">
-                <span class="name">Gül Şahin</span>
-                <span class="role">Sayman</span>
-            </div>
-        </div>
+<div class="card">
+<h3>Gençlik Çalışmaları</h3>
+<p>Gençlerimize yönelik sosyal gelişim, kariyer destek ve eğitim faaliyetleri yürütülür.</p>
+</div>
 
-        <div class="board-grid-members">
-            <div class="board-item"><span class="name">Fatma Köse</span><span class="role">Yönetim Kurulu Üyesi</span></div>
-            <div class="board-item"><span class="name">Seydihan Çamur</span><span class="role">Yönetim Kurulu Üyesi</span></div>
-            <div class="board-item"><span class="name">Mahmut Cücemen</span><span class="role">Yönetim Kurulu Üyesi</span></div>
-            <div class="board-item"><span class="name">Songül Başıbüyük</span><span class="role">Yönetim Kurulu Üyesi</span></div>
+<div class="card">
+<h3>Eğitim & Seminerler</h3>
+<p>Kişisel gelişim, girişimcilik, iş hayatı ve akademik başarı konularında seminerler düzenlenir.</p>
+</div>
 
-            <div class="board-item"><span class="name">Derviş Kihtir</span><span class="role">Yönetim Kurulu Üyesi</span></div>
-            <div class="board-item"><span class="name">Aydan Yılmaz</span><span class="role">Yönetim Kurulu Üyesi</span></div>
-            <div class="board-item"><span class="name">Pınar Kayakökü</span><span class="role">Yönetim Kurulu Üyesi</span></div>
-            <div class="board-item"><span class="name">Ali Yenitur</span><span class="role">Yönetim Kurulu Üyesi</span></div>
-        </div>
-    </section>
+<div class="card">
+<h3>Sosyal Yardımlaşma</h3>
+<p>İhtiyaç sahibi ailelere destek, burs çalışmaları ve dayanışma kampanyaları gerçekleştirilir.</p>
+</div>
 
-    <section class="section-card">
-        <h2>Denetim Kurulu</h2>
-        <div class="board-grid-audit">
-            <div class="board-item"><span class="name">Mustafa Yurttaş</span><span class="role">Denetim Kurulu Başkanı</span></div>
-            <div class="board-item"><span class="name">Mehmet Gültekin</span><span class="role">Üye</span></div>
-            <div class="board-item"><span class="name">Abidin Taşçı</span><span class="role">Üye</span></div>
-        </div>
-    </section>
+<div class="card">
+<h3>Projeler</h3>
+<p>Ulusal ve uluslararası sosyal sorumluluk, gençlik ve kalkınma projeleri hazırlanır.</p>
+</div>
+
+<div class="card">
+<h3>Kadın Çalışmaları</h3>
+<p>Kadın üyelerimize yönelik üretim, eğitim, sosyal dayanışma ve etkinlik programları yapılır.</p>
+</div>
+
+<div class="card">
+<h3>Gezi Organizasyonları</h3>
+<p>Kültürel geziler, şehir içi ve şehir dışı tanıtım organizasyonları düzenlenir.</p>
+</div>
+
+<div class="card">
+<h3>İş Dünyası Buluşmaları</h3>
+<p>İş insanları, esnaf ve girişimciler arasında iş birliği ağı kurulmasına katkı sağlanır.</p>
+</div>
+
+<div class="card">
+<h3>Haberler & Duyurular</h3>
+<p>Dernek faaliyetleri, etkinlikler ve önemli gelişmeler üyelerimize duyurulur.</p>
+</div>
+
+</div>
+
+</section>
 
 </main>
 
 <footer>
-    © 2026 Ankara Malatyalılar Derneği | Tüm Hakları Saklıdır
+© 2026 Ankara Malatyalılar Derneği | Tüm Hakları Saklıdır
 </footer>
 
 </body>
