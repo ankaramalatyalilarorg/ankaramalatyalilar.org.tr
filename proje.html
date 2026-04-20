@@ -6,7 +6,11 @@
 <title>Projeler | Ankara Malatyalılar Derneği</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
 font-family:Arial, Helvetica, sans-serif;
@@ -42,7 +46,7 @@ nav ul{
 list-style:none;
 display:flex;
 flex-wrap:wrap;
-gap:55px;
+gap:60px;
 padding:14px 35px;
 }
 
@@ -51,24 +55,26 @@ color:#fff;
 text-decoration:none;
 font-size:16px;
 font-weight:500;
+transition:0.3s;
 }
 
+nav ul li a:hover,
 nav ul li a.active{
 color:#f4a300;
 }
 
 /* HERO */
 .hero{
-margin-top:16px;
-background:linear-gradient(135deg,#0c3b5e,#2c6fa3);
+margin-top:10px;
+background:linear-gradient(135deg,#1f4e79,#4a86c5);
 color:#fff;
-padding:50px;
+padding:40px;
 border-radius:18px;
 }
 
 .hero h1{
-font-size:44px;
-margin-bottom:12px;
+font-size:42px;
+margin-bottom:10px;
 }
 
 .hero p{
@@ -76,75 +82,94 @@ font-size:18px;
 line-height:1.8;
 }
 
-/* INFO BOX */
-.box{
-margin-top:18px;
-background:#fff;
-padding:22px;
+/* SOURCE BOX */
+.source-box{
+margin-top:20px;
+background:#ffffff;
+padding:25px;
 border-radius:18px;
-box-shadow:0 8px 22px rgba(0,0,0,0.08);
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-.box h2{
-color:#0d2b52;
-margin-bottom:10px;
+.source-box h2{
 font-size:22px;
+margin-bottom:12px;
+color:#0d2b52;
 }
 
-.box ul{
-margin-left:18px;
-line-height:1.8;
+.source-list{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:10px;
+font-size:15px;
+color:#44556b;
+}
+
+/* TITLE */
+.big-title{
+margin-top:25px;
+font-size:32px;
+font-weight:bold;
+text-align:center;
+color:#0d2b52;
+letter-spacing:1px;
 }
 
 /* TABLE */
 .table-wrap{
-margin-top:25px;
-background:#fff;
-border-radius:18px;
+margin-top:20px;
 overflow-x:auto;
-box-shadow:0 8px 22px rgba(0,0,0,0.08);
 }
 
 table{
 width:100%;
 border-collapse:collapse;
-min-width:1100px;
+background:#fff;
+border-radius:12px;
+overflow:hidden;
+}
+
+th, td{
+padding:14px;
+text-align:left;
+border-bottom:1px solid #ddd;
+font-size:15px;
 }
 
 th{
 background:#0d2b52;
 color:#fff;
-padding:12px;
-text-align:left;
-font-size:13px;
-border:1px solid #1f3f66;
 }
 
-td{
-padding:11px;
-font-size:13px;
-border:1px solid #d9e2ef;
+tr:nth-child(even){
+background:#f2f7ff;
 }
 
-tbody tr:nth-child(odd){background:#fff;}
-tbody tr:nth-child(even){background:#eaf3ff;}
-
-.open{color:green;font-weight:bold;}
-.limit{color:orange;font-weight:bold;}
-
+/* BUTTON */
 .btn{
 display:inline-block;
-padding:6px 10px;
-background:#0d2b52;
+padding:8px 14px;
+background:#1f6feb;
 color:#fff;
-border-radius:6px;
-font-size:12px;
+border-radius:8px;
 text-decoration:none;
+font-size:13px;
+font-weight:bold;
+transition:0.3s;
 }
 
 .btn:hover{
-background:#f4a300;
-color:#000;
+background:#0d2b52;
+}
+
+.status-open{
+color:green;
+font-weight:bold;
+}
+
+.status-daily{
+color:orange;
+font-weight:bold;
 }
 
 /* FOOTER */
@@ -154,13 +179,14 @@ text-align:center;
 padding:20px;
 color:#666;
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header class="container">
+
 <div class="banner-box">
 <img src="bas.png" alt="Dernek Banner">
 </div>
@@ -176,76 +202,63 @@ color:#666;
 <li><a href="iletisim.html">İletişim</a></li>
 </ul>
 </nav>
+
 </header>
 
-<!-- HERO -->
-<section class="hero container">
-<h1>PROJE DANIŞMANLIK VE HİBE SİSTEMİ</h1>
+<main class="container">
+
+<section class="hero">
+<h1>PROJE DUYURULARI</h1>
 <p>
-Avrupa Birliği ve Türkiye’deki tüm hibe, destek ve fon programları; danışmanlık ve başvuru yönetimi kapsamında değerlendirilir.
-Yetkilendirme ile proje süreçleri derneğimiz tarafından yürütülmektedir.
+Güncel hibe ve destek programları; gençler, kadınlar, öğrenciler, girişimciler ve kurumlar için sürekli güncellenmektedir.
+Derneğimiz bu fırsatları sizin için takip eder ve başvuru süreçlerinde danışmanlık sağlar.
 </p>
 </section>
 
-<!-- 🔵 ÜST KAYNAK PANELİ -->
-<div class="container">
+<section class="source-box">
+<h2>Avrupa ve Türkiye Hibe Kaynakları</h2>
 
-<div class="box">
-<h2>Avrupa Hibe Programları</h2>
-<ul>
-<li>Erasmus+ Gençlik Değişimleri</li>
-<li>European Solidarity Corps</li>
-<li>Creative Europe</li>
-<li>Horizon Europe</li>
-<li>LIFE Çevre Programı</li>
-<li>Interreg Bölgesel İşbirliği</li>
-</ul>
+<div class="source-list">
+<div>• Erasmus+ Gençlik Değişimleri</div>
+<div>• European Solidarity Corps</div>
+<div>• Creative Europe</div>
+<div>• Horizon Europe</div>
+<div>• LIFE Çevre Programı</div>
+<div>• Interreg Bölgesel İşbirliği</div>
+<div>• TÜBİTAK Ar-Ge Destekleri</div>
+<div>• KOSGEB Girişim Destekleri</div>
+<div>• TKDK IPARD Programı</div>
+<div>• İŞKUR İstihdam Destekleri</div>
+<div>• Gençlik ve Spor Bakanlığı</div>
+<div>• Çevre ve Şehircilik Bakanlığı</div>
 </div>
+</section>
 
-<div class="box">
-<h2>Türkiye Hibe Kaynakları</h2>
-<ul>
-<li>TÜBİTAK Ar-Ge Destekleri</li>
-<li>KOSGEB Girişim Destekleri</li>
-<li>TKDK IPARD Programı</li>
-<li>İŞKUR İstihdam Destekleri</li>
-<li>Gençlik ve Spor Bakanlığı Projeleri</li>
-<li>Çevre ve Şehircilik Bakanlığı Destekleri</li>
-</ul>
-</div>
-
-</div>
-
-<!-- TABLE -->
-<main class="container">
+<div class="big-title">GÜNCEL PROJE DUYURULARI</div>
 
 <div class="table-wrap">
 
 <table>
 
-<thead>
 <tr>
-<th>Proje</th>
+<th>Proje Adı</th>
 <th>Kategori</th>
 <th>Kaynak</th>
-<th>Hibe</th>
+<th>Hibe Tutarı</th>
 <th>Hedef</th>
 <th>Durum</th>
 <th>Kılavuz</th>
 <th>İşlem</th>
 </tr>
-</thead>
-
-<tbody>
 
 <tr>
 <td>Gençlik Değişimleri</td>
 <td>Gençlik</td>
 <td>Erasmus+</td>
-<td>20K-60K €</td>
+<td>20.000 € – 60.000 €</td>
 <td>Gençler</td>
-<td class="open">Açık</td>
-<td><a class="btn" href="https://youth.europa.eu">Kılavuz</a></td>
+<td class="status-open">Açık</td>
+<td><a class="btn" href="#">Aç</a></td>
 <td><a class="btn" href="#">Talep Et</a></td>
 </tr>
 
@@ -253,10 +266,21 @@ Yetkilendirme ile proje süreçleri derneğimiz tarafından yürütülmektedir.
 <td>Dayanışma Projesi</td>
 <td>Sosyal</td>
 <td>ESC</td>
-<td>6K-20K €</td>
+<td>6.000 € – 20.000 €</td>
 <td>Gençlik</td>
-<td class="open">Açık</td>
-<td><a class="btn" href="https://youth.europa.eu/solidarity">Kılavuz</a></td>
+<td class="status-open">Açık</td>
+<td><a class="btn" href="#">Aç</a></td>
+<td><a class="btn" href="#">Talep Et</a></td>
+</tr>
+
+<tr>
+<td>Ar-Ge Destek</td>
+<td>Teknoloji</td>
+<td>TÜBİTAK</td>
+<td>Değişken</td>
+<td>Girişimci</td>
+<td class="status-open">Açık</td>
+<td><a class="btn" href="#">Aç</a></td>
 <td><a class="btn" href="#">Talep Et</a></td>
 </tr>
 
@@ -264,10 +288,10 @@ Yetkilendirme ile proje süreçleri derneğimiz tarafından yürütülmektedir.
 <td>KOSGEB Girişim</td>
 <td>KOBİ</td>
 <td>KOSGEB</td>
-<td>50K-750K ₺</td>
+<td>50.000 ₺ – 750.000 ₺</td>
 <td>Girişimci</td>
-<td class="open">Açık</td>
-<td><a class="btn" href="https://kosgeb.gov.tr">Kılavuz</a></td>
+<td class="status-open">Açık</td>
+<td><a class="btn" href="#">Aç</a></td>
 <td><a class="btn" href="#">Talep Et</a></td>
 </tr>
 
@@ -275,10 +299,32 @@ Yetkilendirme ile proje süreçleri derneğimiz tarafından yürütülmektedir.
 <td>IPARD Tarım</td>
 <td>Tarım</td>
 <td>TKDK</td>
-<td>%60-70</td>
+<td>%60 – %70 Hibe</td>
 <td>Kırsal</td>
-<td class="limit">Dönemsel</td>
-<td><a class="btn" href="https://tkdk.gov.tr">Kılavuz</a></td>
+<td class="status-daily">Dönemsel</td>
+<td><a class="btn" href="#">Aç</a></td>
+<td><a class="btn" href="#">Talep Et</a></td>
+</tr>
+
+<tr>
+<td>Gençlik Projeleri</td>
+<td>Sosyal</td>
+<td>GSB</td>
+<td>100.000 ₺ – 1.000.000 ₺</td>
+<td>Gençler</td>
+<td class="status-open">Açık</td>
+<td><a class="btn" href="#">Aç</a></td>
+<td><a class="btn" href="#">Talep Et</a></td>
+</tr>
+
+<tr>
+<td>Yeşil Dönüşüm</td>
+<td>Çevre</td>
+<td>Çevre Bakanlığı</td>
+<td>Değişken</td>
+<td>Kurumsal</td>
+<td class="status-open">Açık</td>
+<td><a class="btn" href="#">Aç</a></td>
 <td><a class="btn" href="#">Talep Et</a></td>
 </tr>
 
@@ -288,12 +334,11 @@ Yetkilendirme ile proje süreçleri derneğimiz tarafından yürütülmektedir.
 <td>İŞKUR</td>
 <td>Değişken</td>
 <td>Genel</td>
-<td class="open">Açık</td>
-<td><a class="btn" href="https://iskur.gov.tr">Kılavuz</a></td>
+<td class="status-open">Açık</td>
+<td><a class="btn" href="#">Aç</a></td>
 <td><a class="btn" href="#">Talep Et</a></td>
 </tr>
 
-</tbody>
 </table>
 
 </div>
@@ -301,7 +346,7 @@ Yetkilendirme ile proje süreçleri derneğimiz tarafından yürütülmektedir.
 </main>
 
 <footer>
-© 2026 Ankara Malatyalılar Derneği | Proje Sistemi
+© 2026 Ankara Malatyalılar Derneği - Tüm Hakları Saklıdır
 </footer>
 
 </body>
