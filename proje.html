@@ -48,65 +48,54 @@
     }
 
     header{
-      background:#fff;
-      box-shadow:0 2px 10px rgba(0,0,0,.06);
-      position:sticky;
-      top:0;
-      z-index:1000;
+      margin-top:15px;
     }
 
-    .header-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:14px 0;
-      gap:20px;
+    .banner-box{
+      overflow:hidden;
+      border-radius:18px 18px 0 0;
     }
 
-    .logo-area{
-      display:flex;
-      align-items:center;
-      gap:12px;
+    .banner-box img{
+      width:100%;
+      display:block;
     }
 
-    .logo-area img{
-      width:58px;
-      height:58px;
-      object-fit:contain;
-      border-radius:8px;
-    }
-
-    .logo-text{
-      font-weight:700;
-     color:#0b6e4f;
-      font-size:18px;
-      line-height:1.2;
+    nav{
+      background:#264653;
+      border-radius:0 0 18px 18px;
+      overflow:hidden;
     }
 
     nav ul{
       list-style:none;
       display:flex;
-      gap:8px;
+      justify-content:flex-start;
+      align-items:center;
+      gap:65px;
+      padding:16px 35px;
+      margin:0;
       flex-wrap:wrap;
     }
 
+    nav ul li{
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+
     nav ul li a{
-      display:inline-block;
-      padding:10px 14px;
-      border-radius:10px;
-      font-weight:600;
-      color:#333;
+      color:#ffffff;
+      font-size:16px;
+      font-weight:500;
       transition:.25s ease;
+      display:inline-block;
     }
 
-    nav ul li a:hover{
-      background:var(--accent);
-      color:var(--primary);
-    }
-
+    nav ul li a:hover,
     nav ul li a.active{
-      background:var(--primary);
-      color:#fff;
+      color:#f4a300;
+      font-weight:bold;
     }
 
     .hero{
@@ -299,13 +288,42 @@
     }
 
     @media (max-width: 900px){
-      .header-inner{
-        flex-direction:column;
-        align-items:flex-start;
+      nav ul{
+        gap:25px;
+        padding:16px 20px;
       }
 
+      .hero h1{
+        font-size:32px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .lead-box h2,
+      .section-title{
+        font-size:24px;
+      }
+
+      .cta h3{
+        font-size:24px;
+      }
+    }
+
+    @media (max-width: 768px){
       nav ul{
-        gap:6px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:0;
+      }
+
+      nav ul li a{
+        display:block;
+        text-align:center;
+        padding:14px 20px;
+        border-bottom:1px solid rgba(255,255,255,0.15);
       }
 
       .hero h1{
@@ -331,23 +349,23 @@
 
   <header class="container">
 
-<div class="banner-box">
-<img src="bas.png" alt="Ankara Malatyalılar Derneği Banner">
-</div>
+    <div class="banner-box">
+      <img src="bas.png" alt="Ankara Malatyalılar Derneği Banner">
+    </div>
 
-<nav>
-<ul>
-<li><a href="index.html" class="active">Ana Sayfa</a></li>
-<li><a href="kurumsal.html">Kurumsal</a></li>
-<li><a href="faaliyet.html">Faaliyetlerimiz</a></li>
-<li><a href="proje.html">Projeler</a></li>
-<li><a href="blog.html">Blog</a></li>
-<li><a href="uyelik.html">Üyelik</a></li>
-<li><a href="iletisim.html">İletişim</a></li>
-</ul>
-</nav>
+    <nav>
+      <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="kurumsal.html">Kurumsal</a></li>
+        <li><a href="faaliyet.html">Faaliyetlerimiz</a></li>
+        <li><a href="proje.html" class="active">Projeler</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="uyelik.html">Üyelik</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+      </ul>
+    </nav>
 
-</header>
+  </header>
 
   <section class="hero" style="background: linear-gradient(135deg, #0b6e4f, #3fa796) !important; color:#ffffff;">
     <div class="container">
