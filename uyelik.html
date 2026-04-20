@@ -26,10 +26,25 @@ max-width:1350px;
 margin:auto;
 }
 
+/* =========================
+   GLOBAL BOŞLUK STANDARDI
+   (TEK VE KESİN ÇÖZÜM)
+========================= */
 header{
+margin:0;
 padding-top:12px;
+padding-bottom:0;
 }
 
+nav{
+margin-bottom:0;
+}
+
+main{
+padding-top:18px;
+}
+
+/* BANNER */
 .banner-box{
 overflow:hidden;
 border-radius:18px 18px 0 0;
@@ -40,6 +55,7 @@ width:100%;
 display:block;
 }
 
+/* NAV */
 nav{
 background:#2f6b57;
 border-radius:0 0 18px 18px;
@@ -70,6 +86,7 @@ color:#ffb400;
 font-weight:bold;
 }
 
+/* HERO */
 .hero{
 margin-top:16px;
 background:linear-gradient(135deg,#3f836c,#69a892);
@@ -90,6 +107,7 @@ line-height:1.9;
 max-width:1100px;
 }
 
+/* SECTIONS */
 .section{
 margin-top:26px;
 }
@@ -125,12 +143,7 @@ line-height:1.9;
 margin-bottom:14px;
 }
 
-.lead-box p:last-child,
-.requirements-box p:last-child,
-.info-strip p:last-child{
-margin-bottom:0;
-}
-
+/* CARDS */
 .callout-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -158,37 +171,9 @@ color:#44556b;
 line-height:1.8;
 }
 
-.requirements-box ul{
-padding-left:24px;
-margin-top:8px;
-}
-
-.requirements-box ul li{
-font-size:18px;
-color:#44556b;
-line-height:1.9;
-margin-bottom:10px;
-}
-
-.info-strip{
-margin-top:24px;
-background:#f7fbf9;
-border:1px solid #dcebe4;
-}
-
+/* FORM */
 .form-wrap{
 margin-top:24px;
-}
-
-.form-wrap h2{
-margin-bottom:10px;
-}
-
-.form-intro{
-font-size:17px;
-color:#55657a;
-margin-bottom:24px;
-line-height:1.8;
 }
 
 .form-grid{
@@ -197,96 +182,7 @@ grid-template-columns:repeat(2,1fr);
 gap:22px;
 }
 
-.form-group{
-display:flex;
-flex-direction:column;
-}
-
-.form-group label{
-font-size:15px;
-font-weight:bold;
-margin-bottom:8px;
-color:#334;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea{
-padding:14px 15px;
-border:1px solid #d7dbe0;
-border-radius:12px;
-font-size:15px;
-outline:none;
-transition:0.2s;
-background:#fff;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-border-color:#2f6b57;
-box-shadow:0 0 0 3px rgba(47,107,87,0.08);
-}
-
-.form-group textarea{
-min-height:130px;
-resize:vertical;
-}
-
-.full{
-grid-column:1 / -1;
-}
-
-.file-note{
-font-size:14px;
-color:#6b7785;
-margin-top:8px;
-line-height:1.7;
-}
-
-.checkbox-row{
-display:flex;
-align-items:flex-start;
-gap:10px;
-font-size:15px;
-color:#44556b;
-line-height:1.7;
-}
-
-.checkbox-row input{
-margin-top:4px;
-}
-
-.submit-row{
-margin-top:26px;
-display:flex;
-flex-wrap:wrap;
-gap:14px;
-align-items:center;
-}
-
-.submit-btn{
-padding:15px 34px;
-background:#2f6b57;
-color:#fff;
-border:none;
-border-radius:12px;
-font-size:17px;
-font-weight:bold;
-cursor:pointer;
-transition:0.25s;
-}
-
-.submit-btn:hover{
-background:#224d40;
-}
-
-.secondary-note{
-font-size:14px;
-color:#6d7886;
-line-height:1.7;
-}
-
+/* FOOTER */
 footer{
 margin-top:30px;
 background:#1d2f28;
@@ -297,81 +193,24 @@ border-radius:14px 14px 0 0;
 font-size:15px;
 }
 
+/* RESPONSIVE */
 @media(max-width:900px){
-nav ul{
-gap:18px;
-}
-
-.hero{
-padding:38px 26px;
-}
-
-.hero h1{
-font-size:40px;
-}
-
-.form-grid{
-grid-template-columns:1fr;
-}
-
-.lead-box h2,
-.requirements-box h2,
-.form-wrap h2{
-font-size:30px;
-}
+.hero h1{font-size:40px;}
+.form-grid{grid-template-columns:1fr;}
 }
 
 @media(max-width:768px){
+.hero h1{font-size:34px;}
 nav ul{
 flex-direction:column;
-align-items:stretch;
 gap:0;
 padding:0;
 }
-
-nav ul li{
-width:100%;
-}
-
 nav ul li a{
 display:block;
-padding:14px 20px;
+padding:14px;
 text-align:center;
 border-bottom:1px solid rgba(255,255,255,0.12);
-}
-
-.hero{
-padding:34px 22px;
-}
-
-.hero h1{
-font-size:34px;
-}
-
-.hero p{
-font-size:17px;
-}
-
-.lead-box,
-.requirements-box,
-.form-wrap,
-.info-strip,
-.callout-card{
-padding:22px;
-}
-
-.lead-box h2,
-.requirements-box h2,
-.form-wrap h2{
-font-size:26px;
-}
-
-.lead-box p,
-.requirements-box p,
-.requirements-box ul li,
-.info-strip p,
-.callout-card p{
-font-size:16px;
 }
 }
 </style>
@@ -401,8 +240,7 @@ font-size:16px;
   <h1>Üyelik</h1>
   <p>
     Ankara Malatyalılar Derneği çatısı altında yer almak; hemşehrilik bağlarını güçlendirmek,
-    kültürel değerlerimizi yaşatmak, dayanışmayı büyütmek ve ortak faaliyetlerde aktif rol almak
-    için siz de üyemiz olabilirsiniz.
+    kültürel değerlerimizi yaşatmak ve dayanışmayı büyütmek için siz de üyemiz olabilirsiniz.
   </p>
 </section>
 
@@ -411,165 +249,26 @@ font-size:16px;
   <section class="section">
     <div class="lead-box">
       <h2>Neden Üye Olmalısınız?</h2>
-      <p>
-        Derneğimize üye olmak; yalnızca bir kayıt işlemi değil, aynı zamanda Ankara’daki
-        Malatyalılar arasında güçlü bir dayanışma ağına katılmak anlamına gelir.
-      </p>
-      <p>
-        Üyelerimiz; kültürel etkinliklerimizden, dayanışma çalışmalarımızdan, proje ve eğitim
-        fırsatlarından düzenli olarak haberdar olur. Aynı zamanda derneğimizin ortak hafızasına,
-        kurumsal gücüne ve toplumsal etkisine katkı sunar.
-      </p>
-      <p>
-        Siz de bu ailenin bir parçası olarak hem hemşehrilik bağlarını güçlendirebilir hem de
-        derneğimizin geleceğine değer katabilirsiniz.
-      </p>
+      <p>Derneğimize üye olmak güçlü bir dayanışma ağına katılmak demektir.</p>
+      <p>Etkinlikler, projeler ve sosyal faaliyetlerden haberdar olursunuz.</p>
+      <p>Derneğimizin kurumsal gücüne katkı sağlarsınız.</p>
     </div>
 
     <div class="callout-grid">
       <div class="callout-card">
         <h3>Dayanışma</h3>
-        <p>
-          Ortak kültürümüzü yaşatırken güçlü bir sosyal çevre ve hemşehri ağı içinde yer alırsınız.
-        </p>
+        <p>Güçlü hemşehri ağı içinde yer alırsınız.</p>
       </div>
 
       <div class="callout-card">
         <h3>Katılım</h3>
-        <p>
-          Etkinliklere, toplantılara, kültürel faaliyetlere ve gönüllü çalışmalara doğrudan katılabilirsiniz.
-        </p>
+        <p>Tüm etkinliklere aktif katılım sağlarsınız.</p>
       </div>
 
       <div class="callout-card">
         <h3>Kurumsal Güç</h3>
-        <p>
-          Her yeni üye, derneğimizin temsil gücünü ve toplumsal etkisini daha da artırır.
-        </p>
+        <p>Derneğin temsil gücüne katkı verirsiniz.</p>
       </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="requirements-box">
-      <h2>Üye Olmak İçin Gereklilikler</h2>
-      <p>
-        Aşağıdaki belgeler ve bilgiler, online üyelik başvurusunun sağlıklı şekilde değerlendirilmesi için istenir.
-        Dernek tüzüğünde ayrıca farklı veya ek belge şartları varsa, değerlendirmede onlar esas alınır.
-      </p>
-      <ul>
-        <li>Eksiksiz doldurulmuş üyelik başvuru formu</li>
-        <li>T.C. kimlik kartı / nüfus cüzdanı fotokopisi veya taranmış kopyası</li>
-        <li>Telefon, e-posta ve açık adres bilgileri</li>
-        <li>Varsa dernek tarafından talep edilen ek bilgi veya belgeler</li>
-        <li>Dernek tüzüğünü ve üyelik esaslarını kabul ettiğine dair onay</li>
-        <li>Başvurunun dernek yetkili organları tarafından incelenmesi ve karara bağlanması</li>
-      </ul>
-    </div>
-
-    <div class="info-strip">
-      <p>
-        <strong>Bilgilendirme:</strong> Aşağıdaki form üzerinden kimlik belgesi, fotoğraf ve ek belgeleri
-        PDF, JPG veya PNG olarak yükleyebilirsiniz. Form gönderildiğinde başvuru
-        <strong>info@ankaramalatyalilar.org.tr</strong> adresine yönlenir.
-      </p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="form-wrap">
-      <h2>Online Üyelik Başvuru Formu</h2>
-      <p class="form-intro">
-        Lütfen bilgilerinizi eksiksiz doldurun ve gerekli belgeleri yükleyin.
-      </p>
-
-      <form action="https://formsubmit.co/info@ankaramalatyalilar.org.tr"
-            method="POST"
-            enctype="multipart/form-data">
-
-        <input type="hidden" name="_subject" value="Ankara Malatyalılar Derneği - Yeni Üyelik Başvurusu">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://ankaramalatyalilar.org.tr/uyelik.html">
-
-        <div class="form-grid">
-
-          <div class="form-group">
-            <label for="adsoyad">Ad Soyadı</label>
-            <input type="text" id="adsoyad" name="Ad Soyadı" required>
-          </div>
-
-          <div class="form-group">
-            <label for="tc">T.C. Kimlik No</label>
-            <input type="text" id="tc" name="T.C. Kimlik No" required>
-          </div>
-
-          <div class="form-group">
-            <label for="telefon">Telefon</label>
-            <input type="tel" id="telefon" name="Telefon" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">E-Posta</label>
-            <input type="email" id="email" name="E-Posta" required>
-          </div>
-
-          <div class="form-group">
-            <label for="dogum">Doğum Tarihi</label>
-            <input type="date" id="dogum" name="Doğum Tarihi">
-          </div>
-
-          <div class="form-group">
-            <label for="meslek">Meslek</label>
-            <input type="text" id="meslek" name="Meslek">
-          </div>
-
-          <div class="form-group full">
-            <label for="adres">Açık Adres</label>
-            <textarea id="adres" name="Açık Adres" required></textarea>
-          </div>
-
-          <div class="form-group full">
-            <label for="mesaj">Kısa Açıklama / Mesaj</label>
-            <textarea id="mesaj" name="Kısa Açıklama"></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="kimlikdosya">Kimlik Belgesi (PDF/JPG/PNG)</label>
-            <input type="file" id="kimlikdosya" name="Kimlik Belgesi">
-          </div>
-
-          <div class="form-group">
-            <label for="fotograf">Vesikalık / Profil Fotoğrafı</label>
-            <input type="file" id="fotograf" name="Fotoğraf">
-          </div>
-
-          <div class="form-group full">
-            <label for="ekbelge">Ek Belge / Diğer Dosyalar</label>
-            <input type="file" id="ekbelge" name="Ek Belgeler" multiple>
-            <div class="file-note">
-              PDF, JPG ve PNG belgeleri yükleyebilirsiniz.
-            </div>
-          </div>
-
-          <div class="form-group full">
-            <label class="checkbox-row">
-              <input type="checkbox" name="Onay" required>
-              Verdiğim bilgilerin doğru olduğunu, dernek üyelik esaslarını kabul ettiğimi ve başvurumun
-              dernek yetkili organları tarafından değerlendirileceğini onaylıyorum.
-            </label>
-          </div>
-
-        </div>
-
-        <div class="submit-row">
-          <button type="submit" class="submit-btn">Başvuruyu Gönder</button>
-          <div class="secondary-note">
-            Form gönderiminden sonra ilk kullanımda e-posta doğrulaması gerekebilir.
-          </div>
-        </div>
-
-      </form>
     </div>
   </section>
 
