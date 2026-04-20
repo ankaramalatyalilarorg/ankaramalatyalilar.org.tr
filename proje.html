@@ -1,23 +1,229 @@
-<section class="container" style="margin-top:20px;">
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projeler | Ankara Malatyalılar Derneği</title>
 
-<!-- BAŞLIK -->
-<div style="background:#fff; padding:26px; border-radius:18px; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
-  <h1 style="color:#0d2b52; font-size:32px; margin-bottom:10px;">PROJE DUYURULARI</h1>
-  <p style="color:#44556b; font-size:17px; line-height:1.8;">
-    Güncel hibe, destek ve proje fırsatları aşağıda listelenmiştir. Tüm bilgiler resmî kurum kaynaklarına dayanmaktadır.
-  </p>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#eef2f7;
+color:#1d2d44;
+}
+
+/* CONTAINER */
+.container{
+width:95%;
+max-width:1350px;
+margin:auto;
+}
+
+/* HEADER */
+header{
+margin-top:12px;
+}
+
+.banner-box img{
+width:100%;
+display:block;
+border-radius:18px 18px 0 0;
+}
+
+/* NAV */
+nav{
+background:#0d2b52;
+border-radius:0 0 18px 18px;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+flex-wrap:wrap;
+gap:60px;
+padding:14px 35px;
+}
+
+nav ul li a{
+color:#fff;
+text-decoration:none;
+font-size:16px;
+font-weight:500;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+color:#f4a300;
+}
+
+/* HERO */
+.hero{
+margin-top:16px;
+background:linear-gradient(135deg,#1c4a6b,#3f7aa3);
+color:#fff;
+padding:50px;
+border-radius:18px;
+}
+
+.hero h1{
+font-size:44px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.8;
+max-width:1100px;
+}
+
+/* INTRO */
+.intro{
+margin-top:20px;
+background:#fff;
+padding:28px;
+border-radius:18px;
+box-shadow:0 8px 22px rgba(0,0,0,0.08);
+}
+
+.intro h2{
+color:#0d2b52;
+margin-bottom:12px;
+}
+
+.intro p{
+line-height:1.8;
+color:#44556b;
+}
+
+/* TABLE */
+.table-wrap{
+margin-top:25px;
+background:#fff;
+padding:20px;
+border-radius:18px;
+box-shadow:0 8px 22px rgba(0,0,0,0.08);
+overflow-x:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:900px;
+}
+
+th,td{
+padding:12px;
+border-bottom:1px solid #eee;
+text-align:left;
+font-size:14px;
+}
+
+th{
+background:#0d2b52;
+color:#fff;
+}
+
+.status-open{
+color:green;
+font-weight:bold;
+}
+
+.status-limited{
+color:orange;
+font-weight:bold;
+}
+
+/* BUTTON */
+.btn{
+display:inline-block;
+padding:8px 14px;
+background:#0d2b52;
+color:#fff;
+border-radius:8px;
+text-decoration:none;
+font-size:13px;
+}
+
+.btn:hover{
+background:#f4a300;
+color:#000;
+}
+
+/* LIST SECTION */
+.section{
+margin-top:30px;
+background:#fff;
+padding:25px;
+border-radius:18px;
+box-shadow:0 8px 22px rgba(0,0,0,0.08);
+}
+
+.section h2{
+color:#0d2b52;
+margin-bottom:15px;
+}
+
+.section ul{
+margin-left:20px;
+line-height:1.9;
+}
+
+/* FOOTER */
+footer{
+margin-top:30px;
+text-align:center;
+padding:20px;
+color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<header class="container">
+<div class="banner-box">
+<img src="bas.png" alt="Dernek Banner">
 </div>
 
-<br>
+<nav>
+<ul>
+<li><a href="index.html">Ana Sayfa</a></li>
+<li><a href="kurumsal.html">Kurumsal</a></li>
+<li><a href="faaliyet.html">Faaliyetler</a></li>
+<li><a href="proje.html" class="active">Projeler</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="uyelik.html">Üyelik</a></li>
+<li><a href="iletisim.html">İletişim</a></li>
+</ul>
+</nav>
+</header>
 
-<!-- TABLO -->
-<div style="overflow-x:auto;">
+<section class="hero container">
+<h1>PROJE DUYURULARI</h1>
+<p>
+Güncel hibe, destek ve proje fırsatları Ankara Malatyalılar Derneği tarafından sizlere sunulmaktadır.
+Amaç; gençler, girişimciler, kadınlar ve tüm hemşehrilerimizin proje imkanlarına erişimini kolaylaştırmaktır.
+</p>
+</section>
 
-<table style="width:100%; border-collapse:collapse; background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+<main class="container">
 
-<thead style="background:#0d2b52; color:#fff;">
+<div class="intro">
+<h2>Güncel Hibe ve Destek Programları</h2>
+<p>
+Aşağıdaki tüm programlar resmî kurum ve uluslararası fon kaynaklarından derlenmiştir.
+Başvurular doğrudan kurumlara yapılır; derneğimiz bilgilendirme ve yönlendirme noktasıdır.
+</p>
+</div>
+
+<!-- TABLE -->
+<div class="table-wrap">
+<table>
+<thead>
 <tr>
-<th style="padding:14px;">Proje</th>
+<th>Proje</th>
 <th>Kategori</th>
 <th>Kaynak</th>
 <th>Hibe</th>
@@ -28,7 +234,7 @@
 </tr>
 </thead>
 
-<tbody style="font-size:14px; color:#1d2d44;">
+<tbody>
 
 <tr>
 <td>Gençlik Değişimleri</td>
@@ -36,31 +242,31 @@
 <td>Erasmus+</td>
 <td>20K - 60K €</td>
 <td>Gençler</td>
-<td style="color:green; font-weight:bold;">Açık</td>
-<td><a href="https://erasmus-plus.ec.europa.eu" target="_blank">Aç</a></td>
-<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=Gençlik Değişimleri Başvuru Talebi">🟢 Talep Et</a></td>
+<td class="status-open">Açık</td>
+<td><a class="btn" href="https://youth.europa.eu" target="_blank">Kılavuz</a></td>
+<td><a class="btn" href="#">Başvuru Talep Et</a></td>
 </tr>
 
 <tr>
-<td>Dayanışma Projesi</td>
+<td>Dayanışma Projeleri</td>
 <td>Sosyal</td>
-<td>ESC</td>
+<td>European Solidarity Corps</td>
 <td>6K - 20K €</td>
 <td>Gençlik</td>
-<td style="color:green;">Açık</td>
-<td><a href="https://europa.eu/youth/solidarity" target="_blank">Aç</a></td>
-<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=ESC Başvuru Talebi">🟢 Talep Et</a></td>
+<td class="status-open">Açık</td>
+<td><a class="btn" href="https://youth.europa.eu/solidarity" target="_blank">Kılavuz</a></td>
+<td><a class="btn" href="#">Başvuru Talep Et</a></td>
 </tr>
 
 <tr>
-<td>Ar-Ge Destek</td>
+<td>Horizon Europe Ar-Ge</td>
 <td>Teknoloji</td>
-<td>TÜBİTAK</td>
+<td>EU Horizon</td>
 <td>Değişken</td>
 <td>Girişimci</td>
-<td style="color:green;">Açık</td>
-<td><a href="https://www.tubitak.gov.tr" target="_blank">Aç</a></td>
-<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=TÜBİTAK Başvuru">🟢 Talep Et</a></td>
+<td class="status-open">Açık</td>
+<td><a class="btn" href="https://ec.europa.eu/info/horizon-europe" target="_blank">Kılavuz</a></td>
+<td><a class="btn" href="#">Başvuru Talep Et</a></td>
 </tr>
 
 <tr>
@@ -69,9 +275,9 @@
 <td>KOSGEB</td>
 <td>50K - 750K ₺</td>
 <td>Girişimci</td>
-<td style="color:green;">Açık</td>
-<td><a href="https://www.kosgeb.gov.tr" target="_blank">Aç</a></td>
-<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=KOSGEB Başvuru">🟢 Talep Et</a></td>
+<td class="status-open">Açık</td>
+<td><a class="btn" href="https://www.kosgeb.gov.tr" target="_blank">Kılavuz</a></td>
+<td><a class="btn" href="#">Başvuru Talep Et</a></td>
 </tr>
 
 <tr>
@@ -80,9 +286,9 @@
 <td>TKDK</td>
 <td>%60 - %70</td>
 <td>Kırsal</td>
-<td style="color:orange;">Dönemsel</td>
-<td><a href="https://www.tkdk.gov.tr" target="_blank">Aç</a></td>
-<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=IPARD Başvuru">🟢 Talep Et</a></td>
+<td class="status-limited">Dönemsel</td>
+<td><a class="btn" href="https://www.tkdk.gov.tr" target="_blank">Kılavuz</a></td>
+<td><a class="btn" href="#">Başvuru Talep Et</a></td>
 </tr>
 
 <tr>
@@ -91,58 +297,46 @@
 <td>GSB</td>
 <td>100K - 1M ₺</td>
 <td>Gençler</td>
-<td style="color:green;">Açık</td>
-<td><a href="https://www.gsb.gov.tr" target="_blank">Aç</a></td>
-<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=GSB Başvuru">🟢 Talep Et</a></td>
-</tr>
-
-<tr>
-<td>Yeşil Dönüşüm</td>
-<td>Çevre</td>
-<td>Çevre Bakanlığı</td>
-<td>Değişken</td>
-<td>Kurumsal</td>
-<td style="color:green;">Açık</td>
-<td><a href="https://www.csb.gov.tr" target="_blank">Aç</a></td>
-<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=Çevre Proje Başvuru">🟢 Talep Et</a></td>
-</tr>
-
-<tr>
-<td>İstihdam Destek</td>
-<td>Sosyal</td>
-<td>İŞKUR</td>
-<td>Değişken</td>
-<td>Genel</td>
-<td style="color:green;">Açık</td>
-<td><a href="https://www.iskur.gov.tr" target="_blank">Aç</a></td>
-<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=İŞKUR Başvuru">🟢 Talep Et</a></td>
+<td class="status-open">Açık</td>
+<td><a class="btn" href="https://gsb.gov.tr" target="_blank">Kılavuz</a></td>
+<td><a class="btn" href="#">Başvuru Talep Et</a></td>
 </tr>
 
 </tbody>
-
 </table>
-
 </div>
 
-<br>
-
-<!-- ALT BUTON -->
-<div style="text-align:center;">
-
-<a href="mailto:info@ankaramalatyalilar.org.tr"
-style="
-background:linear-gradient(135deg,#0d2b52,#1e4e8c);
-color:#fff;
-padding:14px 28px;
-border-radius:14px;
-text-decoration:none;
-font-weight:bold;
-display:inline-block;
-box-shadow:0 10px 20px rgba(0,0,0,0.15);
-">
-📩 Genel Başvuru Talep Et
-</a>
-
+<!-- EUROPE SECTION -->
+<div class="section">
+<h2>Avrupa Hibe Programları</h2>
+<ul>
+<li>Erasmus+ Gençlik Değişimleri</li>
+<li>European Solidarity Corps</li>
+<li>Creative Europe</li>
+<li>Horizon Europe</li>
+<li>LIFE Çevre Programı</li>
+<li>Interreg Bölgesel İşbirliği</li>
+</ul>
 </div>
 
-</section>
+<!-- TURKEY SECTION -->
+<div class="section">
+<h2>Türkiye Hibe Kaynakları</h2>
+<ul>
+<li>TÜBİTAK Ar-Ge Destekleri</li>
+<li>KOSGEB Girişim Destekleri</li>
+<li>TKDK IPARD Programı</li>
+<li>İŞKUR İstihdam Destekleri</li>
+<li>Gençlik ve Spor Bakanlığı Projeleri</li>
+<li>Çevre ve Şehircilik Bakanlığı Destekleri</li>
+</ul>
+</div>
+
+</main>
+
+<footer>
+© 2026 Ankara Malatyalılar Derneği | Proje Bilgilendirme Sistemi
+</footer>
+
+</body>
+</html>
