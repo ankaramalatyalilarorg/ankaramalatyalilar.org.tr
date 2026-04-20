@@ -39,8 +39,9 @@ width:100%;
 display:block;
 }
 
+<style>
 nav{
-background:#0d2d5e;
+background:#1f2d3d;
 border-radius:0 0 18px 18px;
 overflow:hidden;
 }
@@ -50,23 +51,23 @@ list-style:none;
 display:flex;
 justify-content:flex-start;
 align-items:center;
-flex-wrap:nowrap;
-gap:55px;
+gap:65px;
 padding:16px 35px;
 margin:0;
 }
 
 nav ul li{
 margin:0;
+padding:0;
 }
 
 nav ul li a{
-color:#fff;
+color:#ffffff;
 text-decoration:none;
 font-size:16px;
 font-weight:500;
+letter-spacing:0.2px;
 transition:0.3s;
-display:block;
 }
 
 nav ul li a:hover,
@@ -74,6 +75,7 @@ nav ul li a.active{
 color:#f4a300;
 font-weight:bold;
 }
+
 .hero{
 margin-top:18px;
 background:linear-gradient(135deg,#0d2d5e,#17458c);
@@ -151,10 +153,15 @@ font-size:16px;
 
 nav ul{
 flex-direction:column;
+align-items:stretch;
+gap:0;
+padding:0;
 }
 
-nav a{
+nav ul li a{
+display:block;
 text-align:center;
+padding:14px 20px;
 border-bottom:1px solid rgba(255,255,255,0.15);
 }
 
@@ -184,8 +191,7 @@ font-size:28px;
 
 <nav>
 <ul>
-<li><a h
-      ref="index.html">Ana Sayfa</a></li>
+<li><a href="index.html">Ana Sayfa</a></li>
 <li><a href="kurumsal.html" class="active">Kurumsal</a></li>
 <li><a href="faaliyet.html">Faaliyetlerimiz</a></li>
 <li><a href="proje.html">Projeler</a></li>
@@ -194,6 +200,7 @@ font-size:28px;
 <li><a href="iletisim.html">İletişim</a></li>
 </ul>
 </nav>
+</header>
 
 </header>
 
