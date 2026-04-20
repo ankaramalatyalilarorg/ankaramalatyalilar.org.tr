@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>İletişim | Ankara Malatyalılar Derneği</title>
-<meta name="description" content="Ankara Malatyalılar Derneği iletişim sayfası. Adres, web sitesi, e-posta ve WhatsApp iletişim bilgileri.">
 
 <style>
 *{
@@ -26,6 +25,7 @@ max-width:1350px;
 margin:auto;
 }
 
+/* HEADER */
 header{
 margin-top:15px;
 }
@@ -41,7 +41,7 @@ display:block;
 }
 
 nav{
-background:#5a3e36;
+background:#6a4739;
 border-radius:0 0 18px 18px;
 overflow:hidden;
 }
@@ -53,170 +53,143 @@ justify-content:flex-start;
 align-items:center;
 gap:65px;
 padding:16px 35px;
-margin:0;
 flex-wrap:wrap;
 }
 
-nav ul li{
-list-style:none;
-}
-
 nav ul li a{
-display:inline-block;
-color:#ffffff;
+color:#fff;
 text-decoration:none;
 font-size:16px;
 font-weight:500;
-transition:.25s ease;
+transition:0.25s;
 }
 
 nav ul li a:hover,
 nav ul li a.active{
-color:#f4a300;
+color:#ffb400;
 font-weight:bold;
 }
 
+/* HERO */
 .hero{
 width:95%;
 max-width:1350px;
-margin:0 auto;
-padding:58px 35px;
+margin:4px auto 0 auto;
+padding:42px 38px;
 border-radius:18px;
-background:linear-gradient(135deg,#6b4b3e,#9a6b56);
-color:#ffffff;
+background:linear-gradient(135deg,#2f5d74,#4f89a4);
+color:#fff;
 }
 
 .hero h1{
-font-size:46px;
+font-size:52px;
 margin-bottom:14px;
 }
 
 .hero p{
-font-size:20px;
-line-height:1.8;
-max-width:1100px;
+font-size:21px;
+line-height:1.9;
+max-width:1050px;
 }
 
+/* MAIN */
 .section{
-padding:28px 0 0 0;
-}
-
-.lead-box{
-background:#ffffff;
-border-radius:18px;
-padding:32px;
-box-shadow:0 8px 24px rgba(0,0,0,0.08);
-border-left:6px solid #5a3e36;
-}
-
-.lead-box h2{
-font-size:30px;
-color:#5a3e36;
-margin-bottom:14px;
-}
-
-.lead-box p{
-font-size:18px;
-color:#44556b;
-line-height:1.8;
+padding:28px 0;
 }
 
 .contact-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:24px;
-margin-top:24px;
 }
 
-.contact-card{
-display:block;
-text-decoration:none;
-background:#ffffff;
-border-radius:20px;
+.card{
+background:#fff;
+border-radius:22px;
 padding:28px 24px;
-box-shadow:0 10px 28px rgba(0,0,0,0.08);
-border-top:5px solid #5a3e36;
-transition:0.25s ease;
-color:inherit;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+text-decoration:none;
+color:#1d2d44;
+transition:0.25s;
+border-top:5px solid #4f89a4;
 }
 
-.contact-card:hover{
-transform:translateY(-4px);
+.card:hover{
+transform:translateY(-5px);
 box-shadow:0 14px 32px rgba(0,0,0,0.12);
 }
 
-.icon-wrap{
-width:66px;
-height:66px;
+.icon{
+width:72px;
+height:72px;
 border-radius:18px;
 display:flex;
 align-items:center;
 justify-content:center;
+font-size:34px;
 margin-bottom:18px;
-background:linear-gradient(135deg,#6b4b3e,#9a6b56);
-color:#ffffff;
+color:#fff;
+font-weight:bold;
 }
 
-svg{
-width:30px;
-height:30px;
-fill:currentColor;
+.i1{background:linear-gradient(135deg,#ff7b00,#ffb347);}
+.i2{background:linear-gradient(135deg,#0066ff,#3da5ff);}
+.i3{background:linear-gradient(135deg,#c62828,#ff6b6b);}
+.i4{background:linear-gradient(135deg,#00a84f,#41d67d);}
+
+.card h3{
+font-size:31px;
+margin-bottom:14px;
+color:#5c4033;
 }
 
-.contact-card h3{
-font-size:24px;
-color:#5a3e36;
-margin-bottom:10px;
-}
-
-.contact-card p{
-font-size:17px;
-color:#44556b;
+.card p{
+font-size:18px;
 line-height:1.8;
 margin-bottom:8px;
-word-break:break-word;
 }
 
-.link-note{
+.note{
 margin-top:10px;
-font-size:14px;
+font-size:15px;
 font-weight:bold;
-color:#8a5c4d;
+color:#4f89a4;
 }
 
-.cta{
-margin-top:24px;
+.bottom-box{
+margin-top:28px;
 background:#ffffff;
 border-radius:18px;
 padding:34px;
-text-align:center;
 box-shadow:0 8px 24px rgba(0,0,0,0.08);
+text-align:center;
 }
 
-.cta h3{
-font-size:30px;
-color:#5a3e36;
-margin-bottom:12px;
+.bottom-box h2{
+font-size:38px;
+color:#5c4033;
+margin-bottom:14px;
 }
 
-.cta p{
-font-size:18px;
-color:#55657a;
+.bottom-box p{
+font-size:19px;
+color:#516173;
+line-height:1.8;
 max-width:900px;
 margin:auto;
-line-height:1.8;
 }
 
 footer{
-margin-top:30px;
-background:#5a3e36;
-color:#ffffff;
+margin-top:25px;
+background:#6a4739;
+color:#fff;
 text-align:center;
 padding:24px;
-font-size:15px;
 border-radius:18px 18px 0 0;
+font-size:15px;
 }
 
+/* MOBILE */
 @media(max-width:768px){
 
 nav ul{
@@ -225,31 +198,41 @@ gap:0;
 padding:0;
 }
 
+nav ul li{
+width:100%;
+}
+
 nav ul li a{
 display:block;
-padding:14px 20px;
-border-bottom:1px solid rgba(255,255,255,0.15);
+padding:14px;
 text-align:center;
+border-bottom:1px solid rgba(255,255,255,0.12);
 }
 
 .hero{
-padding:40px 22px;
+padding:28px 20px;
 }
 
 .hero h1{
-font-size:32px;
+font-size:38px;
 }
 
 .hero p{
 font-size:17px;
 }
 
-.lead-box,
-.contact-card,
-.cta{
-padding:22px;
+.card h3{
+font-size:26px;
 }
 
+.card p,
+.bottom-box p{
+font-size:16px;
+}
+
+.bottom-box h2{
+font-size:30px;
+}
 }
 </style>
 </head>
@@ -259,7 +242,7 @@ padding:22px;
 <header class="container">
 
 <div class="banner-box">
-<img src="bas.png" alt="Ankara Malatyalılar Derneği Banner">
+<img src="bas.png" alt="Ankara Malatyalılar Derneği">
 </div>
 
 <nav>
@@ -290,63 +273,53 @@ Ankara Malatyalılar Derneği ile iletişime geçmek, faaliyetlerimiz hakkında 
 
 <section class="section">
 
-<div class="lead-box">
-<h2>Bize Ulaşın</h2>
-<p>
-Derneğimiz ile hızlı ve doğrudan iletişim kurmak için aşağıdaki kartlara tıklayabilirsiniz.
-Adres için harita açılır, e-posta için mail ekranı açılır, WhatsApp için sohbet başlar.
-</p>
-</div>
-
 <div class="contact-grid">
 
-<a class="contact-card" href="https://www.google.com/maps/search/?api=1&query=Mebusevleri+Mahallesi+Turgut+Reis+Caddesi+No+7+Kat+1+Ic+Kapi+No+9+Cankaya+Ankara+Türkiye" target="_blank">
-<div class="icon-wrap">
-<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
-</div>
+<a class="card" href="https://www.google.com/maps/search/?api=1&query=Mebusevleri+Mahallesi+Turgut+Reis+Caddesi+No+7+Kat+1+Ic+Kapi+No+9+Cankaya+Ankara+Türkiye" target="_blank">
+<div class="icon i1">📍</div>
 <h3>Adres</h3>
 <p>Mebusevleri Mahallesi</p>
-<p>Turgut Reis Caddesi No:7 Kat:1 İç Kapı No:9</p>
-<p>06570 Çankaya Ankara Türkiye</p>
-<div class="link-note">Haritada Aç</div>
+<p>Turgut Reis Caddesi No:7</p>
+<p>Kat:1 İç Kapı No:9</p>
+<p>06570 Çankaya Ankara</p>
+<div class="note">Haritada Aç</div>
 </a>
 
-<a class="contact-card" href="https://ankaramalatyalilar.org.tr/" target="_blank">
-<div class="icon-wrap">
-<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/></svg>
-</div>
+<a class="card" href="https://ankaramalatyalilar.org.tr/" target="_blank">
+<div class="icon i2">🌐</div>
 <h3>Web Sitesi</h3>
 <p>ankaramalatyalilar.org.tr</p>
-<p>Resmî duyurular ve güncel içerikler.</p>
-<div class="link-note">Siteye Git</div>
+<p>Resmî duyurular, faaliyetler</p>
+<p>ve güncel içerikler burada.</p>
+<div class="note">Siteye Git</div>
 </a>
 
-<a class="contact-card" href="mailto:info@ankaramalatyalilar.org.tr">
-<div class="icon-wrap">
-<svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
-</div>
+<a class="card" href="mailto:info@ankaramalatyalilar.org.tr">
+<div class="icon i3">✉</div>
 <h3>E-Posta</h3>
 <p>info@ankaramalatyalilar.org.tr</p>
-<p>Başvuru, bilgi ve talepleriniz için yazabilirsiniz.</p>
-<div class="link-note">Mail Gönder</div>
+<p>Bilgi, başvuru ve talepleriniz</p>
+<p>için bize yazabilirsiniz.</p>
+<div class="note">Mail Gönder</div>
 </a>
 
-<a class="contact-card" href="https://wa.me/905369887544" target="_blank">
-<div class="icon-wrap">
-<svg viewBox="0 0 24 24"><path d="M20 3.5A11 11 0 0 0 2.9 16.9L1 23l6.3-1.8A11 11 0 1 0 20 3.5z"/></svg>
-</div>
+<a class="card" href="https://wa.me/905369887544" target="_blank">
+<div class="icon i4">🟢</div>
 <h3>WhatsApp</h3>
 <p>+90 536 988 75 44</p>
-<p>Hızlı iletişim için doğrudan yazabilirsiniz.</p>
-<div class="link-note">WhatsApp Aç</div>
+<p>Hızlı iletişim için</p>
+<p>doğrudan yazabilirsiniz.</p>
+<div class="note">WhatsApp Aç</div>
 </a>
 
 </div>
 
-<div class="cta">
-<h3>Sizleri Bekliyoruz</h3>
+<div class="bottom-box">
+<h2>Sizleri Bekliyoruz</h2>
 <p>
-Ankara’daki Malatyalı hemşehrilerimizle güçlü bağlar kurmak, faaliyetlerimize katılmak ve bizimle iletişimde kalmak için her zaman ulaşabilirsiniz.
+Hemşehrilik bağlarımızı güçlendirmek, kültürel değerlerimizi yaşatmak
+ve Ankara’daki Malatyalılar arasında dayanışmayı büyütmek için her zaman
+bizimle iletişime geçebilirsiniz.
 </p>
 </div>
 
