@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>İletişim | Ankara Malatyalılar Derneği</title>
-<meta name="description" content="Ankara Malatyalılar Derneği iletişim sayfası. Adres, telefon, e-posta ve iletişim bilgileri.">
+<meta name="description" content="Ankara Malatyalılar Derneği iletişim sayfası. Adres, web sitesi, e-posta ve WhatsApp iletişim bilgileri.">
 
 <style>
 *{
@@ -59,8 +59,6 @@ flex-wrap:wrap;
 
 nav ul li{
 list-style:none;
-margin:0;
-padding:0;
 }
 
 nav ul li a{
@@ -82,10 +80,8 @@ font-weight:bold;
 width:95%;
 max-width:1350px;
 margin:0 auto;
-margin-top:0;
 padding:58px 35px;
 border-radius:18px;
-overflow:hidden;
 background:linear-gradient(135deg,#6b4b3e,#9a6b56);
 color:#ffffff;
 }
@@ -122,55 +118,70 @@ margin-bottom:14px;
 .lead-box p{
 font-size:18px;
 color:#44556b;
-margin-bottom:12px;
 line-height:1.8;
 }
 
-.lead-box p:last-child{
-margin-bottom:0;
-}
-
-.grid{
+.contact-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:24px;
 margin-top:24px;
 }
 
-.card{
+.contact-card{
+display:block;
+text-decoration:none;
 background:#ffffff;
-border-radius:18px;
-padding:26px;
-box-shadow:0 8px 24px rgba(0,0,0,0.08);
+border-radius:20px;
+padding:28px 24px;
+box-shadow:0 10px 28px rgba(0,0,0,0.08);
 border-top:5px solid #5a3e36;
+transition:0.25s ease;
+color:inherit;
 }
 
-.card h3{
+.contact-card:hover{
+transform:translateY(-4px);
+box-shadow:0 14px 32px rgba(0,0,0,0.12);
+}
+
+.icon-wrap{
+width:66px;
+height:66px;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:18px;
+background:linear-gradient(135deg,#6b4b3e,#9a6b56);
+color:#ffffff;
+}
+
+svg{
+width:30px;
+height:30px;
+fill:currentColor;
+}
+
+.contact-card h3{
 font-size:24px;
 color:#5a3e36;
-margin-bottom:12px;
+margin-bottom:10px;
 }
 
-.card p{
+.contact-card p{
 font-size:17px;
 color:#44556b;
 line-height:1.8;
 margin-bottom:8px;
+word-break:break-word;
 }
 
-.card p:last-child{
-margin-bottom:0;
-}
-
-.notice{
-margin-top:24px;
-background:#fbf8f6;
-border:1px solid #e7ddd8;
-border-radius:16px;
-padding:22px 24px;
-color:#44556b;
-font-size:17px;
-line-height:1.8;
+.link-note{
+margin-top:10px;
+font-size:14px;
+font-weight:bold;
+color:#8a5c4d;
 }
 
 .cta{
@@ -192,23 +203,8 @@ margin-bottom:12px;
 font-size:18px;
 color:#55657a;
 max-width:900px;
-margin:0 auto 18px auto;
+margin:auto;
 line-height:1.8;
-}
-
-.cta a{
-display:inline-block;
-background:#5a3e36;
-color:#ffffff;
-text-decoration:none;
-padding:12px 22px;
-border-radius:10px;
-font-weight:bold;
-transition:0.3s;
-}
-
-.cta a:hover{
-background:#452f29;
 }
 
 footer{
@@ -221,39 +217,19 @@ font-size:15px;
 border-radius:18px 18px 0 0;
 }
 
-@media(max-width:900px){
-nav ul{
-gap:25px;
-padding:16px 20px;
-}
-
-.hero h1{
-font-size:36px;
-}
-
-.hero p{
-font-size:18px;
-}
-
-.lead-box h2,
-.cta h3{
-font-size:26px;
-}
-}
-
 @media(max-width:768px){
+
 nav ul{
 flex-direction:column;
-align-items:stretch;
 gap:0;
 padding:0;
 }
 
 nav ul li a{
 display:block;
-text-align:center;
 padding:14px 20px;
 border-bottom:1px solid rgba(255,255,255,0.15);
+text-align:center;
 }
 
 .hero{
@@ -269,21 +245,11 @@ font-size:17px;
 }
 
 .lead-box,
-.card,
+.contact-card,
 .cta{
 padding:22px;
 }
 
-.lead-box h2,
-.cta h3{
-font-size:24px;
-}
-
-.lead-box p,
-.card p,
-.cta p{
-font-size:16px;
-}
 }
 </style>
 </head>
@@ -315,7 +281,7 @@ font-size:16px;
 <h1>İletişim</h1>
 <p>
 Ankara Malatyalılar Derneği ile iletişime geçmek, faaliyetlerimiz hakkında bilgi almak,
-üyelik sürecini başlatmak veya öneri ve görüşlerinizi paylaşmak için aşağıdaki bilgilerden bize ulaşabilirsiniz.
+üyelik süreci başlatmak veya görüşlerinizi iletmek için aşağıdaki kanalları kullanabilirsiniz.
 </p>
 </div>
 </section>
@@ -323,59 +289,67 @@ Ankara Malatyalılar Derneği ile iletişime geçmek, faaliyetlerimiz hakkında 
 <main class="container">
 
 <section class="section">
+
 <div class="lead-box">
 <h2>Bize Ulaşın</h2>
 <p>
-Derneğimiz; hemşehrilerimiz arasında birlik, beraberlik ve dayanışmayı güçlendirmek amacıyla faaliyet göstermektedir.
-Sorularınız, önerileriniz ve başvurularınız için bizimle iletişime geçebilirsiniz.
-</p>
-<p>
-Sizlerden gelecek her türlü görüş, katkı ve iletişim talebi bizim için değerlidir.
+Derneğimiz ile hızlı ve doğrudan iletişim kurmak için aşağıdaki kartlara tıklayabilirsiniz.
+Adres için harita açılır, e-posta için mail ekranı açılır, WhatsApp için sohbet başlar.
 </p>
 </div>
 
-<div class="grid">
+<div class="contact-grid">
 
-<div class="card">
+<a class="contact-card" href="https://www.google.com/maps/search/?api=1&query=Mebusevleri+Mahallesi+Turgut+Reis+Caddesi+No+7+Kat+1+Ic+Kapi+No+9+Cankaya+Ankara+Türkiye" target="_blank">
+<div class="icon-wrap">
+<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+</div>
 <h3>Adres</h3>
-<p>Ankara Malatyalılar Derneği</p>
-<p>Merkez Ofis / Dernek Binası</p>
-<p>Ankara, Türkiye</p>
-</div>
+<p>Mebusevleri Mahallesi</p>
+<p>Turgut Reis Caddesi No:7 Kat:1 İç Kapı No:9</p>
+<p>06570 Çankaya Ankara Türkiye</p>
+<div class="link-note">Haritada Aç</div>
+</a>
 
-<div class="card">
-<h3>Telefon</h3>
-<p>Telefon numarası burada yer alacaktır.</p>
-<p>İrtibat saatleri içerisinde bizimle doğrudan iletişime geçebilirsiniz.</p>
+<a class="contact-card" href="https://ankaramalatyalilar.org.tr/" target="_blank">
+<div class="icon-wrap">
+<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/></svg>
 </div>
+<h3>Web Sitesi</h3>
+<p>ankaramalatyalilar.org.tr</p>
+<p>Resmî duyurular ve güncel içerikler.</p>
+<div class="link-note">Siteye Git</div>
+</a>
 
-<div class="card">
+<a class="contact-card" href="mailto:info@ankaramalatyalilar.org.tr">
+<div class="icon-wrap">
+<svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+</div>
 <h3>E-Posta</h3>
-<p>E-posta adresi burada yer alacaktır.</p>
-<p>Bilgi, başvuru ve genel iletişim taleplerinizi e-posta yoluyla iletebilirsiniz.</p>
-</div>
+<p>info@ankaramalatyalilar.org.tr</p>
+<p>Başvuru, bilgi ve talepleriniz için yazabilirsiniz.</p>
+<div class="link-note">Mail Gönder</div>
+</a>
 
-<div class="card">
-<h3>Sosyal İletişim</h3>
-<p>Derneğimizin duyuru ve etkinliklerini sosyal medya hesaplarımız üzerinden de takip edebilirsiniz.</p>
-<p>Güncel haberler ve paylaşımlar için resmi hesaplarımızı izleyiniz.</p>
+<a class="contact-card" href="https://wa.me/905369887544" target="_blank">
+<div class="icon-wrap">
+<svg viewBox="0 0 24 24"><path d="M20 3.5A11 11 0 0 0 2.9 16.9L1 23l6.3-1.8A11 11 0 1 0 20 3.5z"/></svg>
 </div>
+<h3>WhatsApp</h3>
+<p>+90 536 988 75 44</p>
+<p>Hızlı iletişim için doğrudan yazabilirsiniz.</p>
+<div class="link-note">WhatsApp Aç</div>
+</a>
 
-</div>
-
-<div class="notice">
-Adres, telefon ve e-posta bilgileriniz netleştiğinde bu alanları doğrudan gerçek bilgilerinizle güncelleyebilirsiniz.
-İstersen bir sonraki adımda ben bunları sizin gerçek iletişim bilgilerinizle yerleştirecek şekilde de hazırlayabilirim.
 </div>
 
 <div class="cta">
-<h3>Bizimle Hemen İletişime Geçin</h3>
+<h3>Sizleri Bekliyoruz</h3>
 <p>
-Üyelik başvurusu, faaliyetlerimiz hakkında bilgi alma, proje iş birlikleri, kültürel etkinlikler veya genel
-iletişim talepleriniz için derneğimizle bağlantı kurabilirsiniz.
+Ankara’daki Malatyalı hemşehrilerimizle güçlü bağlar kurmak, faaliyetlerimize katılmak ve bizimle iletişimde kalmak için her zaman ulaşabilirsiniz.
 </p>
-<a href="mailto:info@ankaramalatyalilar.org.tr">E-Posta Gönder</a>
 </div>
+
 </section>
 
 </main>
