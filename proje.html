@@ -1,7 +1,196 @@
-<!-- 🔵 HIZLI KAYNAK PANELİ (EN ÜST SEVİYE EKLENEN BÖLÜM) -->
-<div class="container" style="margin-top:18px;">
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projeler | Ankara Malatyalılar Derneği</title>
 
-<div class="intro">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#eef2f7;
+color:#1d2d44;
+}
+
+/* CONTAINER */
+.container{
+width:95%;
+max-width:1350px;
+margin:auto;
+}
+
+/* HEADER */
+header{
+margin-top:12px;
+}
+
+.banner-box img{
+width:100%;
+display:block;
+border-radius:18px 18px 0 0;
+}
+
+/* NAV */
+nav{
+background:#0d2b52;
+border-radius:0 0 18px 18px;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+flex-wrap:wrap;
+gap:55px;
+padding:14px 35px;
+}
+
+nav ul li a{
+color:#fff;
+text-decoration:none;
+font-size:16px;
+font-weight:500;
+}
+
+nav ul li a.active{
+color:#f4a300;
+}
+
+/* HERO */
+.hero{
+margin-top:16px;
+background:linear-gradient(135deg,#0c3b5e,#2c6fa3);
+color:#fff;
+padding:50px;
+border-radius:18px;
+}
+
+.hero h1{
+font-size:44px;
+margin-bottom:12px;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.8;
+}
+
+/* INFO BOX */
+.box{
+margin-top:18px;
+background:#fff;
+padding:22px;
+border-radius:18px;
+box-shadow:0 8px 22px rgba(0,0,0,0.08);
+}
+
+.box h2{
+color:#0d2b52;
+margin-bottom:10px;
+font-size:22px;
+}
+
+.box ul{
+margin-left:18px;
+line-height:1.8;
+}
+
+/* TABLE */
+.table-wrap{
+margin-top:25px;
+background:#fff;
+border-radius:18px;
+overflow-x:auto;
+box-shadow:0 8px 22px rgba(0,0,0,0.08);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:1100px;
+}
+
+th{
+background:#0d2b52;
+color:#fff;
+padding:12px;
+text-align:left;
+font-size:13px;
+border:1px solid #1f3f66;
+}
+
+td{
+padding:11px;
+font-size:13px;
+border:1px solid #d9e2ef;
+}
+
+tbody tr:nth-child(odd){background:#fff;}
+tbody tr:nth-child(even){background:#eaf3ff;}
+
+.open{color:green;font-weight:bold;}
+.limit{color:orange;font-weight:bold;}
+
+.btn{
+display:inline-block;
+padding:6px 10px;
+background:#0d2b52;
+color:#fff;
+border-radius:6px;
+font-size:12px;
+text-decoration:none;
+}
+
+.btn:hover{
+background:#f4a300;
+color:#000;
+}
+
+/* FOOTER */
+footer{
+margin-top:30px;
+text-align:center;
+padding:20px;
+color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="container">
+<div class="banner-box">
+<img src="bas.png" alt="Dernek Banner">
+</div>
+
+<nav>
+<ul>
+<li><a href="index.html">Ana Sayfa</a></li>
+<li><a href="kurumsal.html">Kurumsal</a></li>
+<li><a href="faaliyet.html">Faaliyetler</a></li>
+<li><a href="proje.html" class="active">Projeler</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="uyelik.html">Üyelik</a></li>
+<li><a href="iletisim.html">İletişim</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero container">
+<h1>PROJE DANIŞMANLIK VE HİBE SİSTEMİ</h1>
+<p>
+Avrupa Birliği ve Türkiye’deki tüm hibe, destek ve fon programları; danışmanlık ve başvuru yönetimi kapsamında değerlendirilir.
+Yetkilendirme ile proje süreçleri derneğimiz tarafından yürütülmektedir.
+</p>
+</section>
+
+<!-- 🔵 ÜST KAYNAK PANELİ -->
+<div class="container">
+
+<div class="box">
 <h2>Avrupa Hibe Programları</h2>
 <ul>
 <li>Erasmus+ Gençlik Değişimleri</li>
@@ -13,7 +202,7 @@
 </ul>
 </div>
 
-<div class="intro" style="margin-top:15px;">
+<div class="box">
 <h2>Türkiye Hibe Kaynakları</h2>
 <ul>
 <li>TÜBİTAK Ar-Ge Destekleri</li>
@@ -26,3 +215,94 @@
 </div>
 
 </div>
+
+<!-- TABLE -->
+<main class="container">
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Proje</th>
+<th>Kategori</th>
+<th>Kaynak</th>
+<th>Hibe</th>
+<th>Hedef</th>
+<th>Durum</th>
+<th>Kılavuz</th>
+<th>İşlem</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Gençlik Değişimleri</td>
+<td>Gençlik</td>
+<td>Erasmus+</td>
+<td>20K-60K €</td>
+<td>Gençler</td>
+<td class="open">Açık</td>
+<td><a class="btn" href="https://youth.europa.eu">Kılavuz</a></td>
+<td><a class="btn" href="#">Talep Et</a></td>
+</tr>
+
+<tr>
+<td>Dayanışma Projesi</td>
+<td>Sosyal</td>
+<td>ESC</td>
+<td>6K-20K €</td>
+<td>Gençlik</td>
+<td class="open">Açık</td>
+<td><a class="btn" href="https://youth.europa.eu/solidarity">Kılavuz</a></td>
+<td><a class="btn" href="#">Talep Et</a></td>
+</tr>
+
+<tr>
+<td>KOSGEB Girişim</td>
+<td>KOBİ</td>
+<td>KOSGEB</td>
+<td>50K-750K ₺</td>
+<td>Girişimci</td>
+<td class="open">Açık</td>
+<td><a class="btn" href="https://kosgeb.gov.tr">Kılavuz</a></td>
+<td><a class="btn" href="#">Talep Et</a></td>
+</tr>
+
+<tr>
+<td>IPARD Tarım</td>
+<td>Tarım</td>
+<td>TKDK</td>
+<td>%60-70</td>
+<td>Kırsal</td>
+<td class="limit">Dönemsel</td>
+<td><a class="btn" href="https://tkdk.gov.tr">Kılavuz</a></td>
+<td><a class="btn" href="#">Talep Et</a></td>
+</tr>
+
+<tr>
+<td>İstihdam Destek</td>
+<td>Sosyal</td>
+<td>İŞKUR</td>
+<td>Değişken</td>
+<td>Genel</td>
+<td class="open">Açık</td>
+<td><a class="btn" href="https://iskur.gov.tr">Kılavuz</a></td>
+<td><a class="btn" href="#">Talep Et</a></td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+</main>
+
+<footer>
+© 2026 Ankara Malatyalılar Derneği | Proje Sistemi
+</footer>
+
+</body>
+</html>
