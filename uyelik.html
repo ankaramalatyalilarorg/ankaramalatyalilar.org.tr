@@ -6,16 +6,6 @@
 <title>Üyelik | Ankara Malatyalılar Derneği</title>
 
 <style>
-:root{
---primary:#2f6b57;
---dark:#1d2f28;
---bg:#eef2f5;
---text:#1f2d3d;
---muted:#5b6b7a;
---card:#ffffff;
---border:#e6e9ee;
-}
-
 *{
 margin:0;
 padding:0;
@@ -24,12 +14,11 @@ box-sizing:border-box;
 
 body{
 font-family:Arial, Helvetica, sans-serif;
-background:var(--bg);
-color:var(--text);
+background:#eef2f5;
+color:#1f2d3d;
 line-height:1.6;
 }
 
-/* CONTAINER */
 .container{
 width:95%;
 max-width:1300px;
@@ -53,7 +42,7 @@ display:block;
 
 /* NAV */
 nav{
-background:var(--primary);
+background:#2f6b57;
 border-radius:0 0 18px 18px;
 }
 
@@ -63,7 +52,6 @@ display:flex;
 flex-wrap:wrap;
 gap:55px;
 padding:14px 30px;
-align-items:center;
 }
 
 nav ul li a{
@@ -71,7 +59,6 @@ color:#fff;
 text-decoration:none;
 font-size:15px;
 font-weight:500;
-transition:.2s;
 }
 
 nav ul li a:hover,
@@ -98,27 +85,27 @@ font-size:18px;
 max-width:900px;
 }
 
-/* FORM WRAPPER */
+/* SECTIONS */
 .section{
-margin-top:22px;
+margin-top:20px;
 }
 
 .card{
-background:var(--card);
-border:1px solid var(--border);
+background:#fff;
 border-radius:16px;
 padding:26px;
 margin-bottom:18px;
 box-shadow:0 8px 20px rgba(0,0,0,0.05);
+border:1px solid #e6e9ee;
 }
 
 .card h2{
-color:var(--primary);
-font-size:24px;
+color:#2f6b57;
 margin-bottom:14px;
+font-size:22px;
 }
 
-/* INPUTS */
+/* INPUT GRID */
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -131,36 +118,39 @@ padding:10px 12px;
 border:1px solid #d8dde6;
 border-radius:10px;
 font-size:14px;
-outline:none;
 }
 
 textarea{
 min-height:80px;
-resize:none;
 }
 
 /* FILE UPLOAD */
 .upload{
-border:2px dashed var(--primary);
-padding:18px;
+border:2px dashed #2f6b57;
+padding:16px;
 border-radius:12px;
 text-align:center;
-color:var(--muted);
 }
 
-/* BEYAN */
+/* BEYAN - TAM SOL HİZALI */
 .checklist{
 display:flex;
 flex-direction:column;
-gap:10px;
+gap:12px;
+align-items:flex-start;
 }
 
 .check{
 display:flex;
-align-items:flex-start;
+align-items:center;
 gap:10px;
+width:100%;
 font-size:14px;
-color:var(--text);
+}
+
+.check input{
+margin:0;
+transform:scale(1.1);
 }
 
 /* BUTTONS */
@@ -169,18 +159,15 @@ text-align:center;
 margin-top:20px;
 }
 
-button{
-border:none;
-cursor:pointer;
-}
-
 .btn-submit{
-background:var(--primary);
+background:#2f6b57;
 color:#fff;
 padding:12px 26px;
 border-radius:10px;
 font-size:15px;
 font-weight:600;
+border:none;
+cursor:pointer;
 }
 
 .btn-print{
@@ -189,19 +176,18 @@ color:#fff;
 padding:10px 18px;
 border-radius:10px;
 margin-top:10px;
+border:none;
+cursor:pointer;
 }
 
-/* FOOTER */
-footer{
-margin-top:30px;
-text-align:center;
-color:#6a6a6a;
-padding:20px;
+/* HERO + FORM GAP */
+main{
+margin-top:18px;
 }
 
-/* PRINT FORM */
+/* PRINT */
 @media print{
-nav,.btn-print,.btn-submit{display:none;}
+nav,.btn-submit,.btn-print{display:none;}
 
 body{
 background:#fff;
@@ -210,11 +196,6 @@ background:#fff;
 .card{
 box-shadow:none;
 border:1px solid #000;
-}
-
-.hero{
-background:#fff;
-color:#000;
 }
 }
 
@@ -255,7 +236,7 @@ font-size:30px;
 
 <section class="hero container">
 <h1>Üyelik Başvurusu</h1>
-<p>Derneğimize katılarak dayanışma, kültür ve hemşehrilik bağlarını güçlendirin.</p>
+<p>Derneğimize katılarak dayanışma ve hemşehrilik bağlarını güçlendirin.</p>
 </section>
 
 <main class="container">
@@ -275,7 +256,7 @@ font-size:30px;
 
 <!-- İLETİŞİM -->
 <div class="card">
-<h2>İletişim</h2>
+<h2>İletişim Bilgileri</h2>
 <div class="grid">
 <input type="text" placeholder="Adres">
 <input type="tel" placeholder="Telefon">
@@ -287,10 +268,10 @@ font-size:30px;
 <div class="card">
 <h2>Diğer Bilgiler</h2>
 <div class="grid">
-<input type="text" placeholder="Eğitim / Mezuniyet">
+<input type="text" placeholder="Eğitim Durumu">
 <input type="text" placeholder="Meslek / Çalışma Durumu">
 <input type="text" placeholder="İl / İlçe / Köy">
-<textarea placeholder="İlgi Alanları (Projeler, Etkinlikler, Buluşmalar)"></textarea>
+<textarea placeholder="Faaliyet İlgi Alanı"></textarea>
 </div>
 </div>
 
@@ -303,7 +284,7 @@ font-size:30px;
 </div>
 </div>
 
-<!-- BEYAN -->
+<!-- BEYAN (DÜZELTİLMİŞ TAM SOL) -->
 <div class="card">
 <h2>Onay ve Beyanlar</h2>
 
@@ -311,24 +292,24 @@ font-size:30px;
 
 <label class="check">
 <input type="checkbox">
-Bilgilerimin doğru olduğunu onaylıyorum
+<span>Bilgilerimin doğru olduğunu onaylıyorum</span>
 </label>
 
 <label class="check">
 <input type="checkbox">
-Dernek tüzüğünü okudum ve kabul ediyorum
+<span>Dernek tüzüğünü okudum ve kabul ediyorum</span>
 </label>
 
 <label class="check">
 <input type="checkbox">
-Üyelik şartlarını ve aidat yükümlülüğünü kabul ediyorum
+<span>Üyelik şartlarını ve aidat yükümlülüğünü kabul ediyorum</span>
 </label>
 
 </div>
 
 <div class="actions">
 <button class="btn-print" type="button" onclick="window.print()">Yazdır</button>
-<br>
+<br><br>
 <button class="btn-submit" type="submit">Gönder</button>
 </div>
 
@@ -337,10 +318,6 @@ Dernek tüzüğünü okudum ve kabul ediyorum
 </form>
 
 </main>
-
-<footer>
-© 2026 Ankara Malatyalılar Derneği | Tüm Hakları Saklıdır
-</footer>
 
 </body>
 </html>
