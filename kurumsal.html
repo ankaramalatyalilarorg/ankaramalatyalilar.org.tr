@@ -44,6 +44,8 @@ nav{
 background:#1f2d3d;
 border-radius:0 0 18px 18px;
 overflow:hidden;
+position:relative;
+z-index:10;
 }
 
 nav ul{
@@ -70,10 +72,16 @@ letter-spacing:0.2px;
 transition:0.3s;
 }
 
-nav ul li a:hover,
-nav ul li a.active{
-color:#f4a300;
-font-weight:bold;
+nav ul li a{
+color:#ffffff;
+text-decoration:none;
+font-size:16px;
+font-weight:500;
+letter-spacing:0.2px;
+transition:0.3s;
+position:relative;
+z-index:11;
+display:inline-block;
 }
 
 .hero{
