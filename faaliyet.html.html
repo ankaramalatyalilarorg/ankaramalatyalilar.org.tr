@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faaliyetlerimiz | Ankara Malatyalılar Derneği</title>
+<meta name="description" content="Ankara Malatyalılar Derneği faaliyetlerimiz sayfası.">
 
 <style>
 *{
@@ -14,29 +15,32 @@ box-sizing:border-box;
 
 body{
 font-family:Arial, Helvetica, sans-serif;
-background:#f4f4f4;
-color:#1b1b1b;
-line-height:1.6;
+background:#eef2f7;
+color:#1d2d44;
 }
 
 .container{
 width:95%;
-max-width:1280px;
+max-width:1350px;
 margin:auto;
 }
 
 header{
-padding-top:18px;
+margin-top:15px;
+}
+
+.banner-box{
+overflow:hidden;
+border-radius:18px 18px 0 0;
 }
 
 .banner-box img{
 width:100%;
 display:block;
-border-radius:18px 18px 0 0;
 }
 
 nav{
-background:#0d2d5e;
+background:#3a86c8;
 border-radius:0 0 18px 18px;
 overflow:hidden;
 }
@@ -44,114 +48,134 @@ overflow:hidden;
 nav ul{
 list-style:none;
 display:flex;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-nav li{
+justify-content:flex-start;
+align-items:center;
+gap:65px;
+padding:16px 35px;
 margin:0;
 }
 
-nav a{
-display:block;
-padding:18px 24px;
-color:#ffffff;
-text-decoration:none;
-font-size:18px;
-transition:0.3s;
+nav ul li{
+list-style:none;
+margin:0;
+padding:0;
 }
 
-nav a:hover,
-nav a.active{
-background:#f0a500;
-color:#0d2d5e;
+nav ul li a{
+color:#ffffff;
+text-decoration:none;
+font-size:16px;
+font-weight:500;
+letter-spacing:0.2px;
+transition:0.3s;
+display:inline-block;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+color:#f4a300;
 font-weight:bold;
 }
 
 .hero{
-margin-top:18px;
-background:linear-gradient(135deg,#0f7b45,#28a36a);
+margin-top:20px;
+background:linear-gradient(135deg,#3a86c8,#62a8e5);
 color:#ffffff;
-padding:55px 20px;
+padding:58px 25px;
 border-radius:18px;
 text-align:center;
 }
 
 .hero h1{
-font-size:46px;
-margin-bottom:12px;
+font-size:48px;
+margin-bottom:15px;
 }
 
 .hero p{
-font-size:20px;
-max-width:850px;
+font-size:21px;
+line-height:1.8;
+max-width:900px;
 margin:auto;
 }
 
 .section{
 margin-top:24px;
 background:#ffffff;
-padding:34px;
+padding:36px;
 border-radius:18px;
 box-shadow:0 8px 24px rgba(0,0,0,0.08);
 }
 
 .section h2{
 font-size:34px;
-color:#0d2d5e;
+color:#2c5d8f;
 margin-bottom:18px;
-text-align:center;
 }
 
 .section p{
 font-size:18px;
+line-height:1.8;
 margin-bottom:14px;
-text-align:center;
+color:#33415c;
 }
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:22px;
-margin-top:25px;
+margin-top:12px;
 }
 
 .card{
-background:#f9fbff;
-border-left:6px solid #0f7b45;
+background:#f8fbff;
+border-left:6px solid #f0a500;
 padding:24px;
 border-radius:14px;
 }
 
 .card h3{
 font-size:24px;
-color:#8b0000;
-margin-bottom:12px;
+color:#2c5d8f;
+margin-bottom:10px;
 }
 
 .card p{
 font-size:17px;
+line-height:1.7;
 margin:0;
-text-align:left;
+color:#44556b;
 }
 
 footer{
-margin-top:28px;
-background:#0d2d5e;
-color:#fff;
+margin-top:30px;
+background:#3a86c8;
+color:#ffffff;
 text-align:center;
 padding:22px;
 font-size:16px;
+border-radius:18px 18px 0 0;
+}
+
+@media(max-width:900px){
+nav ul{
+gap:25px;
+padding:16px 20px;
+}
 }
 
 @media(max-width:768px){
 
 nav ul{
 flex-direction:column;
+align-items:stretch;
+gap:0;
+padding:0;
 }
 
-nav a{
+nav ul li a{
+display:block;
 text-align:center;
+padding:14px 20px;
 border-bottom:1px solid rgba(255,255,255,0.15);
 }
 
@@ -165,6 +189,11 @@ font-size:17px;
 
 .section h2{
 font-size:28px;
+}
+
+.section p,
+.card p{
+font-size:16px;
 }
 
 }
@@ -203,73 +232,52 @@ Birlik, dayanışma ve kültürel mirasımızı yaşatan güçlü çalışmalar 
 </section>
 
 <section class="section">
-
-<h2>Başlıca Faaliyet Alanlarımız</h2>
-
+<h2>Sosyal Dayanışma</h2>
 <p>
-Ankara Malatyalılar Derneği olarak hemşehrilerimizi bir araya getiren, sosyal bağları güçlendiren ve toplumsal fayda üreten faaliyetler gerçekleştiriyoruz.
+İhtiyaç sahiplerine destek, yardımlaşma organizasyonları ve toplumsal dayanışmayı artıran çalışmalar gerçekleştirmekteyiz.
 </p>
+</section>
+
+<section class="section">
+<h2>Kültürel Etkinlikler</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>Kültürel Etkinlikler</h3>
-<p>Malatya kültür geceleri, özel programlar, anma günleri ve yöresel buluşmalar düzenlenir.</p>
+<h3>Hemşehri Buluşmaları</h3>
+<p>
+Geleneksel toplantılar, tanışma programları ve kaynaşma etkinlikleri düzenlenmektedir.
+</p>
 </div>
 
 <div class="card">
-<h3>Hemşehri Buluşmaları</h3>
-<p>Ankara’da yaşayan hemşehrilerimizi kaynaştıran kahvaltı, toplantı ve dayanışma organizasyonları yapılır.</p>
+<h3>Yöresel Günler</h3>
+<p>
+Malatya kültürünü tanıtan organizasyonlar, yemek ve sanat etkinlikleri yapılmaktadır.
+</p>
 </div>
 
 <div class="card">
 <h3>Gençlik Çalışmaları</h3>
-<p>Gençlerimize yönelik sosyal gelişim, kariyer destek ve eğitim faaliyetleri yürütülür.</p>
-</div>
-
-<div class="card">
-<h3>Eğitim & Seminerler</h3>
-<p>Kişisel gelişim, girişimcilik, iş hayatı ve akademik başarı konularında seminerler düzenlenir.</p>
-</div>
-
-<div class="card">
-<h3>Sosyal Yardımlaşma</h3>
-<p>İhtiyaç sahibi ailelere destek, burs çalışmaları ve dayanışma kampanyaları gerçekleştirilir.</p>
-</div>
-
-<div class="card">
-<h3>Projeler</h3>
-<p>Ulusal ve uluslararası sosyal sorumluluk, gençlik ve kalkınma projeleri hazırlanır.</p>
-</div>
-
-<div class="card">
-<h3>Kadın Çalışmaları</h3>
-<p>Kadın üyelerimize yönelik üretim, eğitim, sosyal dayanışma ve etkinlik programları yapılır.</p>
-</div>
-
-<div class="card">
-<h3>Gezi Organizasyonları</h3>
-<p>Kültürel geziler, şehir içi ve şehir dışı tanıtım organizasyonları düzenlenir.</p>
-</div>
-
-<div class="card">
-<h3>İş Dünyası Buluşmaları</h3>
-<p>İş insanları, esnaf ve girişimciler arasında iş birliği ağı kurulmasına katkı sağlanır.</p>
-</div>
-
-<div class="card">
-<h3>Haberler & Duyurular</h3>
-<p>Dernek faaliyetleri, etkinlikler ve önemli gelişmeler üyelerimize duyurulur.</p>
+<p>
+Gençlerimizin sosyal, kültürel ve akademik gelişimine katkı sağlayan projeler yürütülmektedir.
+</p>
 </div>
 
 </div>
+</section>
 
+<section class="section">
+<h2>Toplumsal Katkı</h2>
+<p>
+Ankara’da yaşayan Malatyalı hemşehrilerimizin birlik ruhunu güçlendiren kalıcı faaliyetlere devam ediyoruz.
+</p>
 </section>
 
 </main>
 
-<footer>
-© 2026 Ankara Malatyalılar Derneği | Tüm Hakları Saklıdır
+<footer class="container">
+© 2026 Ankara Malatyalılar Derneği - Tüm Hakları Saklıdır.
 </footer>
 
 </body>
