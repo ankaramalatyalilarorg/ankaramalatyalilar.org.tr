@@ -26,21 +26,21 @@ margin:auto;
 }
 
 /* =========================
-   SABİT SPACING (GLOBAL)
+   DENGELİ (ESKİ) SPACING
 ========================= */
 
 header{
-margin:0;
-padding-top:6px;
-padding-bottom:0;
+margin-top:12px;
+padding-top:12px;
 }
 
 nav{
-margin-bottom:0;
+margin-bottom:6px;
 }
 
+/* daha rahat içerik başlangıcı */
 main{
-padding-top:9px;
+padding-top:16px;
 }
 
 /* BANNER */
@@ -67,7 +67,7 @@ justify-content:flex-start;
 align-items:center;
 flex-wrap:wrap;
 gap:70px;
-padding:12px 35px;
+padding:14px 35px;
 }
 
 nav ul li a{
@@ -84,15 +84,17 @@ color:#f4a300;
 font-weight:bold;
 }
 
-/* SAYFA İÇERİĞİ */
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:2fr 1fr;
 gap:30px;
-margin-top:0;
 }
 
-.card{
+/* KARTLAR */
+.card,
+.profile,
+.info-box{
 background:#fff;
 border-radius:20px;
 padding:30px;
@@ -120,10 +122,6 @@ margin-bottom:16px;
 
 /* SAĞ BLOK */
 .profile{
-background:#fff;
-border-radius:20px;
-padding:30px;
-box-shadow:0 8px 22px rgba(0,0,0,0.08);
 text-align:center;
 }
 
@@ -136,21 +134,15 @@ margin-bottom:15px;
 .profile p{
 font-size:18px;
 line-height:1.7;
+margin-bottom:12px;
 }
 
 /* ALT BLOKLAR */
 .bottom-sections{
-margin-top:24px;
+margin-top:30px;
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:30px;
-}
-
-.info-box{
-background:#fff;
-border-radius:20px;
-padding:30px;
-box-shadow:0 8px 22px rgba(0,0,0,0.08);
 }
 
 .info-box h2{
@@ -167,8 +159,8 @@ color:#44556b;
 
 /* FOOTER */
 footer{
-margin-top:35px;
-padding:20px;
+margin-top:40px;
+padding:22px;
 text-align:center;
 font-size:16px;
 color:#666;
@@ -195,7 +187,7 @@ font-size:18px;
 
 nav ul{
 gap:25px;
-padding:12px 20px;
+padding:14px 20px;
 }
 }
 </style>
@@ -241,7 +233,7 @@ Derneğimiz; birlik, beraberlik ve dayanışma ruhunu güçlendirmek, kültürel
 </p>
 
 <p>
-Kurumsal yapımız, şeffaf yönetim anlayışı ve gönüllülük esasına dayalı organizasyon sistemi ile faaliyetlerini sürdürmektedir.
+Kurumsal yapımız şeffaf yönetim anlayışı ve gönüllülük esasına dayalı bir organizasyon modeli ile sürdürülmektedir.
 </p>
 
 </section>
@@ -255,7 +247,7 @@ Vizyonumuz, Ankara’daki tüm Malatyalıların güçlü bir çatı altında bir
 </p>
 
 <p>
-Misyonumuz ise kültürel bağları güçlendirmek, sosyal dayanışmayı artırmak ve topluma fayda sağlayan projeler üretmektir.
+Misyonumuz ise kültürel bağları güçlendirmek, sosyal dayanışmayı artırmak ve topluma faydalı projeler üretmektir.
 </p>
 
 </aside>
