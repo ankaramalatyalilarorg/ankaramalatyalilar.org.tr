@@ -1,335 +1,210 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proje Duyuruları | Ankara Malatyalılar Derneği</title>
-  <style>
-    :root{
-      --primary:#7a0019;
-      --secondary:#a61b3f;
-      --accent:#f8f1f3;
-      --text:#222;
-      --muted:#666;
-      --white:#fff;
-      --border:#e6d9de;
-      --success:#eaf7ed;
-      --warning:#fff6e6;
-      --info:#eef5ff;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projeler | Ankara Malatyalılar Derneği</title>
+<meta name="description" content="Ankara Malatyalılar Derneği proje duyuruları ve destek fırsatları sayfası.">
 
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    body{
-      font-family: Arial, Helvetica, sans-serif;
-      background:#fafafa;
-      color:var(--text);
-      line-height:1.6;
-    }
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#eef2f7;
+color:#1d2d44;
+}
 
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
+.container{
+width:95%;
+max-width:1350px;
+margin:auto;
+}
 
-    img{
-      max-width:100%;
-      height:auto;
-      display:block;
-    }
+header{
+margin-top:15px;
+}
 
-    .container{
-      width:min(1200px, 92%);
-      margin:0 auto;
-    }
+.banner-box{
+overflow:hidden;
+border-radius:18px 18px 0 0;
+}
 
-    header{
-      background:#fff;
-      box-shadow:0 2px 10px rgba(0,0,0,.06);
-      position:sticky;
-      top:0;
-      z-index:1000;
-    }
+.banner-box img{
+width:100%;
+display:block;
+}
 
-    .header-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:14px 0;
-      gap:20px;
-    }
+nav{
+background:#264653;
+border-radius:0 0 18px 18px;
+overflow:hidden;
+}
 
-    .logo-area{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
+nav ul{
+list-style:none;
+display:flex;
+justify-content:flex-start;
+align-items:center;
+gap:65px;
+padding:16px 35px;
+margin:0;
+}
 
-    .logo-area img{
-      width:58px;
-      height:58px;
-      object-fit:contain;
-      border-radius:8px;
-    }
+nav ul li{
+list-style:none;
+margin:0;
+padding:0;
+}
 
-    .logo-text{
-      font-weight:700;
-     color:#0b6e4f;
-      font-size:18px;
-      line-height:1.2;
-    }
+nav ul li a{
+color:#ffffff;
+text-decoration:none;
+font-size:16px;
+font-weight:500;
+letter-spacing:0.2px;
+transition:0.3s;
+display:inline-block;
+}
 
-    nav ul{
-      list-style:none;
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-    }
+nav ul li a:hover,
+nav ul li a.active{
+color:#f4a300;
+font-weight:bold;
+}
 
-    nav ul li a{
-      display:inline-block;
-      padding:10px 14px;
-      border-radius:10px;
-      font-weight:600;
-      color:#333;
-      transition:.25s ease;
-    }
+.hero{
+margin-top:20px;
+background:linear-gradient(135deg,#1b7f69,#46a899);
+color:#ffffff;
+padding:58px 40px;
+border-radius:18px;
+}
 
-    nav ul li a:hover{
-      background:var(--accent);
-      color:var(--primary);
-    }
+.hero h1{
+font-size:48px;
+margin-bottom:18px;
+}
 
-    nav ul li a.active{
-      background:var(--primary);
-      color:#fff;
-    }
+.hero p{
+font-size:20px;
+line-height:1.9;
+max-width:1000px;
+}
 
-    .hero{
-      background:linear-gradient(135deg, var(--primary), var(--secondary));
-      color:#fff;
-      padding:60px 0;
-    }
+.section{
+margin-top:24px;
+background:#ffffff;
+padding:36px;
+border-radius:18px;
+box-shadow:0 8px 24px rgba(0,0,0,0.08);
+}
 
-    .hero h1{
-      font-size:40px;
-      line-height:1.15;
-      margin-bottom:16px;
-    }
+.section h2{
+font-size:34px;
+color:#264653;
+margin-bottom:18px;
+}
 
-    .hero p{
-      font-size:18px;
-      max-width:900px;
-      opacity:.97;
-    }
+.section p{
+font-size:18px;
+line-height:1.8;
+margin-bottom:14px;
+color:#33415c;
+}
 
-    .section{
-      padding:44px 0;
-    }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:22px;
+margin-top:12px;
+}
 
-    .lead-box{
-      background:#fff;
-      border:1px solid var(--border);
-      border-left:6px solid var(--primary);
-      border-radius:16px;
-      padding:24px;
-      box-shadow:0 8px 24px rgba(0,0,0,.04);
-    }
+.card{
+background:#f8fbff;
+border-left:6px solid #f0a500;
+padding:24px;
+border-radius:14px;
+}
 
-    .lead-box h2{
-      color:var(--primary);
-      font-size:30px;
-      margin-bottom:14px;
-    }
+.card h3{
+font-size:24px;
+color:#264653;
+margin-bottom:10px;
+}
 
-    .lead-box p{
-      margin-bottom:12px;
-    }
+.card p{
+font-size:17px;
+line-height:1.7;
+margin:0;
+color:#44556b;
+}
 
-    .lead-box p:last-child{
-      margin-bottom:0;
-    }
+footer{
+margin-top:30px;
+background:#264653;
+color:#ffffff;
+text-align:center;
+padding:22px;
+font-size:16px;
+border-radius:18px 18px 0 0;
+}
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:16px;
-      margin-top:24px;
-    }
+@media(max-width:900px){
+nav ul{
+gap:25px;
+padding:16px 20px;
+}
+}
 
-    .card{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:18px;
-      box-shadow:0 8px 20px rgba(0,0,0,.04);
-    }
+@media(max-width:768px){
 
-    .card h3{
-      color:var(--primary);
-      font-size:18px;
-      margin-bottom:8px;
-    }
+nav ul{
+flex-direction:column;
+align-items:stretch;
+gap:0;
+padding:0;
+}
 
-    .notice{
-      margin-top:18px;
-      background:var(--warning);
-      border:1px solid #efd28a;
-      border-radius:12px;
-      padding:16px 18px;
-      font-weight:600;
-    }
+nav ul li a{
+display:block;
+text-align:center;
+padding:14px 20px;
+border-bottom:1px solid rgba(255,255,255,0.15);
+}
 
-    .section-title{
-      color:var(--primary);
-      font-size:30px;
-      margin-bottom:16px;
-    }
+.hero{
+padding:40px 22px;
+}
 
-    .table-wrap{
-      overflow:auto;
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:16px;
-      box-shadow:0 8px 24px rgba(0,0,0,.04);
-    }
+.hero h1{
+font-size:34px;
+}
 
-    table{
-      width:100%;
-      min-width:1150px;
-      border-collapse:collapse;
-    }
+.hero p{
+font-size:17px;
+}
 
-    th, td{
-      text-align:left;
-      padding:14px 12px;
-      border-bottom:1px solid #eee;
-      vertical-align:top;
-      font-size:15px;
-    }
+.section h2{
+font-size:28px;
+}
 
-    th{
-      background:#f8eef1;
-      color:var(--primary);
-      text-transform:uppercase;
-      letter-spacing:.3px;
-      font-size:13px;
-    }
+.section p,
+.card p{
+font-size:16px;
+}
 
-    tr:hover td{
-      background:#fcfbfc;
-    }
-
-    .badge{
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:12px;
-      font-weight:700;
-      white-space:nowrap;
-    }
-
-    .badge-open{
-      background:var(--success);
-      color:#116633;
-    }
-
-    .badge-soon{
-      background:var(--info);
-      color:#114b9b;
-    }
-
-    .badge-follow{
-      background:#f2f2f2;
-      color:#444;
-    }
-
-    .btn{
-      display:inline-block;
-      background:var(--primary);
-      color:#fff;
-      padding:10px 14px;
-      border-radius:10px;
-      font-weight:700;
-      transition:.25s ease;
-      white-space:nowrap;
-    }
-
-    .btn:hover{
-      background:var(--secondary);
-    }
-
-    .small-note{
-      color:var(--muted);
-      font-size:14px;
-      margin-top:14px;
-    }
-
-    .cta{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:28px;
-      text-align:center;
-      box-shadow:0 8px 24px rgba(0,0,0,.04);
-    }
-
-    .cta h3{
-      color:var(--primary);
-      font-size:28px;
-      margin-bottom:10px;
-    }
-
-    .cta p{
-      max-width:850px;
-      margin:0 auto 18px;
-      color:var(--muted);
-    }
-
-    footer{
-      background:#f4f4f4;
-      color:#555;
-      padding:28px 0 40px;
-      margin-top:10px;
-      font-size:14px;
-    }
-
-    @media (max-width: 900px){
-      .header-inner{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
-      nav ul{
-        gap:6px;
-      }
-
-      .hero h1{
-        font-size:32px;
-      }
-
-      .hero p{
-        font-size:16px;
-      }
-
-      .lead-box h2,
-      .section-title{
-        font-size:24px;
-      }
-
-      .cta h3{
-        font-size:24px;
-      }
-    }
-  </style>
+}
+</style>
 </head>
+
 <body>
 
-  <header class="container">
+<header class="container">
 
 <div class="banner-box">
 <img src="bas.png" alt="Ankara Malatyalılar Derneği Banner">
@@ -337,10 +212,10 @@
 
 <nav>
 <ul>
-<li><a href="index.html" class="active">Ana Sayfa</a></li>
+<li><a href="index.html">Ana Sayfa</a></li>
 <li><a href="kurumsal.html">Kurumsal</a></li>
 <li><a href="faaliyet.html">Faaliyetlerimiz</a></li>
-<li><a href="proje.html">Projeler</a></li>
+<li><a href="proje.html" class="active">Projeler</a></li>
 <li><a href="blog.html">Blog</a></li>
 <li><a href="uyelik.html">Üyelik</a></li>
 <li><a href="iletisim.html">İletişim</a></li>
@@ -349,234 +224,60 @@
 
 </header>
 
-  <section class="hero" style="background: linear-gradient(135deg, #0b6e4f, #3fa796) !important; color:#ffffff;">
-    <div class="container">
-      <h1>PROJE DUYURULARI</h1>
-      <p>
-        Ankara Malatyalılar Derneği olarak; gençler, kadınlar, öğrenciler, girişimciler,
-        çiftçiler, üreticiler, sivil toplum kuruluşları ve toplum yararına proje üretmek isteyen
-        tüm kişi ve kurumlar için Türkiye ve Avrupa kaynaklı güncel hibe, destek ve proje
-        fırsatlarını sizlerle buluşturuyoruz.
-      </p>
-    </div>
-  </section>
+<main class="container">
 
-  <section class="section">
-    <div class="container">
-      <div class="lead-box">
-        <h2>Geleceğe Açılan Kapılar Burada</h2>
-        <p>
-          Bazen bir fikir, doğru destekle büyük bir değişime dönüşür. Bir genç için eğitim kapısı,
-          bir kadın için girişim fırsatı, bir üretici için yeni yatırım, bir dernek için sosyal etki,
-          bir mahalle için umut olabilir.
-        </p>
-        <p>
-          Bu sayfada; başvuruya açık, sürekli yürüyen veya takvimi yayımlanmış proje ve hibe
-          fırsatlarını sade, anlaşılır ve herkesin faydalanabileceği bir dille paylaşıyoruz.
-        </p>
-        <p>
-          Amacımız yalnızca duyuru yapmak değil; insanımıza yol göstermek, fırsatları görünür kılmak
-          ve “Ben de başvurabilir miyim?” diyen herkese cesaret vermektir.
-        </p>
-      </div>
+<section class="hero">
+<h1>Proje Duyuruları</h1>
+<p>
+Ankara Malatyalılar Derneği olarak; gençler, kadınlar, öğrenciler, girişimciler, çiftçiler, üreticiler,
+sivil toplum kuruluşları ve toplum yararına proje üretmek isteyen tüm kişi ve kurumlar için Türkiye ve
+Avrupa kaynaklı güncel hibe, destek ve proje fırsatlarını sizlerle buluşturuyoruz.
+</p>
+</section>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Gençler İçin</h3>
-          <p>Gençlik katılımı, gönüllülük, değişim programları ve dayanışma projeleri.</p>
-        </div>
-        <div class="card">
-          <h3>Kadınlar İçin</h3>
-          <p>Girişimcilik, sosyal katılım, eğitim, istihdam ve toplumsal güçlenme fırsatları.</p>
-        </div>
-        <div class="card">
-          <h3>Öğrenciler İçin</h3>
-          <p>Eğitim, hareketlilik, proje ortaklıkları ve uluslararası öğrenme imkanları.</p>
-        </div>
-        <div class="card">
-          <h3>Çiftçi ve Üreticiler İçin</h3>
-          <p>Kırsal kalkınma, üretim yatırımları, işleme-pazarlama ve büyüme destekleri.</p>
-        </div>
-      </div>
+<section class="section">
+<h2>Destek Alanlarımız</h2>
+<div class="grid">
 
-      <div class="notice">
-        Not: Başvuru takvimleri ve şartlar zaman içinde değişebilir. Bu nedenle her ilan için
-        “Detay / Başvuru” bağlantısından resmî kurum sayfası ayrıca kontrol edilmelidir.
-      </div>
-    </div>
-  </section>
+<div class="card">
+<h3>Gençlik Projeleri</h3>
+<p>
+Gençlerin sosyal, kültürel, eğitimsel ve gönüllülük temelli gelişimini destekleyen proje çağrılarını paylaşmaktayız.
+</p>
+</div>
 
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <h2 class="section-title">Güncel Hibe ve Destek İlanları</h2>
+<div class="card">
+<h3>Kadın ve Aile Destekleri</h3>
+<p>
+Kadınların güçlenmesi, aile yapısının desteklenmesi ve sosyal kalkınma odaklı programlar hakkında bilgilendirme yapılmaktadır.
+</p>
+</div>
 
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Durum</th>
-              <th>Hibe / Destek Konusu</th>
-              <th>Kimler Başvurabilir?</th>
-              <th>Başvuru Kurumu</th>
-              <th>Çağrı / Başvuru Tarih Aralığı</th>
-              <th>Destek Tutarı / Bütçe</th>
-              <th>Kısa Açıklama</th>
-              <th>Detay / Başvuru</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td><span class="badge badge-open">Açık / Yaklaşan Tur</span></td>
-              <td><strong>ESC Dayanışma Projeleri</strong></td>
-              <td>18-30 yaş arası gençler, gençlik grupları, gençler adına çalışan yapılar</td>
-              <td>Türkiye Ulusal Ajansı / Avrupa Dayanışma Programı</td>
-              <td>Yıl içi çağrı takvimine göre dönemsel başvuru</td>
-              <td>Program kurallarına göre proje desteği</td>
-              <td>Yerel dayanışma, sosyal fayda, çevre, gönüllülük ve gençlerin toplumsal katılımı için uygundur.</td>
-              <td><a class="btn" href="https://www.ua.gov.tr/" target="_blank">Detay / Başvuru</a></td>
-            </tr>
+<div class="card">
+<h3>Kırsal Kalkınma</h3>
+<p>
+Çiftçiler, üreticiler ve kırsal alanda faaliyet gösteren paydaşlara yönelik proje ve hibe fırsatları takip edilmektedir.
+</p>
+</div>
 
-            <tr>
-              <td>2</td>
-              <td><span class="badge badge-open">Dönemsel</span></td>
-              <td><strong>Erasmus+ Gençlik Katılımı</strong></td>
-              <td>STK’lar, gençlik kuruluşları, kamu kurumları ve gençlerle çalışan yapılar</td>
-              <td>Türkiye Ulusal Ajansı / Erasmus+</td>
-              <td>Yıllık Erasmus+ çağrı takvimine göre</td>
-              <td>Proje içeriğine göre</td>
-              <td>Gençlerin karar alma süreçlerine katılımı, aktif vatandaşlık ve yerel demokratik katılım projeleri için uygundur.</td>
-              <td><a class="btn" href="https://www.ua.gov.tr/" target="_blank">Detay / Başvuru</a></td>
-            </tr>
+</div>
+</section>
 
-            <tr>
-              <td>3</td>
-              <td><span class="badge badge-open">Dönemsel</span></td>
-              <td><strong>Erasmus+ Gençlik Değişimleri</strong></td>
-              <td>Gençlik grupları, dernekler, gençlik kuruluşları</td>
-              <td>Türkiye Ulusal Ajansı / Erasmus+</td>
-              <td>Yıllık çağrı takvimine göre</td>
-              <td>Proje içeriğine göre</td>
-              <td>Farklı ülkelerden gençlerin bir araya geldiği kültür, eğitim, çevre ve sosyal katılım temalı projeler için uygundur.</td>
-              <td><a class="btn" href="https://www.ua.gov.tr/" target="_blank">Detay / Başvuru</a></td>
-            </tr>
+<section class="section">
+<h2>Amacımız</h2>
+<p>
+Projeler sayfamızın amacı; üyelerimizi, hemşehrilerimizi ve ilgili tüm paydaşları doğru, güncel ve faydalı destek mekanizmalarıyla buluşturmaktır.
+</p>
+<p>
+Ulusal ve uluslararası fon kaynaklarına erişim konusunda farkındalık oluşturmak, proje kültürünü yaygınlaştırmak ve toplumsal fayda sağlayan girişimleri desteklemek temel önceliklerimiz arasındadır.
+</p>
+</section>
 
-            <tr>
-              <td>4</td>
-              <td><span class="badge badge-open">Sürekli / Güncel</span></td>
-              <td><strong>KOSGEB Girişimci Destek Programı</strong></td>
-              <td>Yeni iş kuracak veya işini büyütmek isteyen girişimciler</td>
-              <td>KOSGEB</td>
-              <td>Sürekli veya ilgili dönem ilanlarına göre</td>
-              <td>Program kapsamına göre değişken</td>
-              <td>İş kurma, işletme geliştirme, ekipman, danışmanlık ve büyüme odaklı destekler sunar.</td>
-              <td><a class="btn" href="https://www.kosgeb.gov.tr/" target="_blank">Detay / Başvuru</a></td>
-            </tr>
+</main>
 
-            <tr>
-              <td>5</td>
-              <td><span class="badge badge-open">Sürekli / Güncel</span></td>
-              <td><strong>KOSGEB İşletme Geliştirme Destekleri</strong></td>
-              <td>Faaliyette olan KOBİ’ler ve işletmeler</td>
-              <td>KOSGEB</td>
-              <td>Sürekli veya başlık bazlı dönemlere göre</td>
-              <td>Destek kalemine göre değişken</td>
-              <td>Belgelendirme, fuar, test, analiz, nitelikli personel ve kurumsal gelişim giderleri için uygundur.</td>
-              <td><a class="btn" href="https://www.kosgeb.gov.tr/" target="_blank">Detay / Başvuru</a></td>
-            </tr>
-
-            <tr>
-              <td>6</td>
-              <td><span class="badge badge-soon">Takvimi Yayınlanan</span></td>
-              <td><strong>TKDK / IPARD Kırsal Kalkınma Destekleri</strong></td>
-              <td>Çiftçiler, üreticiler, kırsal yatırımcılar, uygun gerçek ve tüzel kişiler</td>
-              <td>TKDK</td>
-              <td>Yıllık çağrı takvimine göre</td>
-              <td>Çağrı başlığına göre değişken</td>
-              <td>Tarımsal üretim, işleme-pazarlama, kırsal kalkınma ve iş geliştirme yatırımları için uygundur.</td>
-              <td><a class="btn" href="https://www.tkdk.gov.tr/" target="_blank">Detay / Başvuru</a></td>
-            </tr>
-
-            <tr>
-              <td>7</td>
-              <td><span class="badge badge-follow">Takip Edilecek</span></td>
-              <td><strong>Erasmus+ Küçük Ölçekli Ortaklıklar</strong></td>
-              <td>STK’lar, okullar, eğitim kurumları, gençlik ve spor kuruluşları</td>
-              <td>Erasmus+ / Ulusal Ajans</td>
-              <td>Yıllık programa göre ilan edilir</td>
-              <td>Başvuru paketine göre değişken</td>
-              <td>Uluslararası ortaklık kurmak, kurumsal kapasite geliştirmek ve toplumsal etki üretmek isteyen yapılar için çok değerlidir.</td>
-              <td><a class="btn" href="https://erasmus-plus.ec.europa.eu/" target="_blank">Detay / Başvuru</a></td>
-            </tr>
-
-            <tr>
-              <td>8</td>
-              <td><span class="badge badge-follow">Takip Edilecek</span></td>
-              <td><strong>Kadın Girişimcilik ve Sosyal Katılım Destekleri</strong></td>
-              <td>Kadın girişimciler, kadın kooperatifleri, dernekler ve sosyal girişimler</td>
-              <td>KOSGEB / Bakanlıklar / Kalkınma Ajansları / Belediyeler</td>
-              <td>Kuruma ve ilana göre değişir</td>
-              <td>İlana göre değişken</td>
-              <td>Kadınların ekonomik ve sosyal hayata daha güçlü katılımını destekleyen çağrılar düzenli olarak takip edilmelidir.</td>
-              <td><a class="btn" href="https://www.sanayi.gov.tr/" target="_blank">Detay / Başvuru</a></td>
-            </tr>
-
-            <tr>
-              <td>9</td>
-              <td><span class="badge badge-follow">Takip Edilecek</span></td>
-              <td><strong>Öğrencilere ve Gençlere Yönelik Eğitim / Hareketlilik Fırsatları</strong></td>
-              <td>Öğrenciler, gençler, gençlik grupları, okullar ve eğitim kurumları</td>
-              <td>Ulusal Ajans / AB Programları / Vakıflar</td>
-              <td>Program ve ilana göre değişir</td>
-              <td>İlana göre değişken</td>
-              <td>Eğitim, staj, gönüllülük, hareketlilik ve proje katılımı açısından önemli fırsatlar sunar.</td>
-              <td><a class="btn" href="https://www.ua.gov.tr/" target="_blank">Detay / Başvuru</a></td>
-            </tr>
-
-            <tr>
-              <td>10</td>
-              <td><span class="badge badge-follow">Takip Edilecek</span></td>
-              <td><strong>Toplumsal Dayanışma ve Sosyal Destek Projeleri</strong></td>
-              <td>Dernekler, vakıflar, belediyeler, sosyal girişimler, topluluklar</td>
-              <td>AB Programları / Kamu Kurumları / Yerel Yönetimler</td>
-              <td>İlana göre değişir</td>
-              <td>Çağrıya göre değişken</td>
-              <td>İhtiyaç sahipleri, yaşlılar, gençler, kadınlar, engelliler ve dezavantajlı gruplara yönelik sosyal etki projeleri için uygundur.</td>
-              <td><a class="btn" href="https://www.ab.gov.tr/" target="_blank">Detay / Başvuru</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="small-note">
-        Bu liste bilgilendirme amaçlıdır. Kesin başvuru koşulları, uygunluk kriterleri, destek oranları,
-        gerekli belgeler ve son tarihler ilgili resmî kurumun duyurusunda yer alır.
-      </p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="cta">
-        <h3>Bir fikriniz varsa, birlikte projeye dönüştürelim</h3>
-        <p>
-          Ankara Malatyalılar Derneği olarak; gençlere, kadınlara, öğrencilere, üreticilere,
-          girişimcilere ve toplum yararına çalışan tüm kesimlere fayda sağlayacak projeleri önemsiyoruz.
-          Uygun bir çağrı bulduysanız ve proje hazırlamak istiyorsanız bizimle iletişime geçebilirsiniz.
-        </p>
-        <a class="btn" href="iletisim.html">İletişime Geç</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <strong>Ankara Malatyalılar Derneği</strong><br>
-      Bu sayfada yer alan bilgiler kamu yararı amacıyla derlenmiştir. Güncel başvuru şartları için ilgili
-      kurumların resmî ilanları esas alınmalıdır.
-    </div>
-  </footer>
+<footer class="container">
+© 2026 Ankara Malatyalılar Derneği - Tüm Hakları Saklıdır.
+</footer>
 
 </body>
 </html>
