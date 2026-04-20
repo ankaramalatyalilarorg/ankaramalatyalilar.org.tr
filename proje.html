@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ankara Malatyalılar Derneği | Resmi Web Sitesi</title>
-<meta name="description" content="Ankara Malatyalılar Derneği resmi web sitesi. Faaliyetler, projeler, üyelik ve iletişim bilgileri.">
+<title>Projeler | Ankara Malatyalılar Derneği</title>
 
 <style>
 *{
@@ -25,9 +24,9 @@ max-width:1350px;
 margin:auto;
 }
 
-/* HEADER */
+/* HEADER - BOŞLUK BİRAZ AÇILDI */
 header{
-margin-top:12px;
+margin-top:18px; /* önce 12px idi */
 }
 
 .banner-box{
@@ -47,7 +46,7 @@ border-radius:0 0 18px 18px;
 margin-bottom:6px;
 }
 
-/* MENÜ DÜZELTME (SABİT STİL) */
+/* MENÜ */
 nav ul{
 list-style:none;
 display:flex;
@@ -58,8 +57,7 @@ gap:70px;
 padding:14px 35px;
 }
 
-nav ul li a,
-nav ul li a:visited{
+nav ul li a{
 color:#fff;
 text-decoration:none;
 font-size:16px;
@@ -74,9 +72,9 @@ font-weight:400;
 text-decoration:none;
 }
 
-/* MAIN */
+/* MAIN - ÜST BOŞLUK ARTIRILDI */
 main{
-margin-top:16px;
+margin-top:24px; /* önce 16px idi */
 }
 
 .grid{
@@ -92,6 +90,7 @@ padding:30px;
 box-shadow:0 8px 22px rgba(0,0,0,0.08);
 }
 
+/* METİN */
 .card h1{
 font-size:42px;
 line-height:1.3;
@@ -111,6 +110,7 @@ line-height:1.8;
 margin-bottom:18px;
 }
 
+/* PROFİL */
 .profile{
 text-align:center;
 }
@@ -135,6 +135,7 @@ line-height:1.7;
 margin-bottom:14px;
 }
 
+/* ALT BLOKLAR */
 .bottom-sections{
 margin-top:30px;
 display:grid;
@@ -207,10 +208,10 @@ padding:14px 20px;
 
 <nav>
 <ul>
-<li><a href="index.html" class="active">Ana Sayfa</a></li>
+<li><a href="index.html">Ana Sayfa</a></li>
 <li><a href="kurumsal.html">Kurumsal</a></li>
 <li><a href="faaliyet.html">Faaliyetlerimiz</a></li>
-<li><a href="proje.html">Projeler</a></li>
+<li><a href="proje.html" class="active">Projeler</a></li>
 <li><a href="blog.html">Blog</a></li>
 <li><a href="uyelik.html">Üyelik</a></li>
 <li><a href="iletisim.html">İletişim</a></li>
@@ -225,39 +226,42 @@ padding:14px 20px;
 
 <section class="card">
 
-<h1>1997’den Bugüne Ankara’daki<br>Malatyalıların Ortak Buluşma Noktası</h1>
+<h1>PROJE DUYURULARI</h1>
 
-<h3>Ankara Malatyalılar Derneği</h3>
+<h3>Güncel Hibe ve Destek Programları</h3>
 
 <p>
-Ankara Malatyalılar Derneği, 1997 yılından bu yana Ankara’da yaşayan Malatyalı hemşehrilerimizi aynı çatı altında buluşturan köklü bir sivil toplum kuruluşudur.
+Ankara Malatyalılar Derneği olarak; gençler, kadınlar, öğrenciler ve girişimciler için
+güncel proje ve hibe fırsatlarını sizlerle buluşturuyoruz.
 </p>
 
 <p>
-Birlik, beraberlik, dayanışma ve hemşehrilik ruhunu yaşatmayı amaçlayan derneğimiz; kültürel değerlerimizi koruyan, sosyal yardımlaşmayı güçlendiren ve ortak aidiyet bilincini geleceğe taşıyan çalışmalarıyla faaliyetlerini sürdürmektedir.
+Bu sayfa düzenli olarak güncellenen proje duyurularını içerir ve tüm fırsatlar
+resmi kurum kaynaklarına dayanmaktadır.
 </p>
 
 <p>
-Geçmişinden aldığı güç ve tecrübeyle bugün de Ankara’daki Malatyalılar için güven veren bir buluşma noktası olmayı sürdürmektedir.
+Amaç; hemşehrilerimizin proje geliştirme süreçlerine erişimini kolaylaştırmak ve
+fırsatları görünür hale getirmektir.
 </p>
 
 </section>
 
 <aside class="profile">
 
-<img src="derbas.png" alt="Başkan Yusuf Gül">
+<img src="derbas.png" alt="Dernek Görseli">
 
-<h2>Başkanın Mesajı</h2>
+<h2>Bilgilendirme</h2>
 
 <p>
-1997 yılından bu yana Ankara’da Malatyalı hemşehrilerimizin birlik, beraberlik ve dayanışma çatısı olan derneğimizin bugünlere gelmesinde emeği bulunan herkese teşekkür ediyorum.
+Projeler ve destek programları dönemsel olarak değişmektedir.
 </p>
 
 <p>
-Kültürümüzü yaşatmak, hemşehrilik bağlarımızı güçlendirmek ve geleceğe güçlü adımlarla yürümek için çalışmalarımıza devam edeceğiz.
+Başvuru yapmadan önce mutlaka ilgili kurumun resmi sayfası kontrol edilmelidir.
 </p>
 
-<p><strong>Yusuf Gül</strong><br>Başkan</p>
+<p><strong>Ankara Malatyalılar Derneği</strong></p>
 
 </aside>
 
@@ -266,13 +270,13 @@ Kültürümüzü yaşatmak, hemşehrilik bağlarımızı güçlendirmek ve gelec
 <section class="bottom-sections">
 
 <div class="info-box">
-<h2>Güncel Haberler</h2>
-<p>Yakında yeni haberler ve duyurular burada paylaşılacaktır.</p>
+<h2>Güncel Duyurular</h2>
+<p>Yeni proje çağrıları ve destek programları burada yayınlanacaktır.</p>
 </div>
 
 <div class="info-box">
-<h2>Etkinlikler</h2>
-<p>Yaklaşan etkinlikler ve programlarımız burada yayınlanacaktır.</p>
+<h2>Bilgilendirme</h2>
+<p>Başvuru tarihleri ve şartlar resmi kurumlara göre değişmektedir.</p>
 </div>
 
 </section>
