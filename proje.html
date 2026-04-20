@@ -1,189 +1,121 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projeler | Ankara Malatyalılar Derneği</title>
+<section class="container" style="margin-top:20px;">
 
-<style>
-body{
-font-family:Arial;
-background:#eef2f7;
-margin:0;
-}
-
-.container{width:95%;max-width:1300px;margin:auto}
-
-/* NAV */
-nav{
-background:#0d2b52;
-padding:10px;
-border-radius:0 0 12px 12px;
-}
-nav a{
-color:white;
-margin:10px;
-text-decoration:none;
-font-size:15px;
-}
-
-/* HEADER */
-header img{
-width:100%;
-border-radius:12px 12px 0 0;
-}
-
-/* HERO */
-.hero{
-background:#1b556b;
-color:white;
-padding:30px;
-border-radius:12px;
-margin-top:10px;
-}
-
-.hero h1{margin:0}
-
-/* FILTER */
-.filters{
-display:flex;
-gap:10px;
-margin:20px 0;
-flex-wrap:wrap;
-}
-
-select{
-padding:10px;
-border-radius:8px;
-}
-
-/* TABLE */
-table{
-width:100%;
-border-collapse:collapse;
-background:white;
-border-radius:12px;
-overflow:hidden;
-}
-
-th,td{
-padding:12px;
-border-bottom:1px solid #eee;
-font-size:14px;
-}
-
-th{
-background:#f1f5f9;
-}
-
-/* BADGE */
-.badge{
-padding:5px 10px;
-border-radius:20px;
-font-size:12px;
-}
-
-.open{background:#dcfce7;color:#166534}
-.soon{background:#fef9c3;color:#92400e}
-.follow{background:#e0e7ff;color:#3730a3}
-
-/* BUTTON */
-a.btn{
-padding:7px 10px;
-border-radius:8px;
-text-decoration:none;
-font-size:13px;
-display:inline-block;
-}
-
-.guide{background:#0d2b52;color:#fff}
-.apply{background:#f4a300;color:#000}
-</style>
-</head>
-
-<body>
-
-<header class="container">
-<img src="bas.png">
-<nav>
-<a href="#">Ana Sayfa</a>
-<a href="#">Projeler</a>
-<a href="#">Blog</a>
-<a href="#">İletişim</a>
-</nav>
-</header>
-
-<div class="container">
-
-<div class="hero">
-<h1>PROJE DUYURULARI</h1>
-<p>Güncel hibe ve destek programları</p>
+<!-- BAŞLIK -->
+<div style="background:#fff; padding:26px; border-radius:18px; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+  <h1 style="color:#0d2b52; font-size:32px; margin-bottom:10px;">PROJE DUYURULARI</h1>
+  <p style="color:#44556b; font-size:17px; line-height:1.8;">
+    Güncel hibe, destek ve proje fırsatları aşağıda listelenmiştir. Tüm bilgiler resmî kurum kaynaklarına dayanmaktadır.
+  </p>
 </div>
 
-<!-- FILTERS -->
-<div class="filters">
+<br>
 
-<select id="filterSource">
-<option value="">Kaynak Seç</option>
-<option value="KOSGEB">KOSGEB</option>
-<option value="Erasmus">Erasmus+</option>
-<option value="TKDK">TKDK</option>
-</select>
+<!-- TABLO -->
+<div style="overflow-x:auto;">
 
-<select id="filterStatus">
-<option value="">Durum</option>
-<option value="Açık">Açık</option>
-<option value="Yakında">Yakında</option>
-<option value="Takip">Takip</option>
-</select>
+<table style="width:100%; border-collapse:collapse; background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
 
-</div>
-
-<!-- TABLE -->
-<table id="projectTable">
-
-<thead>
+<thead style="background:#0d2b52; color:#fff;">
 <tr>
-<th>Proje</th>
-<th>Konu</th>
+<th style="padding:14px;">Proje</th>
+<th>Kategori</th>
 <th>Kaynak</th>
 <th>Hibe</th>
+<th>Hedef</th>
 <th>Durum</th>
 <th>Kılavuz</th>
-<th>Başvuru</th>
+<th>İşlem</th>
 </tr>
 </thead>
 
-<tbody>
+<tbody style="font-size:14px; color:#1d2d44;">
 
-<tr data-source="Erasmus" data-status="Açık">
-<td>Gençlik Projesi</td>
-<td>Sosyal</td>
+<tr>
+<td>Gençlik Değişimleri</td>
+<td>Gençlik</td>
 <td>Erasmus+</td>
-<td>500.000 ₺</td>
-<td><span class="badge open">Açık</span></td>
-<td><a class="btn guide" href="https://erasmus-plus.ec.europa.eu/">Kılavuz</a></td>
-<td><a class="btn apply" href="mailto:info@ankaramalatyalilar.org.tr">Talep Et</a></td>
+<td>20K - 60K €</td>
+<td>Gençler</td>
+<td style="color:green; font-weight:bold;">Açık</td>
+<td><a href="https://erasmus-plus.ec.europa.eu" target="_blank">Aç</a></td>
+<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=Gençlik Değişimleri Başvuru Talebi">🟢 Talep Et</a></td>
 </tr>
 
-<tr data-source="KOSGEB" data-status="Yakında">
-<td>Girişimcilik Desteği</td>
-<td>İş Kurma</td>
+<tr>
+<td>Dayanışma Projesi</td>
+<td>Sosyal</td>
+<td>ESC</td>
+<td>6K - 20K €</td>
+<td>Gençlik</td>
+<td style="color:green;">Açık</td>
+<td><a href="https://europa.eu/youth/solidarity" target="_blank">Aç</a></td>
+<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=ESC Başvuru Talebi">🟢 Talep Et</a></td>
+</tr>
+
+<tr>
+<td>Ar-Ge Destek</td>
+<td>Teknoloji</td>
+<td>TÜBİTAK</td>
+<td>Değişken</td>
+<td>Girişimci</td>
+<td style="color:green;">Açık</td>
+<td><a href="https://www.tubitak.gov.tr" target="_blank">Aç</a></td>
+<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=TÜBİTAK Başvuru">🟢 Talep Et</a></td>
+</tr>
+
+<tr>
+<td>KOSGEB Girişim</td>
+<td>KOBİ</td>
 <td>KOSGEB</td>
-<td>300.000 ₺</td>
-<td><span class="badge soon">Yakında</span></td>
-<td><a class="btn guide" href="https://kosgeb.gov.tr/">Kılavuz</a></td>
-<td><a class="btn apply" href="https://wa.me/905369887544">Talep Et</a></td>
+<td>50K - 750K ₺</td>
+<td>Girişimci</td>
+<td style="color:green;">Açık</td>
+<td><a href="https://www.kosgeb.gov.tr" target="_blank">Aç</a></td>
+<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=KOSGEB Başvuru">🟢 Talep Et</a></td>
 </tr>
 
-<tr data-source="TKDK" data-status="Takip">
-<td>Kırsal Destek</td>
+<tr>
+<td>IPARD Tarım</td>
 <td>Tarım</td>
 <td>TKDK</td>
-<td>1.000.000 ₺</td>
-<td><span class="badge follow">Takip</span></td>
-<td><a class="btn guide" href="https://www.tkdk.gov.tr/">Kılavuz</a></td>
-<td><a class="btn apply" href="mailto:info@ankaramalatyalilar.org.tr">Talep Et</a></td>
+<td>%60 - %70</td>
+<td>Kırsal</td>
+<td style="color:orange;">Dönemsel</td>
+<td><a href="https://www.tkdk.gov.tr" target="_blank">Aç</a></td>
+<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=IPARD Başvuru">🟢 Talep Et</a></td>
+</tr>
+
+<tr>
+<td>Gençlik Projeleri</td>
+<td>Sosyal</td>
+<td>GSB</td>
+<td>100K - 1M ₺</td>
+<td>Gençler</td>
+<td style="color:green;">Açık</td>
+<td><a href="https://www.gsb.gov.tr" target="_blank">Aç</a></td>
+<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=GSB Başvuru">🟢 Talep Et</a></td>
+</tr>
+
+<tr>
+<td>Yeşil Dönüşüm</td>
+<td>Çevre</td>
+<td>Çevre Bakanlığı</td>
+<td>Değişken</td>
+<td>Kurumsal</td>
+<td style="color:green;">Açık</td>
+<td><a href="https://www.csb.gov.tr" target="_blank">Aç</a></td>
+<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=Çevre Proje Başvuru">🟢 Talep Et</a></td>
+</tr>
+
+<tr>
+<td>İstihdam Destek</td>
+<td>Sosyal</td>
+<td>İŞKUR</td>
+<td>Değişken</td>
+<td>Genel</td>
+<td style="color:green;">Açık</td>
+<td><a href="https://www.iskur.gov.tr" target="_blank">Aç</a></td>
+<td><a href="mailto:info@ankaramalatyalilar.org.tr?subject=İŞKUR Başvuru">🟢 Talep Et</a></td>
 </tr>
 
 </tbody>
@@ -192,26 +124,25 @@ display:inline-block;
 
 </div>
 
-<script>
-const source = document.getElementById("filterSource");
-const status = document.getElementById("filterStatus");
-const rows = document.querySelectorAll("#projectTable tbody tr");
+<br>
 
-function filter(){
-rows.forEach(row=>{
-let s = source.value;
-let st = status.value;
+<!-- ALT BUTON -->
+<div style="text-align:center;">
 
-let matchSource = s==="" || row.dataset.source===s;
-let matchStatus = st==="" || row.dataset.status===st;
+<a href="mailto:info@ankaramalatyalilar.org.tr"
+style="
+background:linear-gradient(135deg,#0d2b52,#1e4e8c);
+color:#fff;
+padding:14px 28px;
+border-radius:14px;
+text-decoration:none;
+font-weight:bold;
+display:inline-block;
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+">
+📩 Genel Başvuru Talep Et
+</a>
 
-row.style.display = (matchSource && matchStatus) ? "" : "none";
-});
-}
+</div>
 
-source.addEventListener("change",filter);
-status.addEventListener("change",filter);
-</script>
-
-</body>
-</html>
+</section>
