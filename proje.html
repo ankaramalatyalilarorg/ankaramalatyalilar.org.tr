@@ -6,254 +6,148 @@
 <title>Projeler | Ankara Malatyalılar Derneği</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
-
 body{
+font-family:Arial;
 background:#eef2f7;
-color:#1f2d3d;
+margin:0;
 }
 
-.container{
-width:95%;
-max-width:1350px;
-margin:auto;
+.container{width:95%;max-width:1300px;margin:auto}
+
+/* NAV */
+nav{
+background:#0d2b52;
+padding:10px;
+border-radius:0 0 12px 12px;
+}
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-size:15px;
 }
 
 /* HEADER */
-header{
-margin-top:12px;
-}
-
-.banner-box img{
+header img{
 width:100%;
-display:block;
-border-radius:18px 18px 0 0;
-}
-
-nav{
-background:#0d2b52;
-border-radius:0 0 18px 18px;
-}
-
-nav ul{
-list-style:none;
-display:flex;
-gap:60px;
-padding:14px 30px;
-flex-wrap:wrap;
-}
-
-nav ul li a{
-color:#fff;
-text-decoration:none;
-font-size:16px;
-font-weight:500;
-}
-
-nav ul li a.active{
-color:#f4a300;
-font-weight:bold;
+border-radius:12px 12px 0 0;
 }
 
 /* HERO */
 .hero{
-margin-top:16px;
-background:linear-gradient(135deg,#1b556b,#4c87ad);
-color:#fff;
-padding:50px 35px;
-border-radius:18px;
+background:#1b556b;
+color:white;
+padding:30px;
+border-radius:12px;
+margin-top:10px;
 }
 
-.hero h1{
-font-size:40px;
-margin-bottom:10px;
-}
-
-.hero p{
-font-size:18px;
-line-height:1.8;
-}
+.hero h1{margin:0}
 
 /* FILTER */
-.filter{
-margin-top:20px;
+.filters{
 display:flex;
-gap:15px;
+gap:10px;
+margin:20px 0;
 flex-wrap:wrap;
 }
 
 select{
 padding:10px;
-border-radius:10px;
-border:1px solid #ccc;
+border-radius:8px;
 }
 
 /* TABLE */
-.table-wrap{
-margin-top:20px;
-overflow-x:auto;
-background:#fff;
-border-radius:18px;
-box-shadow:0 8px 24px rgba(0,0,0,0.08);
-}
-
 table{
 width:100%;
 border-collapse:collapse;
-min-width:1100px;
+background:white;
+border-radius:12px;
+overflow:hidden;
 }
 
-th, td{
-padding:14px;
+th,td{
+padding:12px;
 border-bottom:1px solid #eee;
-text-align:left;
 font-size:14px;
 }
 
 th{
-background:#f3f6fa;
-color:#0d2b52;
-font-size:13px;
-text-transform:uppercase;
+background:#f1f5f9;
 }
 
-tr:hover td{
-background:#f9fbfd;
-}
-
-/* BADGES */
+/* BADGE */
 .badge{
-padding:6px 10px;
+padding:5px 10px;
 border-radius:20px;
 font-size:12px;
-font-weight:bold;
-display:inline-block;
 }
 
-.open{background:#e7f7ee;color:#1a7f37;}
-.soon{background:#fff4e5;color:#b26a00;}
-.follow{background:#eef2ff;color:#2d4b9c;}
+.open{background:#dcfce7;color:#166534}
+.soon{background:#fef9c3;color:#92400e}
+.follow{background:#e0e7ff;color:#3730a3}
 
-/* BUTTONS */
-.btn{
-display:inline-block;
-padding:8px 12px;
-border-radius:10px;
+/* BUTTON */
+a.btn{
+padding:7px 10px;
+border-radius:8px;
+text-decoration:none;
 font-size:13px;
-font-weight:bold;
-text-decoration:none;
-transition:0.3s;
+display:inline-block;
 }
 
-.btn-guide{
-background:#0d2b52;
-color:#fff;
-}
-
-.btn-guide:hover{
-background:#1b4f91;
-}
-
-.btn-apply{
-background:#f4a300;
-color:#000;
-}
-
-.btn-apply:hover{
-background:#d68f00;
-}
-
-/* CTA */
-.cta{
-margin-top:25px;
-text-align:center;
-}
-
-.cta a{
-background:#0d2b52;
-color:#fff;
-padding:12px 18px;
-border-radius:12px;
-text-decoration:none;
-font-weight:bold;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-nav ul{
-flex-direction:column;
-gap:10px;
-}
-.hero h1{
-font-size:28px;
-}
-}
+.guide{background:#0d2b52;color:#fff}
+.apply{background:#f4a300;color:#000}
 </style>
 </head>
 
 <body>
 
 <header class="container">
-<div class="banner-box">
 <img src="bas.png">
-</div>
-
 <nav>
-<ul>
-<li><a href="index.html">Ana Sayfa</a></li>
-<li><a href="kurumsal.html">Kurumsal</a></li>
-<li><a href="faaliyet.html">Faaliyetler</a></li>
-<li><a href="proje.html" class="active">Projeler</a></li>
-<li><a href="blog.html">Blog</a></li>
-<li><a href="uyelik.html">Üyelik</a></li>
-<li><a href="iletisim.html">İletişim</a></li>
-</ul>
+<a href="#">Ana Sayfa</a>
+<a href="#">Projeler</a>
+<a href="#">Blog</a>
+<a href="#">İletişim</a>
 </nav>
 </header>
 
-<section class="hero container">
+<div class="container">
+
+<div class="hero">
 <h1>PROJE DUYURULARI</h1>
-<p>
-Gençler, kadınlar, öğrenciler, girişimciler ve dezavantajlı gruplar için güncel hibe ve destek programları.
-Tüm içerikler resmi kurum kaynaklarına dayanmaktadır.
-</p>
-
-<div class="filter">
-<select>
-<option>Kaynak Seç</option>
-<option>KOSGEB</option>
-<option>Erasmus+</option>
-<option>TKDK</option>
-<option>AB Programları</option>
-</select>
-
-<select>
-<option>Durum</option>
-<option>Açık</option>
-<option>Yakında</option>
-<option>Takip</option>
-</select>
+<p>Güncel hibe ve destek programları</p>
 </div>
-</section>
 
-<main class="container">
+<!-- FILTERS -->
+<div class="filters">
 
-<div class="table-wrap">
-<table>
+<select id="filterSource">
+<option value="">Kaynak Seç</option>
+<option value="KOSGEB">KOSGEB</option>
+<option value="Erasmus">Erasmus+</option>
+<option value="TKDK">TKDK</option>
+</select>
+
+<select id="filterStatus">
+<option value="">Durum</option>
+<option value="Açık">Açık</option>
+<option value="Yakında">Yakında</option>
+<option value="Takip">Takip</option>
+</select>
+
+</div>
+
+<!-- TABLE -->
+<table id="projectTable">
 
 <thead>
 <tr>
 <th>Proje</th>
 <th>Konu</th>
-<th>Kimler</th>
-<th>Max Hibe</th>
 <th>Kaynak</th>
-<th>Son Tarih</th>
+<th>Hibe</th>
 <th>Durum</th>
 <th>Kılavuz</th>
 <th>Başvuru</th>
@@ -262,51 +156,62 @@ Tüm içerikler resmi kurum kaynaklarına dayanmaktadır.
 
 <tbody>
 
-<tr>
-<td>Gençlik Dayanışma Projesi</td>
-<td>Sosyal Fayda</td>
-<td>18-30 Gençler</td>
-<td>500.000 ₺</td>
+<tr data-source="Erasmus" data-status="Açık">
+<td>Gençlik Projesi</td>
+<td>Sosyal</td>
 <td>Erasmus+</td>
-<td>30.06.2026</td>
+<td>500.000 ₺</td>
 <td><span class="badge open">Açık</span></td>
-<td><a class="btn btn-guide" href="#">Kılavuz</a></td>
-<td><a class="btn btn-apply" href="mailto:info@ankaramalatyalilar.org.tr?subject=Başvuru Talebi">Talep Et</a></td>
+<td><a class="btn guide" href="https://erasmus-plus.ec.europa.eu/">Kılavuz</a></td>
+<td><a class="btn apply" href="mailto:info@ankaramalatyalilar.org.tr">Talep Et</a></td>
 </tr>
 
-<tr>
-<td>KOSGEB Girişim Projesi</td>
-<td>Girişimcilik</td>
-<td>Girişimciler</td>
-<td>300.000 ₺</td>
+<tr data-source="KOSGEB" data-status="Yakında">
+<td>Girişimcilik Desteği</td>
+<td>İş Kurma</td>
 <td>KOSGEB</td>
-<td>15.07.2026</td>
+<td>300.000 ₺</td>
 <td><span class="badge soon">Yakında</span></td>
-<td><a class="btn btn-guide" href="#">Kılavuz</a></td>
-<td><a class="btn btn-apply" href="https://wa.me/905369887544">Talep Et</a></td>
+<td><a class="btn guide" href="https://kosgeb.gov.tr/">Kılavuz</a></td>
+<td><a class="btn apply" href="https://wa.me/905369887544">Talep Et</a></td>
 </tr>
 
-<tr>
-<td>Kırsal Kalkınma</td>
-<td>Tarım & Üretim</td>
-<td>Çiftçiler</td>
-<td>1.000.000 ₺</td>
+<tr data-source="TKDK" data-status="Takip">
+<td>Kırsal Destek</td>
+<td>Tarım</td>
 <td>TKDK</td>
-<td>—</td>
+<td>1.000.000 ₺</td>
 <td><span class="badge follow">Takip</span></td>
-<td><a class="btn btn-guide" href="#">Kılavuz</a></td>
-<td><a class="btn btn-apply" href="mailto:info@ankaramalatyalilar.org.tr">Talep Et</a></td>
+<td><a class="btn guide" href="https://www.tkdk.gov.tr/">Kılavuz</a></td>
+<td><a class="btn apply" href="mailto:info@ankaramalatyalilar.org.tr">Talep Et</a></td>
 </tr>
 
 </tbody>
+
 </table>
+
 </div>
 
-<div class="cta">
-<a href="iletisim.html">Yeni Proje Talebi Gönder</a>
-</div>
+<script>
+const source = document.getElementById("filterSource");
+const status = document.getElementById("filterStatus");
+const rows = document.querySelectorAll("#projectTable tbody tr");
 
-</main>
+function filter(){
+rows.forEach(row=>{
+let s = source.value;
+let st = status.value;
+
+let matchSource = s==="" || row.dataset.source===s;
+let matchStatus = st==="" || row.dataset.status===st;
+
+row.style.display = (matchSource && matchStatus) ? "" : "none";
+});
+}
+
+source.addEventListener("change",filter);
+status.addEventListener("change",filter);
+</script>
 
 </body>
 </html>
