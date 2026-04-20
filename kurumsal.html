@@ -41,35 +41,45 @@ display:block;
 
 <style>
 nav{
-background:#1f2d3d;
+background:#1f2d3d !important;
 border-radius:0 0 18px 18px;
 overflow:hidden;
 position:relative;
 z-index:10;
 }
 
-nav ul{
-list-style:none;
-display:flex;
-justify-content:flex-start;
-align-items:center;
-gap:65px;
-padding:16px 35px;
-margin:0;
+nav ul li a{
+color:#ffffff !important;
+text-decoration:none;
+font-size:16px;
+font-weight:500;
+letter-spacing:0.2px;
+transition:0.3s;
+position:relative;
+z-index:11;
+display:inline-block;
 }
 
+nav ul li a:hover,
+nav ul li a.active{
+color:#f4a300 !important;
+font-weight:bold;
+}
 nav ul li{
 margin:0;
 padding:0;
 }
 
 nav ul li a{
-color:#ffffff;
+color:#ffffff !important;
 text-decoration:none;
 font-size:16px;
 font-weight:500;
 letter-spacing:0.2px;
 transition:0.3s;
+position:relative;
+z-index:11;
+display:inline-block;
 }
 
 nav ul li a{
