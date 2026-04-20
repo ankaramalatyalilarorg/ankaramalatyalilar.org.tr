@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Üyelik | Ankara Malatyalılar Derneği</title>
-<meta name="description" content="Ankara Malatyalılar Derneği üyelik sayfası. Üyelik çağrısı, gereklilikler ve online başvuru formu.">
 
 <style>
 *{
@@ -26,25 +25,11 @@ max-width:1350px;
 margin:auto;
 }
 
-/* =========================
-   GLOBAL BOŞLUK STANDARDI
-   (TEK VE KESİN ÇÖZÜM)
-========================= */
+/* HEADER - AZ AÇIKLIK */
 header{
-margin:0;
-padding-top:12px;
-padding-bottom:0;
+margin-top:16px;
 }
 
-nav{
-margin-bottom:0;
-}
-
-main{
-padding-top:18px;
-}
-
-/* BANNER */
 .banner-box{
 overflow:hidden;
 border-radius:18px 18px 0 0;
@@ -65,10 +50,8 @@ overflow:hidden;
 nav ul{
 list-style:none;
 display:flex;
-justify-content:flex-start;
-align-items:center;
 gap:60px;
-padding:18px 35px;
+padding:16px 35px;
 flex-wrap:wrap;
 }
 
@@ -88,98 +71,112 @@ font-weight:bold;
 
 /* HERO */
 .hero{
-margin-top:16px;
+margin-top:18px;
 background:linear-gradient(135deg,#3f836c,#69a892);
-padding:58px 44px;
+padding:50px 40px;
 border-radius:18px;
 color:#fff;
-box-shadow:0 10px 28px rgba(0,0,0,0.08);
 }
 
 .hero h1{
-font-size:54px;
-margin-bottom:18px;
-}
-
-.hero p{
-font-size:20px;
-line-height:1.9;
-max-width:1100px;
-}
-
-/* SECTIONS */
-.section{
-margin-top:26px;
-}
-
-.lead-box,
-.requirements-box,
-.form-wrap,
-.info-strip{
-background:#fff;
-border-radius:18px;
-padding:34px;
-box-shadow:0 10px 28px rgba(0,0,0,0.08);
-}
-
-.lead-box{
-border-left:6px solid #2f6b57;
-}
-
-.lead-box h2,
-.requirements-box h2,
-.form-wrap h2{
-font-size:36px;
-color:#2f6b57;
-margin-bottom:18px;
-}
-
-.lead-box p,
-.requirements-box p,
-.info-strip p{
-font-size:18px;
-color:#44556b;
-line-height:1.9;
+font-size:46px;
 margin-bottom:14px;
 }
 
-/* CARDS */
-.callout-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:24px;
-margin-top:24px;
-}
-
-.callout-card{
-background:#ffffff;
-border-radius:18px;
-padding:28px;
-box-shadow:0 10px 24px rgba(0,0,0,0.08);
-border-top:5px solid #2f6b57;
-}
-
-.callout-card h3{
-font-size:26px;
-color:#2f6b57;
-margin-bottom:12px;
-}
-
-.callout-card p{
-font-size:17px;
-color:#44556b;
+.hero p{
+font-size:19px;
 line-height:1.8;
 }
 
+/* SECTION */
+.section{
+margin-top:28px;
+}
+
+.box{
+background:#fff;
+border-radius:18px;
+padding:28px;
+box-shadow:0 10px 26px rgba(0,0,0,0.08);
+}
+
+.box h2{
+color:#2f6b57;
+font-size:30px;
+margin-bottom:14px;
+}
+
+.box p, .box li{
+font-size:17px;
+color:#44556b;
+line-height:1.8;
+margin-bottom:10px;
+}
+
+/* LİSTE */
+ul.clean{
+padding-left:18px;
+}
+
 /* FORM */
-.form-wrap{
+.form-box{
 margin-top:24px;
+background:#fff;
+border-radius:18px;
+padding:26px;
+box-shadow:0 10px 26px rgba(0,0,0,0.08);
+}
+
+.form-box h2{
+color:#2f6b57;
+font-size:28px;
+margin-bottom:18px;
 }
 
 .form-grid{
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:22px;
+grid-template-columns:1fr 1fr;
+gap:16px;
+}
+
+input, select, textarea{
+width:100%;
+padding:12px;
+border:1px solid #d0d7de;
+border-radius:10px;
+font-size:14px;
+outline:none;
+}
+
+textarea{
+grid-column:1 / -1;
+min-height:90px;
+resize:none;
+}
+
+.check{
+margin-top:14px;
+display:flex;
+align-items:center;
+gap:10px;
+font-size:14px;
+color:#44556b;
+}
+
+button{
+margin-top:16px;
+background:#2f6b57;
+color:#fff;
+border:none;
+padding:12px 18px;
+border-radius:10px;
+font-size:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#245345;
 }
 
 /* FOOTER */
@@ -190,26 +187,29 @@ color:#fff;
 text-align:center;
 padding:22px;
 border-radius:14px 14px 0 0;
-font-size:15px;
+font-size:14px;
 }
 
 /* RESPONSIVE */
-@media(max-width:900px){
-.hero h1{font-size:40px;}
-.form-grid{grid-template-columns:1fr;}
+@media(max-width:768px){
+.form-grid{
+grid-template-columns:1fr;
 }
 
-@media(max-width:768px){
-.hero h1{font-size:34px;}
+.hero h1{
+font-size:34px;
+}
+
 nav ul{
 flex-direction:column;
 gap:0;
 padding:0;
 }
+
 nav ul li a{
 display:block;
-padding:14px;
 text-align:center;
+padding:14px;
 border-bottom:1px solid rgba(255,255,255,0.12);
 }
 }
@@ -219,58 +219,84 @@ border-bottom:1px solid rgba(255,255,255,0.12);
 <body>
 
 <header class="container">
-  <div class="banner-box">
-    <img src="bas.png" alt="Ankara Malatyalılar Derneği Banner">
-  </div>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Ana Sayfa</a></li>
-      <li><a href="kurumsal.html">Kurumsal</a></li>
-      <li><a href="faaliyet.html">Faaliyetlerimiz</a></li>
-      <li><a href="proje.html">Projeler</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="uyelik.html" class="active">Üyelik</a></li>
-      <li><a href="iletisim.html">İletişim</a></li>
-    </ul>
-  </nav>
+<div class="banner-box">
+<img src="bas.png" alt="Ankara Malatyalılar Derneği">
+</div>
+
+<nav>
+<ul>
+<li><a href="index.html">Ana Sayfa</a></li>
+<li><a href="kurumsal.html">Kurumsal</a></li>
+<li><a href="faaliyet.html">Faaliyetlerimiz</a></li>
+<li><a href="proje.html">Projeler</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="uyelik.html" class="active">Üyelik</a></li>
+<li><a href="iletisim.html">İletişim</a></li>
+</ul>
+</nav>
+
 </header>
 
 <section class="container hero">
-  <h1>Üyelik</h1>
-  <p>
-    Ankara Malatyalılar Derneği çatısı altında yer almak; hemşehrilik bağlarını güçlendirmek,
-    kültürel değerlerimizi yaşatmak ve dayanışmayı büyütmek için siz de üyemiz olabilirsiniz.
-  </p>
+<h1>Üyelik</h1>
+<p>
+Derneğimize üye olarak hemşehrilik bağlarını güçlendirebilir, etkinliklere katılabilir ve
+dayanışma ağının bir parçası olabilirsiniz.
+</p>
 </section>
 
 <main class="container">
 
-  <section class="section">
-    <div class="lead-box">
-      <h2>Neden Üye Olmalısınız?</h2>
-      <p>Derneğimize üye olmak güçlü bir dayanışma ağına katılmak demektir.</p>
-      <p>Etkinlikler, projeler ve sosyal faaliyetlerden haberdar olursunuz.</p>
-      <p>Derneğimizin kurumsal gücüne katkı sağlarsınız.</p>
-    </div>
+<!-- NEDEN ÜYE OLMALIYIZ -->
+<div class="section box">
+<h2>Neden Üye Olmalıyız?</h2>
+<ul class="clean">
+<li>Güçlü bir hemşehri dayanışma ağına dahil olursunuz.</li>
+<li>Etkinlik ve projelerden ilk siz haberdar olursunuz.</li>
+<li>Toplumsal ve kültürel faaliyetlere aktif katılım sağlarsınız.</li>
+<li>Derneğin karar süreçlerinde söz sahibi olabilirsiniz.</li>
+</ul>
+</div>
 
-    <div class="callout-grid">
-      <div class="callout-card">
-        <h3>Dayanışma</h3>
-        <p>Güçlü hemşehri ağı içinde yer alırsınız.</p>
-      </div>
+<!-- GEREKLİLİKLER -->
+<div class="section box">
+<h2>Üyelik İçin Gereklilikler</h2>
+<ul class="clean">
+<li>T.C. Kimlik Kartının taranmış hali</li>
+<li>Üyelik formunun eksiksiz doldurulması</li>
+<li>“Gönder” butonuna basılarak başvurunun tamamlanması</li>
+<li>Varsa iletişim bilgilerinin doğru girilmesi</li>
+</ul>
+</div>
 
-      <div class="callout-card">
-        <h3>Katılım</h3>
-        <p>Tüm etkinliklere aktif katılım sağlarsınız.</p>
-      </div>
+<!-- FORM -->
+<div class="form-box">
+<h2>Online Üyelik Formu</h2>
 
-      <div class="callout-card">
-        <h3>Kurumsal Güç</h3>
-        <p>Derneğin temsil gücüne katkı verirsiniz.</p>
-      </div>
-    </div>
-  </section>
+<form action="mailto:info@ankaramalatyalilar.org.tr" method="post" enctype="text/plain">
+
+<div class="form-grid">
+
+<input type="text" name="Ad Soyad" placeholder="Ad Soyad" required>
+<input type="text" name="TC" placeholder="T.C. Kimlik No" required>
+
+<input type="tel" name="Telefon" placeholder="Telefon">
+<input type="email" name="Email" placeholder="E-Posta" required>
+
+<textarea name="Adres" placeholder="Adres"></textarea>
+
+</div>
+
+<div class="check">
+<input type="checkbox" required>
+<span>Bilgilerimin doğru olduğunu onaylıyorum</span>
+</div>
+
+<button type="submit">Gönder</button>
+
+</form>
+</div>
 
 </main>
 
