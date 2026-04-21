@@ -21,7 +21,7 @@ max-width:1300px;
 margin:auto;
 }
 
-/* ÜST KISIM (DOKUNULMADI) */
+/* ===== ÜST KISIM (AYNEN KORUNDU) ===== */
 header{margin-top:12px;}
 
 .banner-box{
@@ -92,29 +92,34 @@ text-align:center;
 
 /* ================= ONAY ================= */
 
-.check-group{
-margin-top:10px;
-display:flex;
-flex-direction:column;
-gap:10px;
+/* SOL METİN */
+.onay-text{
 text-align:left;
+font-size:14px;
+line-height:1.8;
 }
 
-/* label tıklanabilir alan */
+/* CHECKBOX ORTALI ALAN */
+.check-center{
+margin-top:20px;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:10px;
+}
+
+/* CHECKBOX SATIRI */
 .check-item{
 display:flex;
-align-items:flex-start;
+align-items:center;
 gap:8px;
 
 font-size:14px;
-line-height:1.4;
-
 cursor:pointer;
 }
 
 /* checkbox */
 .check-item input{
-margin-top:3px;
 transform:scale(1);
 cursor:pointer;
 }
@@ -179,26 +184,22 @@ margin-bottom:8px;
 
 <main class="container">
 
-<form action="mailto:info@ankaramalatyalilar.org.tr" method="post">
-
 <div class="card">
 <h2>Onay ve Beyan</h2>
 
-<div class="check-group">
+<!-- SOL METİN -->
+<div class="onay-text">
+<p>1. Dernek tüzüğünü okudum ve kabul ediyorum.</p>
+<p>2. Üyelik şartlarını eksiksiz olarak kabul ediyorum.</p>
+<p>3. Girdiğim tüm bilgilerin doğru olduğunu onaylıyorum.</p>
+</div>
+
+<!-- 2 SATIR AŞAĞI + ORTALI CHECKBOX -->
+<div class="check-center">
 
 <label class="check-item">
 <input type="checkbox">
-<span>Dernek tüzüğünü okudum ve kabul ediyorum.</span>
-</label>
-
-<label class="check-item">
-<input type="checkbox">
-<span>Üyelik şartlarını eksiksiz olarak kabul ediyorum.</span>
-</label>
-
-<label class="check-item">
-<input type="checkbox">
-<span>Girdiğim tüm bilgilerin doğru olduğunu onaylıyorum.</span>
+<span>Onaylıyorum</span>
 </label>
 
 </div>
@@ -209,8 +210,6 @@ margin-bottom:8px;
 </div>
 
 </div>
-
-</form>
 
 </main>
 
