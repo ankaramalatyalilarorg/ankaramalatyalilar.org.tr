@@ -6,11 +6,7 @@
 <title>Projeler | Ankara Malatyalılar Derneği</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:Arial, Helvetica, sans-serif;
@@ -18,7 +14,6 @@ background:#eef2f7;
 color:#1d2d44;
 }
 
-/* CONTAINER */
 .container{
 width:95%;
 max-width:1350px;
@@ -26,9 +21,7 @@ margin:auto;
 }
 
 /* HEADER */
-header{
-margin-top:12px;
-}
+header{margin-top:12px;}
 
 .banner-box img{
 width:100%;
@@ -55,7 +48,6 @@ color:#fff;
 text-decoration:none;
 font-size:16px;
 font-weight:500;
-transition:0.3s;
 }
 
 nav ul li a:hover,
@@ -65,16 +57,16 @@ color:#f4a300;
 
 /* HERO */
 .hero{
-margin-top:10px;
+margin-top:12px;
 background:linear-gradient(135deg,#1f4e79,#4a86c5);
 color:#fff;
-padding:40px;
+padding:45px;
 border-radius:18px;
 }
 
 .hero h1{
-font-size:42px;
-margin-bottom:10px;
+font-size:40px;
+margin-bottom:12px;
 }
 
 .hero p{
@@ -85,15 +77,14 @@ line-height:1.8;
 /* SOURCE BOX */
 .source-box{
 margin-top:20px;
-background:#ffffff;
+background:#fff;
 padding:25px;
 border-radius:18px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
 .source-box h2{
-font-size:22px;
-margin-bottom:12px;
+margin-bottom:15px;
 color:#0d2b52;
 }
 
@@ -101,18 +92,26 @@ color:#0d2b52;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:10px;
+}
+
+.source-list a{
+text-decoration:none;
+color:#1d2d44;
 font-size:15px;
-color:#44556b;
+}
+
+.source-list a:hover{
+color:#1f6feb;
+font-weight:bold;
 }
 
 /* TITLE */
 .big-title{
 margin-top:25px;
 font-size:32px;
-font-weight:bold;
 text-align:center;
+font-weight:bold;
 color:#0d2b52;
-letter-spacing:1px;
 }
 
 /* TABLE */
@@ -129,9 +128,8 @@ border-radius:12px;
 overflow:hidden;
 }
 
-th, td{
+th,td{
 padding:14px;
-text-align:left;
 border-bottom:1px solid #ddd;
 font-size:15px;
 }
@@ -145,9 +143,8 @@ tr:nth-child(even){
 background:#f2f7ff;
 }
 
-/* BUTTON */
+/* BUTTONS */
 .btn{
-display:inline-block;
 padding:8px 14px;
 background:#1f6feb;
 color:#fff;
@@ -155,22 +152,15 @@ border-radius:8px;
 text-decoration:none;
 font-size:13px;
 font-weight:bold;
-transition:0.3s;
+display:inline-block;
 }
 
 .btn:hover{
 background:#0d2b52;
 }
 
-.status-open{
-color:green;
-font-weight:bold;
-}
-
-.status-daily{
-color:orange;
-font-weight:bold;
-}
+.status-open{color:green;font-weight:bold;}
+.status-period{color:orange;font-weight:bold;}
 
 /* FOOTER */
 footer{
@@ -179,7 +169,6 @@ text-align:center;
 padding:20px;
 color:#666;
 }
-
 </style>
 </head>
 
@@ -188,7 +177,7 @@ color:#666;
 <header class="container">
 
 <div class="banner-box">
-<img src="bas.png" alt="Dernek Banner">
+<img src="bas.png" alt="Banner">
 </div>
 
 <nav>
@@ -210,8 +199,8 @@ color:#666;
 <section class="hero">
 <h1>PROJE DUYURULARI</h1>
 <p>
-Güncel hibe ve destek programları; gençler, kadınlar, öğrenciler, girişimciler ve kurumlar için sürekli güncellenmektedir.
-Derneğimiz bu fırsatları sizin için takip eder ve başvuru süreçlerinde danışmanlık sağlar.
+Avrupa Birliği ve Türkiye’deki tüm güncel hibe ve destek programları tarafımızca takip edilmektedir.
+Başvuru süreçleri profesyonel olarak yönetilmekte olup, proje hazırlama, dosyalama ve resmi başvurular derneğimiz koordinasyonunda yürütülmektedir.
 </p>
 </section>
 
@@ -219,18 +208,31 @@ Derneğimiz bu fırsatları sizin için takip eder ve başvuru süreçlerinde da
 <h2>Avrupa ve Türkiye Hibe Kaynakları</h2>
 
 <div class="source-list">
-<div>• Erasmus+ Gençlik Değişimleri</div>
-<div>• European Solidarity Corps</div>
-<div>• Creative Europe</div>
-<div>• Horizon Europe</div>
-<div>• LIFE Çevre Programı</div>
-<div>• Interreg Bölgesel İşbirliği</div>
-<div>• TÜBİTAK Ar-Ge Destekleri</div>
-<div>• KOSGEB Girişim Destekleri</div>
-<div>• TKDK IPARD Programı</div>
-<div>• İŞKUR İstihdam Destekleri</div>
-<div>• Gençlik ve Spor Bakanlığı</div>
-<div>• Çevre ve Şehircilik Bakanlığı</div>
+
+<a href="https://erasmus-plus.ec.europa.eu/" target="_blank">• Erasmus+ Gençlik Değişimleri</a>
+
+<a href="https://youth.europa.eu/solidarity_tr" target="_blank">• European Solidarity Corps</a>
+
+<a href="https://culture.ec.europa.eu/creative-europe" target="_blank">• Creative Europe</a>
+
+<a href="https://research-and-innovation.ec.europa.eu/funding" target="_blank">• Horizon Europe</a>
+
+<a href="https://cinea.ec.europa.eu/life_en" target="_blank">• LIFE Çevre Programı</a>
+
+<a href="https://interreg.eu" target="_blank">• Interreg Bölgesel İşbirliği</a>
+
+<a href="https://www.tubitak.gov.tr" target="_blank">• TÜBİTAK Ar-Ge Destekleri</a>
+
+<a href="https://www.kosgeb.gov.tr" target="_blank">• KOSGEB Girişim Destekleri</a>
+
+<a href="https://www.tkdk.gov.tr" target="_blank">• TKDK IPARD Programı</a>
+
+<a href="https://www.iskur.gov.tr" target="_blank">• İŞKUR İstihdam Destekleri</a>
+
+<a href="https://genclikhizmetleri.gov.tr" target="_blank">• Gençlik ve Spor Bakanlığı</a>
+
+<a href="https://csb.gov.tr" target="_blank">• Çevre ve Şehircilik Bakanlığı</a>
+
 </div>
 </section>
 
@@ -258,8 +260,8 @@ Derneğimiz bu fırsatları sizin için takip eder ve başvuru süreçlerinde da
 <td>20.000 € – 60.000 €</td>
 <td>Gençler</td>
 <td class="status-open">Açık</td>
-<td><a class="btn" href="#">Aç</a></td>
-<td><a class="btn" href="#">Talep Et</a></td>
+<td><a class="btn" href="https://erasmus-plus.ec.europa.eu/" target="_blank">Aç</a></td>
+<td><a class="btn" href="iletisim.html">Talep Et</a></td>
 </tr>
 
 <tr>
@@ -269,19 +271,19 @@ Derneğimiz bu fırsatları sizin için takip eder ve başvuru süreçlerinde da
 <td>6.000 € – 20.000 €</td>
 <td>Gençlik</td>
 <td class="status-open">Açık</td>
-<td><a class="btn" href="#">Aç</a></td>
-<td><a class="btn" href="#">Talep Et</a></td>
+<td><a class="btn" href="https://youth.europa.eu/solidarity_tr" target="_blank">Aç</a></td>
+<td><a class="btn" href="iletisim.html">Talep Et</a></td>
 </tr>
 
 <tr>
 <td>Ar-Ge Destek</td>
 <td>Teknoloji</td>
 <td>TÜBİTAK</td>
-<td>Değişken</td>
+<td>Proje Bazlı Değişken</td>
 <td>Girişimci</td>
 <td class="status-open">Açık</td>
-<td><a class="btn" href="#">Aç</a></td>
-<td><a class="btn" href="#">Talep Et</a></td>
+<td><a class="btn" href="https://www.tubitak.gov.tr" target="_blank">Aç</a></td>
+<td><a class="btn" href="iletisim.html">Talep Et</a></td>
 </tr>
 
 <tr>
@@ -291,8 +293,8 @@ Derneğimiz bu fırsatları sizin için takip eder ve başvuru süreçlerinde da
 <td>50.000 ₺ – 750.000 ₺</td>
 <td>Girişimci</td>
 <td class="status-open">Açık</td>
-<td><a class="btn" href="#">Aç</a></td>
-<td><a class="btn" href="#">Talep Et</a></td>
+<td><a class="btn" href="https://www.kosgeb.gov.tr" target="_blank">Aç</a></td>
+<td><a class="btn" href="iletisim.html">Talep Et</a></td>
 </tr>
 
 <tr>
@@ -301,42 +303,9 @@ Derneğimiz bu fırsatları sizin için takip eder ve başvuru süreçlerinde da
 <td>TKDK</td>
 <td>%60 – %70 Hibe</td>
 <td>Kırsal</td>
-<td class="status-daily">Dönemsel</td>
-<td><a class="btn" href="#">Aç</a></td>
-<td><a class="btn" href="#">Talep Et</a></td>
-</tr>
-
-<tr>
-<td>Gençlik Projeleri</td>
-<td>Sosyal</td>
-<td>GSB</td>
-<td>100.000 ₺ – 1.000.000 ₺</td>
-<td>Gençler</td>
-<td class="status-open">Açık</td>
-<td><a class="btn" href="#">Aç</a></td>
-<td><a class="btn" href="#">Talep Et</a></td>
-</tr>
-
-<tr>
-<td>Yeşil Dönüşüm</td>
-<td>Çevre</td>
-<td>Çevre Bakanlığı</td>
-<td>Değişken</td>
-<td>Kurumsal</td>
-<td class="status-open">Açık</td>
-<td><a class="btn" href="#">Aç</a></td>
-<td><a class="btn" href="#">Talep Et</a></td>
-</tr>
-
-<tr>
-<td>İstihdam Destek</td>
-<td>Sosyal</td>
-<td>İŞKUR</td>
-<td>Değişken</td>
-<td>Genel</td>
-<td class="status-open">Açık</td>
-<td><a class="btn" href="#">Aç</a></td>
-<td><a class="btn" href="#">Talep Et</a></td>
+<td class="status-period">Dönemsel</td>
+<td><a class="btn" href="https://www.tkdk.gov.tr" target="_blank">Aç</a></td>
+<td><a class="btn" href="iletisim.html">Talep Et</a></td>
 </tr>
 
 </table>
@@ -346,7 +315,7 @@ Derneğimiz bu fırsatları sizin için takip eder ve başvuru süreçlerinde da
 </main>
 
 <footer>
-© 2026 Ankara Malatyalılar Derneği - Tüm Hakları Saklıdır
+© 2026 Ankara Malatyalılar Derneği
 </footer>
 
 </body>
