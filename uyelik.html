@@ -21,7 +21,7 @@ max-width:1300px;
 margin:auto;
 }
 
-/* ÜST KISIM (AYNEN KORUNDU) */
+/* ===== ÜST KISIM (DOKUNULMADI) ===== */
 header{margin-top:12px;}
 
 .banner-box{
@@ -97,11 +97,23 @@ border-radius:12px;
 text-align:center;
 }
 
-/* ONAY METİN STİLİ */
-.onay-text{
+/* ================= ONAY ALANI ================= */
+
+.onay-box{
 margin-top:10px;
+padding:10px;
+
+text-align:left; /* 🔥 TAM SOL */
+
 font-size:14px;
-line-height:1.8;
+line-height:2;
+}
+
+/* TEK BLOK - KAYMA YOK */
+.onay-box span{
+display:block;
+text-align:left;
+white-space:nowrap; /* tek satır kalsın */
 }
 
 /* BUTTON */
@@ -215,10 +227,10 @@ margin-bottom:8px;
 <div class="card">
 <h2>Onay ve Beyan</h2>
 
-<div class="onay-text">
-<p>☐ Dernek tüzüğünü okudum ve kabul ediyorum.</p>
-<p>☐ Üyelik şartlarını eksiksiz olarak kabul ediyorum.</p>
-<p>☐ Girdiğim tüm bilgilerin doğru olduğunu onaylıyorum.</p>
+<div class="onay-box">
+<span>☐ Dernek tüzüğünü okudum ve kabul ediyorum.</span>
+<span>☐ Üyelik şartlarını eksiksiz olarak kabul ediyorum.</span>
+<span>☐ Girdiğim tüm bilgilerin doğru olduğunu onaylıyorum.</span>
 </div>
 
 <div class="actions">
