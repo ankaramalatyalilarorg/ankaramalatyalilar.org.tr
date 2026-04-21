@@ -21,8 +21,7 @@ max-width:1300px;
 margin:auto;
 }
 
-/* ================= ÜST KISIM (DOKUNULMADI) ================= */
-
+/* ===== ÜST KISIM (AYNEN) ===== */
 header{margin-top:12px;}
 
 .banner-box{
@@ -70,13 +69,6 @@ margin-top:18px;
 border:1px solid #e6e9ee;
 }
 
-ul.clean{
-margin-left:18px;
-margin-top:10px;
-}
-
-ul.clean li{margin-bottom:8px;}
-
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -98,11 +90,10 @@ border-radius:12px;
 text-align:center;
 }
 
-/* ================= ONAY ALANI (DÜZELTİLDİ) ================= */
+/* ================= ONAY (KESİN FIX) ================= */
 
-/* DIŞ ZARİF KUTU */
 .check-outer{
-margin-top:12px;
+margin-top:10px;
 padding:8px;
 
 border:1px solid #2f6b57;
@@ -111,45 +102,52 @@ border-radius:10px;
 background:#f9fffc;
 }
 
-/* LİSTE */
+/* liste */
 .checklist{
 display:flex;
 flex-direction:column;
 gap:6px;
 }
 
-/* HER SATIR (EŞİT İNCE BAR) */
+/* SATIR */
 .check-box{
 display:flex;
-align-items:center;
+align-items:flex-start; /* önemli fix */
 
 width:100%;
-height:30px; /* eşit yükseklik */
 
-padding:0 10px;
+padding:6px 10px;
 
 border:1px solid #2f6b57;
 border-radius:6px;
 
 background:#fff;
+
+/* taşmayı engelle */
+min-width:0;
 }
 
 /* checkbox */
 .check-box input{
-margin:0;
+flex:0 0 auto;
+margin-top:2px;
 transform:scale(1);
 cursor:pointer;
-flex-shrink:0;
 }
 
-/* yazı TAM SOL VE KUTU İÇİNDE */
+/* 🔥 YAZI TAMAMEN KUTU İÇİNDE GARANTİ */
 .check-box span{
-margin:0;
+flex:1;
+min-width:0;
+
 padding-left:10px;
+
 font-size:13px;
 text-align:left;
-line-height:1;
-width:100%;
+
+white-space:normal;   /* taşma yok */
+overflow-wrap:anywhere; /* kırılma garantili */
+word-break:break-word;
 }
 
 /* BUTTON */
@@ -176,18 +174,15 @@ border-radius:10px;
 margin-bottom:8px;
 }
 
-/* MOBILE */
 @media(max-width:768px){
 .grid{grid-template-columns:1fr;}
 .hero h1{font-size:30px;}
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- ================= ÜST KISIM (AYNEN) ================= -->
 <header class="container">
 <div class="banner-box">
 <img src="bas.png">
@@ -215,7 +210,7 @@ margin-bottom:8px;
 
 <div class="card">
 <h2>Neden Üye Olmalısınız?</h2>
-<ul class="clean">
+<ul>
 <li>Hemşehrilik bağlarını güçlendirmek</li>
 <li>Kültürel faaliyetlere katılmak</li>
 <li>Dayanışma ağına dahil olmak</li>
@@ -225,43 +220,15 @@ margin-bottom:8px;
 
 <div class="card">
 <h2>Üyelik Şartları</h2>
-<ul class="clean">
+<ul>
 <li>T.C. Kimlik (PDF / JPG / PNG)</li>
 <li>Formun eksiksiz doldurulması</li>
 <li>Gerekirse ek belgeler</li>
 </ul>
 </div>
 
-<form action="mailto:info@ankaramalatyalilar.org.tr" method="post" enctype="multipart/form-data">
+<form action="mailto:info@ankaramalatyalilar.org.tr" method="post">
 
-<div class="card">
-<h2>Kişisel Bilgiler</h2>
-<div class="grid">
-<input type="text" placeholder="Ad Soyad">
-<input type="text" placeholder="T.C. Kimlik No">
-<input type="date">
-<input type="text" placeholder="Kan Grubu">
-</div>
-</div>
-
-<div class="card">
-<h2>İletişim</h2>
-<div class="grid">
-<input type="text" placeholder="Adres">
-<input type="tel" placeholder="Telefon">
-<input type="email" placeholder="E-posta">
-</div>
-</div>
-
-<div class="card">
-<h2>Belgeler</h2>
-<div class="upload">
-<p>Dosya yükleyiniz</p>
-<input type="file" accept=".pdf,.jpg,.png">
-</div>
-</div>
-
-<!-- ================= ONAY (SON HAL) ================= -->
 <div class="card">
 <h2>Onay ve Beyan</h2>
 
