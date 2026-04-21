@@ -21,7 +21,7 @@ max-width:1300px;
 margin:auto;
 }
 
-/* ===== ÜST KISIM (AYNEN) ===== */
+/* ÜST KISIMLAR (AYNEN KORUNDU) */
 header{margin-top:12px;}
 
 .banner-box{
@@ -69,6 +69,13 @@ margin-top:18px;
 border:1px solid #e6e9ee;
 }
 
+ul{
+margin-left:18px;
+margin-top:10px;
+}
+
+ul li{margin-bottom:8px;}
+
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -90,64 +97,15 @@ border-radius:12px;
 text-align:center;
 }
 
-/* ================= ONAY (KESİN FIX) ================= */
-
-.check-outer{
+/* ONAY DÜZ YAZI */
+.onay-text{
 margin-top:10px;
-padding:8px;
-
-border:1px solid #2f6b57;
-border-radius:10px;
-
-background:#f9fffc;
+font-size:14px;
+line-height:1.8;
 }
 
-/* liste */
-.checklist{
-display:flex;
-flex-direction:column;
-gap:6px;
-}
-
-/* SATIR */
-.check-box{
-display:flex;
-align-items:flex-start; /* önemli fix */
-
-width:100%;
-
-padding:6px 10px;
-
-border:1px solid #2f6b57;
-border-radius:6px;
-
-background:#fff;
-
-/* taşmayı engelle */
-min-width:0;
-}
-
-/* checkbox */
-.check-box input{
-flex:0 0 auto;
-margin-top:2px;
-transform:scale(1);
-cursor:pointer;
-}
-
-/* 🔥 YAZI TAMAMEN KUTU İÇİNDE GARANTİ */
-.check-box span{
-flex:1;
-min-width:0;
-
-padding-left:10px;
-
-font-size:13px;
-text-align:left;
-
-white-space:normal;   /* taşma yok */
-overflow-wrap:anywhere; /* kırılma garantili */
-word-break:break-word;
+.onay-text p{
+margin-bottom:8px;
 }
 
 /* BUTTON */
@@ -174,6 +132,7 @@ border-radius:10px;
 margin-bottom:8px;
 }
 
+/* MOBILE */
 @media(max-width:768px){
 .grid{grid-template-columns:1fr;}
 .hero h1{font-size:30px;}
@@ -230,29 +189,39 @@ margin-bottom:8px;
 <form action="mailto:info@ankaramalatyalilar.org.tr" method="post">
 
 <div class="card">
-<h2>Onay ve Beyan</h2>
-
-<div class="check-outer">
-
-<div class="checklist">
-
-<label class="check-box">
-<input type="checkbox">
-<span>Girdiğim tüm bilgilerin doğru olduğunu beyan ederim.</span>
-</label>
-
-<label class="check-box">
-<input type="checkbox">
-<span>Dernek tüzüğünü okudum ve kabul ediyorum.</span>
-</label>
-
-<label class="check-box">
-<input type="checkbox">
-<span>Üyelik şartlarını eksiksiz olarak kabul ediyorum.</span>
-</label>
-
+<h2>Kişisel Bilgiler</h2>
+<div class="grid">
+<input type="text" placeholder="Ad Soyad">
+<input type="text" placeholder="T.C. Kimlik No">
+<input type="date">
+<input type="text" placeholder="Kan Grubu">
+</div>
 </div>
 
+<div class="card">
+<h2>İletişim</h2>
+<div class="grid">
+<input type="text" placeholder="Adres">
+<input type="tel" placeholder="Telefon">
+<input type="email" placeholder="E-posta">
+</div>
+</div>
+
+<div class="card">
+<h2>Belgeler</h2>
+<div class="upload">
+<p>Dosya yükleyiniz</p>
+<input type="file" accept=".pdf,.jpg,.png">
+</div>
+</div>
+
+<div class="card">
+<h2>Onay ve Beyan</h2>
+
+<div class="onay-text">
+<p>• Girdiğim tüm bilgilerin doğru olduğunu beyan ederim.</p>
+<p>• Dernek tüzüğünü okudum ve kabul ediyorum.</p>
+<p>• Üyelik şartlarını eksiksiz olarak kabul ediyorum.</p>
 </div>
 
 <div class="actions">
