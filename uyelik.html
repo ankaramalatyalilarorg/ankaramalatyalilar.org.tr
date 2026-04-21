@@ -21,7 +21,7 @@ max-width:1300px;
 margin:auto;
 }
 
-/* ===== ÜST KISIM (DOKUNULMADI) ===== */
+/* ÜST KISIM (DOKUNULMADI) */
 header{margin-top:12px;}
 
 .banner-box{
@@ -69,13 +69,6 @@ margin-top:18px;
 border:1px solid #e6e9ee;
 }
 
-ul{
-margin-left:18px;
-margin-top:10px;
-}
-
-ul li{margin-bottom:8px;}
-
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -97,23 +90,33 @@ border-radius:12px;
 text-align:center;
 }
 
-/* ================= ONAY ALANI ================= */
+/* ================= ONAY ================= */
 
-.onay-box{
+.check-group{
 margin-top:10px;
-padding:10px;
-
-text-align:left; /* 🔥 TAM SOL */
-
-font-size:14px;
-line-height:2;
+display:flex;
+flex-direction:column;
+gap:10px;
+text-align:left;
 }
 
-/* TEK BLOK - KAYMA YOK */
-.onay-box span{
-display:block;
-text-align:left;
-white-space:nowrap; /* tek satır kalsın */
+/* label tıklanabilir alan */
+.check-item{
+display:flex;
+align-items:flex-start;
+gap:8px;
+
+font-size:14px;
+line-height:1.4;
+
+cursor:pointer;
+}
+
+/* checkbox */
+.check-item input{
+margin-top:3px;
+transform:scale(1);
+cursor:pointer;
 }
 
 /* BUTTON */
@@ -176,61 +179,28 @@ margin-bottom:8px;
 
 <main class="container">
 
-<div class="card">
-<h2>Neden Üye Olmalısınız?</h2>
-<ul>
-<li>Hemşehrilik bağlarını güçlendirmek</li>
-<li>Kültürel faaliyetlere katılmak</li>
-<li>Dayanışma ağına dahil olmak</li>
-<li>Projelerde aktif rol almak</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>Üyelik Şartları</h2>
-<ul>
-<li>T.C. Kimlik (PDF / JPG / PNG)</li>
-<li>Formun eksiksiz doldurulması</li>
-<li>Gerekirse ek belgeler</li>
-</ul>
-</div>
-
 <form action="mailto:info@ankaramalatyalilar.org.tr" method="post">
-
-<div class="card">
-<h2>Kişisel Bilgiler</h2>
-<div class="grid">
-<input type="text" placeholder="Ad Soyad">
-<input type="text" placeholder="T.C. Kimlik No">
-<input type="date">
-<input type="text" placeholder="Kan Grubu">
-</div>
-</div>
-
-<div class="card">
-<h2>İletişim</h2>
-<div class="grid">
-<input type="text" placeholder="Adres">
-<input type="tel" placeholder="Telefon">
-<input type="email" placeholder="E-posta">
-</div>
-</div>
-
-<div class="card">
-<h2>Belgeler</h2>
-<div class="upload">
-<p>Dosya yükleyiniz</p>
-<input type="file" accept=".pdf,.jpg,.png">
-</div>
-</div>
 
 <div class="card">
 <h2>Onay ve Beyan</h2>
 
-<div class="onay-box">
-<span>☐ Dernek tüzüğünü okudum ve kabul ediyorum.</span>
-<span>☐ Üyelik şartlarını eksiksiz olarak kabul ediyorum.</span>
-<span>☐ Girdiğim tüm bilgilerin doğru olduğunu onaylıyorum.</span>
+<div class="check-group">
+
+<label class="check-item">
+<input type="checkbox">
+<span>Dernek tüzüğünü okudum ve kabul ediyorum.</span>
+</label>
+
+<label class="check-item">
+<input type="checkbox">
+<span>Üyelik şartlarını eksiksiz olarak kabul ediyorum.</span>
+</label>
+
+<label class="check-item">
+<input type="checkbox">
+<span>Girdiğim tüm bilgilerin doğru olduğunu onaylıyorum.</span>
+</label>
+
 </div>
 
 <div class="actions">
