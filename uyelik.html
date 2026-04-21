@@ -21,7 +21,7 @@ max-width:1300px;
 margin:auto;
 }
 
-/* ===== ÜST KISIM (DOKUNULMADI) ===== */
+/* ===== ÜST KISIM (AYNEN KORUNDU) ===== */
 header{margin-top:12px;}
 
 .banner-box{
@@ -101,10 +101,9 @@ text-align:center;
    ONAY KISMI (KESİN DÜZELTME)
 ========================= */
 
-/* DIŞ KUTU */
 .check-outer-box{
 margin-top:10px;
-padding:8px;
+padding:10px;
 
 border:1px solid #2f6b57;
 border-radius:10px;
@@ -112,51 +111,43 @@ border-radius:10px;
 background:#f9fffc;
 }
 
-/* liste */
 .checklist{
 display:flex;
 flex-direction:column;
-gap:6px;
+gap:8px;
 }
 
-/* SATIR KUTU */
+/* HER SATIR KUTU */
 .check-box{
 display:flex;
 align-items:center;
 
 width:100%;
-height:32px;
-
-padding:0 10px;
+padding:6px 10px;
 
 border:1px solid #2f6b57;
 border-radius:6px;
 
 background:#fff;
-
-/* 🔥 taşmayı engelleyen kritik */
-min-width:0;
-overflow:hidden;
 }
 
 /* checkbox */
 .check-box input{
-flex-shrink:0;
-transform:scale(1);
 margin:0;
+transform:scale(1);
 cursor:pointer;
+flex-shrink:0;
 }
 
-/* 🔥 YAZI TAMAMEN KUTU İÇİNDE */
+/* 🔥 YAZI ARTIK %100 GÖRÜNÜR */
 .check-box span{
-flex:1;
-min-width:0;          /* kritik fix */
-white-space:nowrap;   /* taşma yok */
-overflow:hidden;
-text-overflow:ellipsis;
-padding-left:8px;
+display:block;
+width:100%;
+padding-left:10px;
 font-size:13px;
 text-align:left;
+line-height:1.3;
+white-space:normal;   /* taşma yok, satır kırılabilir */
 }
 
 /* BUTTON */
@@ -267,7 +258,7 @@ margin-bottom:8px;
 </div>
 
 <!-- =========================
-     ONAY (SON DÜZELTİLMİŞ)
+     ONAY (KESİN ÇALIŞAN HAL)
 ========================= -->
 
 <div class="card">
