@@ -6,11 +6,7 @@
 <title>Üyelik | Ankara Malatyalılar Derneği</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:Arial, Helvetica, sans-serif;
@@ -33,7 +29,7 @@ border-radius:18px 18px 0 0;
 overflow:hidden;
 }
 
-.banner-box img{width:100%;display:block;}
+.banner-box img{width:100%;}
 
 /* NAV */
 nav{
@@ -42,22 +38,21 @@ border-radius:0 0 18px 18px;
 }
 
 nav ul{
-list-style:none;
 display:flex;
 gap:55px;
 padding:14px 30px;
+list-style:none;
 flex-wrap:wrap;
 }
 
-nav ul li a{
+nav a{
 color:#fff;
 text-decoration:none;
 font-size:15px;
-font-weight:500;
 }
 
-nav ul li a:hover,
-nav ul li a.active{
+nav a:hover,
+nav a.active{
 color:#ffd36a;
 }
 
@@ -70,8 +65,8 @@ padding:40px;
 border-radius:18px;
 }
 
-.hero h1{font-size:42px;margin-bottom:10px;}
-.hero p{font-size:18px;max-width:900px;}
+.hero h1{font-size:42px;}
+.hero p{font-size:18px;}
 
 /* CARD */
 .card{
@@ -80,12 +75,6 @@ border-radius:16px;
 padding:26px;
 margin-top:18px;
 border:1px solid #e6e9ee;
-box-shadow:0 8px 20px rgba(0,0,0,0.05);
-}
-
-.card h2{
-color:#2f6b57;
-margin-bottom:12px;
 }
 
 /* LIST */
@@ -94,12 +83,9 @@ margin-left:18px;
 margin-top:10px;
 }
 
-ul.clean li{
-margin-bottom:8px;
-color:#44556b;
-}
+ul.clean li{margin-bottom:8px;}
 
-/* FORM GRID */
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -122,43 +108,47 @@ border-radius:12px;
 text-align:center;
 }
 
-/* BEYAN FIX %100 SOL */
+/* 🔥 BEYAN TAM SOL (KESİN ÇÖZÜM) */
 .checklist{
-display:flex;
-flex-direction:column;
-gap:12px;
-width:100%;
-align-items:flex-start;   /* KRİTİK FIX */
+margin-top:10px;
 }
 
 .check{
 display:flex;
 align-items:center;
 gap:10px;
-width:100%;
-justify-content:flex-start; /* KRİTİK FIX */
+margin-bottom:10px;
+
+/* KRİTİK */
+margin-left:0 !important;
+padding-left:0 !important;
+justify-content:flex-start;
 }
 
 .check input{
 margin:0;
-transform:scale(1.15);
+transform:scale(1.2);
+flex-shrink:0;
+}
+
+.check span{
+margin:0;
+padding:0;
+text-align:left;
 }
 
 /* BUTTONS */
 .actions{
 text-align:center;
-margin-top:18px;
+margin-top:20px;
 }
 
-button{
-border:none;
-cursor:pointer;
-}
+button{cursor:pointer;border:none;}
 
 .btn-submit{
 background:#2f6b57;
 color:#fff;
-padding:12px 24px;
+padding:12px 26px;
 border-radius:10px;
 font-weight:600;
 }
@@ -169,12 +159,6 @@ color:#fff;
 padding:10px 18px;
 border-radius:10px;
 margin-bottom:10px;
-}
-
-/* PRINT */
-@media print{
-nav,.btn-submit,.btn-print{display:none;}
-.card{box-shadow:none;border:1px solid #000;}
 }
 
 /* MOBILE */
@@ -189,7 +173,7 @@ nav,.btn-submit,.btn-print{display:none;}
 
 <header class="container">
 <div class="banner-box">
-<img src="bas.png" alt="Dernek">
+<img src="bas.png">
 </div>
 
 <nav>
@@ -212,28 +196,25 @@ nav,.btn-submit,.btn-print{display:none;}
 
 <main class="container">
 
-<!-- NEDEN ÜYE OLUNMALI -->
 <div class="card">
 <h2>Neden Üye Olmalısınız?</h2>
 <ul class="clean">
-<li>Hemşehrilik bağlarını güçlendirmek için</li>
-<li>Sosyal ve kültürel faaliyetlere katılmak için</li>
-<li>Dayanışma ağı içinde yer almak için</li>
-<li>Projelerde aktif rol almak için</li>
+<li>Hemşehrilik bağlarını güçlendirmek</li>
+<li>Kültürel faaliyetlere katılmak</li>
+<li>Dayanışma ağına dahil olmak</li>
+<li>Projelerde aktif rol almak</li>
 </ul>
 </div>
 
-<!-- ÜYELİK ŞARTLARI -->
 <div class="card">
 <h2>Üyelik Şartları</h2>
 <ul class="clean">
-<li>T.C. Kimlik Kartının taranmış hali (PDF / PNG / JPG)</li>
-<li>Formun eksiksiz ve doğru doldurulması</li>
-<li>Gerekli görülürse ek belgelerin sunulması</li>
+<li>T.C. Kimlik (PDF / JPG / PNG)</li>
+<li>Formun eksiksiz doldurulması</li>
+<li>Gerekirse ek belgeler</li>
 </ul>
 </div>
 
-<!-- FORM -->
 <form action="mailto:info@ankaramalatyalilar.org.tr" method="post" enctype="multipart/form-data">
 
 <div class="card">
@@ -258,12 +239,12 @@ nav,.btn-submit,.btn-print{display:none;}
 <div class="card">
 <h2>Belgeler</h2>
 <div class="upload">
-<p>Kimlik / Ek Belgeler Yükleyiniz</p>
+<p>Dosya yükleyiniz</p>
 <input type="file" accept=".pdf,.jpg,.png">
 </div>
 </div>
 
-<!-- BEYAN (KESİN SOL FIX) -->
+<!-- 🔥 TAM SOL BEYAN -->
 <div class="card">
 <h2>Onay ve Beyan</h2>
 
@@ -287,8 +268,7 @@ nav,.btn-submit,.btn-print{display:none;}
 </div>
 
 <div class="actions">
-<button class="btn-print" type="button" onclick="window.print()">Yazdır</button>
-<br>
+<button class="btn-print" type="button" onclick="window.print()">Yazdır</button><br>
 <button class="btn-submit" type="submit">Gönder</button>
 </div>
 
