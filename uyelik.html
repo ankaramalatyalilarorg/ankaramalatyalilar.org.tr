@@ -21,7 +21,7 @@ max-width:1300px;
 margin:auto;
 }
 
-/* ===== ÜST KISIMLAR (DOKUNULMADI) ===== */
+/* ===== ÜST KISIM (DOKUNULMADI) ===== */
 header{margin-top:12px;}
 
 .banner-box{
@@ -98,48 +98,58 @@ text-align:center;
 }
 
 /* =========================
-   ONAY KISMI (SON DÜZELTME)
+   ONAY ALANI (ULTRA REVİZE)
 ========================= */
 
-.checklist{
+/* DIŞ ZARİF KUTU */
+.check-outer-box{
 margin-top:10px;
-display:flex;
-flex-direction:column;
-gap:5px;
+padding:8px;
+
+border:1px solid #2f6b57;
+border-radius:10px;
+
+background:#f9fffc;
 }
 
-/* KUTU = TAM GENİŞLİK + İÇERİDE HİZALI */
+/* iç liste */
+.checklist{
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+/* HER SATIR = EŞİT KISA BAR */
 .check-box{
 display:flex;
 align-items:center;
 
 width:100%;
-padding:6px 10px;   /* içeriden boşluk */
+height:30px;          /* 🔥 HEPSİ EŞİT */
+padding:0 10px;
 
 border:1px solid #2f6b57;
 border-radius:6px;
 
-background:#f9fffc;
+background:#ffffff;
 }
 
 /* checkbox */
 .check-box input{
 margin:0;
-padding:0;
 transform:scale(1);
 cursor:pointer;
 flex-shrink:0;
 }
 
-/* 🔥 YAZI TAM SOLA DAYALI VE KUTU İÇİNDE */
+/* yazı TAM SOL BAŞLANGIÇ */
 .check-box span{
-display:block;
-width:100%;
-text-align:left;
 margin:0;
-padding-left:6px; /* kutu içi sol boşluk */
+padding-left:8px;
 font-size:13px;
-line-height:1.2;
+text-align:left;
+line-height:1;
+width:100%;
 }
 
 /* BUTTON */
@@ -249,9 +259,14 @@ margin-bottom:8px;
 </div>
 </div>
 
-<!-- ===== ONAY (SON DOĞRU HAL) ===== -->
+<!-- =========================
+     ONAY (ULTRA ZARİF KUTU)
+========================= -->
+
 <div class="card">
 <h2>Onay ve Beyan</h2>
+
+<div class="check-outer-box">
 
 <div class="checklist">
 
@@ -269,6 +284,8 @@ margin-bottom:8px;
 <input type="checkbox">
 <span>Üyelik şartlarını eksiksiz olarak kabul ediyorum.</span>
 </label>
+
+</div>
 
 </div>
 
