@@ -3,17 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Projeler | Ankara Malatyalılar Derneği</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-font-family:Arial, Helvetica, sans-serif;
-background:#eef2f7;
+font-family:Arial, sans-serif;
+background:#eef3f8;
 color:#1d2d44;
 }
 
+/* CONTAINER */
 .container{
 width:95%;
 max-width:1350px;
@@ -25,7 +27,6 @@ header{margin-top:12px;}
 
 .banner-box img{
 width:100%;
-display:block;
 border-radius:18px 18px 0 0;
 }
 
@@ -36,138 +37,140 @@ border-radius:0 0 18px 18px;
 }
 
 nav ul{
-list-style:none;
 display:flex;
-flex-wrap:wrap;
 gap:60px;
-padding:14px 35px;
+padding:16px 35px;
+list-style:none;
+flex-wrap:wrap;
 }
 
-nav ul li a{
+nav a{
 color:#fff;
 text-decoration:none;
 font-size:16px;
-font-weight:500;
 }
 
-nav ul li a:hover,
-nav ul li a.active{
+nav a:hover,
+nav a.active{
 color:#f4a300;
 }
 
 /* HERO */
 .hero{
-margin-top:12px;
-background:linear-gradient(135deg,#1f4e79,#4a86c5);
-color:#fff;
-padding:45px;
+margin-top:18px;
+padding:50px;
 border-radius:18px;
+background:linear-gradient(135deg,#0d2b52,#3c6aa6);
+color:#fff;
 }
 
 .hero h1{
-font-size:40px;
-margin-bottom:12px;
+font-size:44px;
+margin-bottom:15px;
 }
 
 .hero p{
-font-size:18px;
+font-size:19px;
 line-height:1.8;
 }
 
-/* SOURCE BOX */
-.source-box{
+/* LINK BOX */
+.link-box{
 margin-top:20px;
 background:#fff;
 padding:25px;
 border-radius:18px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
 }
 
-.source-box h2{
+.link-box h2{
 margin-bottom:15px;
 color:#0d2b52;
 }
 
-.source-list{
+.link-box ul{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:10px;
 }
 
-.source-list a{
+.link-box a{
 text-decoration:none;
 color:#1d2d44;
-font-size:15px;
+padding:6px;
+display:block;
+transition:.2s;
 }
 
-.source-list a:hover{
-color:#1f6feb;
-font-weight:bold;
-}
-
-/* TITLE */
-.big-title{
-margin-top:25px;
-font-size:32px;
-text-align:center;
-font-weight:bold;
+.link-box a:hover{
 color:#0d2b52;
+font-weight:bold;
 }
 
 /* TABLE */
 .table-wrap{
-margin-top:20px;
-overflow-x:auto;
+margin-top:30px;
+background:#fff;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 22px rgba(0,0,0,0.08);
+}
+
+.table-title{
+text-align:center;
+font-size:28px;
+padding:20px;
+background:#0d2b52;
+color:#fff;
+font-weight:bold;
 }
 
 table{
 width:100%;
 border-collapse:collapse;
-background:#fff;
-border-radius:12px;
-overflow:hidden;
-}
-
-th,td{
-padding:14px;
-border-bottom:1px solid #ddd;
-font-size:15px;
 }
 
 th{
 background:#0d2b52;
 color:#fff;
+padding:14px;
+font-size:15px;
+}
+
+td{
+padding:14px;
+font-size:15px;
+border-bottom:1px solid #ddd;
 }
 
 tr:nth-child(even){
-background:#f2f7ff;
+background:#f2f6fb;
 }
 
-/* BUTTONS */
+/* STATUS */
+.status-open{color:green;font-weight:bold;}
+.status-mid{color:orange;font-weight:bold;}
+
+/* BUTTON */
 .btn{
-padding:8px 14px;
-background:#1f6feb;
-color:#fff;
+padding:7px 14px;
 border-radius:8px;
 text-decoration:none;
-font-size:13px;
-font-weight:bold;
-display:inline-block;
+color:#fff;
+font-size:14px;
 }
 
-.btn:hover{
-background:#0d2b52;
-}
+.btn-blue{background:#2f6fd1;}
+.btn-green{background:#28a745;}
 
-.status-open{color:green;font-weight:bold;}
-.status-period{color:orange;font-weight:bold;}
+.btn:hover{opacity:0.8;}
 
-/* FOOTER */
 footer{
 margin-top:30px;
-text-align:center;
 padding:20px;
-color:#666;
+text-align:center;
+background:#0d2b52;
+color:#fff;
 }
 </style>
 </head>
@@ -175,144 +178,114 @@ color:#666;
 <body>
 
 <header class="container">
-
 <div class="banner-box">
-<img src="bas.png" alt="Banner">
+<img src="bas.png">
 </div>
 
 <nav>
 <ul>
 <li><a href="index.html">Ana Sayfa</a></li>
 <li><a href="kurumsal.html">Kurumsal</a></li>
-<li><a href="faaliyet.html">Faaliyetler</a></li>
+<li><a href="faaliyet.html">Faaliyetlerimiz</a></li>
 <li><a href="proje.html" class="active">Projeler</a></li>
 <li><a href="blog.html">Blog</a></li>
 <li><a href="uyelik.html">Üyelik</a></li>
 <li><a href="iletisim.html">İletişim</a></li>
 </ul>
 </nav>
-
 </header>
 
-<main class="container">
-
-<section class="hero">
+<section class="container hero">
 <h1>PROJE DUYURULARI</h1>
 <p>
-Avrupa Birliği ve Türkiye’deki tüm güncel hibe ve destek programları tarafımızca takip edilmektedir.
-Başvuru süreçleri profesyonel olarak yönetilmekte olup, proje hazırlama, dosyalama ve resmi başvurular derneğimiz koordinasyonunda yürütülmektedir.
+Derneğimiz; bireyler, girişimciler ve kurumlar adına proje başvuru süreçlerini profesyonel olarak yürütmektedir.  
+Tüm başvurular danışmanlık ve yetkilendirme süreci ile tarafımızdan yapılır.
 </p>
 </section>
 
-<section class="source-box">
+<div class="container link-box">
 <h2>Avrupa ve Türkiye Hibe Kaynakları</h2>
+<ul>
 
-<div class="source-list">
+<li><a href="https://erasmus-plus.ec.europa.eu" target="_blank">Erasmus+ Gençlik Değişimleri</a></li>
+<li><a href="https://youth.europa.eu/solidarity" target="_blank">European Solidarity Corps</a></li>
+<li><a href="https://culture.ec.europa.eu/creative-europe" target="_blank">Creative Europe</a></li>
+<li><a href="https://research-and-innovation.ec.europa.eu" target="_blank">Horizon Europe</a></li>
+<li><a href="https://cinea.ec.europa.eu/life" target="_blank">LIFE Programı</a></li>
+<li><a href="https://interreg.eu" target="_blank">Interreg Programı</a></li>
 
-<a href="https://erasmus-plus.ec.europa.eu/" target="_blank">• Erasmus+ Gençlik Değişimleri</a>
+<li><a href="https://www.tubitak.gov.tr" target="_blank">TÜBİTAK</a></li>
+<li><a href="https://www.kosgeb.gov.tr" target="_blank">KOSGEB</a></li>
+<li><a href="https://www.tkdk.gov.tr" target="_blank">TKDK IPARD</a></li>
+<li><a href="https://www.iskur.gov.tr" target="_blank">İŞKUR</a></li>
+<li><a href="https://www.gsb.gov.tr" target="_blank">Gençlik ve Spor Bakanlığı</a></li>
+<li><a href="https://csb.gov.tr" target="_blank">Çevre Bakanlığı</a></li>
 
-<a href="https://youth.europa.eu/solidarity_tr" target="_blank">• European Solidarity Corps</a>
-
-<a href="https://culture.ec.europa.eu/creative-europe" target="_blank">• Creative Europe</a>
-
-<a href="https://research-and-innovation.ec.europa.eu/funding" target="_blank">• Horizon Europe</a>
-
-<a href="https://cinea.ec.europa.eu/life_en" target="_blank">• LIFE Çevre Programı</a>
-
-<a href="https://interreg.eu" target="_blank">• Interreg Bölgesel İşbirliği</a>
-
-<a href="https://www.tubitak.gov.tr" target="_blank">• TÜBİTAK Ar-Ge Destekleri</a>
-
-<a href="https://www.kosgeb.gov.tr" target="_blank">• KOSGEB Girişim Destekleri</a>
-
-<a href="https://www.tkdk.gov.tr" target="_blank">• TKDK IPARD Programı</a>
-
-<a href="https://www.iskur.gov.tr" target="_blank">• İŞKUR İstihdam Destekleri</a>
-
-<a href="https://genclikhizmetleri.gov.tr" target="_blank">• Gençlik ve Spor Bakanlığı</a>
-
-<a href="https://csb.gov.tr" target="_blank">• Çevre ve Şehircilik Bakanlığı</a>
-
+</ul>
 </div>
-</section>
 
-<div class="big-title">GÜNCEL PROJE DUYURULARI</div>
+<div class="container table-wrap">
 
-<div class="table-wrap">
+<div class="table-title">GÜNCEL PROJE DUYURULARI</div>
 
 <table>
-
 <tr>
-<th>Proje Adı</th>
+<th>Proje</th>
 <th>Kategori</th>
 <th>Kaynak</th>
-<th>Hibe Tutarı</th>
+<th>Hibe</th>
 <th>Hedef</th>
 <th>Durum</th>
 <th>Kılavuz</th>
-<th>İşlem</th>
+<th>Talep</th>
 </tr>
 
 <tr>
 <td>Gençlik Değişimleri</td>
 <td>Gençlik</td>
 <td>Erasmus+</td>
-<td>20.000 € – 60.000 €</td>
+<td>20.000 € - 60.000 €</td>
 <td>Gençler</td>
 <td class="status-open">Açık</td>
-<td><a class="btn" href="https://erasmus-plus.ec.europa.eu/" target="_blank">Aç</a></td>
-<td><a class="btn" href="iletisim.html">Talep Et</a></td>
+<td><a class="btn btn-blue" href="https://erasmus-plus.ec.europa.eu" target="_blank">Aç</a></td>
+<td><a class="btn btn-green" href="mailto:info@ankaramalatyalilar.org.tr?subject=Gençlik Değişimleri Başvuru">Talep Et</a></td>
 </tr>
 
 <tr>
 <td>Dayanışma Projesi</td>
 <td>Sosyal</td>
 <td>ESC</td>
-<td>6.000 € – 20.000 €</td>
+<td>6.000 € - 20.000 €</td>
 <td>Gençlik</td>
 <td class="status-open">Açık</td>
-<td><a class="btn" href="https://youth.europa.eu/solidarity_tr" target="_blank">Aç</a></td>
-<td><a class="btn" href="iletisim.html">Talep Et</a></td>
-</tr>
-
-<tr>
-<td>Ar-Ge Destek</td>
-<td>Teknoloji</td>
-<td>TÜBİTAK</td>
-<td>Proje Bazlı Değişken</td>
-<td>Girişimci</td>
-<td class="status-open">Açık</td>
-<td><a class="btn" href="https://www.tubitak.gov.tr" target="_blank">Aç</a></td>
-<td><a class="btn" href="iletisim.html">Talep Et</a></td>
+<td><a class="btn btn-blue" href="https://youth.europa.eu/solidarity" target="_blank">Aç</a></td>
+<td><a class="btn btn-green" href="mailto:info@ankaramalatyalilar.org.tr?subject=ESC Başvuru">Talep Et</a></td>
 </tr>
 
 <tr>
 <td>KOSGEB Girişim</td>
 <td>KOBİ</td>
 <td>KOSGEB</td>
-<td>50.000 ₺ – 750.000 ₺</td>
+<td>50.000 ₺ - 750.000 ₺</td>
 <td>Girişimci</td>
 <td class="status-open">Açık</td>
-<td><a class="btn" href="https://www.kosgeb.gov.tr" target="_blank">Aç</a></td>
-<td><a class="btn" href="iletisim.html">Talep Et</a></td>
+<td><a class="btn btn-blue" href="https://www.kosgeb.gov.tr" target="_blank">Aç</a></td>
+<td><a class="btn btn-green" href="mailto:info@ankaramalatyalilar.org.tr?subject=KOSGEB Başvuru">Talep Et</a></td>
 </tr>
 
 <tr>
 <td>IPARD Tarım</td>
 <td>Tarım</td>
 <td>TKDK</td>
-<td>%60 – %70 Hibe</td>
+<td>%60 - %70 Hibe</td>
 <td>Kırsal</td>
-<td class="status-period">Dönemsel</td>
-<td><a class="btn" href="https://www.tkdk.gov.tr" target="_blank">Aç</a></td>
-<td><a class="btn" href="iletisim.html">Talep Et</a></td>
+<td class="status-mid">Dönemsel</td>
+<td><a class="btn btn-blue" href="https://www.tkdk.gov.tr" target="_blank">Aç</a></td>
+<td><a class="btn btn-green" href="mailto:info@ankaramalatyalilar.org.tr?subject=IPARD Başvuru">Talep Et</a></td>
 </tr>
 
 </table>
-
 </div>
-
-</main>
 
 <footer>
 © 2026 Ankara Malatyalılar Derneği
