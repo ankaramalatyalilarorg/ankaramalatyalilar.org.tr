@@ -21,7 +21,7 @@ max-width:1300px;
 margin:auto;
 }
 
-/* HEADER - DOKUNULMADI */
+/* ===== ÜST KISIMLAR (DOKUNULMADI) ===== */
 header{margin-top:12px;}
 
 .banner-box{
@@ -31,7 +31,6 @@ overflow:hidden;
 
 .banner-box img{width:100%;}
 
-/* NAV - DOKUNULMADI */
 nav{
 background:#2f6b57;
 border-radius:0 0 18px 18px;
@@ -56,7 +55,6 @@ nav a.active{
 color:#ffd36a;
 }
 
-/* HERO - DOKUNULMADI */
 .hero{
 margin-top:14px;
 background:linear-gradient(135deg,#2f6b57,#4ea07f);
@@ -68,7 +66,6 @@ border-radius:18px;
 .hero h1{font-size:42px;}
 .hero p{font-size:18px;}
 
-/* CARD - DOKUNULMADI */
 .card{
 background:#fff;
 border-radius:16px;
@@ -106,23 +103,26 @@ text-align:center;
 }
 
 /* =========================
-   ONAY KISMI (DOĞRU REVİZE)
+   ONAY KISMI (GERÇEK İNCE BAR)
 ========================= */
 
 .checklist{
-margin-top:10px;
+margin-top:8px;
 display:flex;
 flex-direction:column;
-gap:4px;
+gap:3px;
 }
 
-/* 🔥 4 KAT KÜÇÜLTÜLMÜŞ KUTU */
+/* 🔥 GERÇEK İNCE UZUN SATIR */
 .check-box{
 display:flex;
 align-items:center;
+gap:8px;
 
 width:100%;
-padding:3px 10px;   /* çok ince */
+min-height:28px;   /* çok ince yükseklik */
+
+padding:2px 8px;
 
 border:1px solid #2f6b57;
 border-radius:6px;
@@ -133,17 +133,19 @@ background:#f9fffc;
 /* checkbox */
 .check-box input{
 transform:scale(1);
-margin-right:10px;
-flex-shrink:0;
-cursor:pointer;
-}
-
-/* yazı TAM SOL */
-.check-box span{
-font-size:14px;
-text-align:left;
 margin:0;
 padding:0;
+cursor:pointer;
+flex-shrink:0;
+}
+
+/* yazı TAM SOL BAŞLANGIÇ */
+.check-box span{
+font-size:13px;
+margin:0;
+padding:0;
+text-align:left;
+line-height:1;
 }
 
 /* BUTTON */
@@ -253,7 +255,7 @@ margin-bottom:8px;
 </div>
 </div>
 
-<!-- ONAY KISMI (DOĞRU REVİZE EDİLDİ) -->
+<!-- ===== ONAY (SON HALİ) ===== -->
 <div class="card">
 <h2>Onay ve Beyan</h2>
 
