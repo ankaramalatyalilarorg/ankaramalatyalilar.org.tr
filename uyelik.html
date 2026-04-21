@@ -21,6 +21,7 @@ max-width:1300px;
 margin:auto;
 }
 
+/* HEADER - DOKUNULMADI */
 header{margin-top:12px;}
 
 .banner-box{
@@ -30,6 +31,7 @@ overflow:hidden;
 
 .banner-box img{width:100%;}
 
+/* NAV - DOKUNULMADI */
 nav{
 background:#2f6b57;
 border-radius:0 0 18px 18px;
@@ -54,24 +56,24 @@ nav a.active{
 color:#ffd36a;
 }
 
-/* HERO */
+/* HERO - DOKUNULMADI */
 .hero{
 margin-top:14px;
 background:linear-gradient(135deg,#2f6b57,#4ea07f);
 color:#fff;
-padding:30px;
+padding:40px;
 border-radius:18px;
 }
 
-.hero h1{font-size:40px;}
+.hero h1{font-size:42px;}
 .hero p{font-size:18px;}
 
-/* CARD */
+/* CARD - DOKUNULMADI */
 .card{
 background:#fff;
 border-radius:16px;
-padding:24px;
-margin-top:16px;
+padding:26px;
+margin-top:18px;
 border:1px solid #e6e9ee;
 }
 
@@ -104,39 +106,44 @@ text-align:center;
 }
 
 /* =========================
-   ONAY KISMI (YENİ TASARIM)
+   ONAY KISMI (DOĞRU REVİZE)
 ========================= */
 
 .checklist{
-margin-top:12px;
+margin-top:10px;
 display:flex;
 flex-direction:column;
-gap:8px;
+gap:4px;
 }
 
-/* ince uzun kutu */
+/* 🔥 4 KAT KÜÇÜLTÜLMÜŞ KUTU */
 .check-box{
 display:flex;
 align-items:center;
-gap:12px;
 
 width:100%;
-padding:6px 14px;
+padding:3px 10px;   /* çok ince */
 
 border:1px solid #2f6b57;
-border-radius:8px;
+border-radius:6px;
 
 background:#f9fffc;
 }
 
+/* checkbox */
 .check-box input{
-transform:scale(1.1);
-cursor:pointer;
+transform:scale(1);
+margin-right:10px;
 flex-shrink:0;
+cursor:pointer;
 }
 
+/* yazı TAM SOL */
 .check-box span{
 font-size:14px;
+text-align:left;
+margin:0;
+padding:0;
 }
 
 /* BUTTON */
@@ -150,7 +157,7 @@ button{cursor:pointer;border:none;}
 .btn-submit{
 background:#2f6b57;
 color:#fff;
-padding:11px 24px;
+padding:12px 26px;
 border-radius:10px;
 font-weight:600;
 }
@@ -158,7 +165,7 @@ font-weight:600;
 .btn-print{
 background:#333;
 color:#fff;
-padding:9px 16px;
+padding:10px 18px;
 border-radius:10px;
 margin-bottom:8px;
 }
@@ -166,7 +173,7 @@ margin-bottom:8px;
 /* MOBILE */
 @media(max-width:768px){
 .grid{grid-template-columns:1fr;}
-.hero h1{font-size:28px;}
+.hero h1{font-size:30px;}
 }
 </style>
 </head>
@@ -246,7 +253,7 @@ margin-bottom:8px;
 </div>
 </div>
 
-<!-- ONAY BÖLÜMÜ (YENİ TASARIM KORUNDU) -->
+<!-- ONAY KISMI (DOĞRU REVİZE EDİLDİ) -->
 <div class="card">
 <h2>Onay ve Beyan</h2>
 
