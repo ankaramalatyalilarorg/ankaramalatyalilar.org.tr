@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Üyelik | Ankara Malatyalılar Derneği</title>
 
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
@@ -21,7 +24,7 @@ max-width:1300px;
 margin:auto;
 }
 
-/* ===== ÜST KISIM (AYNEN KORUNDU) ===== */
+/* ===== ÜST KISIM (DEĞİŞMEDİ) ===== */
 header{margin-top:12px;}
 
 .banner-box{
@@ -69,88 +72,79 @@ margin-top:18px;
 border:1px solid #e6e9ee;
 }
 
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:14px;
-margin-top:12px;
-}
-
-input,textarea{
-width:100%;
-padding:10px;
-border:1px solid #d8dde6;
-border-radius:10px;
-}
-
-.upload{
-border:2px dashed #2f6b57;
-padding:14px;
-border-radius:12px;
-text-align:center;
-}
-
-/* ================= ONAY ================= */
+/* ================= ONAY TASARIM ================= */
 
 /* SOL METİN */
-.onay-text{
-text-align:left;
+.onay-left{
 font-size:14px;
-line-height:1.8;
+line-height:2;
+text-align:left;
 }
 
-/* CHECKBOX ORTALI ALAN */
-.check-center{
+/* ORTALI BLOK */
+.onay-center{
 margin-top:20px;
+text-align:center;
 display:flex;
 flex-direction:column;
 align-items:center;
-gap:10px;
-}
-
-/* CHECKBOX SATIRI */
-.check-item{
-display:flex;
-align-items:center;
-gap:8px;
-
-font-size:14px;
-cursor:pointer;
+gap:12px;
 }
 
 /* checkbox */
-.check-item input{
-transform:scale(1);
+.onay-center input{
+transform:scale(1.2);
 cursor:pointer;
 }
 
-/* BUTTON */
+/* PREMIUM BUTONLAR */
 .actions{
-text-align:center;
-margin-top:15px;
+margin-top:25px;
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
 }
 
-button{cursor:pointer;border:none;}
-
-.btn-submit{
-background:#2f6b57;
-color:#fff;
-padding:12px 26px;
-border-radius:10px;
-font-weight:600;
+.btn{
+border:none;
+padding:12px 22px;
+border-radius:12px;
+font-size:14px;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:8px;
+transition:0.2s;
 }
 
+/* Yazdır */
 .btn-print{
-background:#333;
+background:linear-gradient(135deg,#444,#222);
 color:#fff;
-padding:10px 18px;
-border-radius:10px;
-margin-bottom:8px;
+}
+
+.btn-print:hover{
+transform:scale(1.03);
+}
+
+/* Gönder */
+.btn-send{
+background:linear-gradient(135deg,#2f6b57,#4ea07f);
+color:#fff;
+}
+
+.btn-send:hover{
+transform:scale(1.03);
+}
+
+/* ikon */
+.btn i{
+font-size:15px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-.grid{grid-template-columns:1fr;}
 .hero h1{font-size:30px;}
 }
 
@@ -188,25 +182,32 @@ margin-bottom:8px;
 <h2>Onay ve Beyan</h2>
 
 <!-- SOL METİN -->
-<div class="onay-text">
+<div class="onay-left">
 <p>1. Dernek tüzüğünü okudum ve kabul ediyorum.</p>
 <p>2. Üyelik şartlarını eksiksiz olarak kabul ediyorum.</p>
-<p>3. Girdiğim tüm bilgilerin doğru olduğunu onaylıyorum.</p>
 </div>
 
-<!-- 2 SATIR AŞAĞI + ORTALI CHECKBOX -->
-<div class="check-center">
+<!-- ORTALI KISIM -->
+<div class="onay-center">
+<p>Girdiğim tüm bilgilerin doğruluğunu onaylıyorum</p>
 
-<label class="check-item">
+<label>
 <input type="checkbox">
-<span>Onaylıyorum</span>
+<span>Onay Kutusu</span>
 </label>
-
 </div>
 
+<!-- PREMIUM BUTONLAR -->
 <div class="actions">
-<button class="btn-print" type="button" onclick="window.print()">Yazdır</button><br>
-<button class="btn-submit" type="submit">Gönder</button>
+
+<button class="btn btn-print" type="button" onclick="window.print()">
+<i class="fa-solid fa-print"></i> Yazdır
+</button>
+
+<button class="btn btn-send" type="submit">
+<i class="fa-solid fa-envelope"></i> Gönder
+</button>
+
 </div>
 
 </div>
