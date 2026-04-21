@@ -12,6 +12,7 @@ body{
 font-family:Arial, Helvetica, sans-serif;
 background:#eef2f5;
 color:#1f2d3d;
+line-height:1.6;
 }
 
 .container{
@@ -20,8 +21,7 @@ max-width:1300px;
 margin:auto;
 }
 
-/* HEADER */
-header{margin-top:10px;}
+header{margin-top:12px;}
 
 .banner-box{
 border-radius:18px 18px 0 0;
@@ -30,7 +30,6 @@ overflow:hidden;
 
 .banner-box img{width:100%;}
 
-/* NAV */
 nav{
 background:#2f6b57;
 border-radius:0 0 18px 18px;
@@ -50,68 +49,100 @@ text-decoration:none;
 font-size:15px;
 }
 
+nav a:hover,
+nav a.active{
+color:#ffd36a;
+}
+
 /* HERO */
 .hero{
-margin-top:10px;
+margin-top:14px;
 background:linear-gradient(135deg,#2f6b57,#4ea07f);
 color:#fff;
-padding:25px;
+padding:30px;
 border-radius:18px;
 }
 
-.hero h1{font-size:34px;}
-.hero p{font-size:16px;}
+.hero h1{font-size:40px;}
+.hero p{font-size:18px;}
 
 /* CARD */
 .card{
 background:#fff;
 border-radius:16px;
-padding:18px;
-margin-top:10px;
+padding:24px;
+margin-top:16px;
 border:1px solid #e6e9ee;
 }
 
-/* ===== ONAY KUTULARI (İNCE TASARIM) ===== */
-
-.checklist{
+ul.clean{
+margin-left:18px;
 margin-top:10px;
-display:flex;
-flex-direction:column;
-gap:6px;
 }
 
-/* ÇOK İNCE UZUN KUTU */
+ul.clean li{margin-bottom:8px;}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+margin-top:12px;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+border:1px solid #d8dde6;
+border-radius:10px;
+}
+
+.upload{
+border:2px dashed #2f6b57;
+padding:14px;
+border-radius:12px;
+text-align:center;
+}
+
+/* =========================
+   ONAY KISMI (YENİ TASARIM)
+========================= */
+
+.checklist{
+margin-top:12px;
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+/* ince uzun kutu */
 .check-box{
 display:flex;
 align-items:center;
-gap:10px;
+gap:12px;
 
 width:100%;
-padding:6px 12px;   /* 🔥 yükseklik ciddi küçüldü */
+padding:6px 14px;
+
 border:1px solid #2f6b57;
 border-radius:8px;
 
 background:#f9fffc;
 }
 
-/* checkbox */
 .check-box input{
 transform:scale(1.1);
 cursor:pointer;
 flex-shrink:0;
-margin:0;
 }
 
-/* yazı */
 .check-box span{
 font-size:14px;
-line-height:1.2;
 }
 
 /* BUTTON */
 .actions{
 text-align:center;
-margin-top:12px;
+margin-top:15px;
 }
 
 button{cursor:pointer;border:none;}
@@ -119,22 +150,23 @@ button{cursor:pointer;border:none;}
 .btn-submit{
 background:#2f6b57;
 color:#fff;
-padding:10px 22px;
-border-radius:8px;
+padding:11px 24px;
+border-radius:10px;
 font-weight:600;
 }
 
 .btn-print{
 background:#333;
 color:#fff;
-padding:8px 16px;
-border-radius:8px;
-margin-bottom:6px;
+padding:9px 16px;
+border-radius:10px;
+margin-bottom:8px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-.hero h1{font-size:26px;}
+.grid{grid-template-columns:1fr;}
+.hero h1{font-size:28px;}
 }
 </style>
 </head>
@@ -167,6 +199,55 @@ margin-bottom:6px;
 <main class="container">
 
 <div class="card">
+<h2>Neden Üye Olmalısınız?</h2>
+<ul class="clean">
+<li>Hemşehrilik bağlarını güçlendirmek</li>
+<li>Kültürel faaliyetlere katılmak</li>
+<li>Dayanışma ağına dahil olmak</li>
+<li>Projelerde aktif rol almak</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Üyelik Şartları</h2>
+<ul class="clean">
+<li>T.C. Kimlik (PDF / JPG / PNG)</li>
+<li>Formun eksiksiz doldurulması</li>
+<li>Gerekirse ek belgeler</li>
+</ul>
+</div>
+
+<form action="mailto:info@ankaramalatyalilar.org.tr" method="post" enctype="multipart/form-data">
+
+<div class="card">
+<h2>Kişisel Bilgiler</h2>
+<div class="grid">
+<input type="text" placeholder="Ad Soyad">
+<input type="text" placeholder="T.C. Kimlik No">
+<input type="date">
+<input type="text" placeholder="Kan Grubu">
+</div>
+</div>
+
+<div class="card">
+<h2>İletişim</h2>
+<div class="grid">
+<input type="text" placeholder="Adres">
+<input type="tel" placeholder="Telefon">
+<input type="email" placeholder="E-posta">
+</div>
+</div>
+
+<div class="card">
+<h2>Belgeler</h2>
+<div class="upload">
+<p>Dosya yükleyiniz</p>
+<input type="file" accept=".pdf,.jpg,.png">
+</div>
+</div>
+
+<!-- ONAY BÖLÜMÜ (YENİ TASARIM KORUNDU) -->
+<div class="card">
 <h2>Onay ve Beyan</h2>
 
 <div class="checklist">
@@ -194,6 +275,8 @@ margin-bottom:6px;
 </div>
 
 </div>
+
+</form>
 
 </main>
 
