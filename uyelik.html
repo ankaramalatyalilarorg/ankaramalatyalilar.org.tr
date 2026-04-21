@@ -50,11 +50,6 @@ text-decoration:none;
 font-size:15px;
 }
 
-nav a:hover,
-nav a.active{
-color:#ffd36a;
-}
-
 .hero{
 margin-top:14px;
 background:linear-gradient(135deg,#2f6b57,#4ea07f);
@@ -103,26 +98,23 @@ text-align:center;
 }
 
 /* =========================
-   ONAY KISMI (GERÇEK İNCE BAR)
+   ONAY KISMI (SON DÜZELTME)
 ========================= */
 
 .checklist{
-margin-top:8px;
+margin-top:10px;
 display:flex;
 flex-direction:column;
-gap:3px;
+gap:5px;
 }
 
-/* 🔥 GERÇEK İNCE UZUN SATIR */
+/* KUTU = TAM GENİŞLİK + İÇERİDE HİZALI */
 .check-box{
 display:flex;
 align-items:center;
-gap:8px;
 
 width:100%;
-min-height:28px;   /* çok ince yükseklik */
-
-padding:2px 8px;
+padding:6px 10px;   /* içeriden boşluk */
 
 border:1px solid #2f6b57;
 border-radius:6px;
@@ -132,20 +124,22 @@ background:#f9fffc;
 
 /* checkbox */
 .check-box input{
-transform:scale(1);
 margin:0;
 padding:0;
+transform:scale(1);
 cursor:pointer;
 flex-shrink:0;
 }
 
-/* yazı TAM SOL BAŞLANGIÇ */
+/* 🔥 YAZI TAM SOLA DAYALI VE KUTU İÇİNDE */
 .check-box span{
-font-size:13px;
-margin:0;
-padding:0;
+display:block;
+width:100%;
 text-align:left;
-line-height:1;
+margin:0;
+padding-left:6px; /* kutu içi sol boşluk */
+font-size:13px;
+line-height:1.2;
 }
 
 /* BUTTON */
@@ -255,7 +249,7 @@ margin-bottom:8px;
 </div>
 </div>
 
-<!-- ===== ONAY (SON HALİ) ===== -->
+<!-- ===== ONAY (SON DOĞRU HAL) ===== -->
 <div class="card">
 <h2>Onay ve Beyan</h2>
 
