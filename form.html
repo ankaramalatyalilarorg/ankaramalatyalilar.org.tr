@@ -80,7 +80,6 @@ font-size:13px;
 
 .bar-item input{
 margin-left:auto;
-flex-shrink:0;
 width:18px;
 height:18px;
 cursor:pointer;
@@ -93,10 +92,6 @@ justify-content:center;
 gap:10px;
 margin-top:12px;
 flex-wrap:wrap;
-
-/* 🔥 FORM BURADA BİTİYOR */
-padding-bottom:18px;
-border-bottom:2px solid #e6e9ee;
 }
 
 .btn{
@@ -126,7 +121,7 @@ font-size:13px;
 <img src="bas.png">
 </div>
 
-<!-- 🔥 TEK FORM BAŞLANGIÇ -->
+<!-- 🔥 TEK FORM BAŞLANGIÇ (SADECE 1 ADET) -->
 <form id="form">
 
 <div class="card">
@@ -148,25 +143,11 @@ font-size:13px;
 
 <h3>3. İlgi Alanları</h3>
 
-<div class="bar-item">
-<span>Kültür etkinlikleri</span><input type="checkbox">
-</div>
-
-<div class="bar-item">
-<span>Spor faaliyetleri</span><input type="checkbox">
-</div>
-
-<div class="bar-item">
-<span>Girişimcilik</span><input type="checkbox">
-</div>
-
-<div class="bar-item">
-<span>Sosyal yardım</span><input type="checkbox">
-</div>
-
-<div class="bar-item">
-<span>Diğer</span><input type="checkbox">
-</div>
+<div class="bar-item"><span>Kültür etkinlikleri</span><input type="checkbox"></div>
+<div class="bar-item"><span>Spor faaliyetleri</span><input type="checkbox"></div>
+<div class="bar-item"><span>Girişimcilik</span><input type="checkbox"></div>
+<div class="bar-item"><span>Sosyal yardım</span><input type="checkbox"></div>
+<div class="bar-item"><span>Diğer</span><input type="checkbox"></div>
 
 <h3>4. Eğitim ve Mesleki Bilgiler</h3>
 
@@ -182,28 +163,20 @@ font-size:13px;
 
 <h3>5. Üyelik Beyanları</h3>
 
-<div class="bar-item">
-<span>Dernek tüzüğünü okudum ve kabul ediyorum</span><input type="checkbox">
-</div>
-
-<div class="bar-item">
-<span>Üyelik aidatını ödemeyi kabul ediyorum</span><input type="checkbox">
-</div>
-
-<div class="bar-item">
-<span>Verdiğim bilgilerin doğru olduğunu beyan ederim</span><input type="checkbox">
-</div>
+<div class="bar-item"><span>Dernek tüzüğünü okudum ve kabul ediyorum</span><input type="checkbox"></div>
+<div class="bar-item"><span>Üyelik aidatını ödemeyi kabul ediyorum</span><input type="checkbox"></div>
+<div class="bar-item"><span>Verdiğim bilgilerin doğru olduğunu beyan ederim</span><input type="checkbox"></div>
 
 </div>
 
-<!-- 🔥 TEK BUTON SATIRI -->
+<!-- BUTONLAR -->
 <div class="actions">
 
 <button class="btn btn-send" type="submit">
 <i class="fa-solid fa-envelope"></i> GÖNDER
 </button>
 
-<button class="btn btn-pdf" type="button" onclick="pdfOlustur()">
+<button class="btn btn-pdf" type="button" onclick="window.print()">
 <i class="fa-solid fa-file-pdf"></i> PDF İNDİR
 </button>
 
@@ -214,7 +187,7 @@ font-size:13px;
 </div>
 
 </form>
-<!-- 🔥 FORM BURADA BİTİYOR (ÇİFT FORM YOK) -->
+<!-- 🔥 FORM BURADA BİTİYOR -->
 
 </div>
 
@@ -223,13 +196,6 @@ document.getElementById("form").addEventListener("submit", function(e){
 e.preventDefault();
 alert("Başvuru gönderildi.");
 });
-
-function pdfOlustur(){
-const { jsPDF } = window.jspdf;
-const doc = new jsPDF();
-doc.text("ÜYELİK BAŞVURUSU", 10, 10);
-doc.save("uyelik.pdf");
-}
 </script>
 
 </body>
