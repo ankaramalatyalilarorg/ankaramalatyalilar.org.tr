@@ -56,25 +56,18 @@ grid-template-columns:1fr 1fr;
 gap:14px;
 }
 
-/* ================= İLGİ ALANLARI (DÜZELTİLDİ) ================= */
-.interest-section{
+/* ================= İLGİ ALANLARI (KUTU YAPISINA ALINDI) ================= */
+.box-section{
 margin-top:10px;
+padding:15px;
+border:1px solid #e6e9ee;
+border-radius:12px;
+background:#fff;
 }
 
-.interest-item{
-margin-top:12px;
-padding:10px 0;
-border-bottom:1px solid #eee;
-}
-
-.interest-item:last-child{
-border-bottom:none;
-}
-
-.interest-item label{
-display:flex;
-align-items:center;
-gap:8px;
+.box-section label{
+display:block;
+margin-top:8px;
 cursor:pointer;
 font-size:14px;
 }
@@ -119,6 +112,7 @@ gap:8px;
 
 <div class="container">
 
+<!-- BANNER -->
 <div class="banner">
 <img src="bas.png">
 </div>
@@ -129,6 +123,7 @@ gap:8px;
 
 <h2>ÜYE KAYIT FORMU</h2>
 
+<!-- 1 -->
 <h3>1. Kimlik Bilgileri</h3>
 <div class="grid">
 <input id="ad" placeholder="Ad Soyad">
@@ -137,39 +132,28 @@ gap:8px;
 <input placeholder="Doğum Yeri">
 </div>
 
+<!-- 2 -->
 <h3>2. İletişim Bilgileri</h3>
 <input id="tel" placeholder="Mobil Telefon">
 <input id="mail" placeholder="E-posta">
 <textarea placeholder="İkamet Adresi"></textarea>
 
-<!-- ================= İLGİ ALANLARI ================= -->
+<!-- 3 İLGİ ALANLARI (ARTIK KUTU YAPISINDA) -->
 <h3>3. İlgi Alanları</h3>
 
-<div class="interest-section">
-
-<div class="interest-item">
+<div class="box-section">
 <label><input type="checkbox"> Kültür etkinlikleri</label>
-</div>
-
-<div class="interest-item">
 <label><input type="checkbox"> Spor faaliyetleri</label>
-</div>
-
-<div class="interest-item">
 <label><input type="checkbox"> Girişimcilik</label>
-</div>
-
-<div class="interest-item">
 <label><input type="checkbox"> Sosyal yardım</label>
-</div>
-
-<div class="interest-item">
 <label><input type="checkbox"> Diğer</label>
 </div>
 
-</div>
-
+<!-- 4 -->
 <h3>4. Eğitim ve Mesleki Bilgiler</h3>
+
+<div class="box-section">
+
 <select>
 <option>İlköğretim</option>
 <option>Lise</option>
@@ -180,6 +164,9 @@ gap:8px;
 
 <input placeholder="Meslek / Kurum">
 
+</div>
+
+<!-- 5 -->
 <h3>5. Üyelik Beyanları</h3>
 
 <div class="beyan">
