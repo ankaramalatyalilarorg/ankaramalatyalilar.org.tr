@@ -48,7 +48,9 @@ border:1px solid #ccc;
 border-radius:10px;
 }
 
-textarea{height:70px;}
+textarea{
+height:35px; /* %50 küçültüldü (önceden 70px idi) */
+}
 
 .grid{
 display:grid;
@@ -56,12 +58,12 @@ grid-template-columns:1fr 1fr;
 gap:14px;
 }
 
-/* ================= SATIR (TIK YAZI SONU) ================= */
+/* ================= SATIR ================= */
 .line-item{
 display:flex;
 align-items:center;
 gap:8px;
-margin-top:8px;
+margin-top:6px; /* %25 daraltıldı */
 }
 
 .line-item span{
@@ -69,11 +71,11 @@ font-size:15px;
 }
 
 .line-item input{
-transform:scale(1.2);
+transform:scale(1.1);
 cursor:pointer;
 }
 
-/* BEYAN BLOK */
+/* BEYAN */
 .beyan{
 margin-top:15px;
 padding:10px;
@@ -134,6 +136,8 @@ gap:8px;
 <h3>2. İletişim Bilgileri</h3>
 <input placeholder="Mobil Telefon">
 <input placeholder="E-posta">
+
+<!-- DEĞİŞTİRİLEN ALAN -->
 <textarea placeholder="İkamet Adresi"></textarea>
 
 <h3>3. İlgi Alanları</h3>
@@ -209,14 +213,12 @@ gap:8px;
 <script>
 document.getElementById("form").addEventListener("submit", async function(e){
 e.preventDefault();
-
 alert("Başvuru gönderildi.");
 });
 
 function pdfOlustur(){
 const { jsPDF } = window.jspdf;
 const doc = new jsPDF();
-
 doc.text("ÜYELİK BAŞVURUSU", 10, 10);
 doc.save("uyelik.pdf");
 }
