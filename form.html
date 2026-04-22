@@ -6,8 +6,6 @@
 <title>Üye Kayıt Formu</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- PDF KÜTÜPHANESİ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <style>
@@ -25,12 +23,14 @@ max-width:1200px;
 margin:auto;
 }
 
+/* BANNER */
 .banner img{
 width:100%;
 margin-top:12px;
 border-radius:18px;
 }
 
+/* CARD */
 .card{
 background:#fff;
 margin-top:18px;
@@ -39,30 +39,43 @@ border-radius:16px;
 border:1px solid #e6e9ee;
 }
 
-h2{color:#1e3c2f;}
+h2{color:#1e3c2f;margin-bottom:12px;}
 h3{margin-top:18px;color:#2f6b57;}
 
+ul{margin-left:18px;}
+ul li{margin-top:6px;}
+
+.sub{
+margin-left:20px;
+color:#333;
+}
+
+/* INPUT */
 input,select,textarea{
 width:100%;
-padding:12px;
+padding:10px;
 margin-top:8px;
 border:1px solid #ccc;
 border-radius:10px;
 }
 
-textarea{height:80px;resize:none;}
+textarea{height:70px;}
 
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:14px;
+/* BEYAN */
+.beyan{
+margin-top:15px;
+padding:10px;
+background:#f7f9fb;
+border-radius:10px;
+border:1px solid #ddd;
 }
 
+/* BUTTONS */
 .actions{
 display:flex;
 justify-content:center;
 gap:12px;
-margin-top:15px;
+margin-top:20px;
 flex-wrap:wrap;
 }
 
@@ -77,29 +90,9 @@ align-items:center;
 gap:8px;
 }
 
-.btn-send{
-background:linear-gradient(135deg,#1f6feb,#2f6b57);
-color:#fff;
-}
-
-.btn-pdf{
-background:linear-gradient(135deg,#8e44ad,#3498db);
-color:#fff;
-}
-
-.btn-print{
-background:linear-gradient(135deg,#333,#111);
-color:#fff;
-}
-
-.hidden-area{display:none;margin-top:10px;}
-.hidden-area.active{display:block;}
-
-.small-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-}
+.btn-send{background:#2f6b57;color:#fff;}
+.btn-print{background:#333;color:#fff;}
+.btn-pdf{background:#8e44ad;color:#fff;}
 
 </style>
 </head>
@@ -113,51 +106,117 @@ gap:12px;
 <img src="bas.png">
 </div>
 
-<!-- FORM -->
 <form id="form">
 
 <div class="card">
+
 <h2>ÜYE KAYIT FORMU</h2>
 
-<h3>Kimlik</h3>
-<input id="ad" placeholder="Ad Soyad">
-<input id="tc" placeholder="T.C. Kimlik No">
+<!-- 1 -->
+<h3>1. Kimlik Bilgileri</h3>
+<ul>
+<li>Adı Soyadı</li>
+<input id="ad">
 
-<h3>İletişim</h3>
-<input id="tel" placeholder="Telefon">
-<input id="mail" placeholder="E-posta">
+<li>T.C. Kimlik Numarası</li>
+<input id="tc">
 
-<h3>Beyan</h3>
+<li>Doğum tarihi</li>
+<input type="date">
+
+<li>Doğum yeri</li>
+</ul>
+
+<div class="sub">
+İl <input><br>
+İlçe <input><br>
+Mahalle/Köy <input>
+</div>
+
+<!-- 2 -->
+<h3>2. İletişim Bilgileri</h3>
+<ul>
+<li>Mobil telefon numarası</li>
+<input id="tel">
+
+<li>E-posta adresi</li>
+<input id="mail">
+
+<li>İkamet adresi</li>
+<textarea></textarea>
+</ul>
+
+<!-- 3 -->
+<h3>3. Hemşerilik Bilgisi</h3>
+<ul>
+<li>Memleket</li>
+</ul>
+
+<div class="sub">
+İl <input><br>
+İlçe <input><br>
+Köy-Mahalle <input>
+</div>
+
+<!-- 4 -->
+<h3>4. Eğitim ve Mesleki Bilgiler</h3>
+<ul>
+<li>Öğrenim durumu</li>
+<select>
+<option>İlköğrenim</option>
+<option>Lise</option>
+<option>Üniversite Lisans</option>
+<option>Yüksek Lisans</option>
+<option>Doktora</option>
+</select>
+
+<li>Meslek</li>
+</ul>
+
+<div class="sub">
+Çalıştığı kurum <input><br>
+Emekli <input><br>
+Diğer <input>
+</div>
+
+<!-- 5 -->
+<h3>5. Üyelik Beyanları</h3>
+<ul>
+<li>Dernek tüzüğünü okudum ve kabul ediyorum</li>
+<li>Üyelik aidatını ödemeyi kabul ederim</li>
+</ul>
+
+<div class="beyan">
+Verdiğim bilgilerin doğru olduğunu beyan ederim
+<br><br>
 <label>
-<input type="checkbox" id="beyanCheck">
-Dernek tüzüğünü kabul ediyorum
+<input type="checkbox" required> Onay Kutusu
 </label>
-
-<div id="extra" class="hidden-area">
-<div class="small-grid">
-<input id="onayAd" placeholder="Ad Soyad">
-<input type="date" id="onayTarih">
-</div>
 </div>
 
+<!-- İMZA -->
+<h3>Onay</h3>
+<input placeholder="Adı Soyadı">
+<input type="date" placeholder="Tarih">
+<input placeholder="İmza">
+
 </div>
 
-<!-- GÖNDER -->
+<!-- BUTTONS -->
 <div class="actions">
+
 <button class="btn btn-send" type="submit">
 <i class="fa-solid fa-envelope"></i> GÖNDER
 </button>
-</div>
 
-<!-- PDF / PRINT -->
-<div class="actions">
-<button class="btn btn-pdf" type="button" onclick="downloadPDF()">
+<button class="btn btn-pdf" type="button" onclick="pdfOlustur()">
 <i class="fa-solid fa-file-pdf"></i> PDF İNDİR
 </button>
 
 <button class="btn btn-print" type="button" onclick="window.print()">
 <i class="fa-solid fa-print"></i> YAZDIR
 </button>
+
 </div>
 
 </form>
@@ -165,12 +224,6 @@ Dernek tüzüğünü kabul ediyorum
 </div>
 
 <script>
-// BEYAN AÇ
-document.getElementById("beyanCheck").addEventListener("change", function(){
-document.getElementById("extra").classList.toggle("active", this.checked);
-});
-
-// EMAIL GÖNDER (FORMSPREE)
 document.getElementById("form").addEventListener("submit", async function(e){
 e.preventDefault();
 
@@ -187,23 +240,21 @@ headers:{ "Content-Type":"application/json" },
 body: JSON.stringify(data)
 });
 
-alert("Başvuru başarıyla gönderildi.");
+alert("Başvuru gönderildi.");
 });
 
-// PDF İNDİR
-function downloadPDF(){
+function pdfOlustur(){
 const { jsPDF } = window.jspdf;
 const doc = new jsPDF();
 
-doc.text("ÜYELİK BAŞVURU FORMU", 10, 10);
+doc.text("ÜYE KAYIT FORMU", 10, 10);
 doc.text("Ad: " + document.getElementById("ad").value, 10, 20);
 doc.text("TC: " + document.getElementById("tc").value, 10, 30);
-doc.text("Telefon: " + document.getElementById("tel").value, 10, 40);
-doc.text("E-posta: " + document.getElementById("mail").value, 10, 50);
+doc.text("Tel: " + document.getElementById("tel").value, 10, 40);
+doc.text("Mail: " + document.getElementById("mail").value, 10, 50);
 
-doc.save("uyelik_basvuru.pdf");
+doc.save("uyelik.pdf");
 }
-
 </script>
 
 </body>
