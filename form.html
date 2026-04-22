@@ -23,14 +23,12 @@ max-width:1200px;
 margin:auto;
 }
 
-/* BANNER */
 .banner img{
 width:100%;
 margin-top:12px;
 border-radius:18px;
 }
 
-/* CARD */
 .card{
 background:#fff;
 margin-top:18px;
@@ -45,12 +43,6 @@ h3{margin-top:18px;color:#2f6b57;}
 ul{margin-left:18px;}
 ul li{margin-top:6px;}
 
-.sub{
-margin-left:20px;
-color:#333;
-}
-
-/* INPUT */
 input,select,textarea{
 width:100%;
 padding:10px;
@@ -61,6 +53,12 @@ border-radius:10px;
 
 textarea{height:70px;}
 
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
 /* BEYAN */
 .beyan{
 margin-top:15px;
@@ -70,7 +68,6 @@ border-radius:10px;
 border:1px solid #ddd;
 }
 
-/* BUTTONS */
 .actions{
 display:flex;
 justify-content:center;
@@ -94,6 +91,11 @@ gap:8px;
 .btn-print{background:#333;color:#fff;}
 .btn-pdf{background:#8e44ad;color:#fff;}
 
+.checkbox-group label{
+display:block;
+margin-top:6px;
+}
+
 </style>
 </head>
 
@@ -114,91 +116,52 @@ gap:8px;
 
 <!-- 1 -->
 <h3>1. Kimlik Bilgileri</h3>
-<ul>
-<li>Adı Soyadı</li>
-<input id="ad">
-
-<li>T.C. Kimlik Numarası</li>
-<input id="tc">
-
-<li>Doğum tarihi</li>
+<div class="grid">
+<input id="ad" placeholder="Ad Soyad">
+<input id="tc" placeholder="T.C. Kimlik Numarası">
 <input type="date">
-
-<li>Doğum yeri</li>
-</ul>
-
-<div class="sub">
-İl <input><br>
-İlçe <input><br>
-Mahalle/Köy <input>
+<input placeholder="Doğum Yeri">
 </div>
 
 <!-- 2 -->
 <h3>2. İletişim Bilgileri</h3>
-<ul>
-<li>Mobil telefon numarası</li>
-<input id="tel">
+<input id="tel" placeholder="Mobil Telefon">
+<input id="mail" placeholder="E-posta">
+<textarea placeholder="İkamet Adresi"></textarea>
 
-<li>E-posta adresi</li>
-<input id="mail">
+<!-- ❌ HEMŞERİLİK ÇIKARILDI -->
+<!-- ✅ İLGİ ALANLARI EKLENDİ -->
 
-<li>İkamet adresi</li>
-<textarea></textarea>
-</ul>
+<h3>3. İlgi Alanları</h3>
 
-<!-- 3 -->
-<h3>3. Hemşerilik Bilgisi</h3>
-<ul>
-<li>Memleket</li>
-</ul>
-
-<div class="sub">
-İl <input><br>
-İlçe <input><br>
-Köy-Mahalle <input>
+<div class="checkbox-group">
+<label><input type="checkbox"> Kültür etkinlikleri</label>
+<label><input type="checkbox"> Spor faaliyetleri</label>
+<label><input type="checkbox"> Girişimcilik</label>
+<label><input type="checkbox"> Sosyal yardım</label>
+<label><input type="checkbox"> Diğer</label>
 </div>
 
 <!-- 4 -->
 <h3>4. Eğitim ve Mesleki Bilgiler</h3>
-<ul>
-<li>Öğrenim durumu</li>
 <select>
-<option>İlköğrenim</option>
+<option>İlköğretim</option>
 <option>Lise</option>
 <option>Üniversite Lisans</option>
 <option>Yüksek Lisans</option>
 <option>Doktora</option>
 </select>
 
-<li>Meslek</li>
-</ul>
-
-<div class="sub">
-Çalıştığı kurum <input><br>
-Emekli <input><br>
-Diğer <input>
-</div>
+<input placeholder="Meslek / Kurum">
 
 <!-- 5 -->
 <h3>5. Üyelik Beyanları</h3>
-<ul>
-<li>Dernek tüzüğünü okudum ve kabul ediyorum</li>
-<li>Üyelik aidatını ödemeyi kabul ederim</li>
-</ul>
 
 <div class="beyan">
-Verdiğim bilgilerin doğru olduğunu beyan ederim
-<br><br>
-<label>
-<input type="checkbox" required> Onay Kutusu
-</label>
+<label><input type="checkbox"> Dernek tüzüğünü okudum ve kabul ediyorum</label>
+<label><input type="checkbox"> Üyelik aidatını ödemeyi kabul ediyorum</label>
+<label><input type="checkbox"> Verdiğim bilgilerin doğru olduğunu beyan ederim</label>
 </div>
-
-<!-- İMZA -->
-<h3>Onay</h3>
-<input placeholder="Adı Soyadı">
-<input type="date" placeholder="Tarih">
-<input placeholder="İmza">
 
 </div>
 
@@ -227,17 +190,15 @@ Verdiğim bilgilerin doğru olduğunu beyan ederim
 document.getElementById("form").addEventListener("submit", async function(e){
 e.preventDefault();
 
-const data = {
+await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+method:"POST",
+headers:{ "Content-Type":"application/json" },
+body: JSON.stringify({
 ad: document.getElementById("ad").value,
 tc: document.getElementById("tc").value,
 tel: document.getElementById("tel").value,
 mail: document.getElementById("mail").value
-};
-
-await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-method:"POST",
-headers:{ "Content-Type":"application/json" },
-body: JSON.stringify(data)
+})
 });
 
 alert("Başvuru gönderildi.");
@@ -247,7 +208,7 @@ function pdfOlustur(){
 const { jsPDF } = window.jspdf;
 const doc = new jsPDF();
 
-doc.text("ÜYE KAYIT FORMU", 10, 10);
+doc.text("ÜYELİK BAŞVURUSU", 10, 10);
 doc.text("Ad: " + document.getElementById("ad").value, 10, 20);
 doc.text("TC: " + document.getElementById("tc").value, 10, 30);
 doc.text("Tel: " + document.getElementById("tel").value, 10, 40);
