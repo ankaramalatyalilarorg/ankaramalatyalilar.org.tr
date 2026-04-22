@@ -40,6 +40,25 @@ border:1px solid #e6e9ee;
 h2{color:#1e3c2f;margin-bottom:12px;}
 h3{margin-top:18px;color:#2f6b57;}
 
+/* ================= TEK KUTU ================= */
+.item-box{
+border:1px solid #e1e6ef;
+border-radius:10px;
+padding:10px 12px;
+margin-top:8px;
+background:#fff;
+}
+
+/* checkbox hizalama */
+.item-box label{
+display:flex;
+align-items:center;
+gap:8px;
+font-size:14px;
+cursor:pointer;
+}
+
+/* input */
 input,select,textarea{
 width:100%;
 padding:10px;
@@ -50,29 +69,14 @@ border-radius:10px;
 
 textarea{height:70px;}
 
+/* ================= GRID ================= */
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:14px;
 }
 
-/* ================= İLGİ ALANLARI (KUTU YAPISINA ALINDI) ================= */
-.box-section{
-margin-top:10px;
-padding:15px;
-border:1px solid #e6e9ee;
-border-radius:12px;
-background:#fff;
-}
-
-.box-section label{
-display:block;
-margin-top:8px;
-cursor:pointer;
-font-size:14px;
-}
-
-/* BEYAN */
+/* ================= BEYAN ================= */
 .beyan{
 margin-top:15px;
 padding:10px;
@@ -81,7 +85,7 @@ border-radius:10px;
 border:1px solid #ddd;
 }
 
-/* BUTTONS */
+/* ================= BUTTONS ================= */
 .actions{
 display:flex;
 justify-content:center;
@@ -112,7 +116,6 @@ gap:8px;
 
 <div class="container">
 
-<!-- BANNER -->
 <div class="banner">
 <img src="bas.png">
 </div>
@@ -126,34 +129,31 @@ gap:8px;
 <!-- 1 -->
 <h3>1. Kimlik Bilgileri</h3>
 <div class="grid">
-<input id="ad" placeholder="Ad Soyad">
-<input id="tc" placeholder="T.C. Kimlik Numarası">
-<input type="date">
-<input placeholder="Doğum Yeri">
+<div class="item-box"><input id="ad" placeholder="Ad Soyad"></div>
+<div class="item-box"><input id="tc" placeholder="T.C. Kimlik Numarası"></div>
+<div class="item-box"><input type="date"></div>
+<div class="item-box"><input placeholder="Doğum Yeri"></div>
 </div>
 
 <!-- 2 -->
 <h3>2. İletişim Bilgileri</h3>
-<input id="tel" placeholder="Mobil Telefon">
-<input id="mail" placeholder="E-posta">
-<textarea placeholder="İkamet Adresi"></textarea>
+<div class="item-box"><input id="tel" placeholder="Mobil Telefon"></div>
+<div class="item-box"><input id="mail" placeholder="E-posta"></div>
+<div class="item-box"><textarea placeholder="İkamet Adresi"></textarea></div>
 
-<!-- 3 İLGİ ALANLARI (ARTIK KUTU YAPISINDA) -->
+<!-- 3 İLGİ ALANLARI (HER BİRİ KUTU) -->
 <h3>3. İlgi Alanları</h3>
 
-<div class="box-section">
-<label><input type="checkbox"> Kültür etkinlikleri</label>
-<label><input type="checkbox"> Spor faaliyetleri</label>
-<label><input type="checkbox"> Girişimcilik</label>
-<label><input type="checkbox"> Sosyal yardım</label>
-<label><input type="checkbox"> Diğer</label>
-</div>
+<div class="item-box"><label><input type="checkbox"> Kültür etkinlikleri</label></div>
+<div class="item-box"><label><input type="checkbox"> Spor faaliyetleri</label></div>
+<div class="item-box"><label><input type="checkbox"> Girişimcilik</label></div>
+<div class="item-box"><label><input type="checkbox"> Sosyal yardım</label></div>
+<div class="item-box"><label><input type="checkbox"> Diğer</label></div>
 
-<!-- 4 -->
+<!-- 4 EĞİTİM & MESLEK (ALT KUTULAR) -->
 <h3>4. Eğitim ve Mesleki Bilgiler</h3>
 
-<div class="box-section">
-
+<div class="item-box">
 <select>
 <option>İlköğretim</option>
 <option>Lise</option>
@@ -161,9 +161,10 @@ gap:8px;
 <option>Yüksek Lisans</option>
 <option>Doktora</option>
 </select>
+</div>
 
+<div class="item-box">
 <input placeholder="Meslek / Kurum">
-
 </div>
 
 <!-- 5 -->
