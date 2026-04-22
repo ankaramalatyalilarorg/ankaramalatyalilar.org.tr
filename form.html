@@ -29,6 +29,7 @@ margin-top:12px;
 border-radius:18px;
 }
 
+/* CARD */
 .card{
 background:#fff;
 margin-top:18px;
@@ -39,9 +40,6 @@ border:1px solid #e6e9ee;
 
 h2{color:#1e3c2f;margin-bottom:12px;}
 h3{margin-top:18px;color:#2f6b57;}
-
-ul{margin-left:18px;}
-ul li{margin-top:6px;}
 
 input,select,textarea{
 width:100%;
@@ -57,6 +55,26 @@ textarea{height:70px;}
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:14px;
+}
+
+/* ================= İLGİ ALANLARI BOX ================= */
+.interest-box{
+margin-top:10px;
+padding:15px;
+border:2px solid #2f6b57;
+border-radius:16px; /* OVAL KÖŞE */
+background:#f8fbfa;
+}
+
+.interest-box h4{
+margin-bottom:10px;
+color:#2f6b57;
+}
+
+.interest-box label{
+display:block;
+margin:6px 0;
+cursor:pointer;
 }
 
 /* BEYAN */
@@ -91,11 +109,6 @@ gap:8px;
 .btn-print{background:#333;color:#fff;}
 .btn-pdf{background:#8e44ad;color:#fff;}
 
-.checkbox-group label{
-display:block;
-margin-top:6px;
-}
-
 </style>
 </head>
 
@@ -129,17 +142,19 @@ margin-top:6px;
 <input id="mail" placeholder="E-posta">
 <textarea placeholder="İkamet Adresi"></textarea>
 
-<!-- ❌ HEMŞERİLİK ÇIKARILDI -->
-<!-- ✅ İLGİ ALANLARI EKLENDİ -->
-
+<!-- 3 İLGİ ALANLARI (ÇERÇEVELİ) -->
 <h3>3. İlgi Alanları</h3>
 
-<div class="checkbox-group">
+<div class="interest-box">
+
+<h4>İlgi Alanlarınızı Seçiniz</h4>
+
 <label><input type="checkbox"> Kültür etkinlikleri</label>
 <label><input type="checkbox"> Spor faaliyetleri</label>
 <label><input type="checkbox"> Girişimcilik</label>
 <label><input type="checkbox"> Sosyal yardım</label>
 <label><input type="checkbox"> Diğer</label>
+
 </div>
 
 <!-- 4 -->
