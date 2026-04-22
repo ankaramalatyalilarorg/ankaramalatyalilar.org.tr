@@ -17,45 +17,49 @@ background:#eef2f5;
 color:#1f2d3d;
 }
 
+/* 🔥 TEK SAYFA OPTİMİZASYON */
 .container{
 width:95%;
 max-width:1200px;
 margin:auto;
+transform:scale(0.95);
+transform-origin:top;
 }
 
+/* BANNER */
 .banner img{
 width:100%;
-margin-top:12px;
-border-radius:18px;
+margin-top:8px;
+border-radius:16px;
 }
 
+/* CARD (DAHA KOMPAKT) */
 .card{
 background:#fff;
-margin-top:18px;
-padding:26px;
-border-radius:16px;
+margin-top:10px;
+padding:14px;   /* küçültüldü */
+border-radius:14px;
 border:1px solid #e6e9ee;
 }
 
-h2{color:#1e3c2f;margin-bottom:12px;}
-h3{margin-top:18px;color:#2f6b57;}
+h2{color:#1e3c2f;margin-bottom:8px;font-size:18px;}
+h3{margin-top:10px;color:#2f6b57;font-size:14px;}
 
 input,select,textarea{
 width:100%;
-padding:10px;
-margin-top:8px;
+padding:8px;
+margin-top:6px;
 border:1px solid #ccc;
-border-radius:10px;
+border-radius:8px;
+font-size:13px;
 }
 
-textarea{
-height:35px; /* %50 küçültüldü (önceden 70px idi) */
-}
+textarea{height:40px;} /* küçültüldü */
 
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:14px;
+gap:10px;
 }
 
 /* ================= SATIR ================= */
@@ -63,45 +67,34 @@ gap:14px;
 display:flex;
 align-items:center;
 gap:8px;
-margin-top:6px; /* %25 daraltıldı */
-}
-
-.line-item span{
-font-size:15px;
+margin-top:5px;
+font-size:13px;
 }
 
 .line-item input{
-transform:scale(1.1);
+transform:scale(1);
 cursor:pointer;
-}
-
-/* BEYAN */
-.beyan{
-margin-top:15px;
-padding:10px;
-background:#f7f9fb;
-border-radius:10px;
-border:1px solid #ddd;
 }
 
 /* BUTTONS */
 .actions{
 display:flex;
 justify-content:center;
-gap:12px;
-margin-top:20px;
+gap:10px;
+margin-top:12px;
 flex-wrap:wrap;
 }
 
 .btn{
 border:none;
-padding:12px 20px;
-border-radius:10px;
+padding:10px 16px;
+border-radius:8px;
 cursor:pointer;
 font-weight:700;
 display:flex;
 align-items:center;
-gap:8px;
+gap:6px;
+font-size:13px;
 }
 
 .btn-send{background:#2f6b57;color:#fff;}
@@ -136,8 +129,6 @@ gap:8px;
 <h3>2. İletişim Bilgileri</h3>
 <input placeholder="Mobil Telefon">
 <input placeholder="E-posta">
-
-<!-- DEĞİŞTİRİLEN ALAN -->
 <textarea placeholder="İkamet Adresi"></textarea>
 
 <h3>3. İlgi Alanları</h3>
@@ -211,7 +202,7 @@ gap:8px;
 </div>
 
 <script>
-document.getElementById("form").addEventListener("submit", async function(e){
+document.getElementById("form").addEventListener("submit", function(e){
 e.preventDefault();
 alert("Başvuru gönderildi.");
 });
