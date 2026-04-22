@@ -29,7 +29,6 @@ margin-top:12px;
 border-radius:18px;
 }
 
-/* CARD */
 .card{
 background:#fff;
 margin-top:18px;
@@ -57,24 +56,27 @@ grid-template-columns:1fr 1fr;
 gap:14px;
 }
 
-/* ================= İLGİ ALANLARI BOX ================= */
-.interest-box{
+/* ================= İLGİ ALANLARI (DÜZELTİLDİ) ================= */
+.interest-section{
 margin-top:10px;
-padding:15px;
-border:2px solid #2f6b57;
-border-radius:16px; /* OVAL KÖŞE */
-background:#f8fbfa;
 }
 
-.interest-box h4{
-margin-bottom:10px;
-color:#2f6b57;
+.interest-item{
+margin-top:12px;
+padding:10px 0;
+border-bottom:1px solid #eee;
 }
 
-.interest-box label{
-display:block;
-margin:6px 0;
+.interest-item:last-child{
+border-bottom:none;
+}
+
+.interest-item label{
+display:flex;
+align-items:center;
+gap:8px;
 cursor:pointer;
+font-size:14px;
 }
 
 /* BEYAN */
@@ -86,6 +88,7 @@ border-radius:10px;
 border:1px solid #ddd;
 }
 
+/* BUTTONS */
 .actions{
 display:flex;
 justify-content:center;
@@ -116,7 +119,6 @@ gap:8px;
 
 <div class="container">
 
-<!-- BANNER -->
 <div class="banner">
 <img src="bas.png">
 </div>
@@ -127,7 +129,6 @@ gap:8px;
 
 <h2>ÜYE KAYIT FORMU</h2>
 
-<!-- 1 -->
 <h3>1. Kimlik Bilgileri</h3>
 <div class="grid">
 <input id="ad" placeholder="Ad Soyad">
@@ -136,28 +137,38 @@ gap:8px;
 <input placeholder="Doğum Yeri">
 </div>
 
-<!-- 2 -->
 <h3>2. İletişim Bilgileri</h3>
 <input id="tel" placeholder="Mobil Telefon">
 <input id="mail" placeholder="E-posta">
 <textarea placeholder="İkamet Adresi"></textarea>
 
-<!-- 3 İLGİ ALANLARI (ÇERÇEVELİ) -->
+<!-- ================= İLGİ ALANLARI ================= -->
 <h3>3. İlgi Alanları</h3>
 
-<div class="interest-box">
+<div class="interest-section">
 
-<h4>İlgi Alanlarınızı Seçiniz</h4>
-
+<div class="interest-item">
 <label><input type="checkbox"> Kültür etkinlikleri</label>
+</div>
+
+<div class="interest-item">
 <label><input type="checkbox"> Spor faaliyetleri</label>
+</div>
+
+<div class="interest-item">
 <label><input type="checkbox"> Girişimcilik</label>
+</div>
+
+<div class="interest-item">
 <label><input type="checkbox"> Sosyal yardım</label>
+</div>
+
+<div class="interest-item">
 <label><input type="checkbox"> Diğer</label>
+</div>
 
 </div>
 
-<!-- 4 -->
 <h3>4. Eğitim ve Mesleki Bilgiler</h3>
 <select>
 <option>İlköğretim</option>
@@ -169,7 +180,6 @@ gap:8px;
 
 <input placeholder="Meslek / Kurum">
 
-<!-- 5 -->
 <h3>5. Üyelik Beyanları</h3>
 
 <div class="beyan">
