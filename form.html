@@ -7,6 +7,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<!-- PDF KÜTÜPHANESİ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
@@ -22,14 +25,12 @@ max-width:1200px;
 margin:auto;
 }
 
-/* BANNER */
 .banner img{
 width:100%;
 margin-top:12px;
 border-radius:18px;
 }
 
-/* CARD */
 .card{
 background:#fff;
 margin-top:18px;
@@ -38,10 +39,9 @@ border-radius:16px;
 border:1px solid #e6e9ee;
 }
 
-h2{color:#1e3c2f;margin-bottom:12px;}
-h3{margin-top:18px;color:#2f6b57;font-size:18px;}
+h2{color:#1e3c2f;}
+h3{margin-top:18px;color:#2f6b57;}
 
-/* INPUT */
 input,select,textarea{
 width:100%;
 padding:12px;
@@ -52,46 +52,12 @@ border-radius:10px;
 
 textarea{height:80px;resize:none;}
 
-/* GRID */
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:14px;
 }
 
-/* CHECKBOX */
-.check label{
-display:block;
-margin-top:10px;
-cursor:pointer;
-}
-
-/* ================= BEYAN PANEL ================= */
-.beyan-box{
-margin-top:15px;
-padding:15px;
-border-radius:12px;
-background:#f6f9fc;
-border:1px solid #d8dde6;
-}
-
-.hidden-area{
-display:none;
-margin-top:10px;
-}
-
-.hidden-area.active{
-display:block;
-}
-
-.small-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-margin-top:10px;
-}
-
-/* BUTTONS */
 .actions{
 display:flex;
 justify-content:center;
@@ -109,10 +75,7 @@ font-weight:700;
 display:flex;
 align-items:center;
 gap:8px;
-transition:0.2s;
 }
-
-.btn:hover{transform:scale(1.05);}
 
 .btn-send{
 background:linear-gradient(135deg,#1f6feb,#2f6b57);
@@ -129,11 +92,15 @@ background:linear-gradient(135deg,#333,#111);
 color:#fff;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-.grid{grid-template-columns:1fr;}
-.small-grid{grid-template-columns:1fr;}
+.hidden-area{display:none;margin-top:10px;}
+.hidden-area.active{display:block;}
+
+.small-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
 }
+
 </style>
 </head>
 
@@ -146,62 +113,45 @@ color:#fff;
 <img src="bas.png">
 </div>
 
-<form>
+<!-- FORM -->
+<form id="form">
 
 <div class="card">
 <h2>ÜYE KAYIT FORMU</h2>
 
-<h3>1. Kimlik Bilgileri</h3>
-<div class="grid">
-<input placeholder="Ad Soyad">
-<input placeholder="T.C. Kimlik No">
-<input type="date">
-<input placeholder="Doğum Yeri">
-</div>
+<h3>Kimlik</h3>
+<input id="ad" placeholder="Ad Soyad">
+<input id="tc" placeholder="T.C. Kimlik No">
 
-<h3>2. İletişim</h3>
-<input placeholder="Telefon">
-<input placeholder="E-posta">
-<textarea placeholder="Adres"></textarea>
+<h3>İletişim</h3>
+<input id="tel" placeholder="Telefon">
+<input id="mail" placeholder="E-posta">
 
-<h3>3. Eğitim / Meslek</h3>
-<input placeholder="Meslek">
-<select>
-<option>Lise</option>
-<option>Lisans</option>
-<option>Yüksek Lisans</option>
-</select>
+<h3>Beyan</h3>
+<label>
+<input type="checkbox" id="beyanCheck">
+Dernek tüzüğünü kabul ediyorum
+</label>
 
-<h3>4. Üyelik Beyanları</h3>
-
-<div class="check">
-<label><input type="checkbox" id="beyanCheck"> Dernek tüzüğünü okudum ve kabul ediyorum</label>
-<label><input type="checkbox"> Üyelik aidatını ödemeyi kabul ediyorum</label>
-<label><input type="checkbox"> Verdiğim bilgilerin doğru olduğunu beyan ederim</label>
-</div>
-
-<!-- ================= BEYAN AÇILAN ALAN ================= -->
-<div id="beyanArea" class="hidden-area">
-
+<div id="extra" class="hidden-area">
 <div class="small-grid">
-<input placeholder="Adı Soyadı">
-<input type="date">
+<input id="onayAd" placeholder="Ad Soyad">
+<input type="date" id="onayTarih">
+</div>
 </div>
 
 </div>
 
-</div>
-
-<!-- ================= GÖNDER ================= -->
+<!-- GÖNDER -->
 <div class="actions">
 <button class="btn btn-send" type="submit">
 <i class="fa-solid fa-envelope"></i> GÖNDER
 </button>
 </div>
 
-<!-- ================= PDF / PRINT ================= -->
+<!-- PDF / PRINT -->
 <div class="actions">
-<button class="btn btn-pdf" type="button">
+<button class="btn btn-pdf" type="button" onclick="downloadPDF()">
 <i class="fa-solid fa-file-pdf"></i> PDF İNDİR
 </button>
 
@@ -214,16 +164,46 @@ color:#fff;
 
 </div>
 
-<!-- ================= SCRIPT ================= -->
 <script>
+// BEYAN AÇ
 document.getElementById("beyanCheck").addEventListener("change", function(){
-let area = document.getElementById("beyanArea");
-if(this.checked){
-area.classList.add("active");
-}else{
-area.classList.remove("active");
-}
+document.getElementById("extra").classList.toggle("active", this.checked);
 });
+
+// EMAIL GÖNDER (FORMSPREE)
+document.getElementById("form").addEventListener("submit", async function(e){
+e.preventDefault();
+
+const data = {
+ad: document.getElementById("ad").value,
+tc: document.getElementById("tc").value,
+tel: document.getElementById("tel").value,
+mail: document.getElementById("mail").value
+};
+
+await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+method:"POST",
+headers:{ "Content-Type":"application/json" },
+body: JSON.stringify(data)
+});
+
+alert("Başvuru başarıyla gönderildi.");
+});
+
+// PDF İNDİR
+function downloadPDF(){
+const { jsPDF } = window.jspdf;
+const doc = new jsPDF();
+
+doc.text("ÜYELİK BAŞVURU FORMU", 10, 10);
+doc.text("Ad: " + document.getElementById("ad").value, 10, 20);
+doc.text("TC: " + document.getElementById("tc").value, 10, 30);
+doc.text("Telefon: " + document.getElementById("tel").value, 10, 40);
+doc.text("E-posta: " + document.getElementById("mail").value, 10, 50);
+
+doc.save("uyelik_basvuru.pdf");
+}
+
 </script>
 
 </body>
