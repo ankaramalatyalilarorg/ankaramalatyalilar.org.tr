@@ -23,14 +23,12 @@ max-width:1200px;
 margin:auto;
 }
 
-/* BANNER */
 .banner img{
 width:100%;
 margin-top:12px;
 border-radius:18px;
 }
 
-/* ANA KUTU */
 .card{
 background:#fff;
 margin-top:18px;
@@ -42,7 +40,6 @@ border:1px solid #e6e9ee;
 h2{color:#1e3c2f;margin-bottom:12px;}
 h3{margin-top:18px;color:#2f6b57;}
 
-/* INPUT */
 input,select,textarea{
 width:100%;
 padding:10px;
@@ -64,16 +61,21 @@ gap:14px;
 background:#fff;
 border:1px solid #e6e9ee;
 border-radius:10px;
-padding:8px 12px;
-margin-top:6px; /* daraltıldı */
+padding:10px 14px;
+margin-top:6px;
 }
 
 .interest-item label{
 display:flex;
+justify-content:space-between; /* kritik */
 align-items:center;
-gap:8px;
 cursor:pointer;
-font-size:14px;
+width:100%;
+}
+
+.interest-item span{
+text-align:left;
+flex:1;
 }
 
 /* BEYAN */
@@ -148,23 +150,38 @@ gap:8px;
 <h3>3. İlgi Alanları</h3>
 
 <div class="interest-item">
-<label><input type="checkbox"> Kültür etkinlikleri</label>
+<label>
+<span>Kültür etkinlikleri</span>
+<input type="checkbox">
+</label>
 </div>
 
 <div class="interest-item">
-<label><input type="checkbox"> Spor faaliyetleri</label>
+<label>
+<span>Spor faaliyetleri</span>
+<input type="checkbox">
+</label>
 </div>
 
 <div class="interest-item">
-<label><input type="checkbox"> Girişimcilik</label>
+<label>
+<span>Girişimcilik</span>
+<input type="checkbox">
+</label>
 </div>
 
 <div class="interest-item">
-<label><input type="checkbox"> Sosyal yardım</label>
+<label>
+<span>Sosyal yardım</span>
+<input type="checkbox">
+</label>
 </div>
 
 <div class="interest-item">
-<label><input type="checkbox"> Diğer</label>
+<label>
+<span>Diğer</span>
+<input type="checkbox">
+</label>
 </div>
 
 <h3>4. Eğitim ve Mesleki Bilgiler</h3>
