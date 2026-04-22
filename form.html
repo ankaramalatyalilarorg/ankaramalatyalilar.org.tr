@@ -17,27 +17,22 @@ background:#eef2f5;
 color:#1f2d3d;
 }
 
-/* 🔥 TEK SAYFA OPTİMİZASYON */
 .container{
 width:95%;
 max-width:1200px;
 margin:auto;
-transform:scale(0.95);
-transform-origin:top;
 }
 
-/* BANNER */
 .banner img{
 width:100%;
 margin-top:8px;
 border-radius:16px;
 }
 
-/* CARD (DAHA KOMPAKT) */
 .card{
 background:#fff;
 margin-top:10px;
-padding:14px;   /* küçültüldü */
+padding:14px;
 border-radius:14px;
 border:1px solid #e6e9ee;
 }
@@ -54,7 +49,7 @@ border-radius:8px;
 font-size:13px;
 }
 
-textarea{height:40px;} /* küçültüldü */
+textarea{height:40px;}
 
 .grid{
 display:grid;
@@ -62,16 +57,29 @@ grid-template-columns:1fr 1fr;
 gap:10px;
 }
 
-/* ================= SATIR ================= */
-.line-item{
+/* ================= TEK SATIR BAR FORM ================= */
+.bar-item{
 display:flex;
 align-items:center;
-gap:8px;
-margin-top:5px;
+justify-content:space-between;
+width:100%;
+border:1px solid #e6e9ee;
+border-radius:10px;
+padding:8px 12px;
+margin-top:6px;
+background:#fff;
+height:38px; /* tek satır yüksekliği */
+white-space:nowrap;
+}
+
+.bar-item span{
+flex:1;
+text-align:left;
 font-size:13px;
 }
 
-.line-item input{
+.bar-item input{
+margin-left:auto;
 transform:scale(1);
 cursor:pointer;
 }
@@ -133,23 +141,23 @@ font-size:13px;
 
 <h3>3. İlgi Alanları</h3>
 
-<div class="line-item">
+<div class="bar-item">
 <span>Kültür etkinlikleri</span><input type="checkbox">
 </div>
 
-<div class="line-item">
+<div class="bar-item">
 <span>Spor faaliyetleri</span><input type="checkbox">
 </div>
 
-<div class="line-item">
+<div class="bar-item">
 <span>Girişimcilik</span><input type="checkbox">
 </div>
 
-<div class="line-item">
+<div class="bar-item">
 <span>Sosyal yardım</span><input type="checkbox">
 </div>
 
-<div class="line-item">
+<div class="bar-item">
 <span>Diğer</span><input type="checkbox">
 </div>
 
@@ -167,15 +175,15 @@ font-size:13px;
 
 <h3>5. Üyelik Beyanları</h3>
 
-<div class="line-item">
+<div class="bar-item">
 <span>Dernek tüzüğünü okudum ve kabul ediyorum</span><input type="checkbox">
 </div>
 
-<div class="line-item">
+<div class="bar-item">
 <span>Üyelik aidatını ödemeyi kabul ediyorum</span><input type="checkbox">
 </div>
 
-<div class="line-item">
+<div class="bar-item">
 <span>Verdiğim bilgilerin doğru olduğunu beyan ederim</span><input type="checkbox">
 </div>
 
