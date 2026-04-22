@@ -117,6 +117,18 @@ gap:10px;
 margin-top:12px;
 flex-wrap:wrap;
 }
+  /* SAYFA SONU ETKİSİ */
+.actions{
+padding-bottom:20px;
+border-bottom:2px solid #e6e9ee;
+}
+
+/* Yazdırmada sayfa burada bitsin */
+@media print {
+.actions{
+page-break-after: always;
+}
+}
 
 .btn{
 border:none;
