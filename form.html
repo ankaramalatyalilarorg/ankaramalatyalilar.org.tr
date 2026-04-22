@@ -23,14 +23,12 @@ max-width:1200px;
 margin:auto;
 }
 
-/* BANNER */
 .banner img{
 width:100%;
 margin-top:12px;
 border-radius:18px;
 }
 
-/* CARD */
 .card{
 background:#fff;
 margin-top:18px;
@@ -42,7 +40,6 @@ border:1px solid #e6e9ee;
 h2{color:#1e3c2f;margin-bottom:12px;}
 h3{margin-top:18px;color:#2f6b57;}
 
-/* INPUT */
 input,select,textarea{
 width:100%;
 padding:10px;
@@ -59,26 +56,20 @@ grid-template-columns:1fr 1fr;
 gap:14px;
 }
 
-/* ================= TEK SATIR MODERN KUTU ================= */
-.row-item{
+/* ================= SATIR (TIK YAZI SONU) ================= */
+.line-item{
 display:flex;
-justify-content:space-between;
 align-items:center;
-background:#fff;
-border:1px solid #e6e9ee;
-border-radius:10px;
-padding:10px 14px;
-margin-top:6px;
+gap:8px;
+margin-top:8px;
 }
 
-.row-item span{
+.line-item span{
 font-size:15px;
-color:#1f2d3d;
 }
 
-.row-item input{
-width:18px;
-height:18px;
+.line-item input{
+transform:scale(1.2);
 cursor:pointer;
 }
 
@@ -134,42 +125,37 @@ gap:8px;
 
 <h3>1. Kimlik Bilgileri</h3>
 <div class="grid">
-<input id="ad" placeholder="Ad Soyad">
-<input id="tc" placeholder="T.C. Kimlik Numarası">
+<input placeholder="Ad Soyad">
+<input placeholder="T.C. Kimlik Numarası">
 <input type="date">
 <input placeholder="Doğum Yeri">
 </div>
 
 <h3>2. İletişim Bilgileri</h3>
-<input id="tel" placeholder="Mobil Telefon">
-<input id="mail" placeholder="E-posta">
+<input placeholder="Mobil Telefon">
+<input placeholder="E-posta">
 <textarea placeholder="İkamet Adresi"></textarea>
 
 <h3>3. İlgi Alanları</h3>
 
-<div class="row-item">
-<span>Kültür etkinlikleri</span>
-<input type="checkbox">
+<div class="line-item">
+<span>Kültür etkinlikleri</span><input type="checkbox">
 </div>
 
-<div class="row-item">
-<span>Spor faaliyetleri</span>
-<input type="checkbox">
+<div class="line-item">
+<span>Spor faaliyetleri</span><input type="checkbox">
 </div>
 
-<div class="row-item">
-<span>Girişimcilik</span>
-<input type="checkbox">
+<div class="line-item">
+<span>Girişimcilik</span><input type="checkbox">
 </div>
 
-<div class="row-item">
-<span>Sosyal yardım</span>
-<input type="checkbox">
+<div class="line-item">
+<span>Sosyal yardım</span><input type="checkbox">
 </div>
 
-<div class="row-item">
-<span>Diğer</span>
-<input type="checkbox">
+<div class="line-item">
+<span>Diğer</span><input type="checkbox">
 </div>
 
 <h3>4. Eğitim ve Mesleki Bilgiler</h3>
@@ -186,19 +172,16 @@ gap:8px;
 
 <h3>5. Üyelik Beyanları</h3>
 
-<div class="row-item">
-<span>Dernek tüzüğünü okudum ve kabul ediyorum</span>
-<input type="checkbox">
+<div class="line-item">
+<span>Dernek tüzüğünü okudum ve kabul ediyorum</span><input type="checkbox">
 </div>
 
-<div class="row-item">
-<span>Üyelik aidatını ödemeyi kabul ediyorum</span>
-<input type="checkbox">
+<div class="line-item">
+<span>Üyelik aidatını ödemeyi kabul ediyorum</span><input type="checkbox">
 </div>
 
-<div class="row-item">
-<span>Verdiğim bilgilerin doğru olduğunu beyan ederim</span>
-<input type="checkbox">
+<div class="line-item">
+<span>Verdiğim bilgilerin doğru olduğunu beyan ederim</span><input type="checkbox">
 </div>
 
 </div>
@@ -227,17 +210,6 @@ gap:8px;
 document.getElementById("form").addEventListener("submit", async function(e){
 e.preventDefault();
 
-await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-method:"POST",
-headers:{ "Content-Type":"application/json" },
-body: JSON.stringify({
-ad: document.getElementById("ad").value,
-tc: document.getElementById("tc").value,
-tel: document.getElementById("tel").value,
-mail: document.getElementById("mail").value
-})
-});
-
 alert("Başvuru gönderildi.");
 });
 
@@ -246,11 +218,6 @@ const { jsPDF } = window.jspdf;
 const doc = new jsPDF();
 
 doc.text("ÜYELİK BAŞVURUSU", 10, 10);
-doc.text("Ad: " + document.getElementById("ad").value, 10, 20);
-doc.text("TC: " + document.getElementById("tc").value, 10, 30);
-doc.text("Tel: " + document.getElementById("tel").value, 10, 40);
-doc.text("Mail: " + document.getElementById("mail").value, 10, 50);
-
 doc.save("uyelik.pdf");
 }
 </script>
