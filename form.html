@@ -59,35 +59,33 @@ grid-template-columns:1fr 1fr;
 gap:14px;
 }
 
-/* ================= İLGİ ALANLARI ================= */
+/* ================= İLGİ ALANLARI (TEK SATIR) ================= */
+.interest-row{
+display:flex;
+flex-wrap:nowrap; /* TEK SATIR */
+gap:10px;
+margin-top:8px;
+overflow-x:auto; /* taşarsa kaydırma */
+}
+
 .interest-item{
-background:#fff;
+display:flex;
+align-items:center;
+justify-content:space-between;
 border:1px solid #e6e9ee;
 border-radius:10px;
-padding:6px 10px; /* %50 küçültüldü */
-margin-top:5px;
+padding:6px 10px;
+background:#fff;
+min-width:200px;
+white-space:nowrap;
 }
 
-.interest-item label{
-display:flex;
-justify-content:space-between;
-align-items:center;
-width:100%;
-cursor:pointer;
-}
-
-/* metin */
 .interest-item span{
-white-space:nowrap; /* SATIR KIRILMAZ */
-overflow:hidden;
-text-overflow:ellipsis;
+margin-right:10px;
 }
 
-/* checkbox sabit hizalama */
 .interest-item input{
 flex-shrink:0;
-width:18px;
-height:18px;
 }
 
 /* BEYAN */
@@ -161,39 +159,33 @@ gap:8px;
 <!-- ================= İLGİ ALANLARI ================= -->
 <h3>3. İlgi Alanları</h3>
 
+<div class="interest-row">
+
 <div class="interest-item">
-<label>
 <span>Kültür etkinlikleri</span>
 <input type="checkbox">
-</label>
 </div>
 
 <div class="interest-item">
-<label>
 <span>Spor faaliyetleri</span>
 <input type="checkbox">
-</label>
 </div>
 
 <div class="interest-item">
-<label>
 <span>Girişimcilik</span>
 <input type="checkbox">
-</label>
 </div>
 
 <div class="interest-item">
-<label>
 <span>Sosyal yardım</span>
 <input type="checkbox">
-</label>
 </div>
 
 <div class="interest-item">
-<label>
 <span>Diğer</span>
 <input type="checkbox">
-</label>
+</div>
+
 </div>
 
 <h3>4. Eğitim ve Mesleki Bilgiler</h3>
