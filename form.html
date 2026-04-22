@@ -30,7 +30,7 @@ margin-top:12px;
 border-radius:18px;
 }
 
-/* GENEL KUTU */
+/* ANA KUTU */
 .card{
 background:#fff;
 margin-top:18px;
@@ -39,7 +39,6 @@ border-radius:16px;
 border:1px solid #e6e9ee;
 }
 
-/* BAŞLIKLAR */
 h2{color:#1e3c2f;margin-bottom:12px;}
 h3{margin-top:18px;color:#2f6b57;}
 
@@ -54,11 +53,27 @@ border-radius:10px;
 
 textarea{height:70px;}
 
-/* GRID */
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:14px;
+}
+
+/* ================= İLGİ ALANLARI ================= */
+.interest-item{
+background:#fff;
+border:1px solid #e6e9ee;
+border-radius:10px;
+padding:8px 12px;
+margin-top:6px; /* daraltıldı */
+}
+
+.interest-item label{
+display:flex;
+align-items:center;
+gap:8px;
+cursor:pointer;
+font-size:14px;
 }
 
 /* BEYAN */
@@ -73,7 +88,6 @@ border:1px solid #ddd;
 .beyan label{
 display:block;
 margin-top:6px;
-cursor:pointer;
 }
 
 /* BUTTONS */
@@ -107,19 +121,16 @@ gap:8px;
 
 <div class="container">
 
-<!-- BANNER -->
 <div class="banner">
 <img src="bas.png">
 </div>
 
 <form id="form">
 
-<!-- ANA FORM KUTUSU -->
 <div class="card">
 
 <h2>ÜYE KAYIT FORMU</h2>
 
-<!-- 1 -->
 <h3>1. Kimlik Bilgileri</h3>
 <div class="grid">
 <input id="ad" placeholder="Ad Soyad">
@@ -128,23 +139,34 @@ gap:8px;
 <input placeholder="Doğum Yeri">
 </div>
 
-<!-- 2 -->
 <h3>2. İletişim Bilgileri</h3>
 <input id="tel" placeholder="Mobil Telefon">
 <input id="mail" placeholder="E-posta">
 <textarea placeholder="İkamet Adresi"></textarea>
 
-<!-- 3 -->
+<!-- ================= İLGİ ALANLARI ================= -->
 <h3>3. İlgi Alanları</h3>
-<div class="beyan">
+
+<div class="interest-item">
 <label><input type="checkbox"> Kültür etkinlikleri</label>
+</div>
+
+<div class="interest-item">
 <label><input type="checkbox"> Spor faaliyetleri</label>
+</div>
+
+<div class="interest-item">
 <label><input type="checkbox"> Girişimcilik</label>
+</div>
+
+<div class="interest-item">
 <label><input type="checkbox"> Sosyal yardım</label>
+</div>
+
+<div class="interest-item">
 <label><input type="checkbox"> Diğer</label>
 </div>
 
-<!-- 4 -->
 <h3>4. Eğitim ve Mesleki Bilgiler</h3>
 <div class="beyan">
 
@@ -160,7 +182,6 @@ gap:8px;
 
 </div>
 
-<!-- 5 -->
 <h3>5. Üyelik Beyanları</h3>
 <div class="beyan">
 <label><input type="checkbox"> Dernek tüzüğünü okudum ve kabul ediyorum</label>
@@ -170,7 +191,6 @@ gap:8px;
 
 </div>
 
-<!-- BUTONLAR -->
 <div class="actions">
 
 <button class="btn btn-send" type="submit">
