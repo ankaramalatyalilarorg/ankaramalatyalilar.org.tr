@@ -30,7 +30,7 @@ margin-top:12px;
 border-radius:18px;
 }
 
-/* ANA KART */
+/* CARD */
 .card{
 background:#fff;
 margin-top:18px;
@@ -59,8 +59,8 @@ grid-template-columns:1fr 1fr;
 gap:14px;
 }
 
-/* ================= ORTAK TEK SATIR KUTU SİSTEMİ ================= */
-.row-box{
+/* ================= İLGİ ALANLARI (TEK SATIR) ================= */
+.interest-row{
 display:flex;
 flex-wrap:nowrap;
 gap:10px;
@@ -68,7 +68,7 @@ margin-top:8px;
 overflow-x:auto;
 }
 
-.item-box{
+.interest-item{
 display:flex;
 align-items:center;
 justify-content:space-between;
@@ -76,16 +76,30 @@ border:1px solid #e6e9ee;
 border-radius:10px;
 padding:6px 10px;
 background:#fff;
-min-width:240px;
+min-width:200px;
 white-space:nowrap;
 }
 
-.item-box span{
+.interest-item span{
 margin-right:10px;
 }
 
-.item-box input{
+.interest-item input{
 flex-shrink:0;
+}
+
+/* BEYAN NORMAL */
+.beyan{
+margin-top:15px;
+padding:10px;
+background:#f7f9fb;
+border-radius:10px;
+border:1px solid #ddd;
+}
+
+.beyan label{
+display:block;
+margin-top:6px;
 }
 
 /* BUTTONS */
@@ -142,32 +156,31 @@ gap:8px;
 <input id="mail" placeholder="E-posta">
 <textarea placeholder="İkamet Adresi"></textarea>
 
-<!-- ================= İLGİ ALANLARI ================= -->
 <h3>3. İlgi Alanları</h3>
 
-<div class="row-box">
+<div class="interest-row">
 
-<div class="item-box">
+<div class="interest-item">
 <span>Kültür etkinlikleri</span>
 <input type="checkbox">
 </div>
 
-<div class="item-box">
+<div class="interest-item">
 <span>Spor faaliyetleri</span>
 <input type="checkbox">
 </div>
 
-<div class="item-box">
+<div class="interest-item">
 <span>Girişimcilik</span>
 <input type="checkbox">
 </div>
 
-<div class="item-box">
+<div class="interest-item">
 <span>Sosyal yardım</span>
 <input type="checkbox">
 </div>
 
-<div class="item-box">
+<div class="interest-item">
 <span>Diğer</span>
 <input type="checkbox">
 </div>
@@ -186,26 +199,11 @@ gap:8px;
 
 <input placeholder="Meslek / Kurum">
 
-<!-- ================= BEYANLAR ================= -->
 <h3>5. Üyelik Beyanları</h3>
-
-<div class="row-box">
-
-<div class="item-box">
-<span>Dernek tüzüğünü okudum ve kabul ediyorum</span>
-<input type="checkbox">
-</div>
-
-<div class="item-box">
-<span>Üyelik aidatını ödemeyi kabul ediyorum</span>
-<input type="checkbox">
-</div>
-
-<div class="item-box">
-<span>Verdiğim bilgilerin doğru olduğunu beyan ederim</span>
-<input type="checkbox">
-</div>
-
+<div class="beyan">
+<label><input type="checkbox"> Dernek tüzüğünü okudum ve kabul ediyorum</label>
+<label><input type="checkbox"> Üyelik aidatını ödemeyi kabul ediyorum</label>
+<label><input type="checkbox"> Verdiğim bilgilerin doğru olduğunu beyan ederim</label>
 </div>
 
 </div>
