@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Üye Kayıt Formu</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#eef2f5;
+color:#1f2d3d;
+line-height:1.6;
+}
+
+.container{
+width:95%;
+max-width:1200px;
+margin:auto;
+}
+
+/* ================= BANNER ================= */
+.banner{
+margin-top:12px;
+border-radius:18px;
+overflow:hidden;
+}
+
+.banner img{
+width:100%;
+display:block;
+}
+
+/* ================= CARD ================= */
+.card{
+background:#fff;
+margin-top:18px;
+padding:26px;
+border-radius:16px;
+border:1px solid #e6e9ee;
+}
+
+h2{
+color:#1e3c2f;
+margin-bottom:12px;
+}
+
+h3{
+margin-top:18px;
+color:#2f6b57;
+font-size:18px;
+}
+
+/* ================= INPUT ================= */
+input, select, textarea{
+width:100%;
+padding:12px;
+margin-top:8px;
+border:1px solid #d8dde6;
+border-radius:10px;
+font-size:14px;
+}
+
+textarea{
+resize:none;
+height:80px;
+}
+
+/* ================= GRID ================= */
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+/* ================= CHECKBOX ================= */
+.check{
+margin-top:10px;
+}
+
+.check label{
+display:block;
+margin-top:10px;
+font-size:14px;
+}
+
+/* ================= SIGN AREA ================= */
+.signature{
+margin-top:15px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+/* ================= BUTTONS ================= */
+.actions{
+display:flex;
+justify-content:center;
+gap:12px;
+margin-top:25px;
+flex-wrap:wrap;
+}
+
+.btn{
+border:none;
+padding:12px 20px;
+border-radius:10px;
+cursor:pointer;
+font-weight:700;
+display:flex;
+align-items:center;
+gap:8px;
+transition:0.2s;
+}
+
+.btn i{font-size:15px;}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* PDF */
+.btn-pdf{
+background:linear-gradient(135deg,#8e44ad,#3498db);
+color:#fff;
+}
+
+/* PRINT */
+.btn-print{
+background:linear-gradient(135deg,#333,#111);
+color:#fff;
+}
+
+/* SEND */
+.btn-send{
+background:linear-gradient(135deg,#1f6feb,#2f6b57);
+color:#fff;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+.grid{grid-template-columns:1fr;}
+.signature{grid-template-columns:1fr;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ================= BANNER ================= -->
+<div class="banner">
+<img src="bas.png" alt="Dernek Banner">
+</div>
+
+<form>
+
+<!-- ================= FORM TITLE ================= -->
+<div class="card">
+<h2>ÜYE KAYIT FORMU</h2>
+
+<!-- ================= 1. KİMLİK ================= -->
+<h3>1. Kimlik Bilgileri</h3>
+<div class="grid">
+<input type="text" placeholder="Ad Soyad">
+<input type="text" placeholder="T.C. Kimlik Numarası">
+<input type="date" placeholder="Doğum Tarihi">
+<input type="text" placeholder="Doğum Yeri (İl / İlçe / Köy)">
+</div>
+
+<!-- ================= 2. İLETİŞİM ================= -->
+<h3>2. İletişim Bilgileri</h3>
+<input type="text" placeholder="Mobil Telefon">
+<input type="email" placeholder="E-posta">
+<textarea placeholder="İkamet Adresi"></textarea>
+
+<!-- ================= 3. HEMŞERİLİK ================= -->
+<h3>3. Hemşerilik Bilgisi</h3>
+<input type="text" placeholder="Memleket (İl / İlçe / Köy)">
+
+<!-- ================= 4. EĞİTİM ================= -->
+<h3>4. Eğitim ve Mesleki Bilgiler</h3>
+<select>
+<option>İlköğretim</option>
+<option>Lise</option>
+<option>Üniversite Lisans</option>
+<option>Yüksek Lisans</option>
+<option>Doktora</option>
+</select>
+
+<input type="text" placeholder="Meslek / Çalıştığı Kurum">
+
+<!-- ================= 5. BEYAN ================= -->
+<h3>5. Üyelik Beyanları</h3>
+
+<div class="check">
+<label><input type="checkbox"> Dernek tüzüğünü okudum ve kabul ediyorum</label>
+<label><input type="checkbox"> Üyelik aidatını ödemeyi kabul ediyorum</label>
+<label><input type="checkbox"> Verdiğim bilgilerin doğru olduğunu beyan ederim</label>
+</div>
+
+<!-- ================= SIGNATURE ================= -->
+<h3>Onay Alanı</h3>
+
+<div class="signature">
+<input type="text" placeholder="Ad Soyad">
+<input type="date" placeholder="Tarih">
+<input type="text" placeholder="İmza">
+<input type="text" placeholder="Onay / Yönetim Kurulu">
+</div>
+
+</div>
+
+<!-- ================= ACTIONS ================= -->
+<div class="actions">
+
+<button class="btn btn-pdf" type="button">
+<i class="fa-solid fa-file-pdf"></i> PDF İndir
+</button>
+
+<button class="btn btn-print" type="button" onclick="window.print()">
+<i class="fa-solid fa-print"></i> Yazdır
+</button>
+
+<button class="btn btn-send" type="submit">
+<i class="fa-solid fa-envelope"></i> Gönder
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>
