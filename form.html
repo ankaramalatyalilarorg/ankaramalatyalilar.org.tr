@@ -23,12 +23,14 @@ max-width:1200px;
 margin:auto;
 }
 
+/* BANNER */
 .banner img{
 width:100%;
 margin-top:12px;
 border-radius:18px;
 }
 
+/* ANA KART */
 .card{
 background:#fff;
 margin-top:18px;
@@ -40,6 +42,7 @@ border:1px solid #e6e9ee;
 h2{color:#1e3c2f;margin-bottom:12px;}
 h3{margin-top:18px;color:#2f6b57;}
 
+/* INPUT */
 input,select,textarea{
 width:100%;
 padding:10px;
@@ -61,21 +64,30 @@ gap:14px;
 background:#fff;
 border:1px solid #e6e9ee;
 border-radius:10px;
-padding:10px 14px;
-margin-top:6px;
+padding:6px 10px; /* %50 küçültüldü */
+margin-top:5px;
 }
 
 .interest-item label{
 display:flex;
-justify-content:space-between; /* kritik */
+justify-content:space-between;
 align-items:center;
-cursor:pointer;
 width:100%;
+cursor:pointer;
 }
 
+/* metin */
 .interest-item span{
-text-align:left;
-flex:1;
+white-space:nowrap; /* SATIR KIRILMAZ */
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+/* checkbox sabit hizalama */
+.interest-item input{
+flex-shrink:0;
+width:18px;
+height:18px;
 }
 
 /* BEYAN */
