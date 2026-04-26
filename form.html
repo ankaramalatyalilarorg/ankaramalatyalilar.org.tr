@@ -325,45 +325,55 @@ function pdfIndir(){
     alert("Banner resmi bulunamadi. bas.png dosyasinin form.html ile ayni klasorde oldugundan emin olun.");
   };
 }
-</script>
-  <script>
+<script>
+function degerAl(id){
+  const alan = document.getElementById(id);
+  return alan ? alan.value : "";
+}
+
+function onayAl(id){
+  const alan = document.getElementById(id);
+  return alan && alan.checked ? "EVET" : "HAYIR";
+}
+
 function whatsappGonder(){
 
-  const ad = document.getElementById("adSoyad").value;
-  const tc = document.getElementById("tcKimlik").value;
-  const dt = document.getElementById("dogumTarihi").value;
-  const dy = document.getElementById("dogumYeri").value;
-
-  const tel = document.getElementById("telefon").value;
-  const mail = document.getElementById("email").value;
-  const adres = document.getElementById("adres").value;
-
-  const egitim = document.getElementById("egitim").value;
-  const meslek = document.getElementById("meslek").value;
-
   const mesaj =
-  "ÜYELİK BAŞVURU FORMU%0A%0A" +
+`ÜYELİK BAŞVURU FORMU
 
-  "1. Kimlik Bilgileri%0A" +
-  "Ad Soyad: " + ad + "%0A" +
-  "TC: " + tc + "%0A" +
-  "Doğum Tarihi: " + dt + "%0A" +
-  "Doğum Yeri: " + dy + "%0A%0A" +
+1. Kimlik Bilgileri
+Ad Soyad: ${degerAl("adSoyad")}
+T.C. Kimlik Numarası: ${degerAl("tcKimlik")}
+Doğum Tarihi: ${degerAl("dogumTarihi")}
+Doğum Yeri: ${degerAl("dogumYeri")}
 
-  "2. İletişim Bilgileri%0A" +
-  "Telefon: " + tel + "%0A" +
-  "E-posta: " + mail + "%0A" +
-  "Adres: " + adres + "%0A%0A" +
+2. İletişim Bilgileri
+Mobil Telefon: ${degerAl("telefon")}
+E-posta: ${degerAl("email")}
+İkamet Adresi: ${degerAl("adres")}
 
-  "3. Eğitim%0A" +
-  egitim + "%0A" +
+3. İlgi Alanları
+Kültür etkinlikleri: ${onayAl("kultur")}
+Spor faaliyetleri: ${onayAl("spor")}
+Girişimcilik: ${onayAl("girisimcilik")}
+Sosyal yardım: ${onayAl("sosyalYardim")}
+Diğer: ${onayAl("diger")}
 
-  "Meslek: " + meslek;
+4. Eğitim ve Mesleki Bilgiler
+Eğitim Durumu: ${degerAl("egitim")}
+Meslek / Kurum: ${degerAl("meslek")}
 
-  // 🔴 BURAYA KENDİ NUMARANI YAZ
+5. Üyelik Beyanları
+Dernek tüzüğünü okudum ve kabul ediyorum: ${onayAl("tuzukKabul")}
+Üyelik aidatını ödemeyi kabul ediyorum: ${onayAl("aidatKabul")}
+Verdiğim bilgilerin doğru olduğunu beyan ederim: ${onayAl("dogrulukBeyani")}`;
+
   const numara = "905369887544";
 
-  window.open("https://wa.me/" + numara + "?text=" + mesaj, "_blank");
+  window.open(
+    "https://wa.me/" + numara + "?text=" + encodeURIComponent(mesaj),
+    "_blank"
+  );
 }
 </script>
 </body>
