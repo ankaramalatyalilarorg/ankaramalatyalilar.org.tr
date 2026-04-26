@@ -198,8 +198,8 @@ box-shadow:none;
 
 <div class="actions">
 
-<button class="btn btn-send" type="submit">
-<i class="fa-solid fa-envelope"></i> GÖNDER
+<button class="btn btn-send" type="button" onclick="whatsappGonder()">
+<i class="fa-brands fa-whatsapp"></i> GÖNDER
 </button>
 
 <button class="btn btn-pdf" type="button" onclick="pdfIndir()">
@@ -324,6 +324,46 @@ function pdfIndir(){
   img.onerror = function(){
     alert("Banner resmi bulunamadi. bas.png dosyasinin form.html ile ayni klasorde oldugundan emin olun.");
   };
+}
+</script>
+  <script>
+function whatsappGonder(){
+
+  const ad = document.getElementById("adSoyad").value;
+  const tc = document.getElementById("tcKimlik").value;
+  const dt = document.getElementById("dogumTarihi").value;
+  const dy = document.getElementById("dogumYeri").value;
+
+  const tel = document.getElementById("telefon").value;
+  const mail = document.getElementById("email").value;
+  const adres = document.getElementById("adres").value;
+
+  const egitim = document.getElementById("egitim").value;
+  const meslek = document.getElementById("meslek").value;
+
+  const mesaj =
+  "ÜYELİK BAŞVURU FORMU%0A%0A" +
+
+  "1. Kimlik Bilgileri%0A" +
+  "Ad Soyad: " + ad + "%0A" +
+  "TC: " + tc + "%0A" +
+  "Doğum Tarihi: " + dt + "%0A" +
+  "Doğum Yeri: " + dy + "%0A%0A" +
+
+  "2. İletişim Bilgileri%0A" +
+  "Telefon: " + tel + "%0A" +
+  "E-posta: " + mail + "%0A" +
+  "Adres: " + adres + "%0A%0A" +
+
+  "3. Eğitim%0A" +
+  egitim + "%0A" +
+
+  "Meslek: " + meslek;
+
+  // 🔴 BURAYA KENDİ NUMARANI YAZ
+  const numara = "905369887544";
+
+  window.open("https://wa.me/" + numara + "?text=" + mesaj, "_blank");
 }
 </script>
 </body>
