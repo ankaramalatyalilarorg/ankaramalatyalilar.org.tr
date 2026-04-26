@@ -115,61 +115,6 @@ font-size:13px;
 .btn-pdf{background:#8e44ad;color:#fff;}
 .btn-print{background:#333;color:#fff;}
 
-/* PDF TASARIMI */
-.pdf-kopya{
-background:#fff;
-padding:18px;
-width:800px;
-font-family:Arial, Helvetica, sans-serif;
-color:#1f2d3d;
-}
-
-.pdf-kopya img{
-width:100%;
-border-radius:12px;
-margin-bottom:12px;
-display:block;
-}
-
-.pdf-kopya h2{
-font-size:20px;
-margin-bottom:10px;
-color:#1e3c2f;
-}
-
-.pdf-kopya h3{
-font-size:14px;
-margin-top:12px;
-margin-bottom:5px;
-color:#2f6b57;
-}
-
-.pdf-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:8px;
-}
-
-.pdf-satir{
-border:1px solid #ccc;
-border-radius:8px;
-padding:7px;
-margin-top:5px;
-min-height:32px;
-font-size:13px;
-}
-
-.pdf-onay{
-display:flex;
-justify-content:space-between;
-border:1px solid #e6e9ee;
-border-radius:8px;
-padding:6px 10px;
-margin-top:5px;
-font-size:13px;
-}
-
-/* YAZDIR EKRANI */
 @media print{
 body{
 background:#fff;
@@ -272,71 +217,6 @@ box-shadow:none;
 </div>
 
 <script>
-function deger(id){
-  const alan = document.getElementById(id);
-  return alan ? alan.value : "";
-}
-
-function seciliMi(id){
-  const alan = document.getElementById(id);
-  return alan && alan.checked ? "✓" : "";
-}
-
-function pdfIndir(){
-
-  const pdfDiv = document.createElement("div");
-  pdfDiv.className = "pdf-kopya";
-
-  pdfDiv.innerHTML = `
-    <img src="bas.png">
-
-    <h2>ÜYE KAYIT FORMU</h2>
-
-    <h3>1. Kimlik Bilgileri</h3>
-    <div class="pdf-grid">
-      <div class="pdf-satir"><strong>Ad Soyad:</strong> ${deger("adSoyad")}</div>
-      <div class="pdf-satir"><strong>T.C. Kimlik Numarası:</strong> ${deger("tcKimlik")}</div>
-      <div class="pdf-satir"><strong>Doğum Tarihi:</strong> ${deger("dogumTarihi")}</div>
-      <div class="pdf-satir"><strong>Doğum Yeri:</strong> ${deger("dogumYeri")}</div>
-    </div>
-
-    <h3>2. İletişim Bilgileri</h3>
-    <div class="pdf-satir"><strong>Mobil Telefon:</strong> ${deger("telefon")}</div>
-    <div class="pdf-satir"><strong>E-posta:</strong> ${deger("email")}</div>
-    <div class="pdf-satir"><strong>İkamet Adresi:</strong> ${deger("adres")}</div>
-
-    <h3>3. İlgi Alanları</h3>
-    <div class="pdf-onay"><span>Kültür etkinlikleri</span><strong>${seciliMi("kultur")}</strong></div>
-    <div class="pdf-onay"><span>Spor faaliyetleri</span><strong>${seciliMi("spor")}</strong></div>
-    <div class="pdf-onay"><span>Girişimcilik</span><strong>${seciliMi("girisimcilik")}</strong></div>
-    <div class="pdf-onay"><span>Sosyal yardım</span><strong>${seciliMi("sosyalYardim")}</strong></div>
-    <div class="pdf-onay"><span>Diğer</span><strong>${seciliMi("diger")}</strong></div>
-
-    <h3>4. Eğitim ve Mesleki Bilgiler</h3>
-    <div class="pdf-satir"><strong>Eğitim Durumu:</strong> ${deger("egitim")}</div>
-    <div class="pdf-satir"><strong>Meslek / Kurum:</strong> ${deger("meslek")}</div>
-
-    <h3>5. Üyelik Beyanları</h3>
-    <div class="pdf-onay"><span>Dernek tüzüğünü okudum ve kabul ediyorum</span><strong>${seciliMi("tuzukKabul")}</strong></div>
-    <div class="pdf-onay"><span>Üyelik aidatını ödemeyi kabul ediyorum</span><strong>${seciliMi("aidatKabul")}</strong></div>
-    <div class="pdf-onay"><span>Verdiğim bilgilerin doğru olduğunu beyan ederim</span><strong>${seciliMi("dogrulukBeyani")}</strong></div>
-  `;
-
-  pdfDiv.style.position = "absolute";
-  pdfDiv.style.left = "0";
-  pdfDiv.style.top = "0";
-  pdfDiv.style.zIndex = "99999";
-
-  document.body.appendChild(pdfDiv);
-
-  html2pdf()
-    .set({
-      margin: 8,
-      filename: "uye-kayit-formu.pdf",
-      image: { type: "jpeg", quality: 1 },
-      html2canvas: {
-        scale: 2,
-      <script>
 function alan(id){
   const el = document.getElementById(id);
   return el ? el.value : "";
@@ -355,7 +235,7 @@ function pdfIndir(){
 
   pdf.setFont("helvetica", "bold");
   pdf.setFontSize(16);
-  pdf.text("ÜYE KAYIT FORMU", 15, y);
+  pdf.text("UYE KAYIT FORMU", 15, y);
 
   y += 12;
 
@@ -365,53 +245,53 @@ function pdfIndir(){
 
   pdf.setFont("helvetica", "normal");
   pdf.text("Ad Soyad: " + alan("adSoyad"), 15, y); y += 7;
-  pdf.text("T.C. Kimlik Numarası: " + alan("tcKimlik"), 15, y); y += 7;
-  pdf.text("Doğum Tarihi: " + alan("dogumTarihi"), 15, y); y += 7;
-  pdf.text("Doğum Yeri: " + alan("dogumYeri"), 15, y); y += 10;
+  pdf.text("T.C. Kimlik Numarasi: " + alan("tcKimlik"), 15, y); y += 7;
+  pdf.text("Dogum Tarihi: " + alan("dogumTarihi"), 15, y); y += 7;
+  pdf.text("Dogum Yeri: " + alan("dogumYeri"), 15, y); y += 10;
 
   pdf.setFont("helvetica", "bold");
-  pdf.text("2. İletişim Bilgileri", 15, y);
+  pdf.text("2. Iletisim Bilgileri", 15, y);
   y += 8;
 
   pdf.setFont("helvetica", "normal");
   pdf.text("Mobil Telefon: " + alan("telefon"), 15, y); y += 7;
   pdf.text("E-posta: " + alan("email"), 15, y); y += 7;
 
-  const adres = pdf.splitTextToSize("İkamet Adresi: " + alan("adres"), 180);
+  const adres = pdf.splitTextToSize("Ikamet Adresi: " + alan("adres"), 180);
   pdf.text(adres, 15, y);
   y += adres.length * 7 + 5;
 
   pdf.setFont("helvetica", "bold");
-  pdf.text("3. İlgi Alanları", 15, y);
+  pdf.text("3. Ilgi Alanlari", 15, y);
   y += 8;
 
   pdf.setFont("helvetica", "normal");
-  pdf.text("Kültür etkinlikleri: " + onay("kultur"), 15, y); y += 7;
+  pdf.text("Kultur etkinlikleri: " + onay("kultur"), 15, y); y += 7;
   pdf.text("Spor faaliyetleri: " + onay("spor"), 15, y); y += 7;
-  pdf.text("Girişimcilik: " + onay("girisimcilik"), 15, y); y += 7;
-  pdf.text("Sosyal yardım: " + onay("sosyalYardim"), 15, y); y += 7;
-  pdf.text("Diğer: " + onay("diger"), 15, y); y += 10;
+  pdf.text("Girisimcilik: " + onay("girisimcilik"), 15, y); y += 7;
+  pdf.text("Sosyal yardim: " + onay("sosyalYardim"), 15, y); y += 7;
+  pdf.text("Diger: " + onay("diger"), 15, y); y += 10;
 
   pdf.setFont("helvetica", "bold");
-  pdf.text("4. Eğitim ve Mesleki Bilgiler", 15, y);
+  pdf.text("4. Egitim ve Mesleki Bilgiler", 15, y);
   y += 8;
 
   pdf.setFont("helvetica", "normal");
-  pdf.text("Eğitim Durumu: " + alan("egitim"), 15, y); y += 7;
+  pdf.text("Egitim Durumu: " + alan("egitim"), 15, y); y += 7;
   pdf.text("Meslek / Kurum: " + alan("meslek"), 15, y); y += 10;
 
   pdf.setFont("helvetica", "bold");
-  pdf.text("5. Üyelik Beyanları", 15, y);
+  pdf.text("5. Uyelik Beyanlari", 15, y);
   y += 8;
 
   pdf.setFont("helvetica", "normal");
-  pdf.text("Dernek tüzüğünü okudum ve kabul ediyorum: " + onay("tuzukKabul"), 15, y); y += 7;
-  pdf.text("Üyelik aidatını ödemeyi kabul ediyorum: " + onay("aidatKabul"), 15, y); y += 7;
-  pdf.text("Verdiğim bilgilerin doğru olduğunu beyan ederim: " + onay("dogrulukBeyani"), 15, y);
+  pdf.text("Dernek tuzugunu okudum ve kabul ediyorum: " + onay("tuzukKabul"), 15, y); y += 7;
+  pdf.text("Uyelik aidatini odemeyi kabul ediyorum: " + onay("aidatKabul"), 15, y); y += 7;
+  pdf.text("Verdigim bilgilerin dogru oldugunu beyan ederim: " + onay("dogrulukBeyani"), 15, y);
 
   pdf.save("uye-kayit-formu.pdf");
 }
-</script> 
+</script>
 
 </body>
 </html>
