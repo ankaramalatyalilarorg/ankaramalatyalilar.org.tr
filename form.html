@@ -116,29 +116,11 @@ font-size:13px;
 .btn-print{background:#333;color:#fff;}
 
 @media print{
-body{
-background:#fff;
-}
-
-.actions{
-display:none;
-}
-
-.container{
-width:100%;
-max-width:100%;
-}
-
-.banner img{
-display:block;
-width:100%;
-border-radius:0;
-}
-
-.card{
-border:1px solid #ddd;
-box-shadow:none;
-}
+body{background:#fff;}
+.actions{display:none;}
+.container{width:100%;max-width:100%;}
+.banner img{display:block;width:100%;border-radius:0;}
+.card{border:1px solid #ddd;box-shadow:none;}
 }
 </style>
 </head>
@@ -151,7 +133,7 @@ box-shadow:none;
 <img src="bas.png" alt="Dernek Banner">
 </div>
 
-<form name="uyelik" method="POST" data-netlify="true">
+<form name="uyelik" method="POST">
 <input type="hidden" name="form-name" value="uyelik">
 
 <div class="card">
@@ -227,7 +209,7 @@ function onay(id){
   return el && el.checked ? "EVET" : "HAYIR";
 }
 
-function pdfIndir(){
+function pdfOlusturVeIndir(whatsappSonraAcilsin){
   const { jsPDF } = window.jspdf;
   const pdf = new jsPDF("p", "mm", "a4");
 
@@ -319,54 +301,54 @@ function pdfIndir(){
     onayKutu("Verdigim bilgilerin dogru oldugunu beyan ederim", onay("dogrulukBeyani"));
 
     pdf.save("uye-kayit-formu.pdf");
+
+    if(whatsappSonraAcilsin){
+      whatsappAc();
+    }
   };
 
   img.onerror = function(){
     alert("Banner resmi bulunamadi. bas.png dosyasinin form.html ile ayni klasorde oldugundan emin olun.");
   };
 }
-<script>
-function degerAl(id){
-  const alan = document.getElementById(id);
-  return alan ? alan.value : "";
+
+function pdfIndir(){
+  pdfOlusturVeIndir(false);
 }
 
-function onayAl(id){
-  const alan = document.getElementById(id);
-  return alan && alan.checked ? "EVET" : "HAYIR";
-}
-
-function whatsappGonder(){
+function whatsappAc(){
 
   const mesaj =
 `ÜYELİK BAŞVURU FORMU
 
+PDF dosyası indirildi. Lütfen indirilen PDF dosyasını bu WhatsApp mesajına ekleyiniz.
+
 1. Kimlik Bilgileri
-Ad Soyad: ${degerAl("adSoyad")}
-T.C. Kimlik Numarası: ${degerAl("tcKimlik")}
-Doğum Tarihi: ${degerAl("dogumTarihi")}
-Doğum Yeri: ${degerAl("dogumYeri")}
+Ad Soyad: ${alan("adSoyad")}
+T.C. Kimlik Numarası: ${alan("tcKimlik")}
+Doğum Tarihi: ${alan("dogumTarihi")}
+Doğum Yeri: ${alan("dogumYeri")}
 
 2. İletişim Bilgileri
-Mobil Telefon: ${degerAl("telefon")}
-E-posta: ${degerAl("email")}
-İkamet Adresi: ${degerAl("adres")}
+Mobil Telefon: ${alan("telefon")}
+E-posta: ${alan("email")}
+İkamet Adresi: ${alan("adres")}
 
 3. İlgi Alanları
-Kültür etkinlikleri: ${onayAl("kultur")}
-Spor faaliyetleri: ${onayAl("spor")}
-Girişimcilik: ${onayAl("girisimcilik")}
-Sosyal yardım: ${onayAl("sosyalYardim")}
-Diğer: ${onayAl("diger")}
+Kültür etkinlikleri: ${onay("kultur")}
+Spor faaliyetleri: ${onay("spor")}
+Girişimcilik: ${onay("girisimcilik")}
+Sosyal yardım: ${onay("sosyalYardim")}
+Diğer: ${onay("diger")}
 
 4. Eğitim ve Mesleki Bilgiler
-Eğitim Durumu: ${degerAl("egitim")}
-Meslek / Kurum: ${degerAl("meslek")}
+Eğitim Durumu: ${alan("egitim")}
+Meslek / Kurum: ${alan("meslek")}
 
 5. Üyelik Beyanları
-Dernek tüzüğünü okudum ve kabul ediyorum: ${onayAl("tuzukKabul")}
-Üyelik aidatını ödemeyi kabul ediyorum: ${onayAl("aidatKabul")}
-Verdiğim bilgilerin doğru olduğunu beyan ederim: ${onayAl("dogrulukBeyani")}`;
+Dernek tüzüğünü okudum ve kabul ediyorum: ${onay("tuzukKabul")}
+Üyelik aidatını ödemeyi kabul ediyorum: ${onay("aidatKabul")}
+Verdiğim bilgilerin doğru olduğunu beyan ederim: ${onay("dogrulukBeyani")}`;
 
   const numara = "905369887544";
 
@@ -375,6 +357,11 @@ Verdiğim bilgilerin doğru olduğunu beyan ederim: ${onayAl("dogrulukBeyani")}`
     "_blank"
   );
 }
+
+function whatsappGonder(){
+  pdfOlusturVeIndir(true);
+}
 </script>
+
 </body>
 </html>
