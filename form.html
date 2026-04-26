@@ -231,67 +231,100 @@ function pdfIndir(){
   const { jsPDF } = window.jspdf;
   const pdf = new jsPDF("p", "mm", "a4");
 
-  let y = 15;
+  const img = new Image();
+  img.src = "bas.png";
 
-  pdf.setFont("helvetica", "bold");
-  pdf.setFontSize(16);
-  pdf.text("UYE KAYIT FORMU", 15, y);
+  img.onload = function(){
 
-  y += 12;
+    let y = 10;
 
-  pdf.setFontSize(12);
-  pdf.text("1. Kimlik Bilgileri", 15, y);
-  y += 8;
+    pdf.addImage(img, "PNG", 10, y, 190, 38);
+    y += 48;
 
-  pdf.setFont("helvetica", "normal");
-  pdf.text("Ad Soyad: " + alan("adSoyad"), 15, y); y += 7;
-  pdf.text("T.C. Kimlik Numarasi: " + alan("tcKimlik"), 15, y); y += 7;
-  pdf.text("Dogum Tarihi: " + alan("dogumTarihi"), 15, y); y += 7;
-  pdf.text("Dogum Yeri: " + alan("dogumYeri"), 15, y); y += 10;
+    pdf.setFont("helvetica", "bold");
+    pdf.setFontSize(16);
+    pdf.text("UYE KAYIT FORMU", 105, y, { align: "center" });
+    y += 12;
 
-  pdf.setFont("helvetica", "bold");
-  pdf.text("2. Iletisim Bilgileri", 15, y);
-  y += 8;
+    function baslik(text){
+      pdf.setFont("helvetica", "bold");
+      pdf.setFontSize(12);
+      pdf.text(text, 10, y);
+      y += 7;
+    }
 
-  pdf.setFont("helvetica", "normal");
-  pdf.text("Mobil Telefon: " + alan("telefon"), 15, y); y += 7;
-  pdf.text("E-posta: " + alan("email"), 15, y); y += 7;
+    function kutu(label, value, x, w){
+      pdf.setDrawColor(180);
+      pdf.roundedRect(x, y, w, 10, 2, 2);
+      pdf.setFont("helvetica", "bold");
+      pdf.setFontSize(9);
+      pdf.text(label, x + 3, y + 4);
+      pdf.setFont("helvetica", "normal");
+      pdf.text(String(value || ""), x + 3, y + 8);
+    }
 
-  const adres = pdf.splitTextToSize("Ikamet Adresi: " + alan("adres"), 180);
-  pdf.text(adres, 15, y);
-  y += adres.length * 7 + 5;
+    function tamKutu(label, value){
+      pdf.setDrawColor(180);
+      pdf.roundedRect(10, y, 190, 11, 2, 2);
+      pdf.setFont("helvetica", "bold");
+      pdf.setFontSize(9);
+      pdf.text(label, 13, y + 4);
+      pdf.setFont("helvetica", "normal");
+      const satirlar = pdf.splitTextToSize(String(value || ""), 170);
+      pdf.text(satirlar, 13, y + 8);
+      y += 13;
+    }
 
-  pdf.setFont("helvetica", "bold");
-  pdf.text("3. Ilgi Alanlari", 15, y);
-  y += 8;
+    function onayKutu(label, value){
+      pdf.setDrawColor(180);
+      pdf.roundedRect(10, y, 190, 8, 2, 2);
+      pdf.setFont("helvetica", "normal");
+      pdf.setFontSize(9);
+      pdf.text(label, 13, y + 5);
+      pdf.setFont("helvetica", "bold");
+      pdf.text(value, 185, y + 5, { align: "right" });
+      y += 10;
+    }
 
-  pdf.setFont("helvetica", "normal");
-  pdf.text("Kultur etkinlikleri: " + onay("kultur"), 15, y); y += 7;
-  pdf.text("Spor faaliyetleri: " + onay("spor"), 15, y); y += 7;
-  pdf.text("Girisimcilik: " + onay("girisimcilik"), 15, y); y += 7;
-  pdf.text("Sosyal yardim: " + onay("sosyalYardim"), 15, y); y += 7;
-  pdf.text("Diger: " + onay("diger"), 15, y); y += 10;
+    baslik("1. Kimlik Bilgileri");
+    kutu("Ad Soyad", alan("adSoyad"), 10, 92);
+    kutu("T.C. Kimlik Numarasi", alan("tcKimlik"), 108, 92);
+    y += 13;
+    kutu("Dogum Tarihi", alan("dogumTarihi"), 10, 92);
+    kutu("Dogum Yeri", alan("dogumYeri"), 108, 92);
+    y += 16;
 
-  pdf.setFont("helvetica", "bold");
-  pdf.text("4. Egitim ve Mesleki Bilgiler", 15, y);
-  y += 8;
+    baslik("2. Iletisim Bilgileri");
+    tamKutu("Mobil Telefon", alan("telefon"));
+    tamKutu("E-posta", alan("email"));
+    tamKutu("Ikamet Adresi", alan("adres"));
+    y += 3;
 
-  pdf.setFont("helvetica", "normal");
-  pdf.text("Egitim Durumu: " + alan("egitim"), 15, y); y += 7;
-  pdf.text("Meslek / Kurum: " + alan("meslek"), 15, y); y += 10;
+    baslik("3. Ilgi Alanlari");
+    onayKutu("Kultur etkinlikleri", onay("kultur"));
+    onayKutu("Spor faaliyetleri", onay("spor"));
+    onayKutu("Girisimcilik", onay("girisimcilik"));
+    onayKutu("Sosyal yardim", onay("sosyalYardim"));
+    onayKutu("Diger", onay("diger"));
+    y += 3;
 
-  pdf.setFont("helvetica", "bold");
-  pdf.text("5. Uyelik Beyanlari", 15, y);
-  y += 8;
+    baslik("4. Egitim ve Mesleki Bilgiler");
+    tamKutu("Egitim Durumu", alan("egitim"));
+    tamKutu("Meslek / Kurum", alan("meslek"));
+    y += 3;
 
-  pdf.setFont("helvetica", "normal");
-  pdf.text("Dernek tuzugunu okudum ve kabul ediyorum: " + onay("tuzukKabul"), 15, y); y += 7;
-  pdf.text("Uyelik aidatini odemeyi kabul ediyorum: " + onay("aidatKabul"), 15, y); y += 7;
-  pdf.text("Verdigim bilgilerin dogru oldugunu beyan ederim: " + onay("dogrulukBeyani"), 15, y);
+    baslik("5. Uyelik Beyanlari");
+    onayKutu("Dernek tuzugunu okudum ve kabul ediyorum", onay("tuzukKabul"));
+    onayKutu("Uyelik aidatini odemeyi kabul ediyorum", onay("aidatKabul"));
+    onayKutu("Verdigim bilgilerin dogru oldugunu beyan ederim", onay("dogrulukBeyani"));
 
-  pdf.save("uye-kayit-formu.pdf");
+    pdf.save("uye-kayit-formu.pdf");
+  };
+
+  img.onerror = function(){
+    alert("Banner resmi bulunamadi. bas.png dosyasinin form.html ile ayni klasorde oldugundan emin olun.");
+  };
 }
 </script>
-
 </body>
 </html>
