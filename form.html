@@ -6,7 +6,7 @@
 <title>Üye Kayıt Formu</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -336,23 +336,82 @@ function pdfIndir(){
       image: { type: "jpeg", quality: 1 },
       html2canvas: {
         scale: 2,
-        useCORS: true,
-        scrollX: 0,
-        scrollY: 0
-      },
-      jsPDF: {
-        unit: "mm",
-        format: "a4",
-        orientation: "portrait"
-      }
-    })
-    .from(pdfDiv)
-    .save()
-    .then(function(){
-      document.body.removeChild(pdfDiv);
-    });
+      <script>
+function alan(id){
+  const el = document.getElementById(id);
+  return el ? el.value : "";
 }
-</script>
+
+function onay(id){
+  const el = document.getElementById(id);
+  return el && el.checked ? "EVET" : "HAYIR";
+}
+
+function pdfIndir(){
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF("p", "mm", "a4");
+
+  let y = 15;
+
+  pdf.setFont("helvetica", "bold");
+  pdf.setFontSize(16);
+  pdf.text("ÜYE KAYIT FORMU", 15, y);
+
+  y += 12;
+
+  pdf.setFontSize(12);
+  pdf.text("1. Kimlik Bilgileri", 15, y);
+  y += 8;
+
+  pdf.setFont("helvetica", "normal");
+  pdf.text("Ad Soyad: " + alan("adSoyad"), 15, y); y += 7;
+  pdf.text("T.C. Kimlik Numarası: " + alan("tcKimlik"), 15, y); y += 7;
+  pdf.text("Doğum Tarihi: " + alan("dogumTarihi"), 15, y); y += 7;
+  pdf.text("Doğum Yeri: " + alan("dogumYeri"), 15, y); y += 10;
+
+  pdf.setFont("helvetica", "bold");
+  pdf.text("2. İletişim Bilgileri", 15, y);
+  y += 8;
+
+  pdf.setFont("helvetica", "normal");
+  pdf.text("Mobil Telefon: " + alan("telefon"), 15, y); y += 7;
+  pdf.text("E-posta: " + alan("email"), 15, y); y += 7;
+
+  const adres = pdf.splitTextToSize("İkamet Adresi: " + alan("adres"), 180);
+  pdf.text(adres, 15, y);
+  y += adres.length * 7 + 5;
+
+  pdf.setFont("helvetica", "bold");
+  pdf.text("3. İlgi Alanları", 15, y);
+  y += 8;
+
+  pdf.setFont("helvetica", "normal");
+  pdf.text("Kültür etkinlikleri: " + onay("kultur"), 15, y); y += 7;
+  pdf.text("Spor faaliyetleri: " + onay("spor"), 15, y); y += 7;
+  pdf.text("Girişimcilik: " + onay("girisimcilik"), 15, y); y += 7;
+  pdf.text("Sosyal yardım: " + onay("sosyalYardim"), 15, y); y += 7;
+  pdf.text("Diğer: " + onay("diger"), 15, y); y += 10;
+
+  pdf.setFont("helvetica", "bold");
+  pdf.text("4. Eğitim ve Mesleki Bilgiler", 15, y);
+  y += 8;
+
+  pdf.setFont("helvetica", "normal");
+  pdf.text("Eğitim Durumu: " + alan("egitim"), 15, y); y += 7;
+  pdf.text("Meslek / Kurum: " + alan("meslek"), 15, y); y += 10;
+
+  pdf.setFont("helvetica", "bold");
+  pdf.text("5. Üyelik Beyanları", 15, y);
+  y += 8;
+
+  pdf.setFont("helvetica", "normal");
+  pdf.text("Dernek tüzüğünü okudum ve kabul ediyorum: " + onay("tuzukKabul"), 15, y); y += 7;
+  pdf.text("Üyelik aidatını ödemeyi kabul ediyorum: " + onay("aidatKabul"), 15, y); y += 7;
+  pdf.text("Verdiğim bilgilerin doğru olduğunu beyan ederim: " + onay("dogrulukBeyani"), 15, y);
+
+  pdf.save("uye-kayit-formu.pdf");
+}
+</script> 
 
 </body>
 </html>
