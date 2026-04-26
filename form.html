@@ -9,10 +9,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
-font-family:Arial;
+font-family:Arial, Helvetica, sans-serif;
 background:#eef2f5;
 color:#1f2d3d;
 }
@@ -27,6 +31,7 @@ margin:auto;
 width:100%;
 margin-top:8px;
 border-radius:16px;
+display:block;
 }
 
 .card{
@@ -37,19 +42,33 @@ border-radius:14px;
 border:1px solid #e6e9ee;
 }
 
-h2{color:#1e3c2f;margin-bottom:8px;font-size:18px;}
-h3{margin-top:10px;color:#2f6b57;font-size:14px;}
+h2{
+color:#1e3c2f;
+margin-bottom:8px;
+font-size:18px;
+}
 
-input,select,textarea{
+h3{
+margin-top:10px;
+color:#2f6b57;
+font-size:14px;
+}
+
+input, select, textarea{
 width:100%;
 padding:8px;
 margin-top:6px;
 border:1px solid #ccc;
 border-radius:8px;
 font-size:13px;
+background:#fff;
+color:#1f2d3d;
 }
 
-textarea{height:40px;}
+textarea{
+height:40px;
+resize:none;
+}
 
 .grid{
 display:grid;
@@ -89,6 +108,7 @@ display:flex;
 justify-content:center;
 gap:10px;
 margin-top:12px;
+margin-bottom:20px;
 flex-wrap:wrap;
 }
 
@@ -104,9 +124,85 @@ gap:6px;
 font-size:13px;
 }
 
-.btn-send{background:#2f6b57;color:#fff;}
-.btn-pdf{background:#8e44ad;color:#fff;}
-.btn-print{background:#333;color:#fff;}
+.btn-send{
+background:#2f6b57;
+color:#fff;
+}
+
+.btn-pdf{
+background:#8e44ad;
+color:#fff;
+}
+
+.btn-print{
+background:#333;
+color:#fff;
+}
+
+/* PDF için temiz görünüm */
+.pdf-kopya{
+background:#fff;
+padding:18px;
+width:800px;
+font-family:Arial, Helvetica, sans-serif;
+color:#1f2d3d;
+}
+
+.pdf-kopya h2{
+font-size:20px;
+margin-bottom:10px;
+color:#1e3c2f;
+}
+
+.pdf-kopya h3{
+font-size:14px;
+margin-top:12px;
+margin-bottom:5px;
+color:#2f6b57;
+}
+
+.pdf-satir{
+border:1px solid #ccc;
+border-radius:8px;
+padding:7px;
+margin-top:5px;
+min-height:32px;
+font-size:13px;
+}
+
+.pdf-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+}
+
+.pdf-onay{
+display:flex;
+justify-content:space-between;
+border:1px solid #e6e9ee;
+border-radius:8px;
+padding:6px 10px;
+margin-top:5px;
+font-size:13px;
+}
+
+@media print{
+.actions{
+display:none;
+}
+
+body{
+background:#fff;
+}
+
+.banner{
+display:none;
+}
+
+.card{
+border:none;
+}
+}
 </style>
 </head>
 
@@ -121,34 +217,34 @@ font-size:13px;
 <form name="uyelik" method="POST" data-netlify="true">
 <input type="hidden" name="form-name" value="uyelik">
 
-<div class="card" id="pdfAlani">
+<div class="card" id="formAlani">
 
 <h2>ÜYE KAYIT FORMU</h2>
 
 <h3>1. Kimlik Bilgileri</h3>
 <div class="grid">
-<input name="ad_soyad" placeholder="Ad Soyad">
-<input name="tc_kimlik" placeholder="T.C. Kimlik Numarası">
-<input name="dogum_tarihi" type="date">
-<input name="dogum_yeri" placeholder="Doğum Yeri">
+<input id="adSoyad" name="ad_soyad" placeholder="Ad Soyad">
+<input id="tcKimlik" name="tc_kimlik" placeholder="T.C. Kimlik Numarası">
+<input id="dogumTarihi" name="dogum_tarihi" type="date">
+<input id="dogumYeri" name="dogum_yeri" placeholder="Doğum Yeri">
 </div>
 
 <h3>2. İletişim Bilgileri</h3>
-<input name="telefon" placeholder="Mobil Telefon">
-<input name="email" placeholder="E-posta">
-<textarea name="adres" placeholder="İkamet Adresi"></textarea>
+<input id="telefon" name="telefon" placeholder="Mobil Telefon">
+<input id="email" name="email" placeholder="E-posta">
+<textarea id="adres" name="adres" placeholder="İkamet Adresi"></textarea>
 
 <h3>3. İlgi Alanları</h3>
 
-<div class="bar-item"><span>Kültür etkinlikleri</span><input name="kultur" type="checkbox"></div>
-<div class="bar-item"><span>Spor faaliyetleri</span><input name="spor" type="checkbox"></div>
-<div class="bar-item"><span>Girişimcilik</span><input name="girisimcilik" type="checkbox"></div>
-<div class="bar-item"><span>Sosyal yardım</span><input name="sosyal_yardim" type="checkbox"></div>
-<div class="bar-item"><span>Diğer</span><input name="diger" type="checkbox"></div>
+<div class="bar-item"><span>Kültür etkinlikleri</span><input id="kultur" name="kultur" type="checkbox"></div>
+<div class="bar-item"><span>Spor faaliyetleri</span><input id="spor" name="spor" type="checkbox"></div>
+<div class="bar-item"><span>Girişimcilik</span><input id="girisimcilik" name="girisimcilik" type="checkbox"></div>
+<div class="bar-item"><span>Sosyal yardım</span><input id="sosyalYardim" name="sosyal_yardim" type="checkbox"></div>
+<div class="bar-item"><span>Diğer</span><input id="diger" name="diger" type="checkbox"></div>
 
 <h3>4. Eğitim ve Mesleki Bilgiler</h3>
 
-<select name="egitim">
+<select id="egitim" name="egitim">
 <option>İlköğretim</option>
 <option>Lise</option>
 <option>Üniversite Lisans</option>
@@ -156,13 +252,13 @@ font-size:13px;
 <option>Doktora</option>
 </select>
 
-<input name="meslek" placeholder="Meslek / Kurum">
+<input id="meslek" name="meslek" placeholder="Meslek / Kurum">
 
 <h3>5. Üyelik Beyanları</h3>
 
-<div class="bar-item"><span>Dernek tüzüğünü okudum ve kabul ediyorum</span><input name="tuzuk_kabul" type="checkbox"></div>
-<div class="bar-item"><span>Üyelik aidatını ödemeyi kabul ediyorum</span><input name="aidat_kabul" type="checkbox"></div>
-<div class="bar-item"><span>Verdiğim bilgilerin doğru olduğunu beyan ederim</span><input name="dogruluk_beyani" type="checkbox"></div>
+<div class="bar-item"><span>Dernek tüzüğünü okudum ve kabul ediyorum</span><input id="tuzukKabul" name="tuzuk_kabul" type="checkbox"></div>
+<div class="bar-item"><span>Üyelik aidatını ödemeyi kabul ediyorum</span><input id="aidatKabul" name="aidat_kabul" type="checkbox"></div>
+<div class="bar-item"><span>Verdiğim bilgilerin doğru olduğunu beyan ederim</span><input id="dogrulukBeyani" name="dogruluk_beyani" type="checkbox"></div>
 
 </div>
 
@@ -187,19 +283,79 @@ font-size:13px;
 </div>
 
 <script>
-function pdfIndir(){
-  const element = document.getElementById("pdfAlani");
+function deger(id){
+const alan = document.getElementById(id);
+return alan && alan.value ? alan.value : "";
+}
 
-  html2pdf()
-    .set({
-      margin: 10,
-      filename: "uye-kayit-formu.pdf",
-      image: { type: "jpeg", quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
-    })
-    .from(element)
-    .save();
+function seciliMi(id){
+const alan = document.getElementById(id);
+return alan && alan.checked ? "✓" : "";
+}
+
+function pdfIndir(){
+
+const pdfDiv = document.createElement("div");
+pdfDiv.className = "pdf-kopya";
+
+pdfDiv.innerHTML = `
+<h2>ÜYE KAYIT FORMU</h2>
+
+<h3>1. Kimlik Bilgileri</h3>
+<div class="pdf-grid">
+<div class="pdf-satir"><strong>Ad Soyad:</strong> ${deger("adSoyad")}</div>
+<div class="pdf-satir"><strong>T.C. Kimlik Numarası:</strong> ${deger("tcKimlik")}</div>
+<div class="pdf-satir"><strong>Doğum Tarihi:</strong> ${deger("dogumTarihi")}</div>
+<div class="pdf-satir"><strong>Doğum Yeri:</strong> ${deger("dogumYeri")}</div>
+</div>
+
+<h3>2. İletişim Bilgileri</h3>
+<div class="pdf-satir"><strong>Mobil Telefon:</strong> ${deger("telefon")}</div>
+<div class="pdf-satir"><strong>E-posta:</strong> ${deger("email")}</div>
+<div class="pdf-satir"><strong>İkamet Adresi:</strong> ${deger("adres")}</div>
+
+<h3>3. İlgi Alanları</h3>
+<div class="pdf-onay"><span>Kültür etkinlikleri</span><strong>${seciliMi("kultur")}</strong></div>
+<div class="pdf-onay"><span>Spor faaliyetleri</span><strong>${seciliMi("spor")}</strong></div>
+<div class="pdf-onay"><span>Girişimcilik</span><strong>${seciliMi("girisimcilik")}</strong></div>
+<div class="pdf-onay"><span>Sosyal yardım</span><strong>${seciliMi("sosyalYardim")}</strong></div>
+<div class="pdf-onay"><span>Diğer</span><strong>${seciliMi("diger")}</strong></div>
+
+<h3>4. Eğitim ve Mesleki Bilgiler</h3>
+<div class="pdf-satir"><strong>Eğitim Durumu:</strong> ${deger("egitim")}</div>
+<div class="pdf-satir"><strong>Meslek / Kurum:</strong> ${deger("meslek")}</div>
+
+<h3>5. Üyelik Beyanları</h3>
+<div class="pdf-onay"><span>Dernek tüzüğünü okudum ve kabul ediyorum</span><strong>${seciliMi("tuzukKabul")}</strong></div>
+<div class="pdf-onay"><span>Üyelik aidatını ödemeyi kabul ediyorum</span><strong>${seciliMi("aidatKabul")}</strong></div>
+<div class="pdf-onay"><span>Verdiğim bilgilerin doğru olduğunu beyan ederim</span><strong>${seciliMi("dogrulukBeyani")}</strong></div>
+`;
+
+pdfDiv.style.position = "fixed";
+pdfDiv.style.left = "-9999px";
+pdfDiv.style.top = "0";
+document.body.appendChild(pdfDiv);
+
+html2pdf()
+.set({
+margin: 8,
+filename: "uye-kayit-formu.pdf",
+image: { type: "jpeg", quality: 1 },
+html2canvas: {
+scale: 2,
+useCORS: true
+},
+jsPDF: {
+unit: "mm",
+format: "a4",
+orientation: "portrait"
+}
+})
+.from(pdfDiv)
+.save()
+.then(function(){
+document.body.removeChild(pdfDiv);
+});
 }
 </script>
 
