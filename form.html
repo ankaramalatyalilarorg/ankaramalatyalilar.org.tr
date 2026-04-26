@@ -6,7 +6,7 @@
 <title>Üye Kayıt Formu</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -177,9 +177,8 @@ font-size:13px;
 
 <button class="btn btn-send" type="submit">
 <i class="fa-solid fa-envelope"></i> GÖNDER
-</button>
-
-<button class="btn btn-pdf" type="button" onclick="window.print()">
+</button
+<button class="btn btn-pdf" type="button" onclick="pdfIndir()">
 <i class="fa-solid fa-file-pdf"></i> PDF İNDİR
 </button>
 
@@ -195,10 +194,21 @@ font-size:13px;
 </div>
 
 <script>
-document.getElementById("form").addEventListener("submit", function(e){
-e.preventDefault();
-alert("Başvuru gönderildi.");
-});
+<script>
+function pdfIndir(){
+  const element = document.querySelector(".card");
+
+  html2pdf()
+    .set({
+      margin: 10,
+      filename: "uye-kayit-formu.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+    })
+    .from(element)
+    .save();
+}
 </script>
 
 </body>
