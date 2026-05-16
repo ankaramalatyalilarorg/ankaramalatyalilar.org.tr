@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Üye Kayıt Foru</title>
+<title>Üye Kayıt Formu</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -33,18 +33,29 @@ display:block;
 .card{
 background:#fff;
 margin-top:10px;
-padding:14px;
+padding:12px;
 border-radius:14px;
 border:1px solid #e6e9ee;
 }
 
-h2{color:#1e3c2f;margin-bottom:8px;font-size:18px;}
-h3{margin-top:10px;color:#2f6b57;font-size:14px;}
+h2{
+color:#1e3c2f;
+margin-bottom:6px;
+font-size:18px;
+text-align:center;
+}
+
+h3{
+margin-top:8px;
+margin-bottom:5px;
+color:#2f6b57;
+font-size:14px;
+}
 
 input,select,textarea{
 width:100%;
-padding:8px;
-margin-top:6px;
+padding:6px;
+margin-top:4px;
 border:1px solid #ccc;
 border-radius:8px;
 font-size:13px;
@@ -53,14 +64,14 @@ color:#1f2d3d;
 }
 
 textarea{
-height:40px;
+height:34px;
 resize:none;
 }
 
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:10px;
+gap:8px;
 }
 
 .bar-item{
@@ -70,9 +81,9 @@ justify-content:space-between;
 width:100%;
 border:1px solid #e6e9ee;
 border-radius:10px;
-padding:5px 10px;
+padding:4px 10px;
 margin-top:4px;
-height:26px;
+height:24px;
 background:#fff;
 white-space:nowrap;
 }
@@ -85,8 +96,8 @@ font-size:13px;
 
 .bar-item input{
 margin-left:auto;
-width:18px;
-height:18px;
+width:16px;
+height:16px;
 cursor:pointer;
 }
 
@@ -173,7 +184,6 @@ body{background:#fff;}
 
 <h3>5. Üyelik Beyanları</h3>
 <div class="bar-item"><span>Dernek tüzüğünü okudum ve kabul ediyorum</span><input id="tuzukKabul" name="tuzuk_kabul" type="checkbox"></div>
-
 <div class="bar-item"><span>Verdiğim bilgilerin doğru olduğunu beyan ederim</span><input id="dogrulukBeyani" name="dogruluk_beyani" type="checkbox"></div>
 
 </div>
@@ -218,69 +228,71 @@ function pdfOlusturVeIndir(whatsappSonraAcilsin){
 
   img.onload = function(){
 
-    let y = 10;
+    let y = 8;
 
-    pdf.addImage(img, "PNG", 10, y, 190, 38);
-    y += 48;
+    pdf.addImage(img, "PNG", 10, y, 190, 35);
+    y += 43;
 
     pdf.setFont("helvetica", "bold");
-    pdf.setFontSize(16);
+    pdf.setFontSize(15);
     pdf.text("UYE KAYIT FORMU", 105, y, { align: "center" });
-    y += 12;
+    y += 9;
 
     function baslik(text){
       pdf.setFont("helvetica", "bold");
-      pdf.setFontSize(12);
+      pdf.setFontSize(11);
       pdf.text(text, 10, y);
-      y += 7;
+      y += 5;
     }
 
     function kutu(label, value, x, w){
       pdf.setDrawColor(180);
-      pdf.roundedRect(x, y, w, 10, 2, 2);
+      pdf.roundedRect(x, y, w, 8, 2, 2);
       pdf.setFont("helvetica", "bold");
-      pdf.setFontSize(9);
-      pdf.text(label, x + 3, y + 4);
+      pdf.setFontSize(8);
+      pdf.text(label, x + 3, y + 3.4);
       pdf.setFont("helvetica", "normal");
-      pdf.text(String(value || ""), x + 3, y + 8);
+      pdf.setFontSize(8);
+      pdf.text(String(value || ""), x + 3, y + 6.4);
     }
 
     function tamKutu(label, value){
       pdf.setDrawColor(180);
-      pdf.roundedRect(10, y, 190, 11, 2, 2);
+      pdf.roundedRect(10, y, 190, 9, 2, 2);
       pdf.setFont("helvetica", "bold");
-      pdf.setFontSize(9);
-      pdf.text(label, 13, y + 4);
+      pdf.setFontSize(8);
+      pdf.text(label, 13, y + 3.4);
       pdf.setFont("helvetica", "normal");
-      const satirlar = pdf.splitTextToSize(String(value || ""), 170);
-      pdf.text(satirlar, 13, y + 8);
-      y += 13;
+      pdf.setFontSize(8);
+      const satirlar = pdf.splitTextToSize(String(value || ""), 176);
+      pdf.text(satirlar, 13, y + 6.4);
+      y += 10.5;
     }
 
     function onayKutu(label, value){
       pdf.setDrawColor(180);
-      pdf.roundedRect(10, y, 190, 8, 2, 2);
+      pdf.roundedRect(10, y, 190, 7, 2, 2);
       pdf.setFont("helvetica", "normal");
-      pdf.setFontSize(9);
-      pdf.text(label, 13, y + 5);
+      pdf.setFontSize(8.5);
+      pdf.text(label, 13, y + 4.7);
       pdf.setFont("helvetica", "bold");
-      pdf.text(value, 185, y + 5, { align: "right" });
-      y += 10;
+      pdf.text(value, 185, y + 4.7, { align: "right" });
+      y += 8.2;
     }
 
     baslik("1. Kimlik Bilgileri");
     kutu("Ad Soyad", alan("adSoyad"), 10, 92);
     kutu("T.C. Kimlik Numarasi", alan("tcKimlik"), 108, 92);
-    y += 13;
+    y += 10;
     kutu("Dogum Tarihi", alan("dogumTarihi"), 10, 92);
     kutu("Dogum Yeri", alan("dogumYeri"), 108, 92);
-    y += 16;
+    y += 11.5;
 
     baslik("2. Iletisim Bilgileri");
     tamKutu("Mobil Telefon", alan("telefon"));
     tamKutu("E-posta", alan("email"));
     tamKutu("Ikamet Adresi", alan("adres"));
-    y += 3;
+    y += 1;
 
     baslik("3. Ilgi Alanlari");
     onayKutu("Kultur etkinlikleri", onay("kultur"));
@@ -288,17 +300,30 @@ function pdfOlusturVeIndir(whatsappSonraAcilsin){
     onayKutu("Girisimcilik", onay("girisimcilik"));
     onayKutu("Sosyal yardim", onay("sosyalYardim"));
     onayKutu("Diger", onay("diger"));
-    y += 3;
+    y += 1;
 
     baslik("4. Egitim ve Mesleki Bilgiler");
     tamKutu("Egitim Durumu", alan("egitim"));
     tamKutu("Meslek / Kurum", alan("meslek"));
-    y += 3;
+    y += 1;
 
     baslik("5. Uyelik Beyanlari");
     onayKutu("Dernek tuzugunu okudum ve kabul ediyorum", onay("tuzukKabul"));
-    
     onayKutu("Verdigim bilgilerin dogru oldugunu beyan ederim", onay("dogrulukBeyani"));
+
+    y += 11;
+
+    pdf.setFont("helvetica", "bold");
+    pdf.setFontSize(11);
+    pdf.text("ANKARA MALATYALILAR DERNEGI", 105, y, { align: "center" });
+
+    y += 7;
+    pdf.setFontSize(10);
+    pdf.text("......../........./2026", 105, y, { align: "center" });
+
+    y += 7;
+    pdf.setFontSize(11);
+    pdf.text("ONAY", 105, y, { align: "center" });
 
     pdf.save("uye-kayit-formu.pdf");
 
@@ -347,7 +372,6 @@ Meslek / Kurum: ${alan("meslek")}
 
 5. Üyelik Beyanları
 Dernek tüzüğünü okudum ve kabul ediyorum: ${onay("tuzukKabul")}
-
 Verdiğim bilgilerin doğru olduğunu beyan ederim: ${onay("dogrulukBeyani")}`;
 
   const numara = "905369887544";
